@@ -18,6 +18,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
 import javax.swing.text.StyledEditorKit.BoldAction;
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class main {
 	
@@ -7307,8 +7308,9 @@ public class main {
 //		System.out.println(strSum);
 		
 		
-//		//		[5533] 유니크 [블로그]
+//		//		[5533] 유니크 [완료]
 //		
+//		Scanner scan = new Scanner(System.in);
 //		int n = scan.nextInt();
 //		
 //		int [][] arr = new int [n][3];
@@ -8322,8 +8324,77 @@ public class main {
 //		System.out.println(String.format("%.2f", sum/haksum));
 //		//스트링 포멧 활용하여 2자리까지 출력
 		
+	
+/////////////////////////////////////////////////////////////////////////	1006공부			
 		
+		// dfs 탐색 코드
+		
+		Scanner scan = new Scanner(System.in);
+        nV = scan.nextInt();
+        nE = scan.nextInt();
+        ad = new int[nV+1][nV+1]; // 변수 초기화
+        visit = new boolean[nV+1]; // 변수 초기화
+        
+        for(int i = 0; i < nE; i++){
+            int t1 = scan.nextInt();
+            int t2 = scan.nextInt();
+            
+            ad[t1][t2] = ad[t2][t1] = 1;
+        }
+        
+        dfs(1); // 1번부터 탐색 시작
+
 	}
+		//ex) 입력 값 nV = 6;
+		// nE =8;
+		//1 5
+		//1 6
+		//2 3
+		//2 4
+		//2 6 
+		//3 4
+		//3 5
+		//5 6
+	
+		//함수 지정 부분
+		static int nE;// 간선의 개수
+	    static int nV;//정점의 개수
+	    static int[][] ad;   
+	    static boolean[] visit; 
+
+	    public static void dfs(int i){
+	        visit[i] = true;   // 함수 호출 시, visit 했음을 표시
+	        System.out.print(i+ " ");
+	        
+	        for(int j = 1; j < nV+1; j++){
+	            if(ad[i][j] == 1 && visit[j] == false){  // j를 방문하지 않았으면 j를 방문한다.
+	                dfs(j);
+	            }
+	        }
+		
+		
+		
+//		//ArrayList 이론 정리
+//		ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3));
+//		list.remove(1);  //index 1 제거
+//		//배열값 하나 삭제시 모두 앞으로 땡겨저 다시 0번부터 시작할수 잇게한다.
+////		list.clear();  //모든 값 제거
+//		list.add(45);//숫자 삽입
+//		System.out.println(list.size());		
+//		System.out.println(list);
+//		System.out.println(list.get(1));
+//		
+//		System.out.println("_______________________________________");
+//		
+//		for(Integer i : list) { //for문을 통한 전체출력
+//		    System.out.print(i);
+//		}
+//
+//		System.out.println(list.contains(1)); //list에 1이 있는지 검색 : true
+//		System.out.println(list.indexOf(1)); //1이 있는 index반환 없으면 -1
+		
+		
+		}
 }
 
 
