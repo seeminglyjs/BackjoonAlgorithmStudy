@@ -17,8 +17,11 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
+
+import javax.swing.text.DefaultEditorKit.BeepAction;
 import javax.swing.text.StyledEditorKit.BoldAction;
 import javax.swing.text.html.HTMLDocument.Iterator;
+
 
 public class main {
 	
@@ -7345,8 +7348,9 @@ public class main {
 /////////////////////////////////////////////////////////////////////////	927공부		
 		
 		
-//		//		[2869] 이게 분수? [블로그]
+//		//		[2863] 이게 분수? [완료]
 		
+//		Scanner scan = new Scanner(System.in);
 //		int [] arr1 = new int [2];
 //		int [] arr2 = new int [2];
 //		double [] sum = new double [5];
@@ -7387,8 +7391,9 @@ public class main {
 //		System.out.println(count);
 		
 		
-//		//		[1252] 이진수 덧셈 [블로그]
+//		//		[1252] 이진수 덧셈 [완료]
 		
+//		Scanner scan = new Scanner(System.in);
 //		String N = scan.next();
 //		String M = scan.next();
 //		
@@ -7505,7 +7510,7 @@ public class main {
 		
 
 		
-//		//		[2153] 소수단어 [블로그]
+//		//		[2153] 소수단어 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		String n = scan.next();
@@ -7542,7 +7547,7 @@ public class main {
 //	}
 //	
 //	}
-//	
+	
 	
 		
 //		//		[1551] 수열의 변화
@@ -8329,22 +8334,22 @@ public class main {
 		
 		// dfs 탐색 코드
 		
-		Scanner scan = new Scanner(System.in);
-        nV = scan.nextInt();
-        nE = scan.nextInt();
-        ad = new int[nV+1][nV+1]; // 변수 초기화
-        visit = new boolean[nV+1]; // 변수 초기화
-        
-        for(int i = 0; i < nE; i++){
-            int t1 = scan.nextInt();
-            int t2 = scan.nextInt();
-            
-            ad[t1][t2] = ad[t2][t1] = 1;
-        }
-        
-        dfs(1); // 1번부터 탐색 시작
-
-	}
+//		Scanner scan = new Scanner(System.in);
+//        nV = scan.nextInt();
+//        nE = scan.nextInt();
+//        ad = new int[nV+1][nV+1]; // 변수 초기화
+//        visit = new boolean[nV+1]; // 변수 초기화
+//        
+//        for(int i = 0; i < nE; i++){
+//            int t1 = scan.nextInt();
+//            int t2 = scan.nextInt();
+//            
+//            ad[t1][t2] = ad[t2][t1] = 1;
+//        }
+//        
+//        dfs(1); // 1번부터 탐색 시작
+//
+//	}
 		//ex) 입력 값 nV = 6;
 		// nE =8;
 		//1 5
@@ -8356,21 +8361,21 @@ public class main {
 		//3 5
 		//5 6
 	
-		//함수 지정 부분
-		static int nE;// 간선의 개수
-	    static int nV;//정점의 개수
-	    static int[][] ad;   
-	    static boolean[] visit; 
-
-	    public static void dfs(int i){
-	        visit[i] = true;   // 함수 호출 시, visit 했음을 표시
-	        System.out.print(i+ " ");
-	        
-	        for(int j = 1; j < nV+1; j++){
-	            if(ad[i][j] == 1 && visit[j] == false){  // j를 방문하지 않았으면 j를 방문한다.
-	                dfs(j);
-	            }
-	        }
+//		//함수 지정 부분
+//		static int nE;// 간선의 개수
+//	    static int nV;//정점의 개수
+//	    static int[][] ad;   
+//	    static boolean[] visit; 
+//
+//	    public static void dfs(int i){
+//	        visit[i] = true;   // 함수 호출 시, visit 했음을 표시
+//	        System.out.print(i+ " ");
+//	        
+//	        for(int j = 1; j < nV+1; j++){
+//	            if(ad[i][j] == 1 && visit[j] == false){  // j를 방문하지 않았으면 j를 방문한다.
+//	                dfs(j);
+//	            }
+//	        }
 		
 		
 		
@@ -8378,7 +8383,7 @@ public class main {
 //		ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3));
 //		list.remove(1);  //index 1 제거
 //		//배열값 하나 삭제시 모두 앞으로 땡겨저 다시 0번부터 시작할수 잇게한다.
-////		list.clear();  //모든 값 제거
+//		list.clear();  //모든 값 제거
 //		list.add(45);//숫자 삽입
 //		System.out.println(list.size());		
 //		System.out.println(list);
@@ -8394,7 +8399,504 @@ public class main {
 //		System.out.println(list.indexOf(1)); //1이 있는 index반환 없으면 -1
 		
 		
+//		Queue<Integer> q = new <Integer>LinkedList();
+//		
+//		q.offer(1);
+//		q.offer(2);
+//		q.offer(3);
+//		
+//		System.out.println(q.poll());
+//		System.out.println(q.peek());
+		
+/////////////////////////////////////////////////////////////////////////	1008공부			
+		
+//		[1260] dfs bfs
+		
+//		Scanner scan = new Scanner(System.in);
+//		nV = scan.nextInt();
+//		nE = scan.nextInt();
+//		int start = scan.nextInt();
+//		ad= new int [nV + 1][nV + 1];
+//		visit = new boolean [nV + 1];
+//		adB= new int [nV + 1][nV + 1];
+//		visitB = new boolean [nV + 1];
+//		
+//		for(int i = 0; i < nE; i++) {
+//			int t1 = scan.nextInt();
+//			int t2 = scan.nextInt();
+//			
+//			ad[t1][t2] = ad[t2][t1] = 1;
+//			adB[t1][t2] = adB[t2][t1] = 1;
+//		}
+//		
+//		dfs(start);
+//		System.out.println();
+//		bfs(start);
+//		
+//		}
+//	
+//	
+//	static int nE;
+//	static int nV;
+//	static int ad [][];
+//	static int adB [][];
+//	static boolean visit[];
+//	static boolean visitB[];
+//	
+//	public static void dfs(int i) {
+//		visit[i] = true;
+//		System.out.print(i+ " ");
+//		
+//		for(int j = 1; j < nV + 1; j++) {
+//			if(ad[i][j] == 1 && visit[j] == false) {
+//				dfs(j);
+//			}
+//		}
+//	}
+//	
+//	
+//	public static void bfs(int i) {
+//		Queue <Integer> q = new <Integer> LinkedList();
+//		q.offer(i);
+//		visitB[i] = true;
+//		
+//		while(!q.isEmpty()) {
+//			int temp = q.poll();
+//			System.out.print(temp + " ");
+//			
+//			for(int j = 1; j < nV + 1; j++) {
+//				if(adB[temp][j] == 1 && visitB[j] == false) {
+//					q.offer(j);
+//					visitB[j] = true;
+//				}
+//			}
+//		
+//		}
+	
+	
+	
+//		[2178]미로탐색	 [다시보기]
+			
+		
+//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//
+//	        N = Integer.parseInt(st.nextToken());
+//	        M = Integer.parseInt(st.nextToken());
+//
+//	        map = new int[N][M];
+//	        visited = new boolean[N][M];
+//
+//	        for (int i = 0; i < N; i++) {
+//	            st = new StringTokenizer(br.readLine());
+//	            String line = st.nextToken();
+//	            for (int j = 0; j < M; j++) {
+//	                map[i][j] = line.charAt(j) - '0';
+//	            }
+//	        }
+//
+//	        bfs(0,0);
+//
+//	        System.out.println(map[N-1][M-1]);
+//	}
+//
+//    static int[] dr = {1,-1,0,0};
+//    static int[] dc = {0,0,-1,1};
+//    static boolean[][] visited;
+//    static int[][] map;
+//    static int N,M;
+//	
+//    public static void bfs(int i, int j){
+//        Queue<int[]> q = new LinkedList<>();
+//        q.offer(new int[] {i,j});
+//        while(!q.isEmpty()){
+//            int location[] = q.poll();
+//            visited[i][j] = true;
+//
+//            for(int dir = 0; dir<4; dir++){
+//                int r = location[0] + dr[dir];
+//                int c = location[1] + dc[dir];
+//                
+//                //좌표가 -1이 되거나 N or M이 되어 map의 범위를 벗어나면 안되므로
+//                if(r >= 0 && c >= 0 && r < N && c < M){
+//                    if(map[r][c] != 0 && !visited[r][c]){
+//                        q.offer(new int[] {r,c});
+//                        visited[r][c] = true;
+//                        map[r][c] = map[location[0]][location[1]] + 1;
+////                        출력값 체크 를 위한 부분
+//       
+//                        System.out.println();
+//                        System.out.println(location[0] +" "+location[1]);
+//                        System.out.print("배열의 위치는 " + r + " " + c );
+//                        System.out.println();
+//                        System.out.println("이동횟수는 " + map[r][c]);
+//                    }
+//                }
+//            }
+//        }
+    
+	
+///////////////////////////////////////////////////////////////////////	1009공부	
+
+		// [6502] 동혁 피자 [블로그]
+		
+//			Scanner scan = new Scanner(System.in);
+//			int count = 0;
+//			while(true){
+//			int sum = 0;
+//			//식탁크기 초기화
+//			double r = scan.nextDouble();
+//			if(r== 0) {break;}
+//			double w = scan.nextInt();
+//			w = Math.pow(w, 2);
+//			double l = scan.nextInt();
+//			l = Math.pow(l, 2);
+//			r = r * 2;
+//			//식탁의 넓이를 측적함 
+//			count++;
+//			//사각형의 대각선의 길이가 지름보다 작거나 같으면 올릴 수 있다.
+//			if(r >= Math.sqrt(w + l)) {
+//				System.out.println("Pizza " + count + " fits on the table");
+//			}else {
+//				System.out.println("Pizza " + count + " does not fits on the table");
+//			}
+//
+//		}
+			
+			
+			
+			// [7510]	고급수학 [블로그]
+			
+//			Scanner scan = new Scanner(System.in);			
+//			int Tcase = scan.nextInt();			
+//			int [] arr = new int[3];
+//			int Tn = 0;
+//			//출력횟수 넣어줄 변수
+//			
+//			for(int i = 0; i < Tcase; i++) {
+//				int [] temp = new int[3];
+//				//가장 큰 변을 제외한 나머지가 들어갈 배열
+//				int count = 0;
+//				//temp 배열 위치 지정 변수
+//				int max = 0;
+//				//최대 변 길이 들어갈 변수
+//				for(int j = 0; j < arr.length; j++) {
+//					arr[j] = scan.nextInt();
+//					if(max < arr[j]) {
+//						max = arr[j];
+//					}
+//
+//				}
+//			
+//			for(int l = 0; l < arr.length; l++) {
+//				if(arr[l] != max) {
+//					temp[count] = arr[l];
+//					count++;	
+//				}
+//			}
+//				//max가 이닌 나머지 변을 temp에 넣어줌
+//				
+//			int sum = 0;
+//			for(int k = 0; k < temp.length; k++) {
+//				sum += Math.pow(temp[k], 2);
+//			}
+//			//짧은 두변 제곱합 구해줌
+//			
+//			Tn++;
+//			if(Math.pow(max, 2) == sum) {
+//				System.out.println("Scenario #"+ Tn + ":");
+//				System.out.println("yes");
+//			}else {
+//				System.out.println("Scenario #"+ Tn + ":");
+//				System.out.println("No");
+//			}
+//			//가장 긴변 제곱과 같은지 체크 해줌
+
+		// [16431]베시아 데이지		[블로그]
+		
+//		int []bessie = new int [2];
+//		int []daisy = new int [2];
+//		int [] arr = new int [2];
+//		
+//		for(int i = 0; i < 2; i++) {
+//			bessie[i] = scan.nextInt();
+//		}
+//		
+//		for(int i = 0; i < 2; i++) {
+//			daisy[i] = scan.nextInt();
+//		}
+//		
+//		for(int i = 0; i < 2; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		bessie[0] = Math.abs(bessie[0] - arr[0]);
+//		bessie[1] = Math.abs(bessie[1] - arr[1]);
+//		int bCount = bessie[0] >= bessie[1] ? bessie[0] : bessie[1];
+//		//한턴에 모든 방향으로 이동 가능하기때문에 행이나 열중 차이가 큰게 그 턴에 최대 이동값이된다.
+//		//때문에 행이나 열중 차이가 큰 값이 최소 이동거리가 된다.
+//		daisy[0] = Math.abs(daisy[0] - arr[0]);
+//		daisy[1] = Math.abs(daisy[1] - arr[1]);
+//		int dCount = daisy[0] + daisy[1];
+//		//한턴에 행이나 열중 하나 만 움직일 수 있으므로,
+//		//주어진 목적지의 행열의 각 차이가 최소 이동거리가 된다.
+//		
+//		if(bCount < dCount) {
+//			System.out.println("bessie");
+//		}else if(bCount > dCount) {
+//			System.out.println("daisy");
+//		}else {
+//			System.out.println("tie");
+//		}
+			
+		
+		
+///////////////////////////////////////////////////////////////////////	1010공부			
+		
+//		// [2667] 단지번호 붙이기 [다시보기]
+//		
+//			
+//		 n = scan.nextInt();
+//		
+//		map = new int [n][n];
+//		visited = new int[n][n];
+//		
+//		for(int i = 0; i <n; i++) {
+//			String str = scan.next();
+//			for(int j = 0; j < n; j++) {
+//				map[i][j] = str.charAt(j) - '0';
+//			}
+//		}
+////	  		스트링 값으로 배열의 각 열의 값을 입력받음
+//		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < n; j++) {
+//				if(map[i][j]== 1 && visited[i][j] == 0) {
+//					cnt = 1;
+//					solve(i, j);
+//					al.add(cnt);
+//				}
+//			}
+//		}
+//		
+//		Collections.sort(al);
+//		
+//		System.out.println(al.size());
+//		
+//		for(int i = 0; i <al.size(); i++) {
+//			System.out.println(al.get(i));
+//		}
+//	}
+//	  
+//		static int n, cnt;
+//		static int [][]map;
+//		static int [][]visited;
+//		static int dx[] = {-1, 1, 0 ,0};
+//		static int dy[] = {0, 0, -1, 1};
+//		
+//		static ArrayList al = new ArrayList();
+//		
+//		static int solve (int x, int y) {
+//			
+//			visited[x][y] = 1;
+//			
+//			for(int i = 0; i < 4; i++) {
+//				int tx = x + dx[i]; 
+//				int ty = y + dy[i];
+//				
+//				if(tx >=0 && ty >=0 && tx < n && ty < n) {
+//					if(map[tx][ty] == 1 && visited[tx][ty] ==0) {
+//						solve(tx, ty);
+//						cnt++;
+//					}
+//				}
+//				
+//			}
+//			return cnt;
+		
+//		// [1059] 수 2 [블로그]
+		
+//		Scanner scna= new Scanner(System.in);
+//		
+//		int L = scan.nextInt();
+//		int [] arr = new int [L];		
+//		
+//		for(int i = 0; i < L; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int N = scan.nextInt();
+//		int start = 0;
+//		int end = 0;
+//		//시작 배열과 끝 배열의 위치를 받은 변수
+//		
+//		Arrays.sort(arr);
+//		
+//		for(int i = 0; i < L; i++) {
+//			if(arr[i] < N) {
+//				start = arr[i] + 1;
+//				end = arr[i + 1] - 1;
+//			}
+//		}
+//		//포함하지 않는 범위여야 하기 때문에
+//		//시작은 +1 끝은 -1을 해줌
+//		
+//		int count = 0;
+//		//unlucky 갯수를 세줄 변수
+//		int tempEnd = end;
+//		//끝값을 임시로 받아줄 변수
+//		//end 값을 하나씩 빼가면서 비교해 줄 거길 때문에
+//		//초기화용 변수 이다.
+//		while(start != end) {
+//		for(int i = start; i <= end; i++) {
+//			if(start <= N && end >= N || start == N || end == N) {
+//			count++;
+//			}
+//			end--;
+//		}
+//		//스타트와 엔드 구간안에 있거나 같으면 count를 하나씩 더해줌
+//		//이후 end 값을 하나씩 빼주면서 범위에 있는지 체크
+//		
+//		end = tempEnd;
+//		//엔드값 초기화
+//		
+//		if(start + 1 != end) {
+//			start = start + 1;
+//		}else {
+//			break;
+//		}
+//		//이번에는 스타트값을 하나더 해줌
+//		//스타트값이 엔드값과 같을 경우에는 더이상 범위안에
+//		//숫자가 없는 경우이기 때문에 종료
+//		}
+//		System.out.println(count);
+		
+		
+		
+///////////////////////////////////////////////////////////////////////	1011공부		
+
+//		// [1059] 수 이어쓰기 2 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int k = scan.nextInt();
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		
+//		for(int i = 1; i <=n; i++) {
+//			String str = Integer.toString(i);
+//			//n 까지의 값을 스티링으로 받아줌
+//			for(int j = 0; j < str.length(); j++) {
+//				int temp = str.charAt(j) - '0';
+//				//두 자리 이상의 스트링을 하나씩 분리한 후
+//				arr.add(temp);
+//				//해당 arraylist에 담아줌
+//			}
+//		}
+//		
+//		System.out.println(arr.get(k -1));
+//		//순서가 0부터 시작이기 때문에 k-1한 위치가 찾고자 한 위치임
+		
+		
+		
+//		// [3029] 경고 [블로그]
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		String start = br.readLine();
+		String end = br.readLine();
+		
+		int [] arrS = new int [6];
+		int [] arrE = new int [6];
+		int countS = 0;
+		int countE = 0;
+		
+		for(int i = 0; i < 6; i++) {
+			if(start.charAt(i) != 58) {
+				arrS[countS] = start.charAt(i) - '0';
+				countS++;
+
+			}
+			
+			if(end.charAt(i) != 58) {
+				arrE[countE] = end.charAt(i) - '0';
+				countE++;
+			}
 		}
-}
+		
+		int hourS = arrS[0] * 10 + arrS[1];
+		int minuteS = arrS[2] * 10 + arrS[3];
+		int secondS = arrS[4] * 10 + arrS[5];
+		
+		int hourE = arrE[0] * 10 + arrE[1];
+		int minuteE = arrE[2] * 10 + arrE[3];
+		int secondE = arrE[4] * 10 + arrE[5];
+		
+		
+		int second = 0;
+		if(secondS <= secondE) {
+			second = secondE - secondS;
+		}else {
+			second = (60 - secondS) + secondE;
+			minuteS += 1;
+		//시작하는 초단위가 끝나는 초단위 보다 작은경우 분 올림 발생
+		}
+		//초단위 체크
+		
+		int minute = 0;
+		if(minuteS <= minuteE) {
+			minute = minuteE - minuteS;
+		}else {
+			minute = (60 - minuteS) + minuteE;
+			hourS += 1;
+		//시작하는 분단위가 끝나는 초단위 보다 작은경우 분 올림 발생	
+		}
+		//분단위 체크
+		
+		
+		if(hourS >= 25) {
+			hourS = 24;
+			hourE--;
+		}
+		//24시간이 넘어가는 경우 24시간으로 초기화 시켜주고
+		//끝나는 시간을 -- 해줌
+		
+		
+		int hour = 0;
+		if(hourS <= hourE) {
+			hour = hourE - hourS;
+		}else {
+			hour = (24 - hourS) + hourE;
+		}
+		//시간단위 체크
+		
+		String hourW;
+		if(hour < 10) {
+			hourW = '0' + Integer.toString(hour);
+		}else {
+			hourW = Integer.toString(hour);
+		}
+		String minuteW;
+		if(minute < 10) {
+			minuteW = '0' + Integer.toString(minute);
+		}else {
+			minuteW = Integer.toString(minute);
+		}
+		String secondW;
+		if(second < 10) {
+			secondW = '0' + Integer.toString(second);
+		}else {
+			secondW = Integer.toString(second);
+		}
+		//각 단위마다 10 이하인지 체크
+		
+		
+		System.out.println(hourW +":" +minuteW+ ":" +secondW);
+		
+		
+		
+	}	
+	
+}	
+
 
 
