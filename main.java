@@ -8800,103 +8800,214 @@ public class main {
 		
 //		// [3029] 경고 [블로그]
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		String start = br.readLine();
+//		String end = br.readLine();
+//		
+//		int [] arrS = new int [6];
+//		int [] arrE = new int [6];
+//		int countS = 0;
+//		int countE = 0;
+//		
+//		for(int i = 0; i < 6; i++) {
+//			if(start.charAt(i) != 58) {
+//				arrS[countS] = start.charAt(i) - '0';
+//				countS++;
+//
+//			}
+//			
+//			if(end.charAt(i) != 58) {
+//				arrE[countE] = end.charAt(i) - '0';
+//				countE++;
+//			}
+//		}
+//		
+//		int hourS = arrS[0] * 10 + arrS[1];
+//		int minuteS = arrS[2] * 10 + arrS[3];
+//		int secondS = arrS[4] * 10 + arrS[5];
+//		
+//		int hourE = arrE[0] * 10 + arrE[1];
+//		int minuteE = arrE[2] * 10 + arrE[3];
+//		int secondE = arrE[4] * 10 + arrE[5];
+//		
+//		
+//		int second = 0;
+//		if(secondS <= secondE) {
+//			second = secondE - secondS;
+//		}else {
+//			second = (60 - secondS) + secondE;
+//			minuteS += 1;
+//		//시작하는 초단위가 끝나는 초단위 보다 작은경우 분 올림 발생
+//		}
+//		//초단위 체크
+//		
+//		int minute = 0;
+//		if(minuteS <= minuteE) {
+//			minute = minuteE - minuteS;
+//		}else {
+//			minute = (60 - minuteS) + minuteE;
+//			hourS += 1;
+//		//시작하는 분단위가 끝나는 초단위 보다 작은경우 분 올림 발생	
+//		}
+//		//분단위 체크
+//		
+//		
+//		if(hourS >= 25) {
+//			hourS = 24;
+//			hourE--;
+//		}
+//		//24시간이 넘어가는 경우 24시간으로 초기화 시켜주고
+//		//끝나는 시간을 -- 해줌
+//		
+//		
+//		int hour = 0;
+//		if(hourS <= hourE) {
+//			hour = hourE - hourS;
+//		}else {
+//			hour = (24 - hourS) + hourE;
+//		}
+//		//시간단위 체크
+//		
+//		String hourW;
+//		if(hour < 10) {
+//			hourW = '0' + Integer.toString(hour);
+//		}else {
+//			hourW = Integer.toString(hour);
+//		}
+//		String minuteW;
+//		if(minute < 10) {
+//			minuteW = '0' + Integer.toString(minute);
+//		}else {
+//			minuteW = Integer.toString(minute);
+//		}
+//		String secondW;
+//		if(second < 10) {
+//			secondW = '0' + Integer.toString(second);
+//		}else {
+//			secondW = Integer.toString(second);
+//		}
+//		//각 단위마다 10 이하인지 체크
+//		
+//		
+//		System.out.println(hourW +":" +minuteW+ ":" +secondW);
 		
-		String start = br.readLine();
-		String end = br.readLine();
 		
-		int [] arrS = new int [6];
-		int [] arrE = new int [6];
-		int countS = 0;
-		int countE = 0;
+///////////////////////////////////////////////////////////////////////	1012공부
 		
-		for(int i = 0; i < 6; i++) {
-			if(start.charAt(i) != 58) {
-				arrS[countS] = start.charAt(i) - '0';
-				countS++;
+		
+//		// [17087] 숨바꼭질6
+		
+//	       	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//	        // reader writer 생성
+//	 
+//	        String[] info = br.readLine().split(" ");
+//	        // info[0]에 N / info[1]에 S
+//	        String[] temp = br.readLine().split(" ");
+//	 
+//	        int[] distance = new int[temp.length];
+//	 
+//	        for (int i = 0; i < temp.length; i++) {
+//	            if (Integer.parseInt(temp[i]) > Integer.parseInt(info[1])) {
+//	                distance[i] = Integer.parseInt(temp[i]) - Integer.parseInt(info[1]);
+//	            } else {
+//	                distance[i] = Integer.parseInt(info[1]) - Integer.parseInt(temp[i]);
+//	            }
+//	        }
+//	 
+//	        int brothersCnt = Integer.parseInt(info[0]);
+//	 
+//	        int answer = distance[0];
+//	 
+//	        if (brothersCnt != 1) {
+//	            // 동생이 한명이 아니면 최대 공약수를 구한다
+//	            for (int i = 1; i < distance.length; i++) {
+//	                answer = gcd(answer, distance[i]);
+//	            }
+//	        }
+//	 
+//	        bw.write(String.valueOf(answer));
+//	        bw.flush();
+//		
+//	}	
+//    static int gcd(int a, int b) {
+//        if (b == 0) {
+//            return a;
+//        } else {
+//            return gcd(b, a % b);
+//        }
+		
+		
+//		// [2606] 바이러스 [bfs문제]
+		
+		
+//		Scanner sc = new Scanner(System.in);	
+//		
+//		int n= sc.nextInt(); // 컴퓨터의 수
+//		int m = sc.nextInt(); // 네트워크 상에 연결되어 있는 컴퓨터 쌍의 수 즉, 간선의 수
+//		
+//		map=new int[n+1][n+1];
+//		visited = new int[n+1];
+//		for(int i=0;i<m;i++) { // 그래프 구성
+//			int a = sc.nextInt();
+//			int b = sc.nextInt();
+//			map[a][b]=1;
+//			map[b][a]=1;
+//			
+//		}
+//		
+//		bfs(1);
+//		
+//    }
+//	
+//	static int map[][]; // 그래프 배열
+//	static int visited[]; // 방문 배열
+//	static void bfs(int start) { // BFS 메소드
+//		Queue<Integer> queue = new LinkedList<>();
+//		visited[start] =1;	
+//		queue.offer(start);
+//		
+//		int cnt = 0; // 감염 된 컴퓨터의 수
+//		
+//		while(!queue.isEmpty()) {
+//			int x = queue.poll();
+//			
+//			for(int i=1; i< map.length; i++) { // 차례대로 1번과 연결 된 컴퓨터들을 찾아 cnt변수 증가 
+//				if(map[x][i]==1 && visited[i]!=1) {
+//					queue.offer(i);
+//					visited[i] = 1;
+//					cnt++;
+//				}
+//				//연결된 게 없을 경우 for문 탈출
+//			}
+//		}
+//		System.out.println(cnt); //모든 탐색을 마치고 cnt 출력
+		
+//		// [1731] 추론 [블로그]
+		
+		Scanner scan= new Scanner(System.in);
+		int n = scan.nextInt();
+		int [] arr = new int[n];
+		
+		for(int i = 0; i < n; i++ ) {
+			arr[i] = scan.nextInt();
+		}
 
-			}
-			
-			if(end.charAt(i) != 58) {
-				arrE[countE] = end.charAt(i) - '0';
-				countE++;
-			}
-		}
-		
-		int hourS = arrS[0] * 10 + arrS[1];
-		int minuteS = arrS[2] * 10 + arrS[3];
-		int secondS = arrS[4] * 10 + arrS[5];
-		
-		int hourE = arrE[0] * 10 + arrE[1];
-		int minuteE = arrE[2] * 10 + arrE[3];
-		int secondE = arrE[4] * 10 + arrE[5];
-		
-		
-		int second = 0;
-		if(secondS <= secondE) {
-			second = secondE - secondS;
+		if(Math.abs(arr[0] - arr[1]) == Math.abs(arr[1] - arr[2])){
+			//등차일 경우 첫번째 값과 두번째 값이 차이의 절대값과
+			//두번째값과 세번째 값의 차이는 같아야 함
+			int next = Math.abs(arr[0] - arr[1]);
+			//등차일 경우 해당 등차 값을 변수에 넣음
+			System.out.println(arr[n-1] + next);
 		}else {
-			second = (60 - secondS) + secondE;
-			minuteS += 1;
-		//시작하는 초단위가 끝나는 초단위 보다 작은경우 분 올림 발생
+			int next  = arr[1] / arr[0];
+			//등차가 아닐 경우 무조건 등비이기 때문에
+			//한 단계 큰 위치에 있는 수에서 전위치의 수를 나누어 주면,
+			//해당 수열의 등비를 알 수 있음
+			System.out.println(arr[n-1 * next]);
 		}
-		//초단위 체크
 		
-		int minute = 0;
-		if(minuteS <= minuteE) {
-			minute = minuteE - minuteS;
-		}else {
-			minute = (60 - minuteS) + minuteE;
-			hourS += 1;
-		//시작하는 분단위가 끝나는 초단위 보다 작은경우 분 올림 발생	
-		}
-		//분단위 체크
-		
-		
-		if(hourS >= 25) {
-			hourS = 24;
-			hourE--;
-		}
-		//24시간이 넘어가는 경우 24시간으로 초기화 시켜주고
-		//끝나는 시간을 -- 해줌
-		
-		
-		int hour = 0;
-		if(hourS <= hourE) {
-			hour = hourE - hourS;
-		}else {
-			hour = (24 - hourS) + hourE;
-		}
-		//시간단위 체크
-		
-		String hourW;
-		if(hour < 10) {
-			hourW = '0' + Integer.toString(hour);
-		}else {
-			hourW = Integer.toString(hour);
-		}
-		String minuteW;
-		if(minute < 10) {
-			minuteW = '0' + Integer.toString(minute);
-		}else {
-			minuteW = Integer.toString(minute);
-		}
-		String secondW;
-		if(second < 10) {
-			secondW = '0' + Integer.toString(second);
-		}else {
-			secondW = Integer.toString(second);
-		}
-		//각 단위마다 10 이하인지 체크
-		
-		
-		System.out.println(hourW +":" +minuteW+ ":" +secondW);
-		
-		
-		
-	}	
-	
-}	
-
-
+	}
+}
 
