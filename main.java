@@ -23,6 +23,8 @@ import javax.swing.text.StyledEditorKit.BoldAction;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
 
+
+
 public class main {
 	
 	static Scanner scan = new Scanner(System.in);
@@ -7578,7 +7580,7 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////	929공부
 
-//		[2985] [블로그]
+//		[2985] [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		int [] arrNumber = new int [3];
@@ -7609,7 +7611,7 @@ public class main {
 
 			
 
-//			[2985] [블로그]
+//			[2985] 
 			
 //			Scanner scan = new Scanner(System.in);
 //			int [] arr = new int [3];
@@ -7627,7 +7629,7 @@ public class main {
 //			//마지막 값에 차이를 더해준 값을 출력하면 된다.
 		
 		
-//			[5073] 삼각형과 세 변 [블로그]
+//			[5073] 삼각형과 세 변 [완료]
 			
 //			Scanner scan = new Scanner(System.in);
 //
@@ -7683,7 +7685,7 @@ public class main {
 //					System.out.println("Scalene");
 //				//가장 긴변은 나머지 두변의 합보다 작아야함	
 //				}else if(countMax == 1) {
-//					System.out.println("Isos    celes");
+//					System.out.println("Isosceles");
 //				}else {
 //					if(countMax == 2)
 //					System.out.println("Equilateral");
@@ -7723,7 +7725,7 @@ public class main {
 //		System.out.println(sb.toString());
 //	    }
 
-//		[1188] 음식 평론가 [블로그]
+//		[1188] 음식 평론가 [완료]
 		
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //		
@@ -7760,7 +7762,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////	930공부
 		
-//		[2485] [블로그]
+//		[2485] [완료]
 				
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //		int tree = Integer.parseInt(bf.readLine());
@@ -7839,8 +7841,6 @@ public class main {
 //		}
 //		
 //		System.out.println(minCount);
-//		
-//		
 //	}
 	
 	
@@ -8986,28 +8986,547 @@ public class main {
 		
 //		// [1731] 추론 [블로그]
 		
-		Scanner scan= new Scanner(System.in);
-		int n = scan.nextInt();
-		int [] arr = new int[n];
+//		Scanner scan= new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int[n];
+//		
+//		for(int i = 0; i < n; i++ ) {
+//			arr[i] = scan.nextInt();
+//		}
+//
+//		if(Math.abs(arr[0] - arr[1]) == Math.abs(arr[1] - arr[2])){
+//			//등차일 경우 첫번째 값과 두번째 값이 차이의 절대값과
+//			//두번째값과 세번째 값의 차이는 같아야 함
+//			int next = Math.abs(arr[0] - arr[1]);
+//			//등차일 경우 해당 등차 값을 변수에 넣음
+//			System.out.println(arr[n-1] + next);
+//		}else {
+//			int next  = arr[1] / arr[0];
+//			//등차가 아닐 경우 무조건 등비이기 때문에
+//			//한 단계 큰 위치에 있는 수에서 전위치의 수를 나누어 주면,
+//			//해당 수열의 등비를 알 수 있음
+//			System.out.println(arr[n-1 * next]);
+//		}
 		
-		for(int i = 0; i < n; i++ ) {
-			arr[i] = scan.nextInt();
-		}
+///////////////////////////////////////////////////////////////////////	1013공부
 
-		if(Math.abs(arr[0] - arr[1]) == Math.abs(arr[1] - arr[2])){
-			//등차일 경우 첫번째 값과 두번째 값이 차이의 절대값과
-			//두번째값과 세번째 값의 차이는 같아야 함
-			int next = Math.abs(arr[0] - arr[1]);
-			//등차일 경우 해당 등차 값을 변수에 넣음
-			System.out.println(arr[n-1] + next);
-		}else {
-			int next  = arr[1] / arr[0];
-			//등차가 아닐 경우 무조건 등비이기 때문에
-			//한 단계 큰 위치에 있는 수에서 전위치의 수를 나누어 주면,
-			//해당 수열의 등비를 알 수 있음
-			System.out.println(arr[n-1 * next]);
+		
+//		// [3474] 교수가 된 현우		
+        
+//		Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int num5 = 0;
+//        for(int i=0;i<n;i++){
+//            long num = input.nextLong();
+//            for(int j=5;j<=num;j*=5){
+//            	//처음은 5가 들어있는 모든 수의 갯수를 셈
+//            	//다음은 25가 들어있는 모든 수의 갯수를 셈
+//            	//..... 위과정 num보다 작을때까지 반복
+//            	
+//            	num5 += num/j;
+//            }
+//            System.out.println(num5);
+//            num5 = 0;
+//        }
+		
+	
+//		// [10422] 괄효	[dp 점화식 문제]
+		
+//		int n = scan.nextInt();
+//		
+//		int [] arr= new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			if(arr[i] % 2 != 0) {
+//				System.out.println(0);
+//			}else {
+//				int count = 0;
+//				int even = 2;
+//				if(arr[i] == 2) {
+//					System.out.println((int)Math.pow(2, count));
+//				}else {
+//					while(arr[i] != even) {
+//						even = even + 2;
+//						count++;
+//					}
+//					System.out.println((int)Math.pow(2, count));
+//				}
+//			}
+//		}
+//		위의 풀이는 아님
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		int N = Integer.parseInt(br.readLine());
+//
+//		long[] dp = new long[5001];
+//		dp[0] = 1;
+//		dp[2] = 1;
+//		for(int i = 2; i <= 2500; i++) {
+//			for(int j = 0; j <= i-1; j++) {
+//				dp[i*2] += dp[j*2]*dp[(i-1-j)*2];
+//				dp[i*2] %= 1000000007L;
+//			}
+//		}
+//
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < N; i++) {
+//			int n = Integer.parseInt(br.readLine());
+//			sb.append(dp[n] + "\n");
+//		}
+//		System.out.println(sb);				
+//
+		
+//		// [11724] 연결 요소의 개수 [dfs]
+		
+//		Scanner sc = new Scanner(System.in); 
+//		
+//		V = sc.nextInt();
+//		E = sc.nextInt();
+//		
+//		int a,b;
+//		for(int i = 0; i < E; i++) {
+//			a = sc.nextInt();
+//			b = sc.nextInt();
+//			
+//			// 간선 연결
+//			graph[a][b] = graph[b][a] = 1;
+//		}
+//		
+//		int result = 0 ;
+//		
+//		// dfs 탐색
+//		for(int i = 1; i <= V; i++) {
+//			if(visited[i] == false) { // 방문한 적 없는 노드라면 dfs.
+//				dfs(i);
+//				result++;
+//			}
+//		}
+//		
+//		System.out.println(result);
+//		
+//		sc.close();
+//		return;
+//	}
+//		static int[][] graph = new int[1001][1001];
+//		static int V;
+//		static int E;
+//		static boolean[] visited = new boolean[1001];
+//		
+//		public static void dfs(int index) {
+//		if(visited[index] == true)
+//			return;
+//		else {
+//			visited[index] = true;
+//			for(int i = 1; i <= V; i++) {
+//				if(graph[index][i] == 1) {
+//					dfs(i);
+//				}
+//			}
+//		}
+			
+		
+		
+///////////////////////////////////////////////////////////////////////	1014공부	
+		
+		
+// 				[14502] 연구소 (dfs 백트래킹)
+		
+//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//
+//	        n = Integer.parseInt(st.nextToken());
+//	        m = Integer.parseInt(st.nextToken());
+//	        map = new int[n][m];
+//	        copyed = new int[n][m];
+//
+//	        for (int i = 0; i < n; i++) {
+//	            st = new StringTokenizer(br.readLine());
+//	            for (int j = 0; j < m; j++) {
+//	                map[i][j] = Integer.parseInt(st.nextToken());
+//	                if (map[i][j] == 2)
+//	                    virusList.add(new Dot(i, j));
+//	            }
+//	        }
+//
+//	        setWall(0, 0);
+//	        System.out.println(max);
+//		
+//		
+//	}
+//    static class Dot {
+//        int x, y;
+//
+//        public Dot(int x, int y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//    }
+//
+//    static int n;
+//    static int m;
+//    static int[][] map;
+//    static int[][] copyed;
+//    static List<Dot> virusList = new ArrayList<Dot>();
+//    static int[] dx = {1, -1, 0, 0};
+//    static int[] dy = {0, 0, 1, -1};
+//    static int max = 0;
+//    
+//    static void setWall(int start, int depth) {
+//        if (depth == 3) {
+//            // 맵 복사
+//            copyMap();
+//
+//            // 바이러스 퍼트리기
+//            for (Dot dot : virusList) {
+//                spreadVirus(dot.x, dot.y);
+//            }
+//
+//            // 안전영역 크기 구하기
+//            max = Math.max(max, getSafeArea());
+//            return;
+//        }
+//
+//        for (int i = start; i < n * m; i++) {
+//            int x = i / m;
+//            int y = i % m;
+//
+//            if (map[x][y] == 0) {
+//                map[x][y] = 1;
+//                setWall(i + 1, depth + 1);
+//                map[x][y] = 0;
+//            }
+//        }
+//    }
+//
+//    // 기존 맵을 유지하기 위해 바이러스 퍼트릴 맵 복사하기
+//    static void copyMap() {
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                copyed[i][j] = map[i][j];
+//            }
+//        }
+//    }
+//
+//    // DFS 로 바이러스 퍼트리기
+//    static void spreadVirus(int x, int y) {
+//        for (int i = 0; i < 4; i++) {
+//            int nx = x + dx[i];
+//            int ny = y + dy[i];
+//
+//            if (0 <= nx && nx < n && 0 <= ny && ny < m) {
+//                if (copyed[nx][ny] == 0) {
+//                    copyed[nx][ny] = 2;
+//                    spreadVirus(nx, ny);
+//                }
+//            }
+//        }
+//    }
+//
+//    static int getSafeArea() {
+//        int safe = 0;
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                if (copyed[i][j] == 0)
+//                    safe++;
+//            }
+//        }
+//        return safe;
+//    }
+	
+//			[7576] 토마토  [다시보기 아직 안품]
+		
+//		n = scan.nextInt();
+//		m = scan.nextInt();
+//		
+//		map = new int [n+1][m+1];
+//		visited = new int [n+1][m+1];
+//		
+//		for(int i = 1; i <= n; i++) {
+//			String str = scan.next();
+//			for(int j = 1; j <= m; j++) {
+//				map[i][j] = str.charAt(j - 1) - '0';
+//			}
+//		}
+//			
+//		
+//		
+//	
+//	}
+//	
+//	static int n, m;
+//	static int map [][];
+//	static int visited [][];
+//	static int [] dr = {-1,1,0,0};
+//	static int [] dc = {0,0,-1,1};
+//	static int count = 0;
+//	static int start;
+	
+
+//			[2942] 퍼거슨과 사과 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int redApple = scan.nextInt();
+//		int greenApple = scan.nextInt();
+//		int player = 1;
+//		//선수의 수 초기 값 1명 부터 시작
+//		
+//		while(player <= redApple || player <= greenApple) {
+//			//선수가 둘의 사과중 적은 사과의 갯수보다 작거나 같을때까지만 반복
+//			if(redApple % player == 0 && greenApple % player == 0) {
+//				System.out.println(player + " " + redApple / player + " " +  greenApple / player);
+//			//공평하게 나누기 위해서 사과를 선수수로 나누었을때 0의 값이 나와야함
+//			}
+//			player++;
+//			//선수를 한명씩 추가해서 비교해봄
+//		}
+		
+		
+//		[1027] 고층건물 [다시보기]
+		
+//		int n, ans = 0, each_ans;
+//	    double delta;
+//	    boolean [] checker = new boolean[51];
+//	    double [] height = new double[51];
+//	    
+//	     n = scan.nextInt();
+//	    
+//	    for (int i = 1; i <= n; i++)
+//	      height[i] = scan.nextDouble();
+//	    
+//	    for (int i = 1; i <= n; i++)
+//	    {
+//	        for (int j = 1; j <= n; j++)
+//	            checker[j] = true;
+//	        
+//	        for (int j = i-2; j >= 1; j--)
+//	        {
+//	            delta = ((double)(height[i] - height[j])) / ((double)(i - j));
+//	            
+//	            for (int k = j+1; k < i; k++)
+//	            {
+//	                if ( height[j] + (k-j)*delta <= height[k] )
+//	                {
+//	                    checker[j] = false;
+//	                    break;
+//	                }
+//	            }
+//	        }
+//	        
+//	        for (int j = i+2; j <= n; j++)
+//	        {
+//	            delta = ((double)(height[i] - height[j])) / ((double)(j - i));
+//	            
+//	            for (int k = j-1; k > i; k--)
+//	            {
+//	                if ( height[j] + (j-k)*delta <= height[k] )
+//	                {
+//	                    checker[j] = false;
+//	                    break;
+//	                }
+//	            }
+//	        }
+//	        
+//	        each_ans = 0;
+//	        for (int j = 1; j <= n; j++)
+//	        {
+//	            if (checker[j])
+//	                each_ans++;
+//	        }
+//	        
+//	        ans = Math.max(ans, each_ans-1);
+//	    }
+//	    
+//	    System.out.println(ans);
+//	   
+		
+		
+///////////////////////////////////////////////////////////////////////	1015공부			
+	
+
+//		[14726] 신용카드 판별 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int Tcase = scan.nextInt();
+//		int [] CardNum = new int [16];
+//		
+//		int sum = 0;
+//		
+//		for(int i = 0; i < Tcase; i++) {
+//			String str = scan.next();
+//			for(int j = 0; j < 16; j++) {
+//				CardNum[j] = str.charAt(j) - '0';
+//			}
+//			//우선 문자열로 받고 하나씩 잘라가며 배열에 넣어줌
+//			
+//			for(int k = 0; k < 16; k++) {
+//				if(CardNum[k] % 2 == 0) {
+//					CardNum[k] *= 2;
+//					//짝수 체크후 짝수면 두배를 곱해줌
+//					if(CardNum[k] >= 10) {
+//					int temp = CardNum[k] % 10;
+//					CardNum[k] /= 10;
+//					CardNum[k] += temp;
+//					//10이상일 경우 10으로 나눈 나머지를 temp변수에  임시보관 후
+//					//현재 배열을 10으로 나눈 몫과 더해서 새로운 값을 넣어줌
+//				}
+//			}
+//				sum += CardNum[k];
+//				//해당값 총합에 넣어줌
+//			}
+//			System.out.println();
+//			if(sum % 10 == 0) {
+//				System.out.println("T");
+//			}else {
+//				System.out.println("F");
+//			}
+//			//10으로 나누어 나머지가 있나 체크
+//			
+//		}
+
+		
+//		[2991] 사나운개 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		//1번 개 짓는 시간, 쉬는 시간
+//		int c = scan.nextInt();
+//		int d = scan.nextInt();
+//		//2번 개 짓는 시간, 쉬는 시간
+//		
+//		for(int i = 0; i < 3; i++) {
+//			int man = scan.nextInt();
+//			int nmg = man;
+//			int count = 0;
+//			while(true) {
+//				nmg -= a;
+//				if(nmg <= 0) {
+//					count++;
+//					break;
+//				}
+//				nmg -=b;
+//				if(nmg <= 0) {
+//					count = 0;
+//					break;
+//				}
+//				//첫번째 개가 자는 여부 체크
+//				
+//			}
+//			
+//			
+//			nmg = man;
+//			//도착시간 초기화
+//			//다음 개의 시간이랑 비교하기 위함
+//			while(true) {
+//				nmg -= c;
+//				if(nmg <= 0) {
+//					count++;
+//					break;
+//				}
+//				nmg -=d;
+//				if(nmg <= 0) {
+//					count = 0;
+//					break;
+//				}
+//				//두번째 개가 자는 여부 체크
+//			}
+//			
+//			System.out.println(count);
+//		}
+	
+///////////////////////////////////////////////////////////////////////	1016공부			
+		
+
+//		[12756] 고급 여관 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int Aattack = scan.nextInt();
+//		int Ahp = scan.nextInt();
+//
+//		int Battack = scan.nextInt();
+//		int Bhp = scan.nextInt();
+//
+//		while(true) {
+//			Ahp -= Battack;
+//			Bhp -= Aattack;
+//			
+//			if(Bhp <= 0 && Ahp >= 1) {
+//				System.out.println("PLAYER A");
+//				break;
+//			}else if(Ahp <= 0 && Bhp >= 1) {
+//				System.out.println("PLAYER B");
+//				break;
+//			}else if(Ahp >= 1 && Bhp >= 1) {
+//				continue;
+//			}else {
+//				System.out.println("DRAW");
+//				break;
+//			}
+//	
+//		}
+
+		
+//		[11070] 피타고라스 기댓값	[블로그]
+		
+		Scanner scan = new Scanner(System.in);
+		int Tcase = scan.nextInt();
+		//케이스 변수
+		for(int i = 0; i < Tcase; i++) {
+			int team = scan.nextInt();
+			//팀변수
+			int [][] score = new int [2][team + 1];
+			//1행 득점 2행 실점이 담길 배열
+			int game = scan.nextInt();
+			//게임수 변수
+			int [][] arr = new int [game][4];
+			//게임수당 스코어 담길 배열
+			for(int j = 0; j < game; j++) {
+				for(int k = 0; k < 4; k++) {
+					arr[j][k] = scan.nextInt();
+				}
+				score[0][arr[j][0]] += arr[j][2];  
+				//a 팀 승점을 담아둠
+				score[1][arr[j][0]] -= arr[j][3];
+				//a 팀 실점을 담아둠				
+				score[0][arr[j][1]] += arr[j][3]; 
+				//b 팀 승점을 담아둠
+				score[1][arr[j][1]] -= arr[j][2];
+				//b 팀 실점을 담아둠
+			}
+			
+			double [] fscore = new double [team];
+			//최종 기댓값이 담길 배열
+			double max = 0;
+			double min = 9999;
+			for(int f = 0; f < team; f++) {
+				fscore[i] = Math.pow(score[0][f+1], 2)/(Math.pow(score[0][f+1], 2) + (Math.pow(score[1][f+1], 2)));
+				//공식 적용함 값 각 팀마다 넣어줌
+				fscore[i] *= 1000;
+				//최종값 1000곱해서 출력해야 함으로 1000곱해줌
+			
+				if(fscore[i] >= max) {
+					max = fscore[i];
+				}
+				
+				if(fscore[i] <= min) {
+					min = fscore[i];
+				}
+				//기댓값이 가장 큰 값과 작은값을 저장해줌
+			}
+
+				System.out.println((int)max);
+				System.out.println((int)min);
+			}
+
+			
 		}
+		
+		
 		
 	}
-}
 
