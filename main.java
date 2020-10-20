@@ -7887,7 +7887,7 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////	1001공부
 	
-//		[10837] 동전 게임 [블로그]
+//		[10837] 동전 게임 [완료]
 		
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));	
 //		int K = Integer.parseInt(bf.readLine());
@@ -7928,7 +7928,7 @@ public class main {
 //		}
 	
 	
-//		[17256] 달달함이 넘쳐 흘러 [블로그]
+//		[17256] 달달함이 넘쳐 흘러 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -8538,7 +8538,7 @@ public class main {
 	
 ///////////////////////////////////////////////////////////////////////	1009공부	
 
-		// [6502] 동혁 피자 [블로그]
+		// [6502] 동혁 피자 [완료]
 		
 //			Scanner scan = new Scanner(System.in);
 //			int count = 0;
@@ -9473,60 +9473,372 @@ public class main {
 		
 //		[11070] 피타고라스 기댓값	[블로그]
 		
+//		Scanner scan = new Scanner(System.in);
+//		int Tcase = scan.nextInt();
+//		//케이스 변수
+//		for(int i = 0; i < Tcase; i++) {
+//			int team = scan.nextInt();
+//			//팀변수
+//			int [][] score = new int [2][team + 1];
+//			//1행 득점 2행 실점이 담길 배열
+//			int game = scan.nextInt();
+//			//게임수 변수
+//			int [][] arr = new int [game][4];
+//			//게임수당 스코어 담길 배열
+//			for(int j = 0; j < game; j++) {
+//				for(int k = 0; k < 4; k++) {
+//					arr[j][k] = scan.nextInt();
+//				}
+//				score[0][arr[j][0]] += arr[j][2];  
+//				//a 팀 승점을 담아둠
+//				score[1][arr[j][0]] -= arr[j][3];
+//				//a 팀 실점을 담아둠				
+//				score[0][arr[j][1]] += arr[j][3]; 
+//				//b 팀 승점을 담아둠
+//				score[1][arr[j][1]] -= arr[j][2];
+//				//b 팀 실점을 담아둠
+//			}
+//			
+//			double [] fscore = new double [team];
+//			//최종 기댓값이 담길 배열
+//			double max = 0;
+//			double min = 9999;
+//			for(int f = 0; f < team; f++) {
+//				fscore[i] = Math.pow(score[0][f+1], 2)/(Math.pow(score[0][f+1], 2) + (Math.pow(score[1][f+1], 2)));
+//				//공식 적용함 값 각 팀마다 넣어줌
+//				fscore[i] *= 1000;
+//				//최종값 1000곱해서 출력해야 함으로 1000곱해줌
+//			
+//				if(fscore[i] >= max) {
+//					max = fscore[i];
+//				}
+//				
+//				if(fscore[i] <= min) {
+//					min = fscore[i];
+//				}
+//				//기댓값이 가장 큰 값과 작은값을 저장해줌
+//			}
+//
+//				System.out.println((int)max);
+//				System.out.println((int)min);
+//			}
+
+/////////////////////////////////////////////////////////////////////	1017공부
+		
+//		[2018] 수들의 합 5 [블로그]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int n  = Integer.parseInt(bf.readLine());		
+//		int count = 1;
+//		//자기자신도 연속된 수에 포함되기 때문에 무조건 하나는 존재함
+//		
+//		for(int i = 1; i < (n / 2) + 1; i++) {
+//			int sum = i;
+//			//연속된 수의 시작값은 i 부터 시작함
+//			for(int j = i + 1; i < (n / 2) + 2; j++) {
+//				if(sum == n) {
+//					count++;
+//					break;
+//				}
+//				//sum에 j를 계속 더해주면서 n과 같아지고 하나 count에 더해줌
+//				if(sum > n) {
+//					break;
+//				}
+//				//sum이 n보다 커지면 더이상 비교할 필요가 없기 때문에
+//				//break를 걸어줌
+//				sum += j;
+//			}
+//		}
+//		
+//		System.out.println(count);
+//		
+//		
+//		}
+		
+//			[2622] 삼감형만들기
+	
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int n  = Integer.parseInt(bf.readLine());	
+//		int [] arr = new int [3];
+//		
+//		int count = 0;
+//		int sum = 0;
+//		for(int i = 1; i <= n / 2; i++) {
+//			arr[0] = i;
+//			for(int j = 1; j <= n / 2; j++) {
+//				arr[1] = j;
+//				for(int k = 1; k <= n / 2; k++) {
+//					arr[2] = k;
+//					sum += i + j + k;
+//					System.out.println(sum);
+//					if(sum != n) {
+//						sum = 0;
+//					}else {
+//						sum = 0;
+//						for(int l = 0; l < 3; l++) {
+//							sum += arr[l];
+//						}		
+//						int max = 0;
+//						for(int u = 0; u < 3; u++) {
+//							if(arr[u] > max) {
+//								max = arr[u];
+//							}
+//						}
+//						if(sum - max > max) {
+//							count++;
+//						}
+//					}
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
+		// 내가 푼거는 코드값도 더럽고 중복된 삼각형을 체크하지 못함
+//////////////////////////////////////////////////////////////////////////////////////		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        int N = Integer.parseInt(br.readLine());
+//        int cnt = 0;
+//        for (int i = 1; 0 < N - i; i++) {
+//            for (int j = i; j <= N - i - j; j++) {
+//                int longlong = N - i - j;
+//                if (i + j > longlong) cnt++;
+//            }
+//        }
+//        bw.write(String.valueOf(cnt));
+//        bw.flush();
+	//원리를 제대로 파악하지 못해서 그런거 같음
+		
+		
+/////////////////////////////////////////////////////////////////////	1019공부		
+
+//		[1312] 소수	[블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		double a = scan.nextDouble();
+//		double b = scan.nextDouble();
+//		
+//		int n = scan.nextInt();
+//		
+//		String str = Double.toString(a/b);
+//		//순서 체크를 위한 스트링형으로 변환
+//		
+//		int answer = str.charAt(n + 1) - '0';
+//		//위치는 0 부터 시작 수수점은 제외하고 순서를 세야하기 때문에
+//		//0과.은 문자는 제외하기 위해 n+1의 위치에 숫자를 출력 
+//		
+//		System.out.println(answer);
+//		
+//		[14568]		2017 연세대학교 프로그래밍 경시대회 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		
+//		int a = 1; 
+//		//영훈
+//		int b = 3;
+//		//남규: 영훈보다 상타수 + 2
+//		int c = 2;
+//		//택희: 사탕수 무조건 짝수
+//		
+//		int count = 0;
+//		while(true) {
+//			int sum = 0;
+//			sum += a + b + c;
+//			if(n == sum) {
+//				count ++;
+//			}
+//			c = c + 2;	
+//			//짝수니까 2씩 더해주면서 비교
+//			int nmg = n - c;
+//			//n 에서 c 를 빼준값이 a + b 가 됨
+//			
+//			if(nmg % 2 == 0) {
+//				a = nmg / 2 - 2;
+//				b = nmg / 2 + 2;
+//				
+//			}else {
+//				a = nmg / 2 - 1;
+//				b = nmg / 2 + 1;
+//			}
+//			//짝 홀 수 여부 따져 항상 b가
+//			//a 보다 +2 클 수 있도록 체크
+//			
+//			
+//			if(a + b < 3 || c >= n - 3) {
+//				break;
+//			}
+//			//  a + b 가 3보다 작으면 조건 2가 충족이 안되고
+//			// c 가 n - 3 보다 커져도 충족이 안되기 때문에
+//			//break; 선언
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//		[8394] 악수 [블로그]
+		
+//		//피보나치 수열 문제이다.
+//		
+//		Scanner scan = new Scanner(System.in);		
+//		int n = scan.nextInt();
+//		
+//		int a = 1;
+//		int b = 1;
+//		int sum = 2;
+//		
+//		if(n <=  1) {
+//			System.out.println(1);
+//			//주어진 사람이 1보다 작거나 같으면.
+//			//가능한 악수수는 1이다.
+//		}else {
+//			for(int i = 3; i <= n; i++) {
+//				a = b;
+//				b = sum;
+//				sum = a + b;
+//				//2이상일 경우 피보나치로 구현해주면된다.
+//			}
+//			
+//			sum %= 10;
+//			//수가 매우 커지면 끝자리만 출력한다고 했으니
+//			//합에 10으로 나눈 나머지를 넣어주면 된다.
+//			System.out.println(Math.abs(sum));
+//		}
+
+/////////////////////////////////////////////////////////////////////	1019공부		
+
+//		[18247] 겨울왕국 티겟 예매 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);		
+//		int L = 12;
+//		
+//		int Tcase = scan.nextInt();
+//		
+//		for(int i = 0; i < Tcase; i++) {
+//			int N = scan.nextInt();
+//			//행
+//			int M = scan.nextInt();
+//			//열
+//			if(N < 12 || M < 4) {
+//				System.out.println(-1);
+//				break;
+//				//N이 12보다 작고 M이 4보다 작으면 
+//				//성립할 수 없다.
+//			}else {
+//				int answer = (L * M) - (M - 4);
+//				//L 까지의 전체 자석에서  (M-4) 를 뺴주면 L4의 위치가 된다.
+//				System.out.println(answer);
+//			}
+//		
+//		}
+		
+//		[1500]	최대 곱
+		
+//		//곱하는 수의 차이가 작을 수롤 그 곱은 커진다.
+//        Scanner sc =new Scanner(System.in);
+//        int s = sc.nextInt();// 정수 S
+//        int k = sc.nextInt();// 합이 S인 K개의 정수
+//        int q = s / k;// s 를 k 로 나눈 몫
+//        int r = s % k;// s 를 k로 나눈 나머지
+//        long max =1;
+//        for (int i =1; i <= k; i++) {
+//            if(i <= r) {//나머지 갯수만큼 +1
+//                max *= (q +1);
+//            }else {//
+//                max *= q;
+//            }
+//        }
+//        System.out.println(max);
+//        sc.close();
+
+//		[17103] 골드바흐 파티션     
+		 
+	//(https://bellossimo.tistory.com/43?category=908154)
+	// 백준 1929 번 풀어보기	
+//			Scanner scanner = new Scanner(System.in);
+//	        StringBuilder sb = new StringBuilder();
+//
+//	        boolean[] isNotPrime;
+//
+//	        // 에라토스테네스의 체 세팅.
+//	        isNotPrime = makeIsPrimeTable();
+//
+//	        int testCastCount = scanner.nextInt();
+//
+//	        for (int i=0; i<testCastCount; i++) {
+//	            int number = scanner.nextInt();
+//	            int result = 0;
+//
+//	            for (int j=2; j<=number/2; j++) {
+//	                if(! isNotPrime[j] && ! isNotPrime[number-j]) {
+//	                    result++;
+//	                }
+//	            }
+//	            System.out.println(result);
+//	        }
+//
+//	}
+//	
+//	 public static boolean[] makeIsPrimeTable() {
+//	        boolean[] isNotPrime = new boolean[1000001];
+//
+//	        for (int i=2; i <= 1000000; i++) {
+//	            if(! isNotPrime[i]) {
+//	                for (int j=i*2; j<=1000000; j+=i) {
+//	                    isNotPrime[j] = true;
+//	                }
+//	            }
+//	        }
+//
+//
+//	        return isNotPrime;
+		
+		
+		
+//		[1946] 신입사원 [블로그]
+		
 		Scanner scan = new Scanner(System.in);
+		
 		int Tcase = scan.nextInt();
-		//케이스 변수
-		for(int i = 0; i < Tcase; i++) {
-			int team = scan.nextInt();
-			//팀변수
-			int [][] score = new int [2][team + 1];
-			//1행 득점 2행 실점이 담길 배열
-			int game = scan.nextInt();
-			//게임수 변수
-			int [][] arr = new int [game][4];
-			//게임수당 스코어 담길 배열
-			for(int j = 0; j < game; j++) {
-				for(int k = 0; k < 4; k++) {
-					arr[j][k] = scan.nextInt();
-				}
-				score[0][arr[j][0]] += arr[j][2];  
-				//a 팀 승점을 담아둠
-				score[1][arr[j][0]] -= arr[j][3];
-				//a 팀 실점을 담아둠				
-				score[0][arr[j][1]] += arr[j][3]; 
-				//b 팀 승점을 담아둠
-				score[1][arr[j][1]] -= arr[j][2];
-				//b 팀 실점을 담아둠
-			}
+		
+		for(int T = 0; T < Tcase; T++) {
+			int man = scan.nextInt();
+			int [][] arr = new int [man][2];
+			//사람수 행 점수 2열로 구성
 			
-			double [] fscore = new double [team];
-			//최종 기댓값이 담길 배열
-			double max = 0;
-			double min = 9999;
-			for(int f = 0; f < team; f++) {
-				fscore[i] = Math.pow(score[0][f+1], 2)/(Math.pow(score[0][f+1], 2) + (Math.pow(score[1][f+1], 2)));
-				//공식 적용함 값 각 팀마다 넣어줌
-				fscore[i] *= 1000;
-				//최종값 1000곱해서 출력해야 함으로 1000곱해줌
-			
-				if(fscore[i] >= max) {
-					max = fscore[i];
+			for(int i = 0; i < man; i++) {
+				for(int j = 0; j < 2; j++) {
+					arr[i][j] = scan.nextInt();
 				}
-				
-				if(fscore[i] <= min) {
-					min = fscore[i];
+			}
+			//배열 값 입력
+			int count = man;
+			//초기값은 전체 인원
+			for(int i = 0; i < man; i++) {
+				for(int j = 0; j < man; j++) {
+					if(arr[i][0] > arr[j][0]) {
+						if(arr[i][1] > arr[j][1]) {
+							count -= 1;
+							break;
+							//종목당 같은 순위는 존재할 수 없다는 것을 유념하자.
+							//같을때는 체크해주지 않아도 된다.
+							//모든 선수들의 점수를 비교하여, 어떤 하나의 지원자라도
+							//자신보다 2종목 모두 순위가 높은 지원자가 있다면,
+							//해당 지원자는 합격하지 못한다.
+							}
+						}
+					}
 				}
-				//기댓값이 가장 큰 값과 작은값을 저장해줌
-			}
-
-				System.out.println((int)max);
-				System.out.println((int)min);
-			}
-
 			
+			System.out.println(count);
 		}
-		
-		
-		
-	}
+			
+			
+			
 
+		
+		
+	 }
+}
