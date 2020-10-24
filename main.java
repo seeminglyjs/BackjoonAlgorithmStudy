@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -4448,6 +4449,5891 @@ public class main {
 //			sum = 1;
 //		}
 //			System.out.println(sum);
+		
+		
+//		[1463] 1로 만들기
+		
+//		int n = scan.nextInt();
+//		int count = 0;
+//		
+//		while(n != 1) {
+//			if(n % 3 == 0) {
+//				n = n / 3;
+//				count++;
+//			}else if((n - 1) % 3 == 0) {
+//				n = n - 1;
+//				count++;
+//			}else if(n % 2 == 0 && n % 3 != 0) {
+//				n = n / 2;
+//				count++;
+//			}else {
+//				n = n - 1;
+//				count++;
+//			}
+//		}
+//		
+//		System.out.println(count);
+		
+		
+///////////////////////////////////////////////////////////////////////////////	818공부		
+
+//		[9095] 1,2,3 더하기
+		
+//		int t = scan.nextInt();
+//		int n;
+//		
+//		int [] output = new int[11];
+//		output[1] = 1;
+//		output[2] = 2;
+//		output[3] = 4;
+//	
+//		for(int i = 0; i < t; i++) {
+//			n = scan.nextInt();
+//		
+//			for(int j = 4; j < n; j++) {
+//				output[j] = output[j - 1] + output [ j - 2] + output[j - 3];
+//			}
+//			System.out.println(output[n]);
+//		}
+		
+//		[2914] 저작권
+	//		
+	//		double music = scan.nextInt();
+	//		double Ave = scan.nextInt();
+	//		
+	//		double lin = music * (Ave -1) + 1;
+	//		
+	//		int rlin = (int) lin;
+	//		
+	//		System.out.println(rlin);
+				
+/////////////////////////////////////////////////////////////////////////////	820공부		
+		
+		
+//		[2579] 계단오르기 [다시보기 난이도 중]
+//		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		int T = Integer.parseInt(br.readLine());
+//		int f[] = new int[T+1];
+//		int cache[] = new int[T+1];
+//		for(int i = 1; i<=T; i++){
+//		f[i] = Integer.parseInt(br.readLine());
+//		}
+//		cache[1] = f[1];
+//		cache[2] = f[2]+f[1];
+//		cache[3]= Math.max(f[1]+f[3], f[2]+f[3]);
+//		for(int i=4; i<=T; i++){
+//		cache[i] = Math.max(cache[i-3]+f[i]+f[i-1], cache[i-2]+f[i]);
+//		}
+//		System.out.println(cache[T]);
+
+		
+//		[2748] 피보나치 수 2
+		
+//		int n = scan.nextInt();
+//		
+//		int a = 0;
+//		int b = 1;
+//		int sum = 0;
+//		
+//		loop : for(int i = 1; i < n ; i++) {
+//			if( n == 1) {
+//				System.out.println(a);
+//				break loop;
+//			}
+//			else if( n == 2 ) {
+//				System.out.println(b);
+//				break loop;
+//			}
+//			else {
+//			sum = a + b;
+//			a = b;
+//			b = sum; 
+//			}		
+//			}
+//		
+//		System.out.println(sum);
+		
+		
+/////////////////////////////////////////////////////////////////////////////	821공부		
+		
+//		[9461]		
+		
+//		int n = scan.nextInt();
+//		
+//		int [] pado = new int [101];
+//		
+//		pado[1] = 1;
+//		pado[2] = 1;
+//		pado[3] = 1;
+//		pado[4] = 2;
+//		pado[5] = 2;
+//		
+//		if(n >= 6) {
+//		
+//		for(int i = 6; i <=n; i++) {
+//			pado[i] = pado[i - 1] + pado[i - 5];
+//		}
+//		
+//		}else {
+//			System.out.println(pado[n]);
+//		}
+//		
+//		System.out.println(pado[n]);
+		
+		
+//		[2455] 지능형 기차
+		
+//		int [][] Station = new int [5][3];
+//		int max = 0;
+//		int sum = 0;
+//		
+//		for(int i = 1; i <= 4; i++) {
+//			for(int j = 1; j <= 2; j++) {
+//				Station[i][j] = scan.nextInt();
+//				if(j == 1) {
+//					sum -= Station[i][j];
+//				}else {
+//					sum += Station[i][j];
+//				}
+//			}
+//			if(sum > max)
+//				max = sum;
+//		}
+//		
+//		System.out.println(max);
+	
+	
+//		[13458] 시험감독 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int N = scan.nextInt(); // 총 시험장의 수
+//		int supervisorCount = 0;
+//		int [] studentCount = new int [N]; // 강의실별 학생의 수
+//		for(int i = 0; i < N; i++) {
+//			studentCount[i] = scan.nextInt();
+//		}
+//		int B = scan.nextInt(); // 총 감독관은 강의실당 한명이며, 총감독관의 감독할 수 있는 학생의 수
+//		int C = scan.nextInt(); // 부 감독관은 여러명일 수 있다. 부 감독관이 감독할 수 있는 학생의 수
+//		
+//		for(int i = 0; i < N; i++) {
+//			studentCount[i] = studentCount[i] - B;
+//			supervisorCount++;
+//			if(studentCount[i] > 0) {
+//				loop : while(true) {
+//					studentCount[i] = studentCount[i] - C;
+//					supervisorCount++;
+//					if(studentCount[i] <= 0) {
+//						break loop;
+//					}else {
+//						continue;
+//					}
+//				}
+//			}
+//		}
+//
+//	
+//		System.out.println(supervisorCount);
+		
+		
+/////////////////////////////////////////////////////////////////////////////	822공부				
+		
+//		[2475]		
+		
+//		int [] arr = new int [5];
+//		int sum = 0;
+//		
+//		
+//		for(int i = 0; i < arr.length; i++) {
+//			arr[i] = scan.nextInt();
+//			sum += Math.pow(arr[i], 2);
+//		}
+//		
+//		System.out.println(sum % 10);
+
+		
+//		[1699]
+		
+//		이식은 11까지 만됨..
+//		int n = scan.nextInt();
+//		
+//		int [] arr = new int [10000];
+//		int [] temp = {0, 1, 2, 3, 4, 2};
+//
+//		arr[1] = 1; 
+//		arr[2] = 2;
+//		arr[3] = 3;
+//		
+//		if(n > 3) {
+//			n = n - 3;
+//			n = n % 5;
+//		}else {
+//			System.out.println(arr[n]);
+//		}
+//
+//		System.out.println(temp[n]);
+		
+//		int n = scan.nextInt();
+//		
+//		int[] dp = new int[n+1];
+//		dp[1] = 1;
+//		for(int i = 2; i < n+1; i++) {
+//			dp[i] = i;
+//			for(int j = 1; j*j <= i; j++)
+//				dp[i] = Math.min(dp[i], dp[i-j*j] + 1);
+//		}
+//		
+//		System.out.println(dp[n]);
+	
+/////////////////////////////////////////////////////////////////////////////	824공부
+		
+		
+//		[1212]
+//		
+//	        String[] eight = {"000","001","010","011","100","101","110","111"};
+//	        String s = scan.nextLine();
+//	        boolean start = true;
+//	        if (s.length() == 1 && s.charAt(0) == '0') {
+//	            System.out.print(0);
+//	        }
+//	        for (int i=0; i<s.length(); i++) {
+//	            int n = s.charAt(i) - '0';
+//	            if (start == true && n < 4) {
+//	                if (n == 0) {
+//	                    continue;
+//	                } else if (n == 1) {
+//	                    System.out.print("1");
+//	                } else if (n == 2) {
+//	                    System.out.print("10");
+//	                } else if (n == 3) {
+//	                    System.out.print("11");
+//	                }
+//	                start = false;
+//	            } else {
+//	                System.out.print(eight[n]);
+//	                start = false;
+//	            }
+//	        }
+//	        System.out.println();
+		
+//		[10156]
+//		
+//		int snackPrice = scan.nextInt();
+//		int snackNumber = scan.nextInt();
+//		int haveMoney = scan.nextInt();
+//		
+//		int needMoney = 0;
+//	
+//		if(snackPrice * snackNumber > haveMoney) {
+//			needMoney = snackPrice * snackNumber - haveMoney;
+//			System.out.println(needMoney);
+//		}else {
+//			System.out.println(0);
+//		}
+		
+//		[6359] [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int TestCase = scan.nextInt();
+//		
+//		for(int T = 0; T < TestCase; T++) {
+//		int n = scan.nextInt();
+//		int [] arr = new int [n + 1];
+//		int run = 2;
+//		int door = 1;
+//		int count = 0;
+//		
+//		for(int i = 1; i <=n; i++) {
+//			while(run * door <= n) {
+//				if(arr[run * door] == 0) {
+//					arr[run * door] = 1;
+//					//닫혔으면 연다.
+//				}else {
+//					arr[run * door] = 0;
+//					//열렸으면 닫는다.
+//				}
+//				++door;	
+//			}
+//			++run;
+//			door = 1;
+//			//시작 문위치 초기화
+//		}
+//		
+//		for(int i = 1 ; i <=n; i++) {
+//			if(arr[i] == 0) {
+//				count++;
+//				}
+//			}
+//		System.out.println(count);
+//		}
+	
+	
+//		[10972]		[어려웡 다시보기]
+		
+//		int n = scan.nextInt();
+//		
+//		int [] arr = new int [n];
+//		int [] temparr = new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//
+//	}
+//	 private static void nextPermutation(int[] arr) {
+//	        int n = arr.length;
+//	        boolean b = true;
+//	        Loop1: for (int i = n - 1; i > 0; i--) {
+//	            if (arr[i - 1] < arr[i]) {
+//	                for (int j = n - 1; j >= i; j--) {
+//	                    if (arr[j] > arr[i - 1]) {
+//	                        int temp = arr[j];
+//	                        arr[j] = arr[i - 1];
+//	                        arr[i - 1] = temp;
+//	                        int k = n - 1;
+//	                        while (i < k) {
+//	                            int temp2 = arr[i];
+//	                            arr[i] = arr[k];
+//	                            arr[k] = temp2;
+//	                            i++;
+//	                            k--;
+//	                        }
+//	                        b = false;
+//	                        break Loop1;
+//	                    }
+//	                }
+//	            }
+//	        }
+//	        if (b) {
+//	            System.out.println(-1);
+//	        } else {
+//	            showArray(arr);
+//	        }
+//	    }
+//	 
+//	    private static void showArray(int[] arr) {
+//	        for (int i = 0; i < arr.length; i++)
+//	            System.out.println(arr[i]);
+		
+		
+//		[2480]
+		
+//		int [] arr= new int [3];
+//		
+//		for(int i = 0; i < 3; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int one = arr[0];
+//		int two = arr[1];
+//		int three = arr[2];
+//		
+//		int sum =0;
+//		int temp = Math.max(one, two);
+//		int max = Math.max(three, temp);
+//		
+//		if(one == two && one == three) {
+//			sum = 10000 + (one * 1000);
+//		}else if(one == two && one !=three) {
+//			sum = 1000 + (one * 100);
+//		}else if(one == three && one !=two) {
+//			sum = 1000 + (one * 100);
+//		}else if(three == two && one !=three) {
+//			sum = 1000 + (three * 100);
+//		}else {
+//			sum = max * 100;
+//		}
+//		
+//		System.out.println(sum);
+		
+		
+/////////////////////////////////////////////////////////////////////////////	825공부
+		
+//		[1748] 수이어 쓰기
+		
+//		String n = scan.next();
+//		int number = Integer.parseInt(n);
+//		
+//		String [] arr = new String[number+1];
+//		int count = 0;
+//		
+//		for(int i = 1; i <= number; i++) {
+//			arr[i] = Integer.toString(i); 
+//			count += arr[i].length();
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//		[2530]	인공지능 시계
+		
+//		int hour = scan.nextInt();
+//		int minute = scan.nextInt();
+//		int second = scan.nextInt();
+//		
+//		int needTime = scan.nextInt();
+//		
+//		second += needTime;
+//		minute += second / 60; 
+//		second %= 60; 
+//		hour += minute / 60;
+//		minute %= 60;
+//		hour %= 24;
+//		
+//		System.out.printf("%d, %d, %d", hour , minute, second);
+	
+	
+//		[2420]	사파리월드	
+	
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		int sum = Math.abs(n) +  Math.abs(m);
+//		
+//		System.out.println(sum);
+		
+//		[1292] 쉽게푸는 문제
+		
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		int count = 0;
+//		int sum = 1;
+//		
+//		int [] arr = new int [m+1];
+//		
+//		loop : for(int i = 1; i <= m; i++) {
+//			for(int j = 1; j <= i; j++) {
+//				arr[sum] = i;
+//				sum++;
+//				count ++;
+//				if(count == m) {
+//					break loop;
+//				}
+//			}
+//		}
+//		
+//		sum = 0;
+//		for(int i = n; i <= m; i++) {
+//			sum += arr[i];
+//		}
+//
+//		System.out.println(sum);
+	
+	
+/////////////////////////////////////////////////////////////////////////	826공부	
+	
+//		[5063] TGN [완료]
+//		
+//		int Testcase = scan.nextInt();
+//		int [] arr = new int [3];
+//		
+//		while(Testcase != 0) {
+//			System.out.println("값을 넣으세요");
+//			for(int i = 0; i < 3; i++) {
+//			arr[i] = scan.nextInt();
+//			}
+//			
+//			if(arr[0] == arr[1] - arr[2]) {
+//				System.out.println("does not matter");
+//			}else if(arr[0] < arr[1] - arr[2]) {
+//				System.out.println("advertise");
+//			}else {
+//				System.out.println("do not advertise");
+//			}
+//			Testcase--;
+//		}
+//			System.out.println("종료되었습니다.");
+		
+		
+//		[2845] 파티가 끝나고 난 뒤
+		
+//		int man = scan.nextInt();
+//		int W = scan.nextInt();
+//		
+//		int [] arr = new int [5];
+//		int [] temp = new int [5];
+//		
+//		for(int i = 0; i < 5; i++) {
+//			arr[i] = scan.nextInt();
+//			temp[i] = arr[i] - (man * W);
+//		}
+//		
+//		for(int i = 0; i < 5; i++) {ㄹ
+//			System.out.print(" "+temp[i]);
+//		}
+		
+		
+//		[2501] 약수구하기	[완료]
+		
+//		int N = scan.nextInt(); 
+//		int K = scan.nextInt();
+//		
+//		int [] arr = new int [N + 1];
+//		
+//		
+//		for(int i = 1; i <= N; i++) {
+//			if(N % i == 0) {
+//				arr[i] = i;
+//			}
+//		}
+//		
+//		System.out.println(arr[K]);
+		
+		
+//		[10833] 사과 [완료]
+		
+//		int Nclass = scan.nextInt();
+//		int[][] arr= new int [Nclass][2];
+//		int sum = 0;
+//		
+//		for(int i = 0; i < Nclass; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//			loop : while(true) {
+//				if(arr[i][1] >= arr[i][0]) {
+//					//사과 수와 학생수를 비교
+//					arr[i][1] = arr[i][1] - arr[i][0];
+//					//모든 학생들에게 공평한 갯수를 나누어주어야하기 때문에
+//					//전체 사과갯수가 학생들보다 적어질때까지 빼준다.
+//					//ex) 학생수 10명 남은 사과갯수 9개면 else문으로 넘어감
+//				}else {
+//					break loop;
+//				}
+//		     }
+//			sum += arr[i][1];
+//			//남은 사과수를 더해줌
+//			}
+//		System.out.println(sum);
+		
+/////////////////////////////////////////////////////////////////////////	827공부
+
+//		[2965]	캥거루 세마리	
+		
+		
+//		int [] arr = new int [3];
+//		arr[0] = scan.nextInt();
+//		arr[1] = scan.nextInt();
+//		arr[2] = scan.nextInt();
+//		
+//		System.out.println(arr[1] - arr[0] > arr[2] - arr[1] ? arr[1] - arr[0] -1 : arr[2] - arr[1] -1);
+	
+		
+		
+//		
+//		String nSixteen = Integer.toHexString(155);
+//		//진수 변환을 위해서 속성값은 항상 String으로 받아야한다.
+//		System.out.println(nSixteen);
+//		
+//		int nTen = Integer.valueOf(nSixteen, 16);
+//		//10진수로 변환하고자 하는 값은 속성값을 int로 설정해야한다.
+//		System.out.println(nTen);
+//		
+		
+		
+//		[2864] 5와 6의 차이 [완료]
+		
+//		String a = scan.next();
+//		String b = scan.next();
+//		
+//		String minA = "";
+//		String maxA = "";
+//		
+//		String minB = "";
+//		String maxB = "";
+//		
+//		
+//		for(int i = 0; i < a.length(); i++) {
+//			if(a.charAt(i) == '6') {
+//				minA = minA + "5";
+//			}else {
+//				minA = minA + a.charAt(i);
+//				//6이 아닐 경우 그냥 대입
+//			}
+//			
+//			if(a.charAt(i) == '5') {
+//				maxA =  maxA + "6";
+//			}else {
+//				maxA = maxA + a.charAt(i);
+//				//5가 아닐 경우 그냥대입
+//			}
+//			//문자열로 입력 받은 A의 char의 순서대로 비교
+//			//각각 최소 최대 변수와 비교하여 항을 변경
+//			
+//		}
+//		
+//		
+//		for(int i = 0; i < b.length(); i++) {
+//			if(b.charAt(i) == '6') {
+//				minB = minB + "5";
+//			}else {
+//				minB = minB + b.charAt(i);
+//				//6이 아닐 경우 그냥 대입
+//			}
+//			
+//			if(b.charAt(i) == '5') {
+//				maxB =  maxB + "6";
+//			}else {
+//				maxB = maxB + b.charAt(i);
+//				//5가 아닐 경우 그냥대입
+//			}
+//			//문자열로 입력 받은 B의 char의 순서대로 비교
+//			//각각 최소 최대 변수와 비교하여 항을 변경
+//			
+//		}
+//		
+//		int max = Integer.parseInt(maxA) +  Integer.parseInt(maxB);
+//		int min = Integer.parseInt(minA) +  Integer.parseInt(minB);
+//		
+//		
+//		System.out.println(min + " " + max);
+		
+		
+//		[5532] 방학숙제
+		
+//		double Vacation = scan.nextInt();
+//		double Mpage = scan.nextInt();
+//		double Lpage = scan.nextInt();
+//		
+//		int MaxMpage = scan.nextInt();
+//		int MaxLpage = scan.nextInt();
+//		
+//		Mpage = Mpage / MaxMpage;
+//		Lpage = Lpage / MaxLpage;
+//		double Max = Mpage > Lpage ? Mpage : Lpage;
+//		
+//		Vacation = Vacation - Max;
+//		
+//		int nmg = (int) Vacation;
+//		
+//		System.out.println(nmg);
+
+		
+//		[2506] 점수계산 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int[n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int count = 0;
+//		int sum = 0;
+//		for(int i = 0; i < n; i++) {
+//			if(arr[i] == 1) {
+//				count++;
+//				sum += count;
+//				//연속된 수 체크하면서 연속될 경우
+//				//count를 하나씩 더해주어
+//				//sum에 더해준다.
+//			}else {
+//				count = 0;
+//				//연속된값 체크시 후 연속되지 않을 경우
+//				//0으로 초기화 하여 검색한다.
+//			}
+//			
+//		}
+//		
+//		System.out.println(sum);
+
+/////////////////////////////////////////////////////////////////////////	828공부		
+		
+		// 범위내에서의 가장큰 소수 찾기 
+//		int p = 2;
+//		int n = 97;
+//		while(true) {
+//			
+//			double t = Math.sqrt(n);
+//			int m = (int)t;
+//			
+//			for(int i = 2; i <=m; i++) {
+//				int r = n % i;
+//				System.out.println(r);
+//				if(r==0) {
+//					break;
+//				}
+//				if(i==m) {
+//					p = n;
+//					System.out.println(p);
+//				}
+//			}
+//			n++;
+//			if(n > 97) {
+//				break;
+//			}
+//		}
+//		
+//		System.out.println(p);
+		
+//		[2745] 진법변환 [다시보기]
+		
+//		String N = scan.next();
+//		int B = scan.nextInt();
+//		
+//		int ans = 0;
+//	        for (int i = 0; i < N.length(); i++){
+//	            
+//	        	if ('0' <= N.charAt(i) && N.charAt(i) <= '9'){
+//	                ans = ans*B + ((int)N.charAt(i) - (int)'0');
+//	            }
+//	            else{
+//	                ans = ans*B + ((int)N.charAt(i) - (int)'A' + 10);
+//	            }
+//	        }
+//	        
+//	        System.out.println(ans);
+		
+//		[10162] 전자레인지
+		
+//		int n = scan.nextInt();
+//		int fiveM = 0;
+//		int oneM = 0;
+//		int tenS = 0;
+//		
+//		while(true) {
+//			if(n <= 0) {
+//				break;
+//			}
+//			if(n >= 300 && n > 60) {
+//				n = n - 300;
+//				fiveM++;
+//			}else if(n >= 60 && n < 300) {
+//				n = n - 60;
+//				oneM++;
+//			}else if(n >= 10 && n < 60) {
+//				n = n - 10;
+//				tenS++;
+//			}else {
+//				break;
+//			}
+//		}
+//		
+//		System.out.println(fiveM+ " " + oneM+ " " + tenS);
+//	
+		
+//		[3036] 링 [완료] [공약수 구하기 중요]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int N = scan.nextInt();
+//        int[] Ring = new int[N];
+//        
+//        for(int i = 0; i < N; i++) {
+//            Ring[i] = scan.nextInt();
+//        }
+//
+//        for(int i = 1; i < N; i++) {
+//            solve(Ring[0], Ring[i]);
+//            //각 원 간의 배열 공약수를 구하면서 함수 반복문진행
+//        }
+//			
+//		}
+//	// 함수 구문이기 때문에 public class main {} 메인 클래스 내부에 선언해 주어야 한다.
+//	 public static void  solve(int A, int B) {
+//	        int temp;
+//	        int Fring = A;
+//	        //앞에 있는 원
+//	        int Nring = B;
+//	        //뒤에 있는 원
+//	        while(B > 0) {
+//	            temp = B;
+//	            B = A % B;
+//	            A = temp;
+//	            //B 가 0이 되어 공약수가 될때 까지 반복
+//	        }
+//	        System.out.println(Fring / A + "/" + Nring / A);
+//	 }
+	 
+/////////////////////////////////////////////////////////////////////////	829공부		
+//		int a = 1 - 2;
+//		System.out.println(a);
+//		//출력값  == -1
+//		
+//		int b = Math.abs(a);
+//		System.out.println(b);
+//		//출력값 == 1
+		
+		
+//		[1644] 소수의 연속합 [완료]
+//		
+//		int n = scan.nextInt();
+//		int count = 0;
+//		int [] arr = new int [n];
+//		arr[0] = 2;
+//		int k = 1;
+//		int sum = 0;
+//		
+//		for(int i = 3 ; i <= n ; i++) {
+//			loop :for(int j = 2 ; j < i ; j++) {
+//				if(i % j == 0) {
+//					count++;
+//					break loop;
+//					//j로 나누어 0이 되면, 
+//					//소수가 아님
+//				}
+//			}
+//			if(count == 0) {
+//				arr[k] = i;
+//				k++;
+//				//카운트가 0일 경우 해당 i의 값은 소수
+//				//배열에 집어넣음
+//			}
+//			count = 0;
+//			//다음 i값 비교를 위해
+//			//count 초기화
+//		}
+//		
+//		for(int i = 0; i < arr.length; i++ ) {
+//			if(arr[i] == 0) {
+//				break;
+//			}
+//			loop : for(int j = i; j < arr.length; j++ ) {
+//				if(n > sum) {
+//				sum += arr[j];
+//				//n이 더크면 계속 더해
+//				//근접한 수로 만들어줌
+//			}else if(n == sum) {
+//				count++;
+//				break loop;
+//				//n이 같아지면 그수는 소수의 연속합이 되고
+//				//카운트에 하나 더해줌
+//				}else {
+//					break loop;
+//					//sum이 더커지면 연속합이 아니기때문에
+//					//루프 탈출 다음 i값을 비교함
+//				}
+//			}
+//			sum = 0;
+//			//다음 값 더해주기 위해  sum을 초기화
+//		}
+//
+//	   System.out.println(count);     
+	        
+/////////////////////////////////////////////////////////////////////////	831공부
+	       
+//	     int Two = 2;
+//	     System.out.println(Math.pow(Two, 2));
+//	     //앞에는 제곱을 하고자하는 수
+//	     //뒤에는 제곱하고자 하는 만큼의 수를 입력해 준다.
+//	     //출력값 : 4.0
+//	     
+//	     System.out.println(Math.pow(Two, 3));
+//	     //출력값 : 8.0
+//	     
+//	     
+//	     int four = 4;
+//	     System.out.println(Math.sqrt(4));
+//	     //제곱근을 구하고자하는 수를 소괄호안에 써주면된다.
+//	     //출력값 : 2.0
+//	     
+//	     int nine = 9;
+//	     System.out.println(Math.sqrt(9));
+//	     //출력값 : 3.0
+//	     
+		
+		
+//		[1963] [다시보기]
+		
+//		int T = scan.nextInt();
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        
+//        T = Integer.parseInt(br.readLine());
+//        
+//        // 소수를 미리 구한다.
+//        for (int i = 2; i < 10000; i++) {
+//            for (int j = 2; j < i/2; j++) {
+//                if(i % j == 0) 
+//                    nonPrime[i] = true;
+//            }
+//        }
+//        
+//        while(T-- >0) {
+//            StringTokenizer st = new StringTokenizer(br.readLine());
+//            
+//            a = Integer.parseInt(st.nextToken());
+//            b = Integer.parseInt(st.nextToken());
+//            
+//            // 초기화
+//            visited = new boolean[10000];
+//            ok = false;
+//            min = 0;
+//            q.clear();
+//            
+//            // BFS 탐색 시작
+//            visited[a] = true;
+//            q.add(a);
+//            
+//            loop : while(!q.isEmpty()) {
+//                int size = q.size();
+//                for (int s = 0; s < size; s++) {
+//                    int cur = q.poll();
+//                    
+//                    if(cur == b) {
+//                        ok = true;
+//                        break loop;
+//                    }
+//                    
+//                    // 현재 4자리 비밀번호를 각 자리수로 분리하여 배열에 저장.
+//                    int[] digit = {cur/1000 ,(cur%1000) / 100, (cur%100) / 10, cur%10 };
+//                    
+//                    for (int i = 0; i < 4; i++) {
+//                        for (int j = (i== 0 ? 1 : 0); j < 10; j++) {
+//                            int origin = digit[i];    // 이전 값 저장
+//                            digit[i] = j;
+//                            int num = (digit[0]*1000) + (digit[1]*100) + (digit[2]*10) + (digit[3]);
+//                            digit[i] = origin;    // num만 만들고, 다음 변경을 위해 초기 cur의 배열 상태로 되돌린다.
+//                            if(visited[num] || nonPrime[num])
+//                                continue;
+//                            visited[num] = true;
+//                            q.add(num);
+//                        }
+//                    }
+//                }
+//                min++;
+//            }
+//            System.out.println(ok ?min : "Impossible");
+//        }
+//        
+//		}
+//	 static int T;
+//	    static boolean[] nonPrime = new boolean[10000];
+//	    static boolean[] visited;
+//	    static Queue<Integer> q = new LinkedList<>();
+//	    static int a,b;
+//	    static int min;
+//	    static boolean ok;
+
+//		[2587] [완료]
+		
+//		int [] arr= new int [5];
+//		
+//		for(int i = 0; i < arr.length; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int sum = 0;
+//		int min = 100000000;
+//		int center = 0;
+//		for(int i = 0; i < arr.length; i++) {
+//			sum += arr[i];	
+//		}
+//		for(int i = 0; i < arr.length; i++) {
+//			if(Math.abs(sum/arr.length - arr[i]) < min) {
+//				min = Math.abs(sum/arr.length - arr[i]);
+//				center = arr[i];
+//			}
+//		}	
+//		System.out.println(sum/arr.length + " " + center);
+		
+//		[10973] 이전 순열 [남이 푼거 한번 더보기]
+//		[내가 푼거 답안나옴]
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		int [] temparr = new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			temparr[i] = arr[i]; 
+//		}
+//		
+//		Arrays.sort(temparr);
+//		int count = 0;
+//		for(int i = 0; i < n; i++) {
+//			if(temparr[i] == arr[i]) {
+//				count++;
+//			}
+//		}
+//		//첫번째 배열인지 체크
+//		
+//		loop : for(int i = n - 1; i >=0; i--) {
+//			if(count == n) {
+//				System.out.println(-1);
+//				break;		
+//			}
+//			
+//			int temp = 0;
+//			loop2 : for(int j = i - 1; j >=0; j--) {
+//				if(arr[i] < arr[j]) {
+//					temp = arr[i];
+//					arr[i] = arr[j];
+//					arr[j] = temp;
+//					break loop;
+//				}else {
+//					break loop2;
+//				}
+//				
+//			}
+//		}
+//		
+//		for(int i = 0; i < n; i++) {
+//			System.out.print(arr[i]);
+//		}
+//
+		
+//		 Scanner sc = new Scanner(System.in);
+//	        int n = sc.nextInt();
+//	        int[] arr = new int[n];
+//	 
+//	        for (int i = 0; i < n; i++) {
+//	            arr[i] = sc.nextInt();
+//	        }
+//	 
+//	        previousPermutation(arr);
+//	 
+//	        sc.close();
+//		
+//}
+//	  private static void previousPermutation(int[] arr) {
+//	        int n = arr.length;
+//	        boolean b = true;
+//	        Loop1: for (int i = n - 1; i > 0; i--) {
+//	            if (arr[i - 1] > arr[i]) {
+//	                for (int j = n - 1; j >= i; j--) {
+//	                    if (arr[j] < arr[i - 1]) {
+//	                        int temp = arr[i - 1];
+//	                        arr[i - 1] = arr[j];
+//	                        arr[j] = temp;
+//	                        int k = n - 1;
+//	                        
+//	                        while (i < k) {
+//	                            int temp2 = arr[i];
+//	                            arr[i] = arr[k];
+//	                            arr[k] = temp2;
+//	                            i++;
+//	                            k--;
+//	                        }
+//	                        b = false;
+//	                        break Loop1;
+//	                    }
+//	                }
+//	            }
+//	        }
+//	        if (b) {
+//	            System.out.println(-1);
+//	        } else {
+//	            showArray(arr);
+//	        }
+//	    }
+//	 
+//	    private static void showArray(int[] arr) {
+//	        for (int i = 0; i < arr.length; i++)
+//	            System.out.print(arr[i] + " ");
+		
+		
+// 1에서 100까지 수열의 합을 구해보자!
+		
+//		int sum, number;
+//		
+//		number = 0; 
+//		sum = 0;
+//		
+//		do {
+//			number++;
+//			sum += number;
+//		}while(number <= 99);
+//		
+//		System.out.println(sum);
+		
+		
+//		[10164] 격자상의 경로 [다시보기]
+//		
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter out = new BufferedWriter(new OutputStreamWriter(System.out));
+//		
+//		String line[] = in.readLine().split(" ");
+//		
+//		n=Integer.parseInt(line[0]); 
+//		m=Integer.parseInt(line[1]); 
+//		k=Integer.parseInt(line[2]);
+//		
+//		init();
+//		out.write(getVal()+"");
+//		out.close();
+//		in.close();		
+//
+//		
+//}
+//	public static int n, m, k, map[][];
+//	
+//	private static void init(){
+//		map = new int[n+1][m+1];
+//		int i, j; map[0][1]=1;
+//		for(i=1;i<=n;i++)
+//			for(j=1;j<=m;j++)
+//				map[i][j] = map[i-1][j]+map[i][j-1];
+//	}
+//	
+//	private static int getVal(){
+//		if(k==0) return map[n][m];
+//		int ax, ay, bx, by;
+//		ax = k/m+(k%m>0?1:0);
+//		System.out.println(ax);
+//        ay = k-(ax-1)*m;
+//        System.out.println(ay);
+//		bx = n-ax+1;
+//		System.out.println(bx);
+//        by = m-ay+1;
+//        System.out.println(by);
+//		return map[ax][ay] * map[bx][by];
+		
+		
+/////////////////////////////////////////////////////////////////////////	901공부		
+
+		
+		//		[1016]	[다른 알고리즘 적용해서 풀어보기]
+//						[아주 큰 수가 주어졌을 경우의 알고리즘]
+//		
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		
+//		int [] arr = new int [m];
+//		double [] temparr = new double [m / 2];
+//		
+//		int temp = n;
+//		for(int i = 0; i <=m; i++) {
+//			arr[i] = temp;
+//			temp++;
+//			if(temp == m) {
+//				arr[i + 1] = temp;
+//				break;
+//			}
+//			
+//		}
+//		
+//		double number = 2;
+//		for(int i = 0; i < temparr.length; i++) {
+//			if(m <=  Math.pow(number, 2)) {
+//				break;
+//			}
+//			temparr[i] = Math.pow(number, 2);
+//			number++;
+//
+//		}
+//		
+//		int count = 0;
+//		for(int i = 0; i < arr.length; i++) {
+//			if(arr[i] == 0) {
+//				break;
+//			}
+//			loop : for(int j = 0; j < temparr.length; j++) {
+//				if(arr[i] % temparr[j] == 0) {
+//					count++;
+//					break loop;
+//				}
+//			}
+//		}
+//		
+//		System.out.println((m - n + 1) - count);
+		
+//[다른사람 풀이]		
+//		min = scan.nextLong();
+//	    max = scan.nextLong();
+//	        checkNoSquareNumberCount();
+//	    }
+//	 
+//	    private static void checkNoSquareNumberCount() {
+//	        int end = ((int) Math.sqrt(max));
+//	        boolean []checkArray = new boolean[1000001]; 
+//	        Arrays.fill(checkArray, false);
+//	        for(long i = 2; i <= end; i++){
+//	            long square = i*i;
+//	            long start = ((min-1)/square+1) * square;
+//	            for(long a = start; a <= max; a += square){
+//	            	checkArray[(int) (a-min)] = true;
+//	            }
+//	        }
+//	        int count = 0;
+//	        for(int i = 0; i < (max - min + 1); i++){
+//	        	count += (checkArray[i] == true)? 1:0;
+//	        }
+//	        System.out.print(max - min - count + 1);
+//	        
+//	}
+//	    
+//	    static long min;
+//	    static long max;
+
+//		https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221177339719&proxyReferer=https:%2F%2Fwww.google.com%2F		
+			
+		
+		//		[2407]	[어려움 다시보기]		
+//		  	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//	        int n = Integer.parseInt(st.nextToken());
+//	        int m = Integer.parseInt(st.nextToken());
+//
+//	        BigInteger a = BigInteger.ONE;
+//	        BigInteger b = BigInteger.ONE;
+//	        for(int i = 0; i < m; i++){
+//	            a = a.multiply(new BigInteger(String.valueOf(n - i)));
+//	            b = b.multiply(new BigInteger(String.valueOf(i + 1)));
+//	        }
+//	        BigInteger ans = a.divide(b);
+//	        bw.write(ans + "\n");
+//
+//	        bw.flush();
+//	        br.close();
+//	        bw.close();
+		
+/////////////////////////////////////////////////////////////////////////	902공부		
+		
+		
+		//		[15894]		수학은 체육과목입니다.	
+//		
+//		int n = scan.nextInt();
+//		
+//		 int sum = n * 3 + n;
+//			System.out.println(sum);
+
+		
+		
+		//		[1964]	오각형...오각형...(완료)
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int sum = 0;
+//		
+//		int count = 3;
+//		for(int i = 1; i <= n-1; i++) {
+//			sum += (i * 5) - count;
+//			count += 2;
+//			//안에 있는 오각형이 1일때는 -3
+//			//한단계 증가마다 뺴는 값 2씩 증가함
+//			}
+//		
+//		sum += (n * 5);
+//		System.out.println(sum);
+		
+		//		[1834] 나머지와 몫이 같은 수 [완료]
+		
+//		int n = scan.nextInt();
+//		int number = n;
+//		int sum = 0;
+//
+//		loop : while(true) {
+//			int mok = number / n;
+//			int nmg = number % n;
+//			
+//			if(mok >= n) {
+//				break loop;
+//			}
+//			//몫과 n의 값이 같아지면 더이상
+//			//몫과 나머지가 같은 수는 없다.
+//			
+//			if(mok == nmg) {
+//				sum += number;
+//			}
+//			number++;
+//		}
+//		
+//		System.out.println(sum);
+//		
+		
+/////////////////////////////////////////////////////////////////////////	903공부
+
+		//		[1024] 수열의 합 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int l = scan.nextInt();
+//		int min = 100;
+//		// l보다는 크고 100보다는 작은 연속합의 최소횟수 체크
+//		int sum = 0;
+//		// n과 비교할 연속합이 저장됨
+//		int count = 0;
+//		// sum에 더해지는 횟수를 계산
+//		int temp = 0;
+//		// 배열에 저장될 임시값이 들어갈 변수
+//		int [] arr = new int [n];
+//		// 연속합에 사용되는 숫자가 저장될 변수
+//		
+//		for(int i = 1; i < n/2; i++) {
+//			sum = 0;
+//			count = 0;
+//			temp = 0;
+//			
+//			loop :for(int j = i; j < n/2; j++) {
+//				if(sum < n) {
+//					sum += j;
+//					count++;
+//					// n과 같아지기 위해서 지속적으로 sum에 더해줌 
+//					if(sum == n)  {
+//						if(min >= count  && count >= l) {
+//						Arrays.fill(arr,0);
+//						//최솟값을 찾았음으로 배열의 있는 수를 0으로 초기화
+//						min = count;
+//						temp = i;
+//						//연속합의 초기값 i로 지정
+//						for(int k = 1; k <=count; k++) {
+//							arr[k] = temp;
+//							temp++;
+//							//count 값 만큼 배열에 저장
+//							}
+//						}else {
+//							break loop;
+//						}
+//					}
+//				}
+//			else {
+//				break loop;
+//				}
+//			}
+//		}
+//		
+//		Arrays.sort(arr);
+//		//올림차수 정렬
+//		
+//		if(arr[n-1] == 0) {
+//			System.out.println(-1);
+//			//연속합이 되는지 여부 체크
+//			//연속합이 될경우 마지막에 무조건 0보다 큰 값이들어감
+//		}else {
+//		for(int i = 0 ; i < n; i++) {
+//			if(arr[i] != 0) {
+//			System.out.print(arr[i]+ " ");
+//			}
+//		}
+//	}	
+
+		//		[5218] 알파벳 거리
+		
+//		Scanner scan = new Scanner(System.in);
+//		int N = scan.nextInt();
+//		for(int i=0; i<N; i++) {
+//			String str1 = scan.next();
+//			String str2 = scan.next();
+//			int[] arr = new int[str1.length()];
+//			
+//			for(int j=0; j < str1.length(); j++) {
+//				if(str2.charAt(j) >= str1.charAt(j)) {
+//					arr[j] = str2.charAt(j) - str1.charAt(j);
+//				}
+//				else {
+//					arr[j] = str2.charAt(j) - str1.charAt(j) + 26;
+//				}
+//			}
+//			
+//			System.out.print("Distances: ");
+//			for(int j=0; j<arr.length; j++) {
+//				System.out.print(arr[j] + " ");
+//			}
+//			System.out.println();
+//		}
+//		scan.close();
+		
+		//		[1072] [다시보기]
+//		
+//		 Scanner sc = new Scanner(System.in);
+//	        X = sc.nextInt();
+//	        Y = sc.nextInt();
+//
+//	        Z = Y * 100 / X;
+//	        if (Z >= 99)
+//	            System.out.println(-1);
+//	        else
+//	            binarySearch(1, X);
+//	    }
+//		static long X, Y, Z;
+//
+//	    private static void binarySearch(long start, long end) {
+//	        long mid = 0, ratio = 0;
+//	        while (start <= end) {
+//	            mid = (start + end) / 2;
+//	            ratio = (Y + mid) * 100 / (X + mid);
+//
+//	            if (ratio > Z) {
+//	                end = mid - 1;
+//	            } else {
+//	                start = mid + 1;
+//	            }
+//	        }
+//	        System.out.println(start);
+		
+/////////////////////////////////////////////////////////////////////////	904공부
+		
+//		펙토리얼 구현하기 p166
+		
+//		int temp = 1;
+//		//각 i에 다른 팩토리얼이 저장되는 값
+//		// ex) i = 2 → 2!
+//		int sum = 0;
+//		//각 팩토리얼이 더해지는 값
+//		
+//		for(int i = 1; i<= 10; i++) {
+//			temp = temp * i;
+//			sum = sum + temp;
+//		}
+//		
+//		System.out.println(sum);
+//		//10!만 구하고 싶다면 temp 값을 이용하면된다.
+//		
+//		
+//		int temp = 1;
+//		//각 i에 다른 팩토리얼이 저장되는 값
+//		// ex) i = 2 → 2!
+//		int sum = 0;
+//		//각 팩토리얼이 더해지는 값
+//		int i = 0;
+//		//10까지 증가할 팩토리얼 값
+//		
+//		do {
+//			i++;
+//			temp = temp * i;
+//			sum = sum + temp;
+//		}while(i < 10);
+//		
+//		System.out.println(sum);
+//		//10!만 구하고 싶다면 temp 값을 이용하면된다.
+		
+//		피보나치 수열 구현하기 p168
+		
+		
+//		int a = 0;
+//		//첫째 항
+//		int b = 1;
+//		//둘째 항
+//		int c = 0;
+//		// 셋째 항 = 출력값
+//		
+//		for(int i = 1; i < 10; i++) {
+//			c = a + b;
+//			a = b;
+//			b = c;
+//
+//		}
+//		// 피보나치는 0, 1, 1, 2, ... 순으로 커지기 때문에
+//		// F0의 값은 a와 같고  F1의 값은 b와 같다.
+//		//때문에 반복문에 범위는 위와 같이 설정한다.
+//			System.out.println(c);
+		
+		
+		//		[2355] 시그마
+		
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		
+//		int sum = 0;
+//		
+//		while(a <= b) {
+//			sum += a;
+//			a++;
+//		}
+//			
+//		System.out.println(sum);
+			
+		//		[5032] 탄산음료 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int Emptybottle = scan.nextInt();
+//		int Getbottle = scan.nextInt();
+//		int Needbottle = scan.nextInt();
+//			
+//		int sum = Emptybottle + Getbottle;
+//		int nmg = 0;
+//		//그날 마신 빈병의 갯수가 저장되는 곳;	
+//		int count = 0;
+//		//마실 수 있는 병수가 저장될 변수
+//		
+//		while(true) {
+//			
+//			while(sum >= Needbottle) {
+//			sum = sum - Needbottle;
+//			nmg++;
+//			count++;
+//		}
+//		
+//			nmg = nmg + sum;
+//			//남은 빈병과 오늘 마신 빈병을 더해줌;
+//			if(nmg < Needbottle) {
+//				break;
+//			}
+//			
+//			sum = 0;			
+//			while(nmg >= Needbottle) {
+//				nmg = nmg - Needbottle;
+//				sum++;
+//				count++;
+//				//나머지 빈병으로 더 마실수 있나 확인
+//			}
+//			
+//			sum = sum + nmg;
+//			if(nmg < Needbottle) {
+//				break;
+//			}
+//			//다시 한번 마신병수 체크후 Needbottle보다 크면 
+//			//첫번째  while 문으로 돌아간다.
+//			
+//		}
+//			System.out.println(count);
+			
+/////////////////////////////////////////////////////////////////////////	905공부
+//		
+//		String a = "24";
+//		
+//		int n = Integer.valueOf(a, 8);
+//		System.out.println(n);
+		
+		
+//		최대공배수 최대공약수 구하기
+		
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		//입력될 두 수
+//		
+//		int big, small;
+//		//두 수 중 큰 수와 작은 수가 저장될 변수
+//		
+//		int mok, nmg;
+//		//몫과 나머지가 저장될 변수
+//		
+//		int	minM, maxD ;
+//		//최소공배수와 최대공약수가 저장될 변수
+//		
+//		
+//		if(a >= b) {
+//			big = a;
+//			small = b;
+//		}else {
+//			big = b;
+//			small = a;
+//		}
+//		
+//		while(true) {
+//			mok = big / small;
+//			nmg = big - mok * small;
+//				if(nmg == 0) {
+//					maxD = small;
+//					minM = a * b / maxD;
+//					System.out.println(maxD + "  " + minM);
+//					break;
+//				}else {
+//					big = small;
+//					small = nmg;
+//				}
+//		
+//		
+//		}
+		
+		//		[2903] 중앙 이동 알고리즘 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr= new int [ n + 1];
+//		arr[0] = 4;
+//		int count = 0;
+//		//제곱할때마다 커질 수
+//		int num = 2;
+//		
+//		for(int i = 1; i < arr.length; i++) {
+//			arr[i] = (int) Math.sqrt(arr[i - 1]) + (int) Math.pow(num, count);
+//			// 가로(세로)의 점 갯수를 구함(정사각형이기 때문에 하나만 구하면된다)
+//			arr[i] = (int) Math.pow(arr[i], 2);
+//			// 정사각형이기 때문에 가로와 새로를 곱합값이 점의 갯수가 된다.
+//			count++;
+//			//한 사이클 마다 가로(세로)의 길이가 2의 제곱만큼 커짐으로 count를 더해준다.
+//			//ex) 첫번째 2의 1승 두번째 2의 2승 ... 2의 n승; 순으로 커짐
+//		}
+//		
+//		System.out.println(arr[n]);
+		
+		
+/////////////////////////////////////////////////////////////////////////	906공부
+		
+		
+//		
+//		int i = 0;
+//		int [] a = new int[10];
+//		int count = 0; 
+//		//1씩 증가되는 수가 저장될 변수
+//		int max = 0, min = 10000;
+//		//최댓값과 최솟값이 들어갈 변수;		
+//		
+//		do {
+//			count++;
+//			a[i] = count;
+//			if(max <= a[i]) {
+//				max = a[i];
+//			}
+//			
+//			if(min >= a[i]) {
+//				min = a[i];
+//			}
+//			//배열에 삽입된 값이 최댓값인지 최솟값인지 
+//			//계속 비교하며 값은 갱신함
+//			
+//			i++;
+//			//배열의 위치를 하나씩 증가시켜준다.
+//		}while(i < 10); 
+//		
+//		System.out.println(max + " " + min);
+		
+		
+//		int i = 0;
+//		int [] a = new int[10];
+//		a[0] = 0;
+//		a[9] = 100;
+//		//0 번째 자리와 마지막 자리에 
+//		//각 최소값과 최대값을 넣어줍니다.
+//		int sum = 0;
+//		//평균을 구하기 위한 배열의 합이 저장될 변수
+//		
+//		int five = 5; 
+//		//숫자 5 변수 선언
+//		int max = 0, min = 10000;
+//		//최댓값과 최솟값이 들어갈 변수;		
+//		
+//		for(int j = 1; j < a.length - 1; j++) {
+//			a[j] = five;
+//		}
+//		// 배열에 5를 넣어주기 위한 반복문
+//		
+//		do {
+//			if(max <= a[i]) {
+//				max = a[i];
+//			}
+//			
+//			if(min >= a[i]) {
+//				min = a[i];
+//			}
+//			//배열에 삽입된 값이 최댓값인지 최솟값인지 
+//			//계속 비교하며 값은 갱신함
+//			
+//			sum += a[i];
+//			i++;
+//			//배열의 위치를 하나씩 증가시켜준다.
+//		}while(i < 10); 
+//		
+//		System.out.println(max + " " + min);
+//		System.out.println((sum - max - min) / 8);
+//		//두 값을 빼주기 때문에 10 - 2 하여  8로 나누어 준다.
+
+		//		[1297] Tv 크기
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        String[] temp = br.readLine().split(" ");
+//
+//        // width > height
+//        int diagonal = Integer.parseInt(temp[0]);
+//        int height = Integer.parseInt(temp[1]);
+//        int width = Integer.parseInt(temp[2]);
+//
+//        // 높이와 너비를 구하기
+//        // 소수점이 나올 경우, 그 수보다 작으면서 가장 큰 정수 출력 (floor)
+//        double res = Math.sqrt(Math.pow(diagonal, 2) / ( Math.pow(height, 2) + Math.pow(width, 2) ));
+//        System.out.print((int)Math.floor(res*height) + " ");
+//        System.out.println((int)Math.floor(res*width));
+        
+		
+		//		[2981]	검문 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int [] arr= new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int m = 2;
+//		//나누어줄 변수
+//		int temp = 0;
+//		//나눈 나머지가 임시로 저장될 변수
+//		int count = 0;
+//		//같은 값으로 나누어지는 변수가 배열에 저장될 때 마다
+//		//배열의 위치를 지정해주기 위해 1씩 더해질 변수
+//		int [] marr = new int [arr[0]];
+//		//같은 값으로 나누어지는 m의 값이 저장될 변수
+//		boolean flag = false;
+//		//같은 값으로 나누어지는지 체크할 변수
+//		
+//		while(arr[0] > m) {
+//			temp = arr[0] % m;
+//			//주어진 가장 작은 수에 m을 나눈 나머지를 저장
+//			
+//			loop : for(int i = 1; i < n; i++) {
+//				if(arr[i] % m != temp) {
+//					flag = false;
+//					break loop;
+//					//temp와 같지 않으므로 루프 탈출
+//				}else {
+//					flag = true;
+//				}
+//			}
+//			//루프 마무리
+//			
+//			if(flag == true) {
+//				marr[count] = m;
+//				count ++;
+//			}
+//			//루프가 끝난 후 flag 체크 후  true이면 
+//			//배열에 m의 값을 삽입 
+//			
+//			m ++;
+//			temp = 0;
+//			//m의 값은 하나씩 더해주고
+//			//temp 값은 초기화 시켜줌
+//		}
+//		
+//		for(int i = 0; i < marr.length; i++) {
+//			if(marr[i] == 0) {
+//				break;
+//			}
+//			System.out.print(marr[i] + " ");
+//		}
+        
+		
+/////////////////////////////////////////////////////////////////////////	908공부		
+		
+		//		[1267] 핸드폰 요금 [완료]
+		
+//		Scanner scan = new Scanner (System.in);
+//		int n = scan.nextInt();
+//		
+//		int [] arr = new int [n];
+//		int sumY = 0;
+//		int sumM = 0;
+//		
+//		for(int i = 0; i < n ; i++) {
+//			arr[i] = scan.nextInt();
+//			sumY += arr[i];
+//			sumM += arr[i];		
+//		}
+//		
+//		int feeY = 0;
+//		int feeM = 0;
+//		
+//		while(true) {
+//			if(sumY < 0) {
+//				break;
+//			}
+//			
+//			sumY -= 30;
+//			feeY += 10;
+//		}
+//		
+//		while(true) {
+//			if(sumM < 0) {
+//				break;
+//			}
+//			
+//			sumM -= 60;
+//			feeM += 15;
+//		}
+//		
+//		int min = Math.min(feeY, feeM);
+//		
+//		if(min == feeY) {
+//			System.out.println("Y" + " " + feeY);
+//		}else {
+//			System.out.println("M" + " " + feeM);
+//		}
+		
+
+		//		[4796] 캠핑 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = 1;
+//		while(n < 5) {
+//		int P = scan.nextInt();
+//		int L = scan.nextInt();
+//		int vacation = scan.nextInt();
+//		
+//		if(P == 0 && L == 0) {
+//			break;
+//		}
+//		//방학 나누기 연속일수  몫이 나오면 그수에다가 가능일수 더하고 나머지를 더해준다.
+//		int mok = vacation / L;
+//		int nmg = vacation % L;
+//		int sum = (mok * P) + nmg;
+//		
+//		System.out.println("Case " + n + " : " + sum);
+//		n++;
+//		
+//			}
+
+		//		[4796] 거북이		
+		
+//		   Scanner sc= new Scanner(System.in);
+//	        int [] arr = new int[4];
+//	        for(int i=0;i<4;i++) {
+//	            arr[i]=sc.nextInt();
+//	        }
+//	        Arrays.sort(arr);
+//	        System.out.println(arr[0]*arr[2]);
+
+		
+		//		자바 보수 구하기 1의 보수 2의 보수
+		
+//		int [] arr = {1, 1, 0, 0, 1};
+//		int [] bo1 = new int [5];
+//		//1의 보수가 저장될 배열
+//		int [] bo2 = new int [5];
+//		//2의 보수가 저장될 배열
+//	
+//		int i = 0;
+//		
+//		do {
+//			bo1[i] = 1 - arr[i];
+//			//1에서 기존 배열의 값을 빼준면 보수가 된다.
+//			i++;
+//		}while(i < 5);
+//		//1 의 보수의 값은 모두 저장되었다.
+//		
+//		int carry = 1;
+//		//자리 올림이 발생을 고려한 변수
+//		//2의 보수는 1의 보수맨 뒷자리에서 1을 더해주어야 하기 때문에 필요
+//		i = 4;
+//		//끝자리부터 올리기 때문에 
+//		//시작 위치는 배열의 마지막 위치로 지정
+//		do{
+//			bo2[i] = bo1[i] + carry;
+//			bo2[i] = bo2[i] % 2;
+//			carry = bo1[i] * carry;
+//			//0이면 더이상 자리 올림을 할 필요가 없다.
+//			i--;		
+//		}while(i > 0);
+//		
+//		for(int j =0; j < 5; j++) {
+//			System.out.print(bo1[j] + " ");
+//		}
+//		System.out.println();
+//		
+//		for(int j =0; j < 5; j++) {
+//			System.out.print(bo2[j] + " ");
+//		}
+		
+///////////////////////////////////////////////////////////////////////	909공부
+		
+//		n의 배수의 개수와 합 구하기
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int mok, nmg;
+//		int sum = 0;
+//		// 배수들을 더할 변수	
+//		int count = 0;
+//		// 개수를 더할 변수
+//		
+//		for(int i = 1; i <= 100; i++) {
+//			
+//			mok = (int) i / n;
+//			nmg = i - mok * n;
+//			
+//			if(nmg == 0) {
+//				sum += i;
+//				count++;
+//				//나머지가 0이면, 배수이기 때문에
+//				//sum에 더해주고 count 하나씩 더해준다.
+//			}
+//			
+//		}
+//		
+//		System.out.println(sum + " " + count);
+		
+		//		[11816] [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String X = scan.next();
+//		String N ="";
+//		int N8 = 0;
+//		//8진수 값이 저장될 변수
+//		int N16 = 0;
+//		//16진수 값이 저장될 변수
+//		
+//		if(X.charAt(0) == '0') {
+//			//1자리 0인지 체크
+//			if(X.charAt(1) == 'x') {
+//				//2자리 x 면 16진수 for 문 실행
+//				for(int i = 2; i < X.length(); i++) {
+//					N += X.charAt(i);
+//					}
+//					N16 = Integer.valueOf(N, 16);
+//			}else {
+//				//2자리 x가 아님 8진수로 간주하고 8진수로 변환
+//				for(int i = 1; i < X.length(); i++) {
+//					N += X.charAt(i);
+//					}
+//					N8 = Integer.valueOf(N, 8);
+//				}
+//			}else {
+//		System.out.println(X);
+//	}
+//		
+//		if(N8 != 0 || N16 != 0) {
+//		System.out.println(N8 > N16 ? N8 : N16);
+//		//둘 중하나라도 0이 아니면 8진수 아니면 16진수 이기때문에 그수를 출력
+//		}
+
+		
+		//		[2921] 도미노
+		
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		int sum = 0;
+//		
+//
+//        for(int i = 0; i <= n; i++){
+//            for(int j = i; j <= n; j++){
+//                sum = sum + i + j;
+//            }
+//        }
+//		
+//		System.out.println(sum);
+
+///////////////////////////////////////////////////////////////////////	910공부
+		
+		//선택정렬
+		
+//		Scanner scan = new Scanner(System.in);		
+//		int temp = 0;
+//		//배열의 임시값을 받아줄 변수
+//		//큰 수가 잠시동안 들어갈 예정
+//		int number = -1;
+//		int [] data = new int [10];
+//		
+//		do {
+//			number++;
+//			data[number] = scan.nextInt();
+//		}while(number < 9);
+//		
+//		//10자리 배열에 원하는 정수 입력;
+//		
+//		int i = -1;
+//		//배열의 회전수를 지정할 변수 
+//		//do 문을 사용하기 때문에 -1로 입력
+//		do {
+//			i++;
+//			int j = i;
+//		do {
+//			j++;
+//			if(data[i] > data[j]) {
+//				temp = data[i];
+//				data[i] = data[j];
+//				data[j] = temp;
+//				}
+//			}while(j < 9);
+//		}while(i < 8);
+//		
+//		for(int k = 0; k <= 9; k++) {
+//			System.out.print(data[k]);
+//		}
+//		
+//		
+//		//사실 위의 식은 굉장히 더러워 보인다. 
+//		//for 문을 사용하여 간단히 만들어보자
+//		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int [] data = new int [10];
+//		int temp = 0;
+//		
+//		for(int i = 0; i <data.length; i++) {
+//			data[i] = scan.nextInt();
+//		}
+//		//10자리 배열에 원하는 정수 입력;
+//		
+//		for(int i = 0; i < data.length - 1; i++) {
+//			for(int j = i + 1; j < data.length; j++) {
+//				if(data[i] > data[j]) {
+//					temp = data[i];
+//					data[i] = data[j];
+//					data[j] = temp;
+//				}
+//			}
+//		}
+//		//이중 for 문을 사용하여 i의 위치에 따라.
+//		//j의 값을 지속적으로 증가시키며 비교해준다.
+//		
+//		for(int i = 0; i <data.length; i++) {
+//			System.out.print(data[i]);
+//		}
+////		8 5 6 2 4 1 3 7 9 10
+		
+		
+		
+///////////////////////////////////////////////////////////////////////	911공부		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int [] arr = new int [5];
+//		//4자리의 그레이 코드를 받을 변수다
+//		//크기가 5인 이유는 맨앞에 숫자가
+//		//0이나 1이냐 판단하여,
+//		//0일 경우에는  그레이코드 → 이진수 변환
+//		//1일 경우에는  이진수 → 그레이코드 변환
+//		
+//		
+//		for(int i = 0; i < arr.length; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int [] Rearr = new int [4];
+//		//변경된 코드가 들어갈 배열
+//		
+//		Rearr[0] = arr[1];
+//		
+//		if(arr[0] == 0) {
+//			for(int i = 0; i < Rearr.length - 1; i++) {
+//				if(arr[i + 2] == Rearr[i]) {
+//					Rearr[i + 1] = 0;
+//				}else {
+//					Rearr[i + 1] = 1;
+//				}
+//			}
+//			//그레이코드에서 이진수 변환임으로 
+//			//그레이코드 다음수와 이진수 i번째의 수를 비교
+//		}else {
+//			for(int i = 0; i < Rearr.length - 1; i++) {
+//				if(arr[i + 1] == arr[i + 2]) {
+//					Rearr[i + 1] = 0;
+//				}else {
+//					Rearr[i + 1] = 1;
+//				}
+//			}
+//			//이진법에서 그레이코드 변환임으로 
+//			//이진수 i의 수와 다음 이진수 i + 1번째의 수를 비교
+//		}
+//		
+//		for(int i = 0; i < Rearr.length; i++) {
+//			System.out.print(Rearr[i] + " ");
+//		}
+		
+		
+		//		[7572] 간지
+		
+//		int n = scan.nextInt();
+//		int count = 0;
+//		String [] arr1 = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"}; 
+//		String [] arr2 = {"0", "1","2","3","4","5","6","7","8","9"};
+//		int plus1 = 0;
+//		int plus2 = 0;
+//		
+//		int a = (n + 56) % 60;
+//		
+//		for(int i = 0; i < a; i++) {
+//			if(plus1 == 11) {
+//				plus1 = 0;
+//			}else {
+//				plus1++;
+//			}
+//			
+//			if(plus2 == 9) {
+//				plus2 = 0;
+//			}else {
+//				plus2++;
+//			}
+//		}
+//		System.out.println(arr1[plus1] + arr2[plus2]);
+		
+		
+		
+		//		[2089] -2진수 
+		
+//		  Scanner scan = new Scanner(System.in);
+//	        int n = scan.nextInt();
+//	        List<Integer> list = new ArrayList<>();
+//	        
+//	        if(n==0) //n이 0 일때
+//	            System.out.println(n);
+//	    
+//	        while(n!=0) {
+//	            list.add(Math.abs(n%-2));
+//	            n=(int)Math.ceil((double)n/-2);
+//	        }
+//	        
+//	        for(int i=list.size()-1; i>=0; i--)
+//	            System.out.print(list.get(i));
+
+		//		[8320] 직사각형 만드는 방법
+		
+//		int n = scan.nextInt();
+//		int count = 0;
+//		
+//		for(int i = 1; i <=n; i++) {
+//			if(i % 2 == 0 && i != 2) {
+//				count = count + 2;
+//			}else {
+//				count++;
+//			}
+//			
+//		}
+//		
+//		System.out.println(count);
+
+///////////////////////////////////////////////////////////////////////	912부
+		
+		//		[2783] 삼각김밥 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		double won = scan.nextInt();
+//		double gram = scan.nextInt();
+//		double temp = 0;
+//		
+//		double nmg = 1000 % gram;
+//		double mok = 1000 / gram;
+//		
+//		double min =  won * mok;
+//		if(nmg != 0) {
+//			min += won;
+//		}
+//		
+//		int n = scan.nextInt();
+//		int [][] arr = new int [n][2];
+//		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//			nmg = 1000 % arr[i][1];
+//			mok = 1000 / arr[i][1];
+//			//열의 두번째 자리는 gram과 같다.
+//			temp =  arr[i][0] * mok;
+//			if(nmg != 0) {
+//				temp += arr[i][0];
+//				//열의 첫번째 자리는 won과 같다.
+//			}
+//			if(min > temp) {
+//				min = temp;
+//			}
+//			
+//		}
+//	
+//		System.out.println(String.format("%.2f", min));
+//		//0이어도 뒤에자리를 제거하지 않고 출력함
+		
+		
+		
+		//	[5361]	[전투 드로이드 가격]	[완료]
+		
+//		Scanner scan= new Scanner(System.in);
+//		double [] price = {350.34, 230.90, 190.55, 125.30, 180.90};
+//		double sum = 0;
+//		
+//		int testCast = scan.nextInt();
+//		
+//		int [] arr = new int [5];
+//		
+//		for(int i = 0; i < testCast; i++) {
+//			for(int j = 0; j < 5; j++) {
+//				arr[j] = scan.nextInt();
+//				
+//				sum += arr[j] * price[j];
+//				//입력받은 값을 가격과 곱해준다.
+//			}
+//			
+//			System.out.println("$"+String.format("%.2f", sum));
+//			//0이어도 뒤에자리를 제거하지 않고 출력함 
+//			//2자리 출력을 위해 .2f 설정
+//		}
+		
+		
+		//		[10539] 수빈이와 수열	[완료]	
+		
+		
+//		Scanner scan= new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		int count = 2;
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			
+//		}
+//		
+//		int sum = 0;
+//		for(int i = 1; i < n; i++) {
+//			sum = arr[i] * count;
+//			for(int j = 0; j < i; j++) {
+//				sum -= arr[j];
+//				
+//			}
+//			count++;
+//			arr[i] = sum;
+//		}
+//		//반대로 풀기 공식
+//		//현재 위치의 값 곱하기 현재 위치
+//		//빼기 변경된 배열에 저장된 값
+//		for(int i = 0; i < n; i++) {
+//			System.out.print(arr[i]+ " ");
+//		}
+		
+///////////////////////////////////////////////////////////////////////	913공부
+		
+		//		[10158] 개미 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int w = scan.nextInt();
+//		int h = scan.nextInt();
+//		
+//		int inputW = scan.nextInt();
+//		int inputH = scan.nextInt();
+//		int time = scan.nextInt();
+//		
+//		int [][] arr = new int [w + 1][h + 1];
+//		// 배열은 0부터 시작하기 때문에 하나씩 더해줌
+//		for(int i = 0; i <= w; i++) {
+//			for(int j = 0; j <= h; j++) {
+//				arr[i][j] = j;
+//			}
+//		}
+//		
+//		int count = 0;
+//		
+//		int i = inputW;
+//		int j = inputH;
+//		boolean flagi = true;
+//		boolean flagj = true;
+//		
+//		while(count != time) {
+//			if(i >= w) {
+//				flagi = false;
+//			}else {
+//				 if(i == 0)
+//				flagi = true;
+//			}
+//			//행 max 및 min 여부 체크
+//			//max 면 i-- min i++
+// 			
+//			
+//			if(j >= h) {
+//				flagj = false;
+//			}else {
+//				 if(j == 0)
+//				flagj = true;
+//			}
+//			//열 max 및 min 여부 체크
+//			//max 면 j-- min j++
+//			
+//			
+//			if(i < w && flagi == true) {
+//				i++;
+//				}else {
+//					i--;
+//				}
+//			
+//			if(j < h && flagj == true) {
+//				j++;
+//			}else {
+//				j--;			
+//			}
+//			count++;
+//		}
+//		
+//		System.out.println(i + " " + j);
+		
+		
+		//		[2502]	[아직 안품 다시보기]
+		
+//		int day = scan.nextInt();
+//		int total = scan.nextInt();
+//		
+//
+//		int a = 1;
+//		int b = 2;
+//		int firstA = a;
+//		int firstB = b;
+//		
+//		int plus = 1;
+//		int plus2 = 2;
+//		int sum = 0;
+//		int count = 0;
+//		
+//		while(sum != total && count != day) {
+//			
+//			if(sum > total || count > day) {
+//				sum = 0;
+//				count = 0;
+//				plus++;
+//			}
+//			
+//			sum = a + b;
+//			a = b;
+//			b = sum;
+//			count++;
+//				
+//			if(b > (total / day) + 1) {
+//					a = plus2; 
+//					b = a + 1;
+//					firstA = a;
+//					firstB = b;
+//					plus = 1;
+//				}else {
+//					a = 1;
+//					b = a + plus;
+//					firstA = a;
+//					firstB = b;
+//					plus++;
+//				}
+//
+//			System.out.println(firstA + " " + firstB);
+//
+//			
+//
+//			
+//		
+//		}
+//			System.out.println(firstA + " " + firstB);
+//			
+
+		
+///////////////////////////////////////////////////////////////////////	914공부
+
+		//		[17362] [완료]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int count = 1;
+//		int change = -1;
+//		
+//		for(int i = 1 ; i < n; i++) {
+//			if(count <= 1 ) {
+//				change *= -1;
+//			}
+//			
+//			count += change;
+//
+//			
+//			if(count >= 5) {
+//				change *= -1;
+//			}
+//			//첫번째부터 5번쨰 손가락 까지는 하나씩 더해준다.
+//			//손가락 번호가 5가 됬을때는 -1을 곱해 다시 
+//			//1이 되기 까지 곱해준다.
+//		}
+//		
+//		System.out.println(count);
+		
+	
+		
+///////////////////////////////////////////////////////////////////////	915공부
+		
+		//		[1350] 진짜 공간 [완료]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int [] file = new int [n];
+//		
+//		
+//		for(int i = 0; i < n; i++) {
+//			file[i] = scan.nextInt();
+//		}
+//		
+//		int cluster = scan.nextInt();
+//		int sum = 0;
+//		//클러스터를 더해줄 변수
+//		
+//		for(int i = 0; i < n; i++) {
+//			loop : while(true) {
+//				if(file[i] == 0) {
+//					break loop;
+//				}
+//				//0이면 클러스터가 할당 되지 않음
+//				//while문 탈출
+//				
+//				file[i] = file[i] - cluster;
+//				sum += cluster;
+//				//해당 값에 클러스터 값을 빼줌
+//				//이후 sum 에 클러스터값 더해줌
+//				if(file[i] <= 0) {
+//					break loop;
+//				}
+//				//0 보다 작으면 더이상 클러스터 할당 불필요
+//				//while문 탈출
+//			}
+//		}
+//		
+//		System.out.println(sum);
+		
+		
+///////////////////////////////////////////////////////////////////////	916공부
+		
+		//		[3062] [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String reverseN = "";
+//		int numberN =0;
+//		
+//		
+//		int testCase = scan.nextInt();
+//		
+//		for(int T = 0; T < testCase; T++) {
+//			String n = scan.next();
+//			for(int i = n.length() - 1; i >= 0 ; i--) {
+//			reverseN = reverseN + n.charAt(i);
+//		}
+//		//초기 입력 받은 값을 뒤집어 변수에 넣어줌
+//		if(n.length() > 1) {
+//			numberN = Integer.parseInt(n) + Integer.parseInt(reverseN);
+//			}else {
+//				numberN = Integer.parseInt(n);
+//			}
+//		//해당 두값을 더해서 numberN에 넣어줌 
+//		//만약에 한자리면 더할 필요 없이 그냥 n값만 넣어줌
+//		
+//		
+//		String textN = Integer.toString(numberN);
+//		//다시 스트링 속성으로 변환
+//		
+//		if(textN.charAt(0) == textN.charAt(n.length()-1)) {
+//			System.out.println("Yes");
+//		}else {
+//			System.out.println("No");
+//		}
+//		//처음 자리와 끝자리 비교하여 같으면 Yes
+//		//아니면 No 출력
+//				}
+
+		
+///////////////////////////////////////////////////////////////////////	917공부		
+		
+		//		[2858] 기숙사 바닥 [완료]
+//		Scanner scan = new Scanner(System.in);
+//		int Bn = scan.nextInt(); 
+//		int Rn = scan.nextInt();
+//		
+//		
+//		int sum = Bn + Rn;
+//		//주어진 값에 합을 구함
+//		
+//		int H = 3;
+//		int W = 3;
+//		//초기값 설정
+//		//빨간 타일이 하나만 있는 바닥 설정
+//		//해당 값보다 작을시 빨간타일이 없음
+//		
+//		
+//		if(sum < 9) {
+//			System.out.println(-1);
+//			//9보다 작으면 빨간타일 없음
+//		}else {
+//			while(sum != H * W || sum > H * W ) {
+//				if(sum > H * W) {
+//					if(H == W) {
+//						H++;
+//					}else {
+//						W++;
+//					}
+//				}
+//			}
+//			//항상 열의 값이 크기 때문에 우선적으로 열 값을 증가시킴
+//			//열값이 클경우에는 다음에는 행 값을 더해주면서 비교
+//			//sum 값가 같아지거나 커지면 반복문 탈출
+//			
+//			if(sum == H * W) {
+//				System.out.println(H + " " + W);
+//			}else {
+//				System.out.println(-1);
+//			}
+//			//값 체크 후 같으면 출력
+//			//다르면 -1
+//			
+//			
+//		}
+		
+		
+		//		[1773] 폭죽쇼 [완료]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int Student = scan.nextInt();
+//		int End = scan.nextInt();
+//		
+//		int [] timeline = new int [Student];
+//		int sum = 0;
+//		int mok = 0;
+//		
+//		for(int i = 0; i < Student; i++) {
+//			timeline[i] = scan.nextInt();
+//			mok = End / timeline[i];
+//			sum += mok;
+//		}
+//		//공배수 고려하지 않고 우선적으로
+//		//각 주기별 최대한 볼 수 있는 수를 구함
+//		
+//
+//		boolean flag = true;
+//		//공배수 체크 변수
+//		for(int i = 1; i <= End; i++) {
+//			loop : for(int j = 0; j < Student; j++) {
+//				if(i % timeline[j] != 0 ) {
+//					flag = false;
+//					break loop;
+//					//학생들의 모든 주기가 다 0이 아니기 때문에
+//					//공배수 아님 flag false 변경 후 탈출
+//				}else {
+//					flag = true;
+//					//0 일 경우 true;
+//				}
+//
+//			}
+//				
+//				if(flag) {
+//					sum--;
+//				}
+//				//모든 변수 체크 후 공배수일 경우
+//				//loop 탈출시 flag = true 값이 됨
+//				//때문에 기존에 구했던 sum에서 하나 빼줌
+//		}
+//		
+//		
+//		System.out.println(sum);
+
+		
+///////////////////////////////////////////////////////////////////////	918공부			
+		
+		//소인수 분해하기
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int number, d, SqrtE;
+//		int [] arr = new int [100];
+//		int mok = 0, nmg = 0;
+//		
+//		int count = -1;
+//		//배열 위치 지정 함수
+//		number = scan.nextInt();
+//		
+//		while(true) {
+//			 
+//			d = 2;
+//			//제곱근 까지 하나씩 더해줄 수
+//			//1은 곱해도 1이기 때문에
+//			//제외 시키고 시작점은 2부터 시작
+//			
+//			SqrtE = (int) Math.sqrt(number);
+//			//정수 까지만 체크하면 되기 때문에
+//			//int 형은로 변환을 해줌
+//
+//			while(true) {
+//				if(d > SqrtE) {
+//					d = number;
+//					break;
+//					//더 이상 d로 나누어 지는 값이 없어
+//					//d가 SqrtE 보다 커진 경우
+//					//number 자체가 소인수 이기 때문에
+//					//d 값에 number 대입
+//				}
+//				
+//				mok = number / d;
+//				nmg = number - mok * d;
+//				
+//				if(nmg == 0) {
+//					break;
+//					//나머지가 0이 되는 수도 
+//					//소인수 이기 때문에 배열 탈출
+//				}else {
+//					d++;
+//				}
+//				
+//			}
+//			count++;
+//			arr[count] = d;
+//			
+//			if(number == d) {
+//				break;
+//			}
+//			//number 와 d 값이 같은 경우
+//			//더 이상의 소인수는 없음
+//			//때문에 반복문 중단
+//				number = mok;
+//			//넘버를 몫값으로 초기화 해주고
+//			//다음 소인수 체크
+//		}
+//		
+//		for(int i = 0; i <=count; i++) {
+//			System.out.println(arr[i]);
+//		}
+		
+		
+		
+		//		[1773]		
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		
+//		int count = 0;
+//
+//		while(n >= m) {
+//			n = n - m;
+//			count++;
+//		}
+//		
+//		System.out.println(count+ " " + n);
+		
+		//		[2014] 소수의 곱 [다시보기]
+		
+//		  	int k = scan.nextInt();
+//		    int n = scan.nextInt();
+//		 
+//		    // http://mygumi.tistory.com/183
+//		    // 소수 리스트, 소수와 비교하여 곱한 값 넣는 큐, 최종 리스트
+//		    // 큐의 맨 앞 요소를 빼서 각 소수를 곱하면서 큐에 다시 넣을 것이다.
+//		 
+//		    long[] prime = new long[k];
+//		    PriorityQueue<Long> q = new PriorityQueue<>();
+//		 
+//		    for (int i = 0; i < k; i++) {
+//		        prime[i] = scan.nextInt();
+//		        q.add(prime[i]);
+//		    }
+//		 
+//		    long head = 0;
+//		 
+//		    for (int i = 0; i < n; i++) {
+//		        // n번째 뺀 값이 n번째 수가 된다.
+//		        head = q.poll();
+//		 
+//		        // 큐를 활용하여 삽입마다 오름차순으로 정렬됨으로써 원하는 값들을 리스트에 저장 가능.
+//		        for (int j = 0; j < k; j++) {
+//		            long value = head * prime[j];
+//		            q.add(value);
+//		 
+//		            if (head % prime[j] == 0) {
+//		                break;
+//		            }
+//		        }
+//		    }
+//		    System.out.println(head);
+		
+///////////////////////////////////////////////////////////////////////	922공부
+		
+		//		[1592] 영식이와 친구들 [완료]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int arr [] = new int [n + 1];
+//		
+//		int m = scan.nextInt();
+//		int l = scan.nextInt();
+//		
+//		int count = 1;
+//		//배열의 위치를 지정해줄 변수
+//		
+//		int cnt = 0;
+//		arr[1] = 1;
+//		//1번째 사람이 처음 공은 받기 때문에
+//		//초기 값 1을 더해주고 시작
+//		while(true) {
+//			if(arr[count] % 2 == 0) {
+//				count = count - l;
+//				//짝수일 경우 현재 위치에서 L만큼 빼준다.
+//				if(count <= 0) {
+//					count = n + count;
+//				}
+//				//배열이 0 부터 시작하기 때문에
+//				//0이거나 0보다 작으면,
+//				//위치를 시작의 끝점으로 바꾸어준다.
+//				arr[count]++;
+//				cnt++;
+//				if(arr[count] == m) {
+//					break;
+//				}
+//			}else {
+//				//홀수일 경우 현재 위치에서 L만큼 더해준다.
+//				count = count + l;
+//				if(count > n) {
+//					count = count - n;
+//					if(count == 0) {
+//						count = 1;
+//					}
+//					//배열이 0 부터 시작하기 때문에
+//					//커진 시작점에서 전체 배열의 크기를 빼주어
+//					//위치를 재설정해준다.
+//					//배열이 0부터 시작하기 때문에 0일경우
+//					//1로 시작점을 설정해준다.
+//					
+//				}
+//				arr[count]++;
+//				cnt++;
+//				if(arr[count] == m) {
+//					break;
+//			}
+//		}
+//		
+//	}
+//		
+//		System.out.println(cnt);
+	
+/////////////////////////////////////////////////////////////////////////	924공부
+		
+		//삽입 정렬
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int key = 0;
+//		//비교가 되는 키값 변수
+//		int location = 0;
+//		//배열의 위치를 지정해 줄 변수
+//		
+//		int number = 0;
+//		//배열의 값을 넣기 위한 변수
+//		int [] arr= new int [11];
+//		
+//		
+//		
+//		do {
+//			number++;
+//			arr[number] = scan.nextInt();
+//		}while(number < 9);
+//		
+//		//배열의 정렬을 원하는 값 입력
+//		int temp = 0;
+//		//j값을 잠시 담아둘 변수
+//		
+//		for(int i = 2; i <= 9; i++) {
+//			key = arr[i];
+//			//키값은 배열의 두번째 부터 시작해서 비교
+//			for(int j = i-1; j >= 0; j--) {
+//				//범위는 키값보다 하나 작은 값부터
+//				//처음 범위까지 비교하면됨
+//				if(arr[j] > key) {
+//					arr[j + 1] = arr[j];
+//					//비교하는 값이 더 크기 때문에
+//					//그다음 수에 큰 값을 넣어줌
+//					temp = j;
+//				}else {
+//					temp = j;
+//					break;
+//				}
+//			}
+//			
+//			arr[temp + 1] = key;
+//			//더이상 키값보다 작은 값이 없으므로
+//			//작은값 +1 자리가 key의 자리가 됨
+//			temp = 0;
+//		}
+//		
+//		for(int i = 1; i < arr.length-1; i++) {
+//			System.out.print(arr[i] + " ");
+//		}
+//		
+
+		//		[1747]	소수 & 팰린드롬 [아직 안품]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		String n = scan.next();
+//		int tempN = Integer.parseInt(n);
+//		int temp = 0;
+//		int [] arr = new int [7];
+//		//최대 백만 까지 이기 때문에
+//		
+//		int start = 0;
+//		
+//		while(true) {
+//			loop : for(int i = 0 ; i < 7 ; i++ ) {
+//				if(tempN == 0) {
+//					break loop;
+//				}
+//				arr[i] = tempN % 10;
+//				tempN = tempN / 10;
+//			}
+//			
+//			int count = 0;
+//			while(arr[count] == 0) {
+//				start++;
+//				count++;
+//			}
+//			
+//			for(int i = start; i < 7; i++) {
+//				if()
+//				temp += arr[i] * 10;
+//			}
+//			
+//		}
+		
+//		https://octorbirth.tistory.com/71
+		
+/////////////////////////////////////////////////////////////////////////	926공부
+		
+		
+		//		[2436]	공약수
+		
+//		Scanner scan = new Scanner(System.in);
+//		int g= scan.nextInt();
+//		int l = scan.nextInt();
+//		int val = 1;
+//		int f = l / g;
+//		for (int i = 2; i*i <= f; i++) {
+//			if (f%i == 0 && gcd(i, f / i) == 1)
+//				val = i;
+//		}
+//		System.out.printf("%d %d", g*val, g*(f / val));
+//		
+////		우선 두 자연수의 곱이 동일할 경우, 합이 최소가 되려면 두 수의 차가 최소여야합니다. 
+////		그렇기에 주어진 최대공약수/최대공배수를 만족하면서 두 수의 차가 최소인 쌍을 찾아야합니다.
+////
+////		최대공약수를 g, 최대공배수를 l, 두 수를 A와 B라고 할 때 자명하게
+////
+////		A=ga, B=gb, gcd(a,b)=1, ab = l/g가 됩니다. 
+////		그렇기에 저희는 곱이 l/g가 되면서 차는 최소인 두 수 a, b를 구하는 것으로 문제를 바꿔 생각할 수 있습니다.
+////
+////		이는 주어진 l/g에 대해 1부터 sqrt(l/g)까지로 나눠보면서 판단할 수 있습니다
+//		
+//		
+//	}
+//	
+//	public static int gcd(int a, int b) {
+//		if (a == 0)
+//			return b;
+//		return gcd(b%a, a);
+
+		
+		//		[2436] 이진수 합 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//
+//		int number = 1;
+//		int sum = 0;
+//		while(true) {
+//			String strNumber = Integer.toBinaryString(number);
+//			//1부터 자릿수 체크를 위해 
+//				//n 보다 자릿수가 커지면 break;2진수로 변환
+//			if(strNumber.length() > n) {
+//				break;
+//			}else {
+//				sum += number;
+//				number++;
+//				//n 보다 작거나 같으면 수를 더해줌
+//			}
+//		}
+//		
+//		String strSum = Integer.toBinaryString(sum);
+//		//더한 값 다시 2진수 변환
+//		System.out.println(strSum);
+		
+		
+//		//		[5533] 유니크 [완료]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int [][] arr = new int [n][3];
+//		//주어진 게임횟수가 들어갈 배열
+//		int [] sumarr = new int [n];
+//		//게임점수 합이 들어갈 배열
+//		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 3; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		for(int j = 0; j < 3 ; j++) {
+//			for(int i = 0; i < n; i++) {
+//				for(int k = i + 1; k <n; k++) {
+//					if(arr[i][j] == arr[k][j]) {
+//						arr[i][j] = 0;
+//						arr[k][j] = 0;
+//						//한 게임 마다 같은 수가 있는지 체크
+//					}
+//				}
+//			sumarr[i] += arr[i][j];}
+//			//비교가 끝나면 해당 값을 더해줌
+//		}
+//		
+//		for(int i = 0; i < n; i++) {
+//			System.out.println(sumarr[i]);
+//		}
+		
+		
+/////////////////////////////////////////////////////////////////////////	927공부		
+		
+		
+//		//		[2863] 이게 분수? [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int [] arr1 = new int [2];
+//		int [] arr2 = new int [2];
+//		double [] sum = new double [5];
+//		//문제의 포인트는 초기 상태는 1회전으로 두지 않는다.
+//		
+//		
+//		for(int i =0; i < arr1.length; i++) {
+//			arr1[i] = scan.nextInt();
+//		}
+//		
+//		for(int i =0; i < arr2.length; i++) {
+//			arr2[i] = scan.nextInt();
+//		}
+//		//다중 배열이 아닌 배열 2개를 사용했다.
+//		
+//
+//		double max = sum[0];
+//		int count = 0;
+//		
+//		for(int i = 1; i <= 4; i++) {
+//			int temp1 = arr1[0];
+//			int temp2 = arr1[1];
+//			//임시 변수를 만들어  옮길 배열을 
+//			//잠시 담아두었다.
+//			arr1[0] = arr2[0];
+//			arr1[1] = temp1;
+//			arr2[0] = arr2[1];
+//			arr2[1] = temp2;
+//			sum[i] = (arr1[0] / arr2[0]) + (arr1[1]  / arr2[1]);
+//			//분자가 클수롤 그 값은 큰 값이기 때문에 /(몫) 연산을 사용
+//			if(max < sum[i]) {
+//				max = sum[i];
+//				count = i;
+//				//기존값과 비교
+//			}
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//		//		[1252] 이진수 덧셈 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String N = scan.next();
+//		String M = scan.next();
+//		
+//		int [] sum = new int [80];
+//		
+//		int max = N.length() >= M.length() ? N.length() : M.length();
+//		//몇번째 까지 입력되었는지 체크할 변수
+//		
+//		int C = 0;
+//		//자리올림 체크 변수
+//		
+//		int [] arrN = new int [max];
+//		int [] arrM = new int [max];
+//		
+//		int count = 0;
+//		//배열위치 지정함수
+//		for(int i = N.length()- 1; i >= 0 ; i--) {
+//			arrN[count] = N.charAt(i) - '0';	
+//			count++;
+//		}	
+//		//이진법은 뒤에서 부터 계산하기 때문에 뒤부터 배열에 넣어줌
+//		
+//		count = 0;
+//		for(int i = M.length()- 1; i >= 0 ; i--) {
+//			arrM[count] = M.charAt(i) - '0';
+//			count++;
+//		}
+//		
+//		
+//		for(int i = 0; i < max; i++) {
+//			sum[i] = arrN[i] + arrM[i] + C;
+//			if(sum[i] >= 2) {
+//				sum[i] -=2;
+//				C = 1;
+//			}else {
+//				C = 0;
+//			}
+//		}
+//		
+//		
+//		if(C == 1) {
+//			//첫쨰 자리에 자리올림이 있었는지
+//			//마지막으로 체크
+//			sum[max] = 1;
+//			for(int i = max; i >=0; i--) {
+//				System.out.print(sum[i]);
+//			}	
+//		}else {
+//			for(int i = max-1; i >=0; i--) {
+//				System.out.print(sum[i]);
+//			}
+//			
+//		}
+		
+		
+/////////////////////////////////////////////////////////////////////////	928공부				
+		
+		
+		//버블정렬 구현하기
+		
+//		Scanner scan = new Scanner(System.in);
+//		int [] arr = new int [10];
+//		//정렬할 숫자가 들어갈 배열
+//		
+//		int n = -1;
+//		//입력받을 숫자의 개수가 저장될 변수
+//		int count = 0;
+//		//자료의 교환 횟수가 저장될 변수
+//		int sw = 0;
+//		//자료가 교환 되었는지 검사할 변수
+//		
+//		do {
+//			n++;
+//			arr[n] = scan.nextInt();
+//		}while(n < 9);
+//		//숫자 입력 반복문
+//		
+//		int temp = 0;
+//		//위치를 바꿀때 숫자를 잠시 담아둘 변수
+//		
+//		for(int i = 1; i <=9; i++) {
+//			sw = 0;
+//			loop : for(int j = 0; j <= (9-i); j++) {
+//				if(arr[j] > arr[j + 1]) {
+//					temp = arr[j];
+//					arr[j] = arr[j + 1];
+//					arr[j + 1] = temp;
+//					count++;
+//					sw = 1;
+//				}
+//			}
+//			//sw 가 1이되면 자료가 변경되었다는 의미
+//			//변경될게 없을떄까지 loop 문 반복
+//			if(sw == 0)
+//				break;
+//		}
+//		
+//		for(int i =0; i < 10; i++) {
+//			System.out.print(arr[i] + " ");
+//		}
+		
+		
+//		//		[3049] [다시보기]
+		
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+// 
+//        int n = Integer.parseInt(br.readLine());
+//        int ans = (n *(n-1)*(n-2)*(n-3)) / (4*3*2);
+//        
+//        bw.write(String.valueOf(ans) + "\n");
+//        bw.flush();
+//        bw.close();
+		
+
+		
+//		//		[2153] 소수단어 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String n = scan.next();
+//		Solve(n);
+//	}
+//	
+//	public static void Solve(String n) {
+//		int [] arr = new int [n.length()];
+//		int sum = 0;
+//		
+//		for(int i = 0; i < n.length(); i++) {
+//			arr[i] = n.charAt(i);
+//			//해당 문자에 아스키 코드 값을 넣어줌
+//			sum += arr[i];	
+//			//문자마다 더해주어 합을 구함
+//		}
+//		
+//		if(sum != 1 && sum != 2) {
+//		//sum 1이거나 2일 경우 반복문 진행 불필요
+//			for(int i = 2; i <= sum/2; i++) {
+//			if(sum % 2 == 0) {
+//				System.out.println("It is not a prime word.");
+//				break;
+//				//2부터 하나씩 증가해주면 소수인지 체크 
+//				//나머지가 0일 경우 소수가 아님
+//			}
+//			
+//			if(i == sum/2 && sum % 2 != 0) {
+//				System.out.println("It is a prime word.");
+//			}
+//		}
+//	}else {
+//		System.out.println("It is a prime word.");
+//	}
+//	
+//	}
+	
+	
+		
+//		//		[1551] 수열의 변화
+		
+//		Scanner scan = new Scanner(System.in);
+//		int N = scan.nextInt();
+//		int K = scan.nextInt();
+//		
+//		
+//		String number = scan.next(); 
+//		int [] arr= new int [N];
+//		
+//		String[] temp = new String[41];
+//		temp = number.split(",");
+//		for(int i = 0; i < N; i++) {
+//			arr[i] = Integer.parseInt(temp[i]);
+//		}
+//		
+//		for(int i=0; i< K; i++)
+//            for(int j=0; j<N-i-1; j++)
+//                arr[j] = arr[j+1] - arr[j];
+//         
+//        for(int i=0; i<N-K; i++){
+//            System.out.print(arr[i]);
+//            if(i!=N-K-1)System.out.print(",");
+//        }
+
+
+///////////////////////////////////////////////////////////////////////	929공부
+
+//		[2985] [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int [] arrNumber = new int [3];
+//		//입력숫자가 들어갈 배열
+//		
+//		// "+", "-", "*", "/"
+//		
+//		
+//		for(int i =0; i < 3; i++ ) {
+//			arrNumber[i] = scan.nextInt();
+//		}
+//			
+//		int answer = arrNumber[2];
+//		
+//			if(arrNumber[0] + arrNumber[1] == answer) {
+//				System.out.println(arrNumber[0]+" + " + arrNumber[1] + " = " + answer );
+//			}else if(arrNumber[0] - arrNumber[1] == answer) {
+//				System.out.println(arrNumber[0]+" - " + arrNumber[1] + " = " + answer );
+//			}else if(arrNumber[0] * arrNumber[1] == answer) {
+//				System.out.println(arrNumber[0]+" * " + arrNumber[1] + " = " + answer );
+//			}else {
+//				System.out.println(arrNumber[0]+" / " + arrNumber[1] + " = " + answer );
+//			}
+//
+//		// "+", "-", "*", "/"
+//		// 어렵게 생각할 거 없이 수식이 단 4개 뿐임으로
+//		// 모든 경우 if문을 구현하여 작성했다.
+
+			
+
+//			[2985] 
+			
+//			Scanner scan = new Scanner(System.in);
+//			int [] arr = new int [3];
+//			
+//			
+//			for(int i = 0; i < 3; i++) {
+//				arr[i] = scan.nextInt();
+//			}
+//			
+//			int car = arr[1] - arr[0]; 
+//			//수열간에 차이를 넣을 변수;
+//			
+//			System.out.println(arr[2] + car);
+//			//등차수열간에 차이는 항상 일정하기때문에
+//			//마지막 값에 차이를 더해준 값을 출력하면 된다.
+		
+		
+//			[5073] 삼각형과 세 변 [완료]
+			
+//			Scanner scan = new Scanner(System.in);
+//
+//			while(true) {
+//				
+//				int [] arr = new int [3]; 
+//				int sum = 0;
+//				double max = 0;
+//				//최대 변의 길이를 담아줄 변수		
+//				double [] temp = new double[3];
+//				//가장 긴변은 나머지 두변의 합보다 작은 값은 체크를 위한
+//				//나머지 두변 들어갈 변수
+//				//제외한 나머지 변이 들어갈 변수
+//				int tempCount = 0;
+//				//탬프 변수 위치 지정변수
+//				
+//				for(int i =0; i < 3; i++) {
+//					arr[i] = scan.nextInt();
+//					sum += arr[i];
+//					if(max < arr[i]) {
+//						max = arr[i];
+//					}else {
+//						temp[tempCount] = arr[i];
+//						tempCount++;
+//					}
+//				}				
+//				if(sum == 0) {
+//					System.out.println("프로그램종료");
+//					break;
+//				}
+//				
+//
+//				int countMax = 0;
+//				//최대 같은 변의 갯수를 넣어줄 변수
+//				for(int i = 0; i < 3 - 1; i++) {
+//					int count = 0;
+//					//같은변을 셀 변수
+//					for(int j = i + 1; j < 3; j++) {
+//						if(arr[i] == arr[j]) {
+//							count++;
+//							//같으면 카운트 증가
+//						}
+//						if(countMax < count) {
+//							countMax = count;
+//						}
+//						
+//					}
+//				}			
+//				if(countMax == 0 && temp[0] + temp[1] < max) {
+//					System.out.println("Invalid");
+//				//가장 긴변은 나머지 두변의 합보다 작아야함	
+//				}else if(countMax == 0 && temp[0] + temp[1] > max) {
+//					System.out.println("Scalene");
+//				//가장 긴변은 나머지 두변의 합보다 작아야함	
+//				}else if(countMax == 1) {
+//					System.out.println("Isosceles");
+//				}else {
+//					if(countMax == 2)
+//					System.out.println("Equilateral");
+//				}
+//				
+//				
+//			}
+
+		
+		
+		
+//		[6591] 이항 쇼다운	[조합]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		StringBuilder sb = new StringBuilder();
+//	    while (true) {
+//		int n = Integer.parseInt(bf.readLine());
+//		int k = Integer.parseInt(bf.readLine());
+//		
+//		int div = 1;
+//        long ans = 1;
+// 
+//        if (n == 0 && k == 0) {
+//            break;
+//        }
+// 
+//        if (n - k < k) {
+//            k = n - k;
+//        }
+// 
+//        while (k-- > 0) {
+//            ans *= n--;
+//            ans /= div++;
+//        }
+//        sb.append(ans + "\n");
+//
+//		System.out.println(sb.toString());
+//	    }
+
+//		[1188] 음식 평론가 [완료]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		int sausage = Integer.parseInt(bf.readLine());
+//		int man = Integer.parseInt(bf.readLine());
+//		
+//		int cut = 0;
+//		//자른횟수를 계산할 변수
+//		int count = 2;
+//		//곱할때 사용할  변수
+//		int tempSausage = sausage;
+//		while(true) {
+//			if(tempSausage % man != 0) {
+//				tempSausage = sausage;
+//				//자를때마다 처음소세지의 배수로 커지기 때문에
+//				//초기화 해주어야 한다.
+//				tempSausage = tempSausage * count;
+//				count++;
+//				//곱해줄수 하나씩 더해줌
+//				cut++;
+//				//자르는 횟수 더해줌
+//			}else {
+//				break;
+//			}
+//		}
+//		
+//		cut = cut * sausage;
+//		//자른 수에 처음 소세지 갯수를 곱해준다.
+//		//위의 반복문은 소시지 하나기준이 때문에
+//		//총 소세지 개수를 곱해주어야 답이된다.
+//		
+//		System.out.println(cut);
+		
+		
+///////////////////////////////////////////////////////////////////////	930공부
+		
+//		[2485] [완료]
+				
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int tree = Integer.parseInt(bf.readLine());
+//		
+//		int [] arr = new int [tree];
+//		int [] temp = new int [tree];
+//		
+//		int max = 10000000;
+//		//각 배열의 차이값중 최솟값이 되는것이
+//		//등차에서 가질수있는데 max 값이다.
+//		for(int i = 0; i < tree; i++) {
+//			arr[i] = Integer.parseInt(bf.readLine());
+//			temp[i] = arr[i];
+//		}
+//		
+//		for(int i = 0; i < tree - 1; i++) {
+//			if(arr[i + 1] - arr[i] < max) {
+//				max = arr[i + 1] - arr[i];
+//			}
+//		}
+//		
+//		int count = 0;
+//		//가로수 갯수 셀변수
+//		int minCount= 10000000;
+//		
+//		int plus = 1;
+//		if(max != 1) {
+//			plus = max / 2;
+//				}
+//		//등차변수
+//		int i = 0;
+//		//배열 위치 지정변수
+//		while(true) {
+//			
+//			if(max < plus) {
+//				break;
+//			}
+//		
+//			
+//			do{	
+//			if(temp[i] + plus == temp[i + 1]) {
+//				i++;
+//				//플러스값을 더할때 다음값과 같으면
+//				//카운트 필요없이 위치만 이동
+//				}else if(temp[i] + plus < temp[i +1]) {
+//					count++;
+//					temp[i] = temp[i] + plus;
+//					//풀러스 한 값이 작으면,
+//					//위치 바꿀필요 없이 현재 위치에서 플러스만
+//					//더해주고 카운트 더해줌
+//				}else {
+//					count = 99999;
+//					//등차를 이루지 않기 때문에 멈추고
+//					//카운트에 큰값을 넣어주어
+//					//mincount에 들어가지 않게함
+//					break;
+//				}
+//			}while(i < tree-1);
+//			//i의 값이 마지막 위치가 되면 종료함
+//			
+//			if(count < minCount) {
+//				minCount = count;
+//			}
+//			
+//			count = 0;
+//			i = 0;
+//			plus++;
+//			//사용변수 초기화
+//			//플러스는 다음 등차비교 위해 하나 더해줌
+//		
+//			for(int reset = 0; reset < tree; reset++) {
+//				temp[reset] = arr[reset];
+//			}
+//			//temp 배열 초기화 시켜줌
+//			
+//		}
+//		
+//		System.out.println(minCount);
+//	}
+	
+	
+	
+//		[10166] [다시]
+		
+//		Scanner sc = new Scanner(System.in);
+//
+//		int D1 = sc.nextInt();
+//		int D2 = sc.nextInt();
+//		long ans = 0;
+//		for (int i = D1; i <= D2; i++) {
+//
+//			// 1 ~ i 까지 중복체크
+//			// 기약 분수로 나타냇을때 중복이 안되면 더한다.
+//			// 결국 완탐..
+//			for (int j = 1; j <= i; j++) {
+//				// 1 / 1 북쪽 좌석
+//				int gcd = GCD(i, j);
+//				if (View[i / gcd][j / gcd])
+//					continue;
+//				ans++;
+//				View[i / gcd][j / gcd] = true;
+//			}
+//
+//		}
+//		System.out.println(ans);
+//	
+//	
+//	
+//	
+//	}
+//	static boolean View[][] = new boolean[2001][2001];
+//
+//	static int GCD(int a, int b) {
+//		// a >= b
+//
+//		while (b != 0) {
+//			int c = a % b;
+//			a = b;
+//			b = c;
+//		}
+//		return a;
+
+///////////////////////////////////////////////////////////////////////	1001공부
+	
+//		[10837] 동전 게임 [완료]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));	
+//		int K = Integer.parseInt(bf.readLine());
+//		int TestCase = Integer.parseInt(bf.readLine());
+//
+//		for(int i = 0; i < TestCase; i++) {
+//			String [] arr = bf.readLine().split(" ");
+//			int youngM = Integer.parseInt(arr[0]);
+//			//영희의 점수
+//			int dongN = Integer.parseInt(arr[1]);
+//			//동수의 점수
+//			int gap = Math.abs(youngM - dongN);
+//			//두수의 차
+//			int nmg = K - (youngM > dongN ? youngM : dongN);
+//			//나머지 던지는 횟수
+//			
+//			if(youngM == dongN) {
+//				System.out.println(1);
+//			}else if(youngM > dongN) {
+//				if(gap - nmg <= 2) {
+//					System.out.println(1);
+//				}else {
+//					System.out.println(0);
+//				}
+//				//영희가 먼저 던지기 때문에 두수의 차가
+//				//나머지가 2보다 크면 점수를 메꿀수 없음
+//				
+//			}else {
+//				if(gap - nmg <= 1) {
+//					System.out.println(1);
+//				}else {
+//					System.out.println(0);
+//				}
+//			}
+//			
+//			//동수는 영희보다 늦게 던지기 때문에 두수의 차가
+//			//나머지가 1보다 크면 점수를 메꿀수 없음
+//		}
+	
+	
+//		[17256] 달달함이 넘쳐 흘러 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int [] a = new int [3];
+//		for(int i =0; i < 3; i++) {
+//			a[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int [] c = new int [3];
+//		for(int i =0; i < 3; i++) {
+//			c[i] = scan.nextInt();
+//		}
+//	
+//		int bx = c[0] - a[2];
+//		int bz = c[1]  / a[1];
+//		int by = c[2] - a[0];
+//		//방정식 형태로 풀어서 출력하면된다.
+//		
+//		System.out.print(bx+ " " + bz+ " " + by);
+		
+		
+//		[2484] 주사위 네개 [완료]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));		
+//		int man = Integer.parseInt(bf.readLine());
+//		int winner = 0;
+//		//최대 상금 담을 변수	
+//		
+//		for(int i = 0; i < man; i++) {
+//		String [] arr = bf.readLine().split(" ");
+//				
+//		int max = 0;
+//		//같은 숫자중 최댓값 저장할 변수
+//		int diceNumber = 0;
+//		int OtherdiceNumber = 0;
+//		int maxDiceNumber = 0;
+//		
+//		for(int j = 0; j< arr.length -1; j++) {
+//			int count = 1;
+//			//같은 숫자 최댓값 찾을 변수	
+//			for(int k = j + 1; k <  arr.length; k++) {
+//				if(arr[j].equals(arr[k])) {
+//					count++;
+//				}
+//			}
+//	
+//			if(max < count) {
+//				max = count;
+//				diceNumber = Integer.parseInt(arr[j]); 
+//				//주사위 면을 저장할 변수	
+//			}else {
+//				if(max == 2 && count == 2) {
+//					OtherdiceNumber = Integer.parseInt(arr[j]); 
+//					//3번 조건 체크 하기 위한 식
+//				}			
+//				if(maxDiceNumber < diceNumber) {
+//					maxDiceNumber = diceNumber;
+//					//모두 다를 경우 대비한 식
+//					//나온 주사위 눈준 가장 큰수 저장
+//				}
+//			}
+//		
+//		}
+//
+//			int sum = 0;
+//			//합계가 저장될 변수
+//			if(max == 4) {
+//				sum = 50000 + (diceNumber*5000);
+//			}else if(max == 3) {
+//				sum = 10000 + (diceNumber*1000);
+//			}else if(max == 2 && OtherdiceNumber != 0) {
+//				sum = 2000 + (diceNumber * 500) + (OtherdiceNumber * 500);
+//			}else if(max == 2) {
+//				sum = 1000 + (diceNumber * 100);
+//			}else {
+//				sum = maxDiceNumber * 100;
+//			}
+//			//주사위 최대변수에 대한 식
+//			
+//			if(winner < sum) {
+//				winner = sum;
+//			}
+//		}
+//		
+//		System.out.println(winner);
+		
+/////////////////////////////////////////////////////////////////////	1002공부		
+
+		
+//		[13900] [완료]		
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int n = Integer.parseInt(bf.readLine());
+//		String [] arr = bf.readLine().split(" ");
+//		
+//		//주어진 입력값 예시
+//		//(1*2)+(1*3)+(1*4)+(2*3)+(2*4)+(3*4)
+//		//앞의 항이 하나씩 커질수로 뒤에항의 곱해지는 값은 하나씩 적어짐
+//		//(1*(2+3+4))+(2(3*4))+(3*4)
+//		//위처럼 식을 바꿀 수 있음
+//		//위의 내용을 식을 코드로 바꾸면 아래와 같음
+//		
+//		int sum = 0;
+//		for(int i = 0; i < n - 1; i++) {
+//			int tempSum = 0;
+//			//앞에 곱해줄 수 i 0, 1, 2 순으로 바뀜 
+//			for(int j = i + 1; j < n; j++) {
+//				tempSum += Integer.parseInt(arr[j]);
+//				//더해서 곱해줄 뒤엣수 j i보다 하나 큰값부터 마지막 값가지 더해줌
+//			}
+//			sum += Integer.parseInt(arr[i]) * tempSum;
+//		}
+//		
+//		System.out.println(sum);
+		
+//		[10179] 쿠폰 [완료]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		double []arr = new double [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextDouble();
+//			double sum = arr[i] * 80 / 100;
+//			//20 할인이니까 80 곱한후 100으로 나누어줌
+//			System.out.println("$"+ String.format("%.2f", sum));
+//			//String format메소드 활용하여 "%.2f"소숫점 둘째자리까지 출력함
+//		}
+		
+//		[15667] [블로그] 
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int fireNumber = 1;
+//		while(fireNumber != 10) {
+//			int sum = 1;
+//			//처음 불꽃은 무조건 1번임
+//			sum += fireNumber +(fireNumber * fireNumber);
+//			//처음 갈래에 그다음 (갈래 *갈래) 해주면 총 불꽃수를 알수 있음
+//			if(sum == n) {
+//				break;
+//			}else {
+//				fireNumber++;
+//			}
+//			
+//		}
+//		
+//		System.out.println(fireNumber);
+		
+		
+/////////////////////////////////////////////////////////////////////	1003공부		
+
+		
+//			[1356] 유진수 [블로그]		
+
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		String n = bf.readLine();
+//		int [] arr = new int [n.length()];
+//		
+//		
+//		for(int i = 0; i < n.length(); i++) {
+//			arr[i] = n.charAt(i) - '0';
+//		}
+//		
+//		int count = 1;
+//		//곱해주는 범위를 지정해주는 변수
+//		//초기 값 1
+//		//ex) 1234 일 때 1까지
+//		loop1 : while(true) {		
+//			if(count > arr.length -1) {
+//				System.out.println("NO");
+//				break loop1;
+//			}
+//			//카운트가 배열의 위치보다 커지면 반복문 종료
+//			
+//			int frontM = 1;
+//			int backM = 1;
+//			//앞자리 뒷자리 곱을 저장해줄 변수
+//			for(int i = 0; i < count; i++) {
+//				frontM *= arr[i];
+//			}
+//			//앞자리곱계산
+//			for(int i = count; i < arr.length; i++) {
+//				backM *= arr[i];
+//			}
+//			//뒷자리곱계산
+//			if(frontM == backM) {
+//				System.out.println("YES");
+//				break loop1;
+//			}else {
+//				count++;
+//			}
+//			//같은지 여부 체크후 아니면 곱위치를 증가시켜줌
+//			
+//		}
+		
+//		[17388] 와글와글 숭고한
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));			
+//		int [] arr = new int [3];
+//		int sum = 0;
+//		int min = 999999;
+//		
+//		for(int i = 0; i < 3; i++) {
+//			arr[i] =  Integer.parseInt(bf.readLine()); 
+//			sum += arr[i];
+//			if(arr[i] < min) {
+//				min = arr[i];
+//			}			
+//		}
+//		
+//		if(sum >= 100) {
+//			System.out.println("OK");
+//		}else {
+//			if(arr[0] == min) {
+//				System.out.println("Soongsil");
+//			}else if(arr[1] == min) {
+//				System.out.println("Korea");
+//			}else{
+//				System.out.println("Hanyang");
+//			}
+//		}
+
+		
+/////////////////////////////////////////////////////////////////////////	1004공부		
+		
+//		[2033] 반올림 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String n = scan.next();
+//		
+//		int [] arr = new int [n.length() + 2];
+//
+//		
+//		int temp = 0;
+//		//n의 초기 문자위치 지정할 변수
+//		for(int i = 2; i < arr.length; i++) {
+//			arr[i] = n.charAt(temp) - '0';
+//			temp++;
+//		}
+//		//초기배열 {0,0,1,5}
+//		//올림을 생각해 앞에 자리 여유를 줌
+//		
+//		for(int i = arr.length - 1; i > 2; i--) {
+//			if(arr[i] >= 5) {
+//				arr[i] = 0;
+//				arr[i -1] += 1;
+//			}else {
+//				arr[i] = 0;
+//			}
+//		}
+//		//맨끝자리부터 앞에 한자리를 제외한 숫자 까지 반올림
+//		
+//		
+//		if(arr[2] > 9) {
+//		int mok = arr[2] / 10;
+//		int nmg = arr[2] % 10;
+//		arr[1] += mok;
+//		
+//		if(nmg >= 5) {
+//			arr[1] += 1;
+//		}else {
+//			arr[2] = 0;
+//		}
+//		}
+//		//첫자리 올림이 있엇나 비교함
+//		//올림이 있으면 목만큼 올려주고
+//		//나머지가 5가 아닐 경우 0을 대입함
+//		
+//		
+//		if(arr[1] == 0) {
+//			for(int i = 2; i <arr.length; i++) {
+//				System.out.print(arr[i]);
+//			}
+//		}else {
+//				for(int i = 1; i <arr.length; i++) {
+//					System.out.print(arr[i]);
+//				}
+//			}
+	
+
+//		[15873] 공백 없는 ~~~[블로그]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		String n = bf.readLine();
+//		
+//		int [] arr = new int[n.length()];
+//		
+//		for(int i =0; i <arr.length; i++) {
+//			arr[i] = n.charAt(i) - '0';
+//		}
+//		
+//		for(int i = 1; i < arr.length; i++) {
+//			if(arr[i] == 0) {
+//				arr[0] *= 10;
+//			}else {
+//				arr[0] += arr[i];
+//			}
+//		}
+//		//0일 경우 연속된 수임으로 * 10 
+//		//아닐경우 더해줌
+//		System.out.println(arr[0]);
+		
+
+		
+//		[15780] 멀티탭충분하니? [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int Student = scan.nextInt();
+//		int MutiN = scan.nextInt();
+//		//멀티탭수
+//		
+//		int [] arr= new int [MutiN];
+//		
+//		int sum = 0;
+//		//사용 가능 멀티탭 구멍 갯수 샐 변수
+//		for(int i = 0; i < arr.length; i++) {
+//			arr[i] = scan.nextInt();
+//			if(arr[i] % 2 == 0) {
+//				sum += arr[i] / 2;		
+//			}else {
+//				sum += (arr[i] / 2)  + 1;
+//			}
+//		}
+//		//한칸씩 뛰어주어야 하기 때문에
+//		//짝수의 구멍이면 (n / 2) 개가 사용가능하며,
+//		//홀수의 구멍이면 (n / 2) + 1 개가 사용가능하다.
+//		
+//		
+//		if(sum >= Student) {
+//			System.out.println("Yes");
+//		}else {
+//			System.out.println("No");
+//		}
+		
+		
+/////////////////////////////////////////////////////////////////////////	1005공부	
+		
+//		[3035] 스캐너 [몰겟음]
+		
+		  
+		   
+//		   int R = scan.nextInt();
+//		   int C = scan.nextInt();
+//		   int ZR = scan.nextInt();
+//		   int ZC = scan.nextInt();
+//		   
+//		   String [][] arr = new String [51][51];
+//		   
+//		    for (int i = 0; i < R; ++i) {
+//		    	for (int j = 0; j < C; ++j) {
+//		    		arr[i][j] = scan.next();
+//		    	}
+//		    }
+//		 
+//		    for (int i = 0; i < R; ++i) 
+//		        for (int l = 0; l < ZR; ++l) 
+//		            for (int j = 0; j < C; ++j) 
+//		                for (int k = 0; k < ZC; ++k)
+//		                    System.out.printf("%c", arr[i][j]);
+		            
+		
+		
+//		[2755] 이번학기 평점은 몇점 [블로그]
+		
+//		int n = scan.nextInt();
+//		String [][] arr = new String [n][3];
+//	
+//		double sum = 0;
+//		//학점 * 성적의 합이들어갈 변수
+//		double haksum = 0;
+//		//학점의 합이들어갈 변수
+//		for(int i = 0; i < n; i++) {
+//			double temp = 0;
+//			//한 과목의 성적이 임시로 들어갈 변수
+//			for(int j = 0; j < 3; j++) {
+//			arr[i][j] = scan.next();
+//			}	
+//			String score = arr[i][2];				
+//			if (score.charAt(0) == 'A') temp = 4; 
+//			if (score.charAt(0) == 'B') temp = 3; 
+//			if (score.charAt(0) == 'C') temp = 2; 
+//			if (score.charAt(0) == 'D') temp = 1;
+//		    if (score.charAt(1) == '+') temp += 0.3; 
+//		    if (score.charAt(1) == '-') temp -= 0.3;
+//			//각 스트링 값당 점수를 부여하는 과정
+//		    
+//			sum += Integer.parseInt(arr[i][1]) * temp;	
+//			//총합  = 학점 * 성적
+//			haksum += Integer.parseInt(arr[i][1]);
+//			//학점합  += 학점 
+//		}
+//
+//		System.out.println(String.format("%.2f", sum/haksum));
+//		//스트링 포멧 활용하여 2자리까지 출력
+		
+	
+/////////////////////////////////////////////////////////////////////////	1006공부			
+		
+		// dfs 탐색 코드
+		
+//		Scanner scan = new Scanner(System.in);
+//        nV = scan.nextInt();
+//        nE = scan.nextInt();
+//        ad = new int[nV+1][nV+1]; // 변수 초기화
+//        visit = new boolean[nV+1]; // 변수 초기화
+//        
+//        for(int i = 0; i < nE; i++){
+//            int t1 = scan.nextInt();
+//            int t2 = scan.nextInt();
+//            
+//            ad[t1][t2] = ad[t2][t1] = 1;
+//        }
+//        
+//        dfs(1); // 1번부터 탐색 시작
+//
+//	}
+		//ex) 입력 값 nV = 6;
+		// nE =8;
+		//1 5
+		//1 6
+		//2 3
+		//2 4
+		//2 6 
+		//3 4
+		//3 5
+		//5 6
+	
+//		//함수 지정 부분
+//		static int nE;// 간선의 개수
+//	    static int nV;//정점의 개수
+//	    static int[][] ad;   
+//	    static boolean[] visit; 
+//
+//	    public static void dfs(int i){
+//	        visit[i] = true;   // 함수 호출 시, visit 했음을 표시
+//	        System.out.print(i+ " ");
+//	        
+//	        for(int j = 1; j < nV+1; j++){
+//	            if(ad[i][j] == 1 && visit[j] == false){  // j를 방문하지 않았으면 j를 방문한다.
+//	                dfs(j);
+//	            }
+//	        }
+		
+		
+		
+//		//ArrayList 이론 정리
+//		ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3));
+//		list.remove(1);  //index 1 제거
+//		//배열값 하나 삭제시 모두 앞으로 땡겨저 다시 0번부터 시작할수 잇게한다.
+//		list.clear();  //모든 값 제거
+//		list.add(45);//숫자 삽입
+//		System.out.println(list.size());		
+//		System.out.println(list);
+//		System.out.println(list.get(1));
+//		
+//		System.out.println("_______________________________________");
+//		
+//		for(Integer i : list) { //for문을 통한 전체출력
+//		    System.out.print(i);
+//		}
+//
+//		System.out.println(list.contains(1)); //list에 1이 있는지 검색 : true
+//		System.out.println(list.indexOf(1)); //1이 있는 index반환 없으면 -1
+		
+		
+//		Queue<Integer> q = new <Integer>LinkedList();
+//		
+//		q.offer(1);
+//		q.offer(2);
+//		q.offer(3);
+//		
+//		System.out.println(q.poll());
+//		System.out.println(q.peek());
+		
+/////////////////////////////////////////////////////////////////////////	1008공부			
+		
+//		[1260] dfs bfs
+		
+//		Scanner scan = new Scanner(System.in);
+//		nV = scan.nextInt();
+//		nE = scan.nextInt();
+//		int start = scan.nextInt();
+//		ad= new int [nV + 1][nV + 1];
+//		visit = new boolean [nV + 1];
+//		adB= new int [nV + 1][nV + 1];
+//		visitB = new boolean [nV + 1];
+//		
+//		for(int i = 0; i < nE; i++) {
+//			int t1 = scan.nextInt();
+//			int t2 = scan.nextInt();
+//			
+//			ad[t1][t2] = ad[t2][t1] = 1;
+//			adB[t1][t2] = adB[t2][t1] = 1;
+//		}
+//		
+//		dfs(start);
+//		System.out.println();
+//		bfs(start);
+//		
+//		}
+//	
+//	
+//	static int nE;
+//	static int nV;
+//	static int ad [][];
+//	static int adB [][];
+//	static boolean visit[];
+//	static boolean visitB[];
+//	
+//	public static void dfs(int i) {
+//		visit[i] = true;
+//		System.out.print(i+ " ");
+//		
+//		for(int j = 1; j < nV + 1; j++) {
+//			if(ad[i][j] == 1 && visit[j] == false) {
+//				dfs(j);
+//			}
+//		}
+//	}
+//	
+//	
+//	public static void bfs(int i) {
+//		Queue <Integer> q = new <Integer> LinkedList();
+//		q.offer(i);
+//		visitB[i] = true;
+//		
+//		while(!q.isEmpty()) {
+//			int temp = q.poll();
+//			System.out.print(temp + " ");
+//			
+//			for(int j = 1; j < nV + 1; j++) {
+//				if(adB[temp][j] == 1 && visitB[j] == false) {
+//					q.offer(j);
+//					visitB[j] = true;
+//				}
+//			}
+//		
+//		}
+	
+	
+	
+//		[2178]미로탐색	 [다시보기]
+			
+		
+//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//
+//	        N = Integer.parseInt(st.nextToken());
+//	        M = Integer.parseInt(st.nextToken());
+//
+//	        map = new int[N][M];
+//	        visited = new boolean[N][M];
+//
+//	        for (int i = 0; i < N; i++) {
+//	            st = new StringTokenizer(br.readLine());
+//	            String line = st.nextToken();
+//	            for (int j = 0; j < M; j++) {
+//	                map[i][j] = line.charAt(j) - '0';
+//	            }
+//	        }
+//
+//	        bfs(0,0);
+//
+//	        System.out.println(map[N-1][M-1]);
+//	}
+//
+//    static int[] dr = {1,-1,0,0};
+//    static int[] dc = {0,0,-1,1};
+//    static boolean[][] visited;
+//    static int[][] map;
+//    static int N,M;
+//	
+//    public static void bfs(int i, int j){
+//        Queue<int[]> q = new LinkedList<>();
+//        q.offer(new int[] {i,j});
+//        while(!q.isEmpty()){
+//            int location[] = q.poll();
+//            visited[i][j] = true;
+//
+//            for(int dir = 0; dir<4; dir++){
+//                int r = location[0] + dr[dir];
+//                int c = location[1] + dc[dir];
+//                
+//                //좌표가 -1이 되거나 N or M이 되어 map의 범위를 벗어나면 안되므로
+//                if(r >= 0 && c >= 0 && r < N && c < M){
+//                    if(map[r][c] != 0 && !visited[r][c]){
+//                        q.offer(new int[] {r,c});
+//                        visited[r][c] = true;
+//                        map[r][c] = map[location[0]][location[1]] + 1;
+////                        출력값 체크 를 위한 부분
+//       
+//                        System.out.println();
+//                        System.out.println(location[0] +" "+location[1]);
+//                        System.out.print("배열의 위치는 " + r + " " + c );
+//                        System.out.println();
+//                        System.out.println("이동횟수는 " + map[r][c]);
+//                    }
+//                }
+//            }
+//        }
+    
+	
+///////////////////////////////////////////////////////////////////////	1009공부	
+
+		// [6502] 동혁 피자 [완료]
+		
+//			Scanner scan = new Scanner(System.in);
+//			int count = 0;
+//			while(true){
+//			int sum = 0;
+//			//식탁크기 초기화
+//			double r = scan.nextDouble();
+//			if(r== 0) {break;}
+//			double w = scan.nextInt();
+//			w = Math.pow(w, 2);
+//			double l = scan.nextInt();
+//			l = Math.pow(l, 2);
+//			r = r * 2;
+//			//식탁의 넓이를 측적함 
+//			count++;
+//			//사각형의 대각선의 길이가 지름보다 작거나 같으면 올릴 수 있다.
+//			if(r >= Math.sqrt(w + l)) {
+//				System.out.println("Pizza " + count + " fits on the table");
+//			}else {
+//				System.out.println("Pizza " + count + " does not fits on the table");
+//			}
+//
+//		}
+			
+			
+			
+			// [7510]	고급수학 [블로그]
+			
+//			Scanner scan = new Scanner(System.in);			
+//			int Tcase = scan.nextInt();			
+//			int [] arr = new int[3];
+//			int Tn = 0;
+//			//출력횟수 넣어줄 변수
+//			
+//			for(int i = 0; i < Tcase; i++) {
+//				int [] temp = new int[3];
+//				//가장 큰 변을 제외한 나머지가 들어갈 배열
+//				int count = 0;
+//				//temp 배열 위치 지정 변수
+//				int max = 0;
+//				//최대 변 길이 들어갈 변수
+//				for(int j = 0; j < arr.length; j++) {
+//					arr[j] = scan.nextInt();
+//					if(max < arr[j]) {
+//						max = arr[j];
+//					}
+//
+//				}
+//			
+//			for(int l = 0; l < arr.length; l++) {
+//				if(arr[l] != max) {
+//					temp[count] = arr[l];
+//					count++;	
+//				}
+//			}
+//				//max가 이닌 나머지 변을 temp에 넣어줌
+//				
+//			int sum = 0;
+//			for(int k = 0; k < temp.length; k++) {
+//				sum += Math.pow(temp[k], 2);
+//			}
+//			//짧은 두변 제곱합 구해줌
+//			
+//			Tn++;
+//			if(Math.pow(max, 2) == sum) {
+//				System.out.println("Scenario #"+ Tn + ":");
+//				System.out.println("yes");
+//			}else {
+//				System.out.println("Scenario #"+ Tn + ":");
+//				System.out.println("No");
+//			}
+//			//가장 긴변 제곱과 같은지 체크 해줌
+
+		// [16431]베시아 데이지		[블로그]
+		
+//		int []bessie = new int [2];
+//		int []daisy = new int [2];
+//		int [] arr = new int [2];
+//		
+//		for(int i = 0; i < 2; i++) {
+//			bessie[i] = scan.nextInt();
+//		}
+//		
+//		for(int i = 0; i < 2; i++) {
+//			daisy[i] = scan.nextInt();
+//		}
+//		
+//		for(int i = 0; i < 2; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		bessie[0] = Math.abs(bessie[0] - arr[0]);
+//		bessie[1] = Math.abs(bessie[1] - arr[1]);
+//		int bCount = bessie[0] >= bessie[1] ? bessie[0] : bessie[1];
+//		//한턴에 모든 방향으로 이동 가능하기때문에 행이나 열중 차이가 큰게 그 턴에 최대 이동값이된다.
+//		//때문에 행이나 열중 차이가 큰 값이 최소 이동거리가 된다.
+//		daisy[0] = Math.abs(daisy[0] - arr[0]);
+//		daisy[1] = Math.abs(daisy[1] - arr[1]);
+//		int dCount = daisy[0] + daisy[1];
+//		//한턴에 행이나 열중 하나 만 움직일 수 있으므로,
+//		//주어진 목적지의 행열의 각 차이가 최소 이동거리가 된다.
+//		
+//		if(bCount < dCount) {
+//			System.out.println("bessie");
+//		}else if(bCount > dCount) {
+//			System.out.println("daisy");
+//		}else {
+//			System.out.println("tie");
+//		}
+			
+		
+		
+///////////////////////////////////////////////////////////////////////	1010공부			
+		
+//		// [2667] 단지번호 붙이기 [다시보기]
+//		
+//			
+//		 n = scan.nextInt();
+//		
+//		map = new int [n][n];
+//		visited = new int[n][n];
+//		
+//		for(int i = 0; i <n; i++) {
+//			String str = scan.next();
+//			for(int j = 0; j < n; j++) {
+//				map[i][j] = str.charAt(j) - '0';
+//			}
+//		}
+////	  		스트링 값으로 배열의 각 열의 값을 입력받음
+//		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < n; j++) {
+//				if(map[i][j]== 1 && visited[i][j] == 0) {
+//					cnt = 1;
+//					solve(i, j);
+//					al.add(cnt);
+//				}
+//			}
+//		}
+//		
+//		Collections.sort(al);
+//		
+//		System.out.println(al.size());
+//		
+//		for(int i = 0; i <al.size(); i++) {
+//			System.out.println(al.get(i));
+//		}
+//	}
+//	  
+//		static int n, cnt;
+//		static int [][]map;
+//		static int [][]visited;
+//		static int dx[] = {-1, 1, 0 ,0};
+//		static int dy[] = {0, 0, -1, 1};
+//		
+//		static ArrayList al = new ArrayList();
+//		
+//		static int solve (int x, int y) {
+//			
+//			visited[x][y] = 1;
+//			
+//			for(int i = 0; i < 4; i++) {
+//				int tx = x + dx[i]; 
+//				int ty = y + dy[i];
+//				
+//				if(tx >=0 && ty >=0 && tx < n && ty < n) {
+//					if(map[tx][ty] == 1 && visited[tx][ty] ==0) {
+//						solve(tx, ty);
+//						cnt++;
+//					}
+//				}
+//				
+//			}
+//			return cnt;
+		
+//		// [1059] 수 2 [블로그]
+		
+//		Scanner scna= new Scanner(System.in);
+//		
+//		int L = scan.nextInt();
+//		int [] arr = new int [L];		
+//		
+//		for(int i = 0; i < L; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int N = scan.nextInt();
+//		int start = 0;
+//		int end = 0;
+//		//시작 배열과 끝 배열의 위치를 받은 변수
+//		
+//		Arrays.sort(arr);
+//		
+//		for(int i = 0; i < L; i++) {
+//			if(arr[i] < N) {
+//				start = arr[i] + 1;
+//				end = arr[i + 1] - 1;
+//			}
+//		}
+//		//포함하지 않는 범위여야 하기 때문에
+//		//시작은 +1 끝은 -1을 해줌
+//		
+//		int count = 0;
+//		//unlucky 갯수를 세줄 변수
+//		int tempEnd = end;
+//		//끝값을 임시로 받아줄 변수
+//		//end 값을 하나씩 빼가면서 비교해 줄 거길 때문에
+//		//초기화용 변수 이다.
+//		while(start != end) {
+//		for(int i = start; i <= end; i++) {
+//			if(start <= N && end >= N || start == N || end == N) {
+//			count++;
+//			}
+//			end--;
+//		}
+//		//스타트와 엔드 구간안에 있거나 같으면 count를 하나씩 더해줌
+//		//이후 end 값을 하나씩 빼주면서 범위에 있는지 체크
+//		
+//		end = tempEnd;
+//		//엔드값 초기화
+//		
+//		if(start + 1 != end) {
+//			start = start + 1;
+//		}else {
+//			break;
+//		}
+//		//이번에는 스타트값을 하나더 해줌
+//		//스타트값이 엔드값과 같을 경우에는 더이상 범위안에
+//		//숫자가 없는 경우이기 때문에 종료
+//		}
+//		System.out.println(count);
+		
+		
+		
+///////////////////////////////////////////////////////////////////////	1011공부		
+
+//		// [1059] 수 이어쓰기 2 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int k = scan.nextInt();
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		
+//		for(int i = 1; i <=n; i++) {
+//			String str = Integer.toString(i);
+//			//n 까지의 값을 스티링으로 받아줌
+//			for(int j = 0; j < str.length(); j++) {
+//				int temp = str.charAt(j) - '0';
+//				//두 자리 이상의 스트링을 하나씩 분리한 후
+//				arr.add(temp);
+//				//해당 arraylist에 담아줌
+//			}
+//		}
+//		
+//		System.out.println(arr.get(k -1));
+//		//순서가 0부터 시작이기 때문에 k-1한 위치가 찾고자 한 위치임
+		
+		
+		
+//		// [3029] 경고 [블로그]
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		String start = br.readLine();
+//		String end = br.readLine();
+//		
+//		int [] arrS = new int [6];
+//		int [] arrE = new int [6];
+//		int countS = 0;
+//		int countE = 0;
+//		
+//		for(int i = 0; i < 6; i++) {
+//			if(start.charAt(i) != 58) {
+//				arrS[countS] = start.charAt(i) - '0';
+//				countS++;
+//
+//			}
+//			
+//			if(end.charAt(i) != 58) {
+//				arrE[countE] = end.charAt(i) - '0';
+//				countE++;
+//			}
+//		}
+//		
+//		int hourS = arrS[0] * 10 + arrS[1];
+//		int minuteS = arrS[2] * 10 + arrS[3];
+//		int secondS = arrS[4] * 10 + arrS[5];
+//		
+//		int hourE = arrE[0] * 10 + arrE[1];
+//		int minuteE = arrE[2] * 10 + arrE[3];
+//		int secondE = arrE[4] * 10 + arrE[5];
+//		
+//		
+//		int second = 0;
+//		if(secondS <= secondE) {
+//			second = secondE - secondS;
+//		}else {
+//			second = (60 - secondS) + secondE;
+//			minuteS += 1;
+//		//시작하는 초단위가 끝나는 초단위 보다 작은경우 분 올림 발생
+//		}
+//		//초단위 체크
+//		
+//		int minute = 0;
+//		if(minuteS <= minuteE) {
+//			minute = minuteE - minuteS;
+//		}else {
+//			minute = (60 - minuteS) + minuteE;
+//			hourS += 1;
+//		//시작하는 분단위가 끝나는 초단위 보다 작은경우 분 올림 발생	
+//		}
+//		//분단위 체크
+//		
+//		
+//		if(hourS >= 25) {
+//			hourS = 24;
+//			hourE--;
+//		}
+//		//24시간이 넘어가는 경우 24시간으로 초기화 시켜주고
+//		//끝나는 시간을 -- 해줌
+//		
+//		
+//		int hour = 0;
+//		if(hourS <= hourE) {
+//			hour = hourE - hourS;
+//		}else {
+//			hour = (24 - hourS) + hourE;
+//		}
+//		//시간단위 체크
+//		
+//		String hourW;
+//		if(hour < 10) {
+//			hourW = '0' + Integer.toString(hour);
+//		}else {
+//			hourW = Integer.toString(hour);
+//		}
+//		String minuteW;
+//		if(minute < 10) {
+//			minuteW = '0' + Integer.toString(minute);
+//		}else {
+//			minuteW = Integer.toString(minute);
+//		}
+//		String secondW;
+//		if(second < 10) {
+//			secondW = '0' + Integer.toString(second);
+//		}else {
+//			secondW = Integer.toString(second);
+//		}
+//		//각 단위마다 10 이하인지 체크
+//		
+//		
+//		System.out.println(hourW +":" +minuteW+ ":" +secondW);
+		
+		
+///////////////////////////////////////////////////////////////////////	1012공부
+		
+		
+//		// [17087] 숨바꼭질6
+		
+//	       	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//	        // reader writer 생성
+//	 
+//	        String[] info = br.readLine().split(" ");
+//	        // info[0]에 N / info[1]에 S
+//	        String[] temp = br.readLine().split(" ");
+//	 
+//	        int[] distance = new int[temp.length];
+//	 
+//	        for (int i = 0; i < temp.length; i++) {
+//	            if (Integer.parseInt(temp[i]) > Integer.parseInt(info[1])) {
+//	                distance[i] = Integer.parseInt(temp[i]) - Integer.parseInt(info[1]);
+//	            } else {
+//	                distance[i] = Integer.parseInt(info[1]) - Integer.parseInt(temp[i]);
+//	            }
+//	        }
+//	 
+//	        int brothersCnt = Integer.parseInt(info[0]);
+//	 
+//	        int answer = distance[0];
+//	 
+//	        if (brothersCnt != 1) {
+//	            // 동생이 한명이 아니면 최대 공약수를 구한다
+//	            for (int i = 1; i < distance.length; i++) {
+//	                answer = gcd(answer, distance[i]);
+//	            }
+//	        }
+//	 
+//	        bw.write(String.valueOf(answer));
+//	        bw.flush();
+//		
+//	}	
+//    static int gcd(int a, int b) {
+//        if (b == 0) {
+//            return a;
+//        } else {
+//            return gcd(b, a % b);
+//        }
+		
+		
+//		// [2606] 바이러스 [bfs문제]
+		
+		
+//		Scanner sc = new Scanner(System.in);	
+//		
+//		int n= sc.nextInt(); // 컴퓨터의 수
+//		int m = sc.nextInt(); // 네트워크 상에 연결되어 있는 컴퓨터 쌍의 수 즉, 간선의 수
+//		
+//		map=new int[n+1][n+1];
+//		visited = new int[n+1];
+//		for(int i=0;i<m;i++) { // 그래프 구성
+//			int a = sc.nextInt();
+//			int b = sc.nextInt();
+//			map[a][b]=1;
+//			map[b][a]=1;
+//			
+//		}
+//		
+//		bfs(1);
+//		
+//    }
+//	
+//	static int map[][]; // 그래프 배열
+//	static int visited[]; // 방문 배열
+//	static void bfs(int start) { // BFS 메소드
+//		Queue<Integer> queue = new LinkedList<>();
+//		visited[start] =1;	
+//		queue.offer(start);
+//		
+//		int cnt = 0; // 감염 된 컴퓨터의 수
+//		
+//		while(!queue.isEmpty()) {
+//			int x = queue.poll();
+//			
+//			for(int i=1; i< map.length; i++) { // 차례대로 1번과 연결 된 컴퓨터들을 찾아 cnt변수 증가 
+//				if(map[x][i]==1 && visited[i]!=1) {
+//					queue.offer(i);
+//					visited[i] = 1;
+//					cnt++;
+//				}
+//				//연결된 게 없을 경우 for문 탈출
+//			}
+//		}
+//		System.out.println(cnt); //모든 탐색을 마치고 cnt 출력
+		
+//		// [1731] 추론 [블로그]
+		
+//		Scanner scan= new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int[n];
+//		
+//		for(int i = 0; i < n; i++ ) {
+//			arr[i] = scan.nextInt();
+//		}
+//
+//		if(Math.abs(arr[0] - arr[1]) == Math.abs(arr[1] - arr[2])){
+//			//등차일 경우 첫번째 값과 두번째 값이 차이의 절대값과
+//			//두번째값과 세번째 값의 차이는 같아야 함
+//			int next = Math.abs(arr[0] - arr[1]);
+//			//등차일 경우 해당 등차 값을 변수에 넣음
+//			System.out.println(arr[n-1] + next);
+//		}else {
+//			int next  = arr[1] / arr[0];
+//			//등차가 아닐 경우 무조건 등비이기 때문에
+//			//한 단계 큰 위치에 있는 수에서 전위치의 수를 나누어 주면,
+//			//해당 수열의 등비를 알 수 있음
+//			System.out.println(arr[n-1 * next]);
+//		}
+		
+///////////////////////////////////////////////////////////////////////	1013공부
+
+		
+//		// [3474] 교수가 된 현우		
+        
+//		Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int num5 = 0;
+//        for(int i=0;i<n;i++){
+//            long num = input.nextLong();
+//            for(int j=5;j<=num;j*=5){
+//            	//처음은 5가 들어있는 모든 수의 갯수를 셈
+//            	//다음은 25가 들어있는 모든 수의 갯수를 셈
+//            	//..... 위과정 num보다 작을때까지 반복
+//            	
+//            	num5 += num/j;
+//            }
+//            System.out.println(num5);
+//            num5 = 0;
+//        }
+		
+	
+//		// [10422] 괄효	[dp 점화식 문제]
+		
+//		int n = scan.nextInt();
+//		
+//		int [] arr= new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			if(arr[i] % 2 != 0) {
+//				System.out.println(0);
+//			}else {
+//				int count = 0;
+//				int even = 2;
+//				if(arr[i] == 2) {
+//					System.out.println((int)Math.pow(2, count));
+//				}else {
+//					while(arr[i] != even) {
+//						even = even + 2;
+//						count++;
+//					}
+//					System.out.println((int)Math.pow(2, count));
+//				}
+//			}
+//		}
+//		위의 풀이는 아님
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		int N = Integer.parseInt(br.readLine());
+//
+//		long[] dp = new long[5001];
+//		dp[0] = 1;
+//		dp[2] = 1;
+//		for(int i = 2; i <= 2500; i++) {
+//			for(int j = 0; j <= i-1; j++) {
+//				dp[i*2] += dp[j*2]*dp[(i-1-j)*2];
+//				dp[i*2] %= 1000000007L;
+//			}
+//		}
+//
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < N; i++) {
+//			int n = Integer.parseInt(br.readLine());
+//			sb.append(dp[n] + "\n");
+//		}
+//		System.out.println(sb);				
+//
+		
+//		// [11724] 연결 요소의 개수 [dfs]
+		
+//		Scanner sc = new Scanner(System.in); 
+//		
+//		V = sc.nextInt();
+//		E = sc.nextInt();
+//		
+//		int a,b;
+//		for(int i = 0; i < E; i++) {
+//			a = sc.nextInt();
+//			b = sc.nextInt();
+//			
+//			// 간선 연결
+//			graph[a][b] = graph[b][a] = 1;
+//		}
+//		
+//		int result = 0 ;
+//		
+//		// dfs 탐색
+//		for(int i = 1; i <= V; i++) {
+//			if(visited[i] == false) { // 방문한 적 없는 노드라면 dfs.
+//				dfs(i);
+//				result++;
+//			}
+//		}
+//		
+//		System.out.println(result);
+//		
+//		sc.close();
+//		return;
+//	}
+//		static int[][] graph = new int[1001][1001];
+//		static int V;
+//		static int E;
+//		static boolean[] visited = new boolean[1001];
+//		
+//		public static void dfs(int index) {
+//		if(visited[index] == true)
+//			return;
+//		else {
+//			visited[index] = true;
+//			for(int i = 1; i <= V; i++) {
+//				if(graph[index][i] == 1) {
+//					dfs(i);
+//				}
+//			}
+//		}
+			
+		
+		
+///////////////////////////////////////////////////////////////////////	1014공부	
+		
+		
+// 				[14502] 연구소 (dfs 백트래킹)
+		
+//			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//
+//	        n = Integer.parseInt(st.nextToken());
+//	        m = Integer.parseInt(st.nextToken());
+//	        map = new int[n][m];
+//	        copyed = new int[n][m];
+//
+//	        for (int i = 0; i < n; i++) {
+//	            st = new StringTokenizer(br.readLine());
+//	            for (int j = 0; j < m; j++) {
+//	                map[i][j] = Integer.parseInt(st.nextToken());
+//	                if (map[i][j] == 2)
+//	                    virusList.add(new Dot(i, j));
+//	            }
+//	        }
+//
+//	        setWall(0, 0);
+//	        System.out.println(max);
+//		
+//		
+//	}
+//    static class Dot {
+//        int x, y;
+//
+//        public Dot(int x, int y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//    }
+//
+//    static int n;
+//    static int m;
+//    static int[][] map;
+//    static int[][] copyed;
+//    static List<Dot> virusList = new ArrayList<Dot>();
+//    static int[] dx = {1, -1, 0, 0};
+//    static int[] dy = {0, 0, 1, -1};
+//    static int max = 0;
+//    
+//    static void setWall(int start, int depth) {
+//        if (depth == 3) {
+//            // 맵 복사
+//            copyMap();
+//
+//            // 바이러스 퍼트리기
+//            for (Dot dot : virusList) {
+//                spreadVirus(dot.x, dot.y);
+//            }
+//
+//            // 안전영역 크기 구하기
+//            max = Math.max(max, getSafeArea());
+//            return;
+//        }
+//
+//        for (int i = start; i < n * m; i++) {
+//            int x = i / m;
+//            int y = i % m;
+//
+//            if (map[x][y] == 0) {
+//                map[x][y] = 1;
+//                setWall(i + 1, depth + 1);
+//                map[x][y] = 0;
+//            }
+//        }
+//    }
+//
+//    // 기존 맵을 유지하기 위해 바이러스 퍼트릴 맵 복사하기
+//    static void copyMap() {
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                copyed[i][j] = map[i][j];
+//            }
+//        }
+//    }
+//
+//    // DFS 로 바이러스 퍼트리기
+//    static void spreadVirus(int x, int y) {
+//        for (int i = 0; i < 4; i++) {
+//            int nx = x + dx[i];
+//            int ny = y + dy[i];
+//
+//            if (0 <= nx && nx < n && 0 <= ny && ny < m) {
+//                if (copyed[nx][ny] == 0) {
+//                    copyed[nx][ny] = 2;
+//                    spreadVirus(nx, ny);
+//                }
+//            }
+//        }
+//    }
+//
+//    static int getSafeArea() {
+//        int safe = 0;
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                if (copyed[i][j] == 0)
+//                    safe++;
+//            }
+//        }
+//        return safe;
+//    }
+	
+//			[7576] 토마토  [다시보기 아직 안품]
+		
+//		n = scan.nextInt();
+//		m = scan.nextInt();
+//		
+//		map = new int [n+1][m+1];
+//		visited = new int [n+1][m+1];
+//		
+//		for(int i = 1; i <= n; i++) {
+//			String str = scan.next();
+//			for(int j = 1; j <= m; j++) {
+//				map[i][j] = str.charAt(j - 1) - '0';
+//			}
+//		}
+//			
+//		
+//		
+//	
+//	}
+//	
+//	static int n, m;
+//	static int map [][];
+//	static int visited [][];
+//	static int [] dr = {-1,1,0,0};
+//	static int [] dc = {0,0,-1,1};
+//	static int count = 0;
+//	static int start;
+	
+
+//			[2942] 퍼거슨과 사과 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int redApple = scan.nextInt();
+//		int greenApple = scan.nextInt();
+//		int player = 1;
+//		//선수의 수 초기 값 1명 부터 시작
+//		
+//		while(player <= redApple || player <= greenApple) {
+//			//선수가 둘의 사과중 적은 사과의 갯수보다 작거나 같을때까지만 반복
+//			if(redApple % player == 0 && greenApple % player == 0) {
+//				System.out.println(player + " " + redApple / player + " " +  greenApple / player);
+//			//공평하게 나누기 위해서 사과를 선수수로 나누었을때 0의 값이 나와야함
+//			}
+//			player++;
+//			//선수를 한명씩 추가해서 비교해봄
+//		}
+		
+		
+//		[1027] 고층건물 [다시보기]
+		
+//		int n, ans = 0, each_ans;
+//	    double delta;
+//	    boolean [] checker = new boolean[51];
+//	    double [] height = new double[51];
+//	    
+//	     n = scan.nextInt();
+//	    
+//	    for (int i = 1; i <= n; i++)
+//	      height[i] = scan.nextDouble();
+//	    
+//	    for (int i = 1; i <= n; i++)
+//	    {
+//	        for (int j = 1; j <= n; j++)
+//	            checker[j] = true;
+//	        
+//	        for (int j = i-2; j >= 1; j--)
+//	        {
+//	            delta = ((double)(height[i] - height[j])) / ((double)(i - j));
+//	            
+//	            for (int k = j+1; k < i; k++)
+//	            {
+//	                if ( height[j] + (k-j)*delta <= height[k] )
+//	                {
+//	                    checker[j] = false;
+//	                    break;
+//	                }
+//	            }
+//	        }
+//	        
+//	        for (int j = i+2; j <= n; j++)
+//	        {
+//	            delta = ((double)(height[i] - height[j])) / ((double)(j - i));
+//	            
+//	            for (int k = j-1; k > i; k--)
+//	            {
+//	                if ( height[j] + (j-k)*delta <= height[k] )
+//	                {
+//	                    checker[j] = false;
+//	                    break;
+//	                }
+//	            }
+//	        }
+//	        
+//	        each_ans = 0;
+//	        for (int j = 1; j <= n; j++)
+//	        {
+//	            if (checker[j])
+//	                each_ans++;
+//	        }
+//	        
+//	        ans = Math.max(ans, each_ans-1);
+//	    }
+//	    
+//	    System.out.println(ans);
+//	   
+		
+		
+///////////////////////////////////////////////////////////////////////	1015공부			
+	
+
+//		[14726] 신용카드 판별 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int Tcase = scan.nextInt();
+//		int [] CardNum = new int [16];
+//		
+//		int sum = 0;
+//		
+//		for(int i = 0; i < Tcase; i++) {
+//			String str = scan.next();
+//			for(int j = 0; j < 16; j++) {
+//				CardNum[j] = str.charAt(j) - '0';
+//			}
+//			//우선 문자열로 받고 하나씩 잘라가며 배열에 넣어줌
+//			
+//			for(int k = 0; k < 16; k++) {
+//				if(CardNum[k] % 2 == 0) {
+//					CardNum[k] *= 2;
+//					//짝수 체크후 짝수면 두배를 곱해줌
+//					if(CardNum[k] >= 10) {
+//					int temp = CardNum[k] % 10;
+//					CardNum[k] /= 10;
+//					CardNum[k] += temp;
+//					//10이상일 경우 10으로 나눈 나머지를 temp변수에  임시보관 후
+//					//현재 배열을 10으로 나눈 몫과 더해서 새로운 값을 넣어줌
+//				}
+//			}
+//				sum += CardNum[k];
+//				//해당값 총합에 넣어줌
+//			}
+//			System.out.println();
+//			if(sum % 10 == 0) {
+//				System.out.println("T");
+//			}else {
+//				System.out.println("F");
+//			}
+//			//10으로 나누어 나머지가 있나 체크
+//			
+//		}
+
+		
+//		[2991] 사나운개 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		//1번 개 짓는 시간, 쉬는 시간
+//		int c = scan.nextInt();
+//		int d = scan.nextInt();
+//		//2번 개 짓는 시간, 쉬는 시간
+//		
+//		for(int i = 0; i < 3; i++) {
+//			int man = scan.nextInt();
+//			int nmg = man;
+//			int count = 0;
+//			while(true) {
+//				nmg -= a;
+//				if(nmg <= 0) {
+//					count++;
+//					break;
+//				}
+//				nmg -=b;
+//				if(nmg <= 0) {
+//					count = 0;
+//					break;
+//				}
+//				//첫번째 개가 자는 여부 체크
+//				
+//			}
+//			
+//			
+//			nmg = man;
+//			//도착시간 초기화
+//			//다음 개의 시간이랑 비교하기 위함
+//			while(true) {
+//				nmg -= c;
+//				if(nmg <= 0) {
+//					count++;
+//					break;
+//				}
+//				nmg -=d;
+//				if(nmg <= 0) {
+//					count = 0;
+//					break;
+//				}
+//				//두번째 개가 자는 여부 체크
+//			}
+//			
+//			System.out.println(count);
+//		}
+	
+///////////////////////////////////////////////////////////////////////	1016공부			
+		
+
+//		[12756] 고급 여관 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int Aattack = scan.nextInt();
+//		int Ahp = scan.nextInt();
+//
+//		int Battack = scan.nextInt();
+//		int Bhp = scan.nextInt();
+//
+//		while(true) {
+//			Ahp -= Battack;
+//			Bhp -= Aattack;
+//			
+//			if(Bhp <= 0 && Ahp >= 1) {
+//				System.out.println("PLAYER A");
+//				break;
+//			}else if(Ahp <= 0 && Bhp >= 1) {
+//				System.out.println("PLAYER B");
+//				break;
+//			}else if(Ahp >= 1 && Bhp >= 1) {
+//				continue;
+//			}else {
+//				System.out.println("DRAW");
+//				break;
+//			}
+//	
+//		}
+
+		
+//		[11070] 피타고라스 기댓값	[블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int Tcase = scan.nextInt();
+//		//케이스 변수
+//		for(int i = 0; i < Tcase; i++) {
+//			int team = scan.nextInt();
+//			//팀변수
+//			int [][] score = new int [2][team + 1];
+//			//1행 득점 2행 실점이 담길 배열
+//			int game = scan.nextInt();
+//			//게임수 변수
+//			int [][] arr = new int [game][4];
+//			//게임수당 스코어 담길 배열
+//			for(int j = 0; j < game; j++) {
+//				for(int k = 0; k < 4; k++) {
+//					arr[j][k] = scan.nextInt();
+//				}
+//				score[0][arr[j][0]] += arr[j][2];  
+//				//a 팀 승점을 담아둠
+//				score[1][arr[j][0]] -= arr[j][3];
+//				//a 팀 실점을 담아둠				
+//				score[0][arr[j][1]] += arr[j][3]; 
+//				//b 팀 승점을 담아둠
+//				score[1][arr[j][1]] -= arr[j][2];
+//				//b 팀 실점을 담아둠
+//			}
+//			
+//			double [] fscore = new double [team];
+//			//최종 기댓값이 담길 배열
+//			double max = 0;
+//			double min = 9999;
+//			for(int f = 0; f < team; f++) {
+//				fscore[i] = Math.pow(score[0][f+1], 2)/(Math.pow(score[0][f+1], 2) + (Math.pow(score[1][f+1], 2)));
+//				//공식 적용함 값 각 팀마다 넣어줌
+//				fscore[i] *= 1000;
+//				//최종값 1000곱해서 출력해야 함으로 1000곱해줌
+//			
+//				if(fscore[i] >= max) {
+//					max = fscore[i];
+//				}
+//				
+//				if(fscore[i] <= min) {
+//					min = fscore[i];
+//				}
+//				//기댓값이 가장 큰 값과 작은값을 저장해줌
+//			}
+//
+//				System.out.println((int)max);
+//				System.out.println((int)min);
+//			}
+
+/////////////////////////////////////////////////////////////////////	1017공부
+		
+//		[2018] 수들의 합 5 [블로그]
+		
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int n  = Integer.parseInt(bf.readLine());		
+//		int count = 1;
+//		//자기자신도 연속된 수에 포함되기 때문에 무조건 하나는 존재함
+//		
+//		for(int i = 1; i < (n / 2) + 1; i++) {
+//			int sum = i;
+//			//연속된 수의 시작값은 i 부터 시작함
+//			for(int j = i + 1; i < (n / 2) + 2; j++) {
+//				if(sum == n) {
+//					count++;
+//					break;
+//				}
+//				//sum에 j를 계속 더해주면서 n과 같아지고 하나 count에 더해줌
+//				if(sum > n) {
+//					break;
+//				}
+//				//sum이 n보다 커지면 더이상 비교할 필요가 없기 때문에
+//				//break를 걸어줌
+//				sum += j;
+//			}
+//		}
+//		
+//		System.out.println(count);
+//		
+//		
+//		}
+		
+//			[2622] 삼감형만들기
+	
+//		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+//		int n  = Integer.parseInt(bf.readLine());	
+//		int [] arr = new int [3];
+//		
+//		int count = 0;
+//		int sum = 0;
+//		for(int i = 1; i <= n / 2; i++) {
+//			arr[0] = i;
+//			for(int j = 1; j <= n / 2; j++) {
+//				arr[1] = j;
+//				for(int k = 1; k <= n / 2; k++) {
+//					arr[2] = k;
+//					sum += i + j + k;
+//					System.out.println(sum);
+//					if(sum != n) {
+//						sum = 0;
+//					}else {
+//						sum = 0;
+//						for(int l = 0; l < 3; l++) {
+//							sum += arr[l];
+//						}		
+//						int max = 0;
+//						for(int u = 0; u < 3; u++) {
+//							if(arr[u] > max) {
+//								max = arr[u];
+//							}
+//						}
+//						if(sum - max > max) {
+//							count++;
+//						}
+//					}
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
+		// 내가 푼거는 코드값도 더럽고 중복된 삼각형을 체크하지 못함
+//////////////////////////////////////////////////////////////////////////////////////		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        int N = Integer.parseInt(br.readLine());
+//        int cnt = 0;
+//        for (int i = 1; 0 < N - i; i++) {
+//            for (int j = i; j <= N - i - j; j++) {
+//                int longlong = N - i - j;
+//                if (i + j > longlong) cnt++;
+//            }
+//        }
+//        bw.write(String.valueOf(cnt));
+//        bw.flush();
+	//원리를 제대로 파악하지 못해서 그런거 같음
+		
+		
+/////////////////////////////////////////////////////////////////////	1019공부		
+
+//		[1312] 소수	[블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		double a = scan.nextDouble();
+//		double b = scan.nextDouble();
+//		
+//		int n = scan.nextInt();
+//		
+//		String str = Double.toString(a/b);
+//		//순서 체크를 위한 스트링형으로 변환
+//		
+//		int answer = str.charAt(n + 1) - '0';
+//		//위치는 0 부터 시작 수수점은 제외하고 순서를 세야하기 때문에
+//		//0과.은 문자는 제외하기 위해 n+1의 위치에 숫자를 출력 
+//		
+//		System.out.println(answer);
+//		
+//		[14568]		2017 연세대학교 프로그래밍 경시대회 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		
+//		int a = 1; 
+//		//영훈
+//		int b = 3;
+//		//남규: 영훈보다 상타수 + 2
+//		int c = 2;
+//		//택희: 사탕수 무조건 짝수
+//		
+//		int count = 0;
+//		while(true) {
+//			int sum = 0;
+//			sum += a + b + c;
+//			if(n == sum) {
+//				count ++;
+//			}
+//			c = c + 2;	
+//			//짝수니까 2씩 더해주면서 비교
+//			int nmg = n - c;
+//			//n 에서 c 를 빼준값이 a + b 가 됨
+//			
+//			if(nmg % 2 == 0) {
+//				a = nmg / 2 - 2;
+//				b = nmg / 2 + 2;
+//				
+//			}else {
+//				a = nmg / 2 - 1;
+//				b = nmg / 2 + 1;
+//			}
+//			//짝 홀 수 여부 따져 항상 b가
+//			//a 보다 +2 클 수 있도록 체크
+//			
+//			
+//			if(a + b < 3 || c >= n - 3) {
+//				break;
+//			}
+//			//  a + b 가 3보다 작으면 조건 2가 충족이 안되고
+//			// c 가 n - 3 보다 커져도 충족이 안되기 때문에
+//			//break; 선언
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//		[8394] 악수 [블로그]
+		
+//		//피보나치 수열 문제이다.
+//		
+//		Scanner scan = new Scanner(System.in);		
+//		int n = scan.nextInt();
+//		
+//		int a = 1;
+//		int b = 1;
+//		int sum = 2;
+//		
+//		if(n <=  1) {
+//			System.out.println(1);
+//			//주어진 사람이 1보다 작거나 같으면.
+//			//가능한 악수수는 1이다.
+//		}else {
+//			for(int i = 3; i <= n; i++) {
+//				a = b;
+//				b = sum;
+//				sum = a + b;
+//				//2이상일 경우 피보나치로 구현해주면된다.
+//			}
+//			
+//			sum %= 10;
+//			//수가 매우 커지면 끝자리만 출력한다고 했으니
+//			//합에 10으로 나눈 나머지를 넣어주면 된다.
+//			System.out.println(Math.abs(sum));
+//		}
+
+/////////////////////////////////////////////////////////////////////	1020공부		
+
+//		[18247] 겨울왕국 티겟 예매 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);		
+//		int L = 12;
+//		
+//		int Tcase = scan.nextInt();
+//		
+//		for(int i = 0; i < Tcase; i++) {
+//			int N = scan.nextInt();
+//			//행
+//			int M = scan.nextInt();
+//			//열
+//			if(N < 12 || M < 4) {
+//				System.out.println(-1);
+//				break;
+//				//N이 12보다 작고 M이 4보다 작으면 
+//				//성립할 수 없다.
+//			}else {
+//				int answer = (L * M) - (M - 4);
+//				//L 까지의 전체 자석에서  (M-4) 를 뺴주면 L4의 위치가 된다.
+//				System.out.println(answer);
+//			}
+//		
+//		}
+		
+//		[1500]	최대 곱
+		
+//		//곱하는 수의 차이가 작을 수롤 그 곱은 커진다.
+//        Scanner sc =new Scanner(System.in);
+//        int s = sc.nextInt();// 정수 S
+//        int k = sc.nextInt();// 합이 S인 K개의 정수
+//        int q = s / k;// s 를 k 로 나눈 몫
+//        int r = s % k;// s 를 k로 나눈 나머지
+//        long max =1;
+//        for (int i =1; i <= k; i++) {
+//            if(i <= r) {//나머지 갯수만큼 +1
+//                max *= (q +1);
+//            }else {//
+//                max *= q;
+//            }
+//        }
+//        System.out.println(max);
+//        sc.close();
+
+//		[17103] 골드바흐 파티션     
+		 
+	//(https://bellossimo.tistory.com/43?category=908154)
+	// 백준 1929 번 풀어보기	
+//			Scanner scanner = new Scanner(System.in);
+//	        StringBuilder sb = new StringBuilder();
+//
+//	        boolean[] isNotPrime;
+//
+//	        // 에라토스테네스의 체 세팅.
+//	        isNotPrime = makeIsPrimeTable();
+//
+//	        int testCastCount = scanner.nextInt();
+//
+//	        for (int i=0; i<testCastCount; i++) {
+//	            int number = scanner.nextInt();
+//	            int result = 0;
+//
+//	            for (int j=2; j<=number/2; j++) {
+//	                if(! isNotPrime[j] && ! isNotPrime[number-j]) {
+//	                    result++;
+//	                }
+//	            }
+//	            System.out.println(result);
+//	        }
+//
+//	}
+//	
+//	 public static boolean[] makeIsPrimeTable() {
+//	        boolean[] isNotPrime = new boolean[1000001];
+//
+//	        for (int i=2; i <= 1000000; i++) {
+//	            if(! isNotPrime[i]) {
+//	                for (int j=i*2; j<=1000000; j+=i) {
+//	                    isNotPrime[j] = true;
+//	                }
+//	            }
+//	        }
+//
+//
+//	        return isNotPrime;
+		
+		
+		
+//		[1946] 신입사원 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int Tcase = scan.nextInt();
+//		
+//		for(int T = 0; T < Tcase; T++) {
+//			int man = scan.nextInt();
+//			int [][] arr = new int [man][2];
+//			//사람수 행 점수 2열로 구성
+//			
+//			for(int i = 0; i < man; i++) {
+//				for(int j = 0; j < 2; j++) {
+//					arr[i][j] = scan.nextInt();
+//				}
+//			}
+//			//배열 값 입력
+//			int count = man;
+//			//초기값은 전체 인원
+//			for(int i = 0; i < man; i++) {
+//				for(int j = 0; j < man; j++) {
+//					if(arr[i][0] > arr[j][0]) {
+//						if(arr[i][1] > arr[j][1]) {
+//							count -= 1;
+//							break;
+//							//종목당 같은 순위는 존재할 수 없다는 것을 유념하자.
+//							//같을때는 체크해주지 않아도 된다.
+//							//모든 선수들의 점수를 비교하여, 어떤 하나의 지원자라도
+//							//자신보다 2종목 모두 순위가 높은 지원자가 있다면,
+//							//해당 지원자는 합격하지 못한다.
+//							}
+//						}
+//					}
+//				}
+//			
+//			System.out.println(count);
+//		}
+//			
+			
+			
+/////////////////////////////////////////////////////////////////////	1021공부		
+
+//			[1339] 단어 수학 [hash set / hash map 보고 다시오기]
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		N = Integer.parseInt(br.readLine());
+//		max = Integer.MIN_VALUE;
+//		set = new HashSet<>();
+//		map = new HashMap<>();
+//		input = new char[N][];
+//		
+//		for(int i = 0 ; i < N ; ++i) {
+//			char[] line = br.readLine().toCharArray();
+//			// 원래 알파벳을 기억한다. 
+//			input[i] = line;
+//			// 주어진 알파벳을 set에 넣는다.(중복제거) 
+//			for(char c : line) set.add(c);
+//		}
+//		
+//		alphabet = new ArrayList<>(set);
+//		
+//		selected = new boolean[10];
+//		permutation(0);
+//		
+//		System.out.println(max);
+//
+//	 }
+//	
+//	static char[][] input;
+//	static HashSet<Character> set;
+//	static HashMap<Character, Integer> map;
+//	static ArrayList<Character> alphabet;
+//	static boolean[] selected;
+//	static int N, max;
+//	
+//	private static void permutation(int depth) {
+//		if(depth == alphabet.size()) {
+//			int temp = calc();
+//			max = temp > max ? temp : max;
+//			return;
+//		}
+//		
+//		for(int i = 0 ; i < 10 ; ++i) {
+//			if(!selected[i]) {
+//				selected[i] = true;
+//				// 해쉬맵으로 문자 - 숫자를 매핑한다.
+//				map.put(alphabet.get(depth), i);
+//				permutation(depth + 1);
+//				selected[i] = false;
+//			}
+//		}
+//		
+//	}
+//
+//	// 매핑된 문자 - 숫자를 바탕으로 합계 산출하기 
+//	private static int calc() {
+//		int result = 0;
+//		
+//		for(int i = 0 ; i < N ; ++i) {
+//			int temp = 0;
+//			// String을 직접 핸들링하는 것은 부담이 크다(연산, 파싱) 
+//			for(char c : input[i]) {
+//				temp *= 10;
+//				temp += map.get(c);
+//			}
+//			result += temp;
+//		}
+//		
+//		return result;
+		
+		
+//		[1080] 행렬 [블로그]
+		
+//		public class TemplateA {
+//			
+//			static int n,m;
+//			static int arrN[][],arrM[][];
+//			
+//			public static boolean flip(int startA, int startB) { 
+//				// arrN 과 arrM이 같지 않을때 뒤집을 함수
+//				
+//				if(startA > n || startB+3 > m) { 
+//					return false; 
+//					} 
+//				//범위를 넘어간다면, 같아질 수 없음으로  false를 리턴함
+//				//true 문을 먼저 적으면 overhead 발생할 수 있어 함수식 작성시
+//				//false조건이 먼저 있어야함
+//				
+//				for(int i = startA; i <= startA + 2; i++) { 			
+//					for(int j = startB; j <= startB + 2; j++) {
+//						arrN[i][j]= 1-(arrN[i][j]);					
+//					}
+//				}
+//				return true;
+//				//함수에 들어간 i 와  j에 2씩 더해준 값이 3 * 3 의 크기임으로 그 범위까지
+//				//바꾸어주고 그후 true를 리턴헤줌 
+//			}
+//			
+//			
+//			public static void main(String[] args) throws IOException {
+//				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//				StringTokenizer st = new StringTokenizer(br.readLine());
+//				
+//				n = Integer.parseInt(st.nextToken());
+//				m = Integer.parseInt(st.nextToken());
+//				
+//				arrN = new int[n][m];
+//				arrM = new int[n][m];
+//				
+//				for(int i = 0; i < n; i++) {
+//					String row = br.readLine();
+//					for(int j = 0; j < m; j++) {				
+//						arrN[i][j] =row.charAt(j)-'0';
+//						
+//					}
+//				}
+//				for(int i = 0; i < n; i++) {
+//					String row = br.readLine();
+//					for(int j = 0; j < m; j++) {				
+//						arrM[i][j] =row.charAt(j)-'0';
+//						
+//					}
+//				}
+//				// arrN 과 arrM 에 주어진 값을 넣어주는 과정
+//				
+//				int count = 0;
+//				loop : for(int i = 0; i < n; i++) {
+//					for(int j = 0; j < m; j++) {
+//						
+//						if(arrN[i][j] != arrM[i][j]) {
+//							if(flip(i,j)) {
+//								count++;
+//								//같지 않을 경우 지속적으로 범위내에서 3 * 3 뒤집기를 해줌
+//							}else {
+//								count = -1;
+//								break loop;
+//								//flip 함수가 false를 출력할 경우임
+//								//count는 -1로 변경한 후 반복문 탈출 						
+//							}
+//						}
+//						
+//					}
+//				}
+//				
+//				System.out.println(count);
+//				br.close();
+//				
+//			
+//			
+//		}
+//		    }
+//		    
+//
+
+
+//		[16112] 5차 전직 [블로그]
+		
+		//이문제에 중요한 부분은 처음 아케인스톤이 활성화되면
+		//그 아케인스톤의 경험치는 0이된다.
+		//주의할 점은 첫번째 아케인스톤이 활성화 되면,
+		//그 아케인스톤 경험치 역시 0으로 계산된다.
+		//사실 문제가 길어서 그렇지 어렵지는 않음
+		
+//		Scanner scan = new Scanner(System.in);
+//		int quest = scan.nextInt();	
+//		int activeS = scan.nextInt();
+//		
+//		int [] arr = new int [quest];
+//		
+//		for(int i = 0; i < quest; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr);
+//		//오름차순으로 정렬해주어 최대 아케인스톤이 활성화 전까지
+//		//감소되는 경험치를 최소화한다. 
+//		
+//		int count = 0;
+//		//count는 최대 활성 아케인스톤 값까지 증가할 변수
+//		int exp  = 0;
+//		//최대 경험치가 들어갈 변수
+//		for(int i = 0; i < quest; i++) {
+//			if(count < activeS) {
+//				count ++;
+//				//최대 아케인 스톤값이 될때까지 하나씩 더해줌
+//				exp -= arr[i];				
+//				//최대 아케인 스톤 값이 되기 전까지는 하나의 경험치가 사라지게
+//				//됨으로 그 아케인 스톤의 경험치를 총경험치에서 빼줌
+//				
+//			}
+//			exp += (arr[i] * count);
+//			//이후 활성화된 아케인 스톤의 수와 경험치를 곱해줌
+//		}
+//	
+//		System.out.println(exp);
+		
+		
+/////////////////////////////////////////////////////////////////////	1021공부		
+
+//			[15973] 두 박스 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int [] a = new int [4];
+//		int [] b = new int [4];
+//		
+//		for(int i = 0; i < 4; i++) {
+//			a[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int arMax = 0;
+//		//a행의 최대 범위 값이 들어갈 변수
+//		int arMin = 1000;
+//		//a행의 최대 범위 값이 들어갈 변수
+//		if(a[0] > a[2]) {
+//			arMax = a[0];
+//			arMin = a[2];
+//		}else {
+//			arMax = a[2];
+//			arMin = a[0];
+//		}
+//		
+//		int acMax = 0;
+//		//a열의 최대 범위 값이 들어갈 변수
+//		int acMin = 1000;
+//		//a열의 최대 범위 값이 들어갈 변수
+//		if(a[1] > a[3]) {
+//			acMax = a[1];
+//			acMin = a[3];
+//		}else {
+//			acMax = a[3];
+//			acMin = a[1];
+//		}
+//		
+//		for(int i = 0; i < 4; i++) {
+//			b[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int brMax = 0;
+//		//b행의 최대 범위 값이 들어갈 변수
+//		int brMin = 1000;
+//		//b행의 최소 범위 값이 들어갈 변수
+//		if(b[0] > b[2]) {
+//			brMax = b[0];
+//			brMin = b[2];
+//		}else {
+//			brMax = b[2];
+//			brMin = b[0];
+//		}
+//		
+//		int bcMax = 0;
+//		//b열의 최대 범위 값이 들어갈 변수
+//		int bcMin = 1000;
+//		//b열의 최소 범위 값이 들어갈 변수
+//		if(b[1] > b[3]) {
+//			bcMax = b[1];
+//			bcMin = b[3];
+//		}else {
+//			bcMax = b[3];
+//			bcMin = b[1];
+//		}	
+//
+//		if(a[0] == b[0] && a[1] == b[1] 
+//				|| a[2] == b[2] && a[3] == b[3] 
+//				|| a[0] == b[2] && a[1] == b[3] 
+//				|| a[2] == b[0] && a[3] == b[1]) {
+//			System.out.println("POINT");
+//			//행과열이 모두 값은 점이 하나 존재하는지 체크 함
+//		}else if((arMax >= brMax && arMin <= brMin) || (acMax >= bcMax && acMin <= bcMin)) {
+//			System.out.println("FACE");
+//			//b의 행과 열이 a의 행에 영역에서 모두 포함되거나, 열의 영역에서 모두 포함되는지 체크
+//		}else if((arMax > brMax && arMin > brMin && (acMin == bcMin || acMin == bcMax || acMax == bcMin || acMax == bcMax )) 
+//				|| (acMax > bcMax && acMin > bcMin && (arMin == brMin || arMin == brMax || arMax == brMin || arMax == brMax ))
+//				|| (arMax < brMax && arMin < brMin && (acMin == bcMin || acMin == bcMax || acMax == bcMin || acMax == bcMax )) 
+//				|| (acMax < bcMax && acMin < bcMin && (arMin == brMin || arMin == brMax || arMax == brMin || arMax == brMax ))) {
+//			System.out.println("LINE");
+//			//b가 a에 한 선만 겹치면서 적어도 a의 행이나 열의 끝접접에 위치하는지 체크 
+//		}else {
+//			System.out.println("NULL");
+//		}
+//		
+
+		
+//		[13136] Do Not Touch Anything [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int r = scan.nextInt();
+//		int c = scan.nextInt();
+//		int n = scan.nextInt();
+//		
+//		int mok = r / n;
+//		//행의 몫이 담길 변수
+//		int nmg = r % n;
+//		//행의 나머지가 담길 변수
+//		
+//		int count = 0;
+//		if(nmg == 0) {
+//			count = mok;
+//		}else {
+//			count = mok + 1;
+//		}
+//		//나머지가 1일 경우 모든 범위를 할당하기 위해
+//		//추가적인 카메라수 1을 더해줌
+//		
+//		
+//		 mok = c / n;
+//		//열의 몫이 담길 변수
+//		 nmg = c % n;
+//		//열의 나머지가 담길 변수
+//		
+//		 
+//		 if(nmg == 0) {
+//			count = mok * count;
+//		}else {
+//			count = (mok + 1) * count;
+//		}
+//		//마찬가지로 나머지가 1일 경우 모든 범위 할당위해
+//		//목의 1을 더해주고 총 갯수를 구하기위해 행의 필요 카메라수를 더해줌
+//		 
+//		
+//		System.out.println(count);
+		
+
+/////////////////////////////////////////////////////////////////////	1023공부		
+		
+//		[13164] 행복 유치원 [ 몰겟음 ]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		int k = scan.nextInt();
+//		
+//		int [] arr = new int [300000];
+//		
+//		int sum = 0;
+//		
+//		for(int i = 1; i < n; i++) {
+//			arr[i + 1] = scan.nextInt();
+//			arr[i - 1] = arr[i] - arr[i - 1];
+//			Arrays.sort(arr);
+//			
+//		}
+//		for (int i = 0; i < n - k; i++) 
+//			sum += arr[i];
+//			
+//			
+//		
+//		System.out.println(sum);
+		
+		
+//		[14464] 소가 길을 건너간 이유 [ 좀더 자세한 풀이로 바꾸기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int chi = scan.nextInt();
+//		int cow = scan.nextInt();
+//		
+//		int [] arr = new int [chi];
+//		
+//		for(int i = 0; i < chi; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr);
+//		
+//		int count = 0;
+//		for(int i = 0; i < cow; i++) {
+//			int start = scan.nextInt();
+//			int end = scan.nextInt();
+//			for(int j = 0; j < chi; j++) {
+//				if(arr[j] >= start && arr[j] <= end) {
+//					count++;
+//					arr[j] = -1;
+//					break;
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
+		
+		
+		
+/////////////////////////////////////////////////////////////////////	1024공부	
+		
+		
+/////  [9661] 돌 게임7 [블로그]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		
+//		int set = n ;
+//		// n을 담아둘 변수
+//		int plus = 0;
+//		// 4의 증가하는 승수를 담아둘 변수
+//		int count = 0;
+//		// 상근과 창영이의 턴을 체크할 변수
+//			while(true) {
+//				set -= Math.pow(4, plus);
+//				// 각 턴마다 4의 plus승을 빼줌
+//				plus++;
+//				count++;
+//				//턴이 지났으니 모두 하나씩증가
+//				if(set < 0) {
+//					// set이 0보다 작아진 경우는 그 턴에 4의 plus 재곱의 값이
+//					// 컸다는 이야기 그턴에 사람이 패배
+//					if(count % 2 == 0) {
+//						System.out.println("SK");
+//						break;
+//					}else {
+//						System.out.println("CY");
+//						break;
+//					}
+//				}
+//			}
+		
+		
+		/////  [2725] 보이는 점의 개수 [다시보기]
+			
+//		
+//			Scanner scan = new Scanner(System.in);
+//			ans[0] = 0;
+//			ans[1] = 2;
+//			
+//			  for (int i = 2; i <= 1000; ++i)
+//			    {
+//			        int n = 0;
+//			        for (int j = 1; j <= i; ++j)
+//			        {
+//			            if (gcd(i, j) == 1)
+//			                ++n;
+//			            // 1이 될 경우 겹치지 않음
+//			        }
+//			        ans[i] = ans[i - 1] + n;
+//			    }
+//			    int T = scan.nextInt();
+//			    while (T > 0)
+//			    {
+//			        int N = scan.nextInt();
+//			        System.out.println(ans[N] * 2 - 1);
+//			        T--;
+//			    }
+//		
+//	}
+//	
+//	static int [] ans = new int [1001];
+//	static int gcd(int a, int b) {
+//		 while (a % b != 0)
+//		    {
+//		        int temp = b;
+//		        b = a % b;
+//		        a = temp;
+//		    }
+//		    return b;
+	
+			
+		    
+		    /////  [16283] Farm [블로그]
+		
+		int Sfood = scan.nextInt();
+		//양이 먹는 양
+		int Gfood = scan.nextInt();
+		//염소가 먹는 양	
+		int n = scan.nextInt();
+		//전체 수
+		int food = scan.nextInt();
+		//전체 사료수
+		
+		loop : for(int i = 1; i <= n - 1; i++) {
+			for(int j = 1; j <= n - 1; j++) {
+				if(i + j == n) {
+					//우선 양와 염소의 수가 주어지 총수와 같은지 체크
+					if((i * Sfood) + (j * Gfood) == food) {
+						//같으면 사료수롤 곱해 총사료수와 같은지 체크
+						System.out.println(i + " " + j);
+						break loop;
+					}
+				}
+				
+				if(i == n - 1 && j >= 2) {
+					System.out.println(-1);
+					break;
+					//양의수가 최대치가 되었고 염소의 수가 2 이상이 되면,
+					//범위 초가로 -1 출력
+				}
+			}		
+		}
+		
+	
+	}
+
+}
+tem.out.println(sum);
 		
 		
 //		[1463] 1로 만들기
