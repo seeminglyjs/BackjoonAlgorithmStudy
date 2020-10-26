@@ -10319,36 +10319,135 @@ public class main {
 		    
 		    /////  [16283] Farm [블로그]
 		
-		int Sfood = scan.nextInt();
-		//양이 먹는 양
-		int Gfood = scan.nextInt();
-		//염소가 먹는 양	
-		int n = scan.nextInt();
-		//전체 수
-		int food = scan.nextInt();
-		//전체 사료수
+//		int Sfood = scan.nextInt();
+//		//양이 먹는 양
+//		int Gfood = scan.nextInt();
+//		//염소가 먹는 양	
+//		int n = scan.nextInt();
+//		//전체 수
+//		int food = scan.nextInt();
+//		//전체 사료수
+//		
+//		loop : for(int i = 1; i <= n - 1; i++) {
+//			for(int j = 1; j <= n - 1; j++) {
+//				if(i + j == n) {
+//					//우선 양와 염소의 수가 주어지 총수와 같은지 체크
+//					if((i * Sfood) + (j * Gfood) == food) {
+//						//같으면 사료수롤 곱해 총사료수와 같은지 체크
+//						System.out.println(i + " " + j);
+//						break loop;
+//					}
+//				}
+//				
+//				if(i == n - 1 && j >= 2) {
+//					System.out.println(-1);
+//					break;
+//					//양의수가 최대치가 되었고 염소의 수가 2 이상이 되면,
+//					//범위 초가로 -1 출력
+//				}
+//			}		
+//		}
 		
-		loop : for(int i = 1; i <= n - 1; i++) {
-			for(int j = 1; j <= n - 1; j++) {
-				if(i + j == n) {
-					//우선 양와 염소의 수가 주어지 총수와 같은지 체크
-					if((i * Sfood) + (j * Gfood) == food) {
-						//같으면 사료수롤 곱해 총사료수와 같은지 체크
-						System.out.println(i + " " + j);
-						break loop;
-					}
-				}
-				
-				if(i == n - 1 && j >= 2) {
-					System.out.println(-1);
-					break;
-					//양의수가 최대치가 되었고 염소의 수가 2 이상이 되면,
-					//범위 초가로 -1 출력
-				}
-			}		
+///////////////////////////////////////////////////////////////////////////////////////1026공부		
+		
+//		[15729번] 방탈출 [블로그]
+		
+//		Scanner scan = new Scanner (System.in);		
+//		int n = scan.nextInt();
+//		int [] start = new int [n];
+//		//초기 다꺼진 배열
+//		int [] arr = new int [n];
+//		
+//		for(int i = 0; i <n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		//주어진 배열 입력
+//		
+//		int count = 0;
+//		//충 누른 스위치 횟수를 저장할 변수
+//		int point = 0;
+//		//초기 배열과 주어진 배열의 다른 위치를 체크할 변수
+//		while(true) {
+//			boolean flag = false;
+//			for(int i = 0; i < n; i++) {
+//				if(arr[i] == start[i]){
+//					flag = true;
+//					//배열이 같을 경우 flag는 계속 true
+//				}else {
+//					flag = false;
+//					point = i;
+//					break;
+//					//배열이 다를경우 flag는 false과 되고 다른 지점
+//					//point에 저장
+//				}
+//			}	
+//			if(flag) {
+//				System.out.println(count);
+//				break;
+//			}	
+//			//flag 가 true이면 두 배열은 같기 때문에
+//			//총 버튼 누른 횟수 출력
+//			
+//			count++;
+//			//버튼을 누름
+//			for(int i = point; i < point + 3; i++) {
+//				if(i > n - 1) {
+//					break;
+//				}
+//				//단 버튼을 누를시 전체 배열의 크기는 초과하면 안되기 때문에
+//				//이와 같은 경우에는 break를 걸어줌
+//				start[i] = 1 - start[i];
+//				//0은 1로 1은 0으로 만들어주는 식
+//			}
+//		}
+		
+//		[17262번] 팬덤이 넘쳐흘러 [블로그]
+		
+		Scanner scan = new Scanner (System.in);	
+		
+		int fan = scan.nextInt();
+		int [][] arr = new int [fan][2];
+		
+		
+		for(int i =0; i < fan; i++) {
+			for(int j = 0; j < 2; j++) {
+				arr[i][j] = scan.nextInt();
+			}
 		}
 		
-	
+		int start = arr[0][0];
+		//초기 시작값은 처음 학생의 머무는 시간으로 준다.
+		int end = arr[0][1];
+		//초기 끝값은 처음 학생의 머무는 시간으로 준다.
+		//(사실 어떤학생을 주던 크게 상관은 없는데, 순서 때문에 구현하기 까다로워짐)
+		
+		int count = 0;
+		//머무는 시간을 셀 변수
+		for(int i = 1; i < fan; i++) {
+			//첫학생은 이미 초기값 셋팅으로 들어가 있음으로
+			// 2번째 학생부터 비교하면됨
+			for(int j = 0; j < 1; j++) {
+				if(arr[i][j + 1] < start) {
+					count += start - arr[i][j + 1];
+					start = arr[i][j];
+					//학생의 머무는 시간의 끝값이 다른 학생의 스타트 값보다
+					//작으면, 겹치는 시간이 없음
+					//머무는 시간에 둘의 차를 더해주고
+					//시작값은 더 먼저 도착하는 학생의 값으로 변경한다.
+				}else {
+					if(arr[i][j] > end) {
+						count += arr[i][j] - end;
+						end = arr[i][j + 1];
+					}
+					// end 값에 저장된 학생의 값보다 다른 학생의 시작하는 값이 크면,
+					//마찬가지로 겹치는 시간이 없음 때문에 끝값은 그 다른 학생이 떠나는 시간으로 초기화하고
+					// 카운트에 해당하는 값들의 차이를 넣어줌
+				}
+			}
+		}
+		
+		System.out.println(count);
+		
 	}
 
 }
