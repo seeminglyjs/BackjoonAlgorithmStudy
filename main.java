@@ -1046,7 +1046,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 
-//		[2577번] [블로그]
+//		[2577번] [완료]
 //		세 개의 자연수 A, B, C가 주어질 때 A×B×C를 계산한 결과에 0부터 9까지 각각의 숫자가
 //		몇 번씩 쓰였는지를 구하는 프로그램을 작성하시오.
 //
@@ -10403,51 +10403,331 @@ public class main {
 		
 //		[17262번] 팬덤이 넘쳐흘러 [블로그]
 		
-		Scanner scan = new Scanner (System.in);	
+//		Scanner scan = new Scanner (System.in);	
+//		
+//		int fan = scan.nextInt();
+//		int [][] arr = new int [fan][2];
+//		
+//		
+//		for(int i =0; i < fan; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		int start = arr[0][0];
+//		//초기 시작값은 처음 학생의 머무는 시간으로 준다.
+//		int end = arr[0][1];
+//		//초기 끝값은 처음 학생의 머무는 시간으로 준다.
+//		//(사실 어떤학생을 주던 크게 상관은 없는데, 순서 때문에 구현하기 까다로워짐)
+//		
+//		int count = 0;
+//		//머무는 시간을 셀 변수
+//		for(int i = 1; i < fan; i++) {
+//			//첫학생은 이미 초기값 셋팅으로 들어가 있음으로
+//			// 2번째 학생부터 비교하면됨
+//			for(int j = 0; j < 1; j++) {
+//				if(arr[i][j + 1] < start) {
+//					count += start - arr[i][j + 1];
+//					start = arr[i][j];
+//					//학생의 머무는 시간의 끝값이 다른 학생의 스타트 값보다
+//					//작으면, 겹치는 시간이 없음
+//					//머무는 시간에 둘의 차를 더해주고
+//					//시작값은 더 먼저 도착하는 학생의 값으로 변경한다.
+//				}else {
+//					if(arr[i][j] > end) {
+//						count += arr[i][j] - end;
+//						end = arr[i][j + 1];
+//					}
+//					// end 값에 저장된 학생의 값보다 다른 학생의 시작하는 값이 크면,
+//					//마찬가지로 겹치는 시간이 없음 때문에 끝값은 그 다른 학생이 떠나는 시간으로 초기화하고
+//					// 카운트에 해당하는 값들의 차이를 넣어줌
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
+
 		
-		int fan = scan.nextInt();
-		int [][] arr = new int [fan][2];
+///////////////////////////////////////////////////////////////////////////////////////1027공부		
 		
+//		[1124번] 언더프라임 [다시보기]
 		
-		for(int i =0; i < fan; i++) {
-			for(int j = 0; j < 2; j++) {
-				arr[i][j] = scan.nextInt();
-			}
-		}
+//		
+//		int A = scan.nextInt();
+//		int B = scan.nextInt();
+//		
+//		int ct = 0;
+//		    cin >> A >> B;
+//
+//		    initialize();
+//
+//		    for (int i = A; i <= B; ++i)
+//		    {
+//		        if (sosu(nums[i]))
+//		            ct++;
+//		    }
+//
+//		    cout << ct << endl;
+//		
+//	}
+//	
+//	static int [] nums = new int [100001];
+//	
+//	 static boolean sosu (int x) {
+//		if(x == 1) {
+//			return false;
+//		}
+//		    for (int i = 2; i <= Math.sqrt(x); ++i) { 
+//		        if (x % i == 0) { 
+//		        	return false;
+//		        	}
+//		    	}
+//		return true;
+//	}
+//	
+//	static void initialize()
+//	{
+//	    nums[1] = 1;
+//	    for (int i = 2; i <= 100000; ++i) {
+//	        if (sosu(i))
+//	            nums[i] = 1;
+//	        else if (i % 2 == 0)
+//	            nums[i] = nums[i / 2] + 1;
+//	        else {
+//	            for (int j = 3; j <= i; j += 2) {
+//	                if (i % j == 0) {
+//	                    nums[i] = nums[i / j] + 1;
+//	                    break;
+//	                }
+//	            }
+//	        }
+//	    }
 		
-		int start = arr[0][0];
-		//초기 시작값은 처음 학생의 머무는 시간으로 준다.
-		int end = arr[0][1];
-		//초기 끝값은 처음 학생의 머무는 시간으로 준다.
-		//(사실 어떤학생을 주던 크게 상관은 없는데, 순서 때문에 구현하기 까다로워짐)
+
 		
-		int count = 0;
-		//머무는 시간을 셀 변수
-		for(int i = 1; i < fan; i++) {
-			//첫학생은 이미 초기값 셋팅으로 들어가 있음으로
-			// 2번째 학생부터 비교하면됨
-			for(int j = 0; j < 1; j++) {
-				if(arr[i][j + 1] < start) {
-					count += start - arr[i][j + 1];
-					start = arr[i][j];
-					//학생의 머무는 시간의 끝값이 다른 학생의 스타트 값보다
-					//작으면, 겹치는 시간이 없음
-					//머무는 시간에 둘의 차를 더해주고
-					//시작값은 더 먼저 도착하는 학생의 값으로 변경한다.
-				}else {
-					if(arr[i][j] > end) {
-						count += arr[i][j] - end;
-						end = arr[i][j + 1];
+//		[4375번] 1	[다시보기]	
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//		BigInteger t = new BigInteger(br.readLine());
+//
+//		// StringBuffer result = new StringBuffer();
+//
+//		// StringTokenizer str = null;
+//
+//		BigInteger temp = BigInteger.ONE;
+//
+//		while (true) {
+//
+//			if (temp.mod(t).compareTo(BigInteger.ZERO) == 0) {
+//
+//				System.out.println(temp.toString().length());
+//
+//				break;
+//
+//			} else {
+//
+//				temp = temp.multiply(BigInteger.TEN);
+//
+//				temp = temp.add(BigInteger.ONE);
+//
+//			}
+//
+//		}
+//
+//		// result.deleteCharAt(result.length() - 1);
+//
+//		// System.out.println(result);
+
+///////////////////////////////////////////////////////////////////////////////////////1028공부	
+		
+//  		[14720] 우유 축제 [블로그]
+	
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		
+//		int sum = 0;
+//		// 우유의 종류를 체크할 변수
+//		int count = 0;
+//		// 총 마시는 우유 개수를 체크할 변수
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			if(sum > 2) {
+//				sum = 0;
+//			}
+//			// 만약에 우유가 2보다 커지면 다시 0으로 초기화
+//			if(arr[i] == sum) {
+//				count ++;
+//			}else {
+//				break;
+//			}
+//			//같으면 총 개수를 하나씩 더해주고
+//			//하나라도 순서가 틀리면 더 이상 비교는 불필요 하기 때문에
+//			//반복문을 종료
+//			sum++;
+//		}
+//		System.out.println(count);
+
+		
+//		[1449] 수리공 항승 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		// 조건 1. 물이 세는 부분은 무조건 정수다.
+//		// 조건 2. 테이프는 중간에 자를 수 없다.
+//		// 조건 3. 물이 세는 곳 양쪽 모두 0.5 만큼의 추가적인 간격이 필요하다.
+//		// 조건 4. 테이프를 겹쳐서 붙이는 것이 가능하다.
+//		// 즉 앞에수와 뒤에 정수 간의 차이가 1이면 겹치는 것이 가능하다.
+//		
+//		int n = scan.nextInt();
+//		//총 물이 세는 곳
+//		int tapeL = scan.nextInt();
+//		// 테이프 길이
+//		int count = 1;
+//		
+//		double [] arr = new double [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		// ex) n값 4 tapeL값 3 배열값 1 2 3 4
+//		
+//			double Limit = (arr[0] - 0.5 + tapeL);
+//			//초기 값 0.5 ~ 3.5 까지 커버가능
+//			//해당 범위 넘어 가는 부분에는 이제 다시 테이프롤 추가해주면됨
+//			for(int i = 1; i < arr.length; i++) {
+//				if (Limit < (arr[i] + 0.5)){
+//					Limit = (arr[i] - 0.5 + tapeL);
+//					count ++;
+//				}
+//			}
+//
+//			System.out.println(count);
+
+
+///////////////////////////////////////////////////////////////////////////////////////1029공부	
+		
+////		[1402]	아무래도 이문제는 A 번 난이도인 것 같다. [블로그]
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int tCase = scan.nextInt();
+//		
+//		for(int i = 0; i < tCase; i++) {
+//			int a = scan.nextInt();
+//			int b = scan.nextInt();
+//			int [] arr = new int [a];
+//			
+//			int temp = 2;
+//			//소인수 분해를 위해 사용될 변수
+//			int t = 0;
+//			//배열위치지정변수
+//			while(a != 1) {
+//				if(a % temp == 0) {
+//					//a 의 소인수 여부 체크
+//					arr[t] = temp;
+//					//소인수 배열 할당
+//					a = a / temp;
+//					//a 값 소인수로 나누어서 초기화
+//					t++;
+//					//배열위치 하나씩 증가
+//				}else {
+//					temp++;
+//					//소인수 아니면 하나씩 증가
+//				}
+//			}
+//			
+//			int sum = 0;
+//			for(int j = 0; j < arr.length; j++) {	
+//				if(arr[j] == 0){break;}
+//				sum +=arr[j];
+//			}
+//			//소인수값 sum에 모두 더해줌
+//			
+//			System.out.println(sum);
+//			if(sum == b) {
+//				System.out.println("yes");
+//			}else {
+//				System.out.println("no");
+//			}
+//			//sum과 b가 같은지 체크
+//
+//		}
+		
+//		[5692] 팩토리얼 진법 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//
+//		while(true) {
+//			int t = scan.nextInt();
+//			if(t == 0) {break;}
+//			//t 가 0 이면 프로그램을 종료한다.
+//			f = 1;	
+//			int temp = t % 10;
+//			//맨 뒷자리 값을 추출할 변수
+//			t = t / 10;
+//			//뒷자리를 뺀 나머지 자리를 저장
+//			int sum = temp * f;
+//			//팩토리얼 1은 무조건 1이기 때문에
+//			//sum 초기값은 temp * f 로 지정해준다.
+//			while(true) {
+//				f++;
+//				temp = t % 10;
+//				t = t / 10;
+//				sum += temp * (fac(f));	
+//				//자릿수가 하나씩 많아질때마다 팩토리얼 도 하나씩 증가
+//				//해당 자릿수에 팩토리얼 값을 곱해줌
+//				if(t == 0) {break;}	
+//				//t가 0이면 더이상 비교할 필요 없음
+//			}
+//			
+//			System.out.println(sum);
+//		}
+//	
+//	}
+//	
+//	static int f;
+//	static int x = 1;
+//	static int y = 1;
+//	
+//	static int fac(int z) {
+//		do {
+//			x++;
+//			y *= x;
+//		}while(x < f);
+//		//팩토리얼 method
+//		return y;
+	
+	
+//		[16968] 차량 번호판 1 [다시 보기]
+		
+		Scanner sc = new Scanner(System.in);
+		
+		char[] template = sc.next().toCharArray();
+		int result = 1;
+		
+		for(int i = 0 ; i < template.length ; ++i) {
+			if(i == 0) {
+				if(template[i] == 'c') result *= 26;
+				else result *= 10;
+			} else {
+				if(template[i] == 'c') {
+					if(template[i - 1] == 'c') {
+						result *= 25;
+					} else {
+						result *= 26;
 					}
-					// end 값에 저장된 학생의 값보다 다른 학생의 시작하는 값이 크면,
-					//마찬가지로 겹치는 시간이 없음 때문에 끝값은 그 다른 학생이 떠나는 시간으로 초기화하고
-					// 카운트에 해당하는 값들의 차이를 넣어줌
+				} else {
+					if(template[i - 1] == 'd') {
+						result *= 9;
+					} else {
+						result *= 10;
+					}
 				}
 			}
 		}
-		
-		System.out.println(count);
-		
+		System.out.println(result);
+		}
 	}
 
-}
+
