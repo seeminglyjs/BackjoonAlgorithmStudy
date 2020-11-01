@@ -1084,7 +1084,7 @@ public class main {
 	
 ///////////////////////////////////////////////////////////////////////////////////////	
 
-//		[3052번] [블로그]			
+//		[3052번] [완료]			
 //		두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 
 //		예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다. 
 //		수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하시오.
@@ -1166,7 +1166,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 
-//		[8958번]	[블로그]			
+//		[8958번]	[완료]			
 		
 //		"OOXXOXXOOO"와 같은 OX퀴즈의 결과가 있다. 
 //		O는 문제를 맞은 것이고, X는 문제를 틀린 것이다. 
@@ -1465,7 +1465,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////		
 		
-//		[1157번] 단어 공부 [블로그]
+//		[1157번] 단어 공부 [완료]
 		
 //		import java.util.Arrays;
 //		import java.util.Scanner;
@@ -1871,47 +1871,56 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////////////////////		
 		
-//		[1193번]	(다시 풀어봐야된다.)			
+//		[1193번]	분수찾기 [블로그]		
 		
 		
-//		문제
-//		무한히 큰 배열에 다음과 같이 분수들이 적혀있다.
+		//사실 이 문제는 배열문제 처럼 보이지만 굳이 배열을 사용할 필요없이
+		//변수와 약간의 수학적 접근만으로 충분히 풀 수 있는 문제이다.
+
+
+//		import java.util.Arrays;
+//		import java.util.Scanner;
 //
-//		1/1	1/2	1/3	1/4	1/5	…
-//		2/1	2/2	2/3	2/4	…	…
-//		3/1	3/2	3/3	…	…	…
-//		4/1	4/2	…	…	…	…
-//		5/1	…	…	…	…	…
-//		…	…	…	…	…	…
-//		이와 같이 나열된 분수들을 1/1 -> 1/2 -> 2/1 -> 3/1 -> 2/2 -> 
-//		… 과 같은 지그재그 순서로 차례대로 1번, 2번, 3번, 4번, 5번, … 분수라고 하자.
-//		X가 주어졌을 때, X번째 분수를 구하는 프로그램을 작성하시오.
+//		public class TemplateA {
+//				public static void main(String[] args)  {
 //
-//		입력
-//		첫째 줄에 X(1 ≤ X ≤ 10,000,000)가 주어진다.
+//					Scanner scan = new Scanner(System.in);
+//					
+//					int n = scan.nextInt();
+//					
+//					int max = 1;
+//					//대각선 상에서 커질수 있는 최대 수
+//					//대각선의 줄 수라고도 볼 수 있다.
+//					while(n != 0) {
+//						int top = 0;
+//						//분자 값 초기화
+//						int bottom = max + 1;
+//						//분모 값 초기화
+//						for(int i = 1; i <= max; i++) {
+//							n--;
+//							top++;
+//							bottom--;
+//							//분자 분모가 하나씩 더해지고 빼지는 만큼
+//							//n의 순서값도 하나씩 빼줌
+//							if(n == 0) {
+//								if(max % 2 != 0) {
+//									System.out.println(bottom + " / " + top);
+//								}else {
+//									System.out.println(top + " / " + bottom);	
+//								}
+//								break;
+//								//배열자체가 지그재그 형식이다보니 max 값이 홀수이면 분모가 위로가고
+//								//짝수면 분모가 다시 아래로 간다.
+//							}
+//						}
+//						max++;
+//						//대각선의 길이가 하나씩 커지기 때문에 한 대각선을 다돌면
+//						//max 값 하나씩 더해줌
 //
-//		출력
-//		첫째 줄에 분수를 출력한다.
-//		
-//		int X = scan.nextInt();
-//		int count = 0;
-//		int line = 0;
-//		
-//		while(count < X) {
-//			line++;
-//			count = line *(line+1)/2; 
-//		}
-//		
-//		if(count /2 != 0) {
-//			int top = 1 + (count - X);
-//			int botton = line - (count - X);
-//			System.out.println(top+"/"+botton);
-//		}else {
-//			int botton = 1 + (count - X);
-//			int top = line - (count - X);
-//			System.out.println(top+"/"+botton);
-//		}
-//								
+//					}
+//					
+//				}
+//		    }
 
 		
 
@@ -2020,27 +2029,36 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////////////////////		
 		
-//		[10250번]		(이해해안된 다음ㅠㅠ 다시보기)
+//		[2775번]	부녀회장이 될테야 [완료]
 		
-		
-//		문제
-//		평소 반상회에 참석하는 것을 좋아하는 주희는 이번 기회에 부녀회장이 되고 싶어 
-//		각 층의 사람들을 불러 모아 반상회를 주최하려고 한다.
-//
-//		이 아파트에 거주를 하려면 조건이 있는데, 
-//		“a층의 b호에 살려면 자신의 아래(a-1)층의 1호부터 b호까지 사람들의 수의 합만큼 사람들을 데려와 살아야 한다” 
-//		는 계약 조항을 꼭 지키고 들어와야 한다.
-//
-//		아파트에 비어있는 집은 없고 모든 거주민들이 이 계약 조건을 지키고 왔다고 가정했을 때, 
-//		주어지는 양의 정수 k와 n에 대해 k층에 n호에는 몇 명이 살고 있는지 출력하라. 
-//		단, 아파트에는 0층부터 있고 각층에는 1호부터 있으며, 0층의 i호에는 i명이 산다.
-//
-//		입력
-//		첫 번째 줄에 Test case의 수 T가 주어진다. 
-//		그리고 각각의 케이스마다 입력으로 첫 번째 줄에 정수 k, 두 번째 줄에 정수 n이 주어진다. (1 <= k <= 14, 1 <= n <= 14)
-//
-//		출력
-//		각각의 Test case에 대해서 해당 집에 거주민 수를 출력하라.	
+//		Scanner in = new Scanner(System.in);
+//		
+//		// 아파트 생성 
+//		int[][] APT = new int[15][15];
+// 
+//		for(int i = 0; i < 15; i++) {
+//			APT[i][1] = 1;	// i층 1호
+//			APT[0][i] = i;	// 0층 i호
+//		}
+// 
+// 
+//		for(int i = 1; i < 15; i ++) {	// 1층부터 14층까지
+// 
+//			for(int j = 2; j < 15; j++) {	// 2호부터 14호까지
+//				APT[i][j] = APT[i][j - 1] + APT[i - 1][j];
+//			}
+//		}
+//		
+//		// 테스트 부분 		
+//		int T = in.nextInt();
+//		
+//		for(int i = 0; i < T; i++) {
+//			int n = in.nextInt();
+//			int k = in.nextInt();
+//			System.out.println(APT[n][k]);
+//		}
+//	}
+
 ///////////////////////////////////////////////////////////////////////////////////////		
 		
 //		[1011번]		
@@ -2581,37 +2599,71 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 		
-//		[2447번]	(이해안감 어려움 ㅠㅠ)
+//		[2447번]	별 찍기 - 10[다시보기]
 		
-//		문제
-//		재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, ...)이라고 할 때, 
-//		크기 N의 패턴은 N×N 정사각형 모양이다.
+///import java.util.Scanner;
 //
-//		크기 3의 패턴은 가운데에 공백이 있고, 가운데를 제외한 모든 칸에 별이 하나씩 있는 패턴이다.
+//public class Main {
+//	static char[][] arr;
 //
-//		***
-//		* *
-//		***
-		
-//		N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데의 (N/3)×(N/3) 정사각형을 크기 N/3의 패턴으로 둘러싼 형태이다. 
-//		예를 들어 크기 27의 패턴은 예제 출력 1과 같다.
+//	public static void main(String[] args) {
+//		Scanner in = new Scanner(System.in);
+//		int N = in.nextInt();
 //
-//		입력
-//		첫째 줄에 N이 주어진다. N은 3의 거듭제곱이다. 즉 어떤 정수 k에 대해 N=3k이며, 이때 1 ≤ k < 8이다.
+//		arr = new char[N][N];
+//       
+//		star(0, 0, N, false);
 //
-//		출력
-//		첫째 줄부터 N번째 줄까지 별을 출력한다.
-		
-//		Scanner scan = new Scanner(System.in);
-//		System.out.println("숫자를 입력해주세요.");	
-//		int N = scan.nextInt();
-//		
-//		for(int i = 1; i <= N; i++) {
-//			for(int j = 1; j <= N; j++) {
-//				if(Math.pow())
+//		StringBuilder sb = new StringBuilder();
+//		for (int i = 0; i < N; i++) {
+//			for (int j = 0; j < N; j++) {
+//				sb.append(arr[i][j]);
 //			}
-//		System.out.println();}
-//		
+//			sb.append('\n');
+//		}
+//		System.out.print(sb);
+//	}
+//
+//	static void star(int x, int y, int N, boolean blank) {
+//
+//		// 공백칸일 경우
+//		if (blank) {
+//			for (int i = x; i < x + N; i++) {
+//				for (int j = y; j < y + N; j++) {
+//					arr[i][j] = ' ';
+//				}
+//			}
+//			return;
+//		}
+//
+//		// 더이상 쪼갤 수 없는 블록일 때
+//		if (N == 1) {
+//			arr[x][y] = '*';
+//			return;
+//		}
+//
+//		/*
+//		   N=27 일 경우 한 블록의 사이즈는 9이고, 
+//		   N=9 일 경우 한 블록의 사이즈는 3이듯
+//		   해당 블록의 한 칸을 담을 변수를 의미 size
+//          
+//		   count는 별 출력 누적을 의미
+//		 */
+//
+//		int size = N / 3;
+//		int count = 0;
+//		for (int i = x; i < x + N; i += size) {
+//			for (int j = y; j < y + N; j += size) {
+//				count++;
+//				if (count == 5) { // 공백 칸일 경우
+//					star(i, j, size, true);
+//				} else {
+//					star(i, j, size, false);
+//				}
+//			}
+//		}
+//	}
+//}
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 		
@@ -10701,33 +10753,175 @@ public class main {
 	
 //		[16968] 차량 번호판 1 [다시 보기]
 		
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
+//		
+//		char[] template = sc.next().toCharArray();
+//		int result = 1;
+//		
+//		for(int i = 0 ; i < template.length ; ++i) {
+//			if(i == 0) {
+//				if(template[i] == 'c') result *= 26;
+//				else result *= 10;
+//			} else {
+//				if(template[i] == 'c') {
+//					if(template[i - 1] == 'c') {
+//						result *= 25;
+//					} else {
+//						result *= 26;
+//					}
+//				} else {
+//					if(template[i - 1] == 'd') {
+//						result *= 9;
+//					} else {
+//						result *= 10;
+//					}
+//				}
+//			}
+//		}
+//		System.out.println(result);
 		
-		char[] template = sc.next().toCharArray();
-		int result = 1;
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
 		
-		for(int i = 0 ; i < template.length ; ++i) {
-			if(i == 0) {
-				if(template[i] == 'c') result *= 26;
-				else result *= 10;
-			} else {
-				if(template[i] == 'c') {
-					if(template[i - 1] == 'c') {
-						result *= 25;
-					} else {
-						result *= 26;
-					}
-				} else {
-					if(template[i - 1] == 'd') {
-						result *= 9;
-					} else {
-						result *= 10;
-					}
-				}
+////		[2847]	게임을 만든 동준이 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		int sum = 0;
+//		//총 내려야 하는 점수가 들어갈 변수
+//		for(int i = n - 1; i >= 1; i--) {
+//				if(arr[i] < arr[i - 1] ) {
+//					//전 레벨의 점수가 현재 레벨의 점수보다 높은 경우
+//					sum += (arr[i - 1] + 1) - arr[i];
+//					arr[i - 1] -= (arr[i - 1] + 1) - arr[i]; 
+//					//차이 값에 1만큼 더 작아야 전레벨의 점수가 현재 레벨보다 낮아진다.
+//				}else if(arr[i] == arr[i - 1] ) {
+//					//전 레벨의 점수가 현재 레벨의 점수와 같은 경우
+//					sum += 1;
+//					arr[i - 1] -= 1;
+//					//같으면 1만 빼주면 전레벨의 점수가 현재레벨보다 낮아진다.
+//				}else {
+//					continue;
+//				}
+//		}
+//		
+//		System.out.println(sum);
+//		
+//		}
+//	}
+
+////		[1439] 뒤집기 [블로그]
+			
+//		Scanner scan = new Scanner(System.in);
+//		String s = scan.next();
+//		int [] arr = new int [s.length()];
+//		for(int i = 0; i < s.length(); i++) {
+//			arr[i] = s.charAt(i) - '0';
+//		}
+//		//초기 문자열로 데이터 받아줌
+//		
+//		int count = 0;
+//		//총 뒤집는 횟수 저장될 변수
+//		while(true) {
+//		int flag = 0;
+//		//연속된 다른수의 횟수를 저장할 변수
+//		int temp = arr[0];	
+//			for(int i = 1; i < s.length(); i++) {
+//					if(temp != arr[i]) {
+//						flag ++;
+//						temp = arr[i];
+//						//연속되지 않을 경우 flag 변수 하나 더해줌
+//						//다시 연속된 수 체크를 위해 temp에 배열 위치 저장
+//					}
+//			}
+//			if(flag >= 3) {
+//				count++;
+//				for(int i = 0; i < s.length(); i++) {
+//					arr[i] = 1 - arr[i];
+//				}
+//				//3번 이상 연속된 수가 있을 경우 한 번뒤집고로 안됨
+//				//때문에 배열을 전체 다 뒤집은 다음에 다시 while 문으로 비교
+//			}else if(flag == 2 || flag == 1) {
+//				count++;
+//				break;
+//				//뒤집기가 2번 일 경우 특정 부분만 뒤집으면 되고
+//				//1일 경우 temp 위치의 배열부터 끝까지 뒤집으면 되니까
+//				//한 번만 뒤집으면 됨
+//			}else {
+//				break;
+//				//이미 같은 수열임 뒤집을 필요없음
+//			}
+//				
+//		}
+//		
+//		System.out.println(count);
+		
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
+		
+////		[13305]주유소[블로그][뿌듯]
+	
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int [] distance = new int [n-1]; 
+		int [] price = new int [n];
+		
+		for(int i = 0; i < distance.length; i++) {
+			distance[i] = scan.nextInt();
+		}
+		
+		int min = 99999999;
+		int temp = 0;
+		for(int i = 0; i < price.length; i++) {
+			price[i] = scan.nextInt();
+			if(min > price[i]) {
+				min = price[i];
+				temp = i;
 			}
 		}
-		System.out.println(result);
+	
+//		sum += price[i] * distance[count];
+		int sum = 0;
+		//총 기름값이 들어갈 변수
+		if(temp == 0) {
+			for(int i = 0; i <distance.length; i++) {
+				sum += distance[i] * min;
+			}
+			//temp 0 이면 첫도시의 기름 값이 제일 쌈 
+		}else {
+		int i = temp = 0;
+		//첫도시 기름값이 제일 싼값이 아님
+		//도시간 기름 값 비교를 위한 변수 0으로 초기화
+			loop : while(true) {
+				i = temp;
+				//도시의 위치를 temp 값으로 변경
+				//이는 아래식에서 temp 까지 차가 이동했기 때문
+				//초기값은 어차피 처음 위치임
+				for(int j = i + 1; j < price.length - 1; j++) {
+					if(price[i] > price[j]) {
+						temp = j;
+						break;
+						//i 이후에 도시들을 비교하며 i 보다 기름 값이 싼 도시에서 정지
+					}else {
+						temp = distance.length;
+						//i가 가장 쌀 경우 거기서 끝가지 가도 되기 때문에
+						//temp값에 최대거리를 넣어줌
+					}
+				}
+				for(int k = i; k < temp; k++) {
+					sum += price[i] * distance[k];
+				}
+				//현재 도시의 기름값과 i 로 갈수 있는 거리만큼 곱해줌
+				
+				if(temp == distance.length) {break loop;}
+				//temp가 총거리랑 같으면 모든 기름값을 더해주었고 도착한 후이기 때문에 반복문 종료
+			}
 		}
+		
+			System.out.println(sum);
+		}
+	
 	}
-
-
+	
