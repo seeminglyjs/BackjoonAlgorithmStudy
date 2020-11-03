@@ -1871,7 +1871,7 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////////////////////		
 		
-//		[1193번]	분수찾기 [블로그]		
+//		[1193번]	분수찾기 [완료]		
 		
 		
 		//사실 이 문제는 배열문제 처럼 보이지만 굳이 배열을 사용할 필요없이
@@ -1884,7 +1884,6 @@ public class main {
 //		public class TemplateA {
 //				public static void main(String[] args)  {
 //
-//					Scanner scan = new Scanner(System.in);
 //					
 //					int n = scan.nextInt();
 //					
@@ -10863,65 +10862,229 @@ public class main {
 		
 ////		[13305]주유소[블로그][뿌듯]
 	
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
-		int [] distance = new int [n-1]; 
-		int [] price = new int [n];
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] distance = new int [n-1]; 
+//		int [] price = new int [n];
+//		
+//		for(int i = 0; i < distance.length; i++) {
+//			distance[i] = scan.nextInt();
+//		}
+//		
+//		int min = 99999999;
+//		int temp = 0;
+//		for(int i = 0; i < price.length; i++) {
+//			price[i] = scan.nextInt();
+//			if(min > price[i]) {
+//				min = price[i];
+//				temp = i;
+//			}
+//		}
+//	
+////		sum += price[i] * distance[count];
+//		int sum = 0;
+//		//총 기름값이 들어갈 변수
+//		if(temp == 0) {
+//			for(int i = 0; i <distance.length; i++) {
+//				sum += distance[i] * min;
+//			}
+//			//temp 0 이면 첫도시의 기름 값이 제일 쌈 
+//		}else {
+//		int i = temp = 0;
+//		//첫도시 기름값이 제일 싼값이 아님
+//		//도시간 기름 값 비교를 위한 변수 0으로 초기화
+//			loop : while(true) {
+//				i = temp;
+//				//도시의 위치를 temp 값으로 변경
+//				//이는 아래식에서 temp 까지 차가 이동했기 때문
+//				//초기값은 어차피 처음 위치임
+//				for(int j = i + 1; j < price.length - 1; j++) {
+//					if(price[i] > price[j]) {
+//						temp = j;
+//						break;
+//						//i 이후에 도시들을 비교하며 i 보다 기름 값이 싼 도시에서 정지
+//					}else {
+//						temp = distance.length;
+//						//i가 가장 쌀 경우 거기서 끝가지 가도 되기 때문에
+//						//temp값에 최대거리를 넣어줌
+//					}
+//				}
+//				for(int k = i; k < temp; k++) {
+//					sum += price[i] * distance[k];
+//				}
+//				//현재 도시의 기름값과 i 로 갈수 있는 거리만큼 곱해줌
+//				
+//				if(temp == distance.length) {break loop;}
+//				//temp가 총거리랑 같으면 모든 기름값을 더해주었고 도착한 후이기 때문에 반복문 종료
+//			}
+//		}
+//		
+//			System.out.println(sum);
+
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
 		
-		for(int i = 0; i < distance.length; i++) {
-			distance[i] = scan.nextInt();
-		}
+////	[15726] 이칙연산 [블로그]
 		
-		int min = 99999999;
-		int temp = 0;
-		for(int i = 0; i < price.length; i++) {
-			price[i] = scan.nextInt();
-			if(min > price[i]) {
-				min = price[i];
-				temp = i;
-			}
-		}
-	
-//		sum += price[i] * distance[count];
-		int sum = 0;
-		//총 기름값이 들어갈 변수
-		if(temp == 0) {
-			for(int i = 0; i <distance.length; i++) {
-				sum += distance[i] * min;
-			}
-			//temp 0 이면 첫도시의 기름 값이 제일 쌈 
-		}else {
-		int i = temp = 0;
-		//첫도시 기름값이 제일 싼값이 아님
-		//도시간 기름 값 비교를 위한 변수 0으로 초기화
-			loop : while(true) {
-				i = temp;
-				//도시의 위치를 temp 값으로 변경
-				//이는 아래식에서 temp 까지 차가 이동했기 때문
-				//초기값은 어차피 처음 위치임
-				for(int j = i + 1; j < price.length - 1; j++) {
-					if(price[i] > price[j]) {
-						temp = j;
-						break;
-						//i 이후에 도시들을 비교하며 i 보다 기름 값이 싼 도시에서 정지
-					}else {
-						temp = distance.length;
-						//i가 가장 쌀 경우 거기서 끝가지 가도 되기 때문에
-						//temp값에 최대거리를 넣어줌
-					}
-				}
-				for(int k = i; k < temp; k++) {
-					sum += price[i] * distance[k];
-				}
-				//현재 도시의 기름값과 i 로 갈수 있는 거리만큼 곱해줌
-				
-				if(temp == distance.length) {break loop;}
-				//temp가 총거리랑 같으면 모든 기름값을 더해주었고 도착한 후이기 때문에 반복문 종료
-			}
-		}
+//		Scanner scan = new Scanner(System.in);
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		int c = scan.nextInt();
+//		
+//		int max1 = a * b / c;
+//		int max2 = a / b * c;
+//	
+//		if(max1 >= max2) {
+//			System.out.println(max1);
+//		}else {
+//			System.out.println(max2);
+//		}
+
+////	[11812] k 진트리 [다시보기]
 		
-			System.out.println(sum);
-		}
+//	 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	    String str = br.readLine();
+//	    StringTokenizer st = new StringTokenizer(str);
+//	     
+//	    long N = Long.parseLong(st.nextToken());
+//	    int K = Integer.parseInt(st.nextToken());
+//	    int Q = Integer.parseInt(st.nextToken());
+//	     
+//	    for (int i = 0; i < Q; i++) {
+//	        str = br.readLine();
+//	        st = new StringTokenizer(str);
+//	        long x = Long.parseLong(st.nextToken());
+//	        long y = Long.parseLong(st.nextToken());
+//	         
+//	        long count = 0;
+//	        if (K == 1) {
+//	            count = x < y ? y - x : x - y;
+//	        }
+//	        else {
+//	            while (x != y) {
+//	                // 부모 노드
+//	                if (x < y) {
+//	                    y = (y - 2) / K + 1;
+//	                }
+//	                else {
+//	                    x = (x - 2) / K + 1;
+//	                }
+//	                 
+//	                count++;
+//	            }
+//	        }           
+//	         
+//	        System.out.println(count);
+//	    }
+		
+////	[3955] 사탕 분배 [답이 나오는데 아마 시간을 많이 잡아먹음]
+	    
+//	    int tCase = scan.nextInt();
+//	    
+//	    for(int i = 0; i < tCase; i++) {
+//	    	int count = 0;
+//	    	int people = scan.nextInt();
+//	    	int candy = scan.nextInt();
+//	    	if(people % candy == 0 && candy != 1) {
+//	    		System.out.println("IMPOSSIBLE");
+//	    		continue;
+//	    	}else {
+//	    		while(true) {
+//	    			count++;
+//	    			if((candy * count) % people == 1 ) {
+//	    				break;
+//	    			}
+//	    		}
+//	    	}
+//	    	
+//	    	System.out.println(count);
+//	    }
+		
+		
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
+		
+////		[2810]	컵홀더 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		String seat = scan.next();
+//		String arr [] = new String [n];
+//		
+//		for(int i =0; i < n; i++) {
+//			arr[i] = String.valueOf(seat.charAt(i) - 'L');
+//			//s 는 숫자 7이되고 L은 숫자 0이된다.
+//		}
+//		
+//		int count = n;
+//		//모든 사람이 컵홀더를 쓸수 있다는 전제
+//		int check = 0;
+//		//커플석 체크 변수
+//		for(int i =0; i < n; i++) {
+//			if(arr[i].equals("0")) {
+//				check++;
+//			}
+//			
+//			if(check == 2) {
+//				check = 0;
+//				count --;
+//			}
+//			//체크가 2이면 커플석이고 한사람은 컵홀더를 못씀
+//		}
+//		
+//		if(count != n) {
+//			count += 1;
+//		}
+//		//왼쪽 컵홀더를 쓴다는 기준으로 생각함
+//		//때문에 오른쪽 컵홀더가 하나 남게 되는데,
+//		//때문에 하나를 더해줌(커플석이 하나라도 있을경우)
+//		System.out.println(count);
+		
+		
+////	[2812]	크게 만들기 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		//자릿수
+//		int k = scan.nextInt();
+//		//지울 자릿수
+//		String str = scan.next();		
+//		//입력값
+//		int [] arr = new int [n];	
+//		int min = 9;
+//		for(int i = 0; i <n; i++) {
+//			arr[i] = str.charAt(i) - '0';
+//			if(min > arr[i]) {
+//				min = arr[i];
+//			}
+//		}
+//		//입력값 배열에 넣어줌
+//		
+//		loop : while(k > 0) {
+//			for(int i = n - 1; i >= 0; i--) {
+//				if(arr[i] == min) {
+//					arr[i] = -1;
+//					k--;
+//					if(k == 0) {break loop;}
+//				}
+//				//앞자리가 큰수가 남아야하기 때문에 배열 뒷자리 부터 비교
+//				//동일수라도 앞에는 큰수가 남아야함
+//				min = 9;
+//				for(int j = 0; j < n; j++) {
+//					if(min > arr[j] && arr[j] != -1) {
+//						min = arr[j];
+//					}
+//				}
+//				//다음에 지울 수를 찾음 (-1이 아니고 그다음 작은수)
+//			}
+//			
+//		}
+//		
+//		for(int i =0; i <n; i++) {
+//			if(arr[i] != -1) {
+//				System.out.print(arr[i]);
+//			}
+//		}
+		
+	}
 	
 	}
 	
