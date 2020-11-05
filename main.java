@@ -1,3 +1,4 @@
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -8157,7 +8158,7 @@ public class main {
 /////////////////////////////////////////////////////////////////////	1003공부		
 
 		
-//			[1356] 유진수 [블로그]		
+//			[1356] 유진수 [완료]		
 
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //		String n = bf.readLine();
@@ -8230,7 +8231,7 @@ public class main {
 		
 /////////////////////////////////////////////////////////////////////////	1004공부		
 		
-//		[2033] 반올림 [블로그]
+//		[2033] 반올림 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		String n = scan.next();
@@ -8285,7 +8286,7 @@ public class main {
 //			}
 	
 
-//		[15873] 공백 없는 ~~~[블로그]
+//		[15873] 공백 없는 ~~~[완료]
 		
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //		String n = bf.readLine();
@@ -8309,7 +8310,7 @@ public class main {
 		
 
 		
-//		[15780] 멀티탭충분하니? [블로그]
+//		[15780] 멀티탭충분하니? [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		int Student = scan.nextInt();
@@ -8367,7 +8368,7 @@ public class main {
 		            
 		
 		
-//		[2755] 이번학기 평점은 몇점 [블로그]
+//		[2755] 이번학기 평점은 몇점 [완료]
 		
 //		int n = scan.nextInt();
 //		String [][] arr = new String [n][3];
@@ -10921,7 +10922,7 @@ public class main {
 //		
 //			System.out.println(sum);
 
-///////////////////////////////////////////////////////////////////////////////////////1030공부	
+///////////////////////////////////////////////////////////////////////////////////////1102공부	
 		
 ////	[15726] 이칙연산 [블로그]
 		
@@ -11000,7 +11001,7 @@ public class main {
 //	    }
 		
 		
-///////////////////////////////////////////////////////////////////////////////////////1030공부	
+///////////////////////////////////////////////////////////////////////////////////////1103공부	
 		
 ////		[2810]	컵홀더 [블로그]
 		
@@ -11083,7 +11084,176 @@ public class main {
 //				System.out.print(arr[i]);
 //			}
 //		}
+
 		
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
+		
+////		[9576]	책 나눠주기 [다시보기]
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		StringTokenizer st;
+//		int T = Integer.parseInt(br.readLine());
+//
+//		StringBuilder sb = new StringBuilder();
+//		while (T-- > 0) {
+//			st = new StringTokenizer(br.readLine());
+//			int N = Integer.parseInt(st.nextToken());
+//			int M = Integer.parseInt(st.nextToken());
+//
+//			Point[] points = new Point[M + 1];
+//			for (int i = 1; i <= M; i++) {
+//				st = new StringTokenizer(br.readLine());
+//
+//				int a = Integer.parseInt(st.nextToken());
+//				int b = Integer.parseInt(st.nextToken());
+//
+//				points[i] = new Point(a, b);
+//			}
+//
+//			// b를 기준으로 오름차순 정렬하되, b가 같을 경우
+//			// a를 기준으로 오름차순 정렬한다.
+//			Arrays.sort(points, 1, M + 1, (p1, p2) -> (p1.y == p2.y) ? p1.x - p2.x : p1.y - p2.y);
+//
+//			int ans = 0;
+//			boolean[] check = new boolean[N + 1];
+//			for (int i = 1; i <= M; i++) {
+//				int a = points[i].x;
+//				int b = points[i].y;
+//
+//				// 해당하는 범위 내에서
+//				// 가능한 가장 작은 번호의 책부터 뽑는다.
+//				for (int j = a; j <= b; j++) {
+//					if (!check[j]) {
+//						check[j] = true;
+//						ans++;
+//						break;
+//					}
+//				}
+//			}
+//			sb.append(ans + "\n");
+//		}
+//
+//		bw.write(sb.toString());
+//		bw.flush();
+//		bw.close();
+//		br.close();
+		
+////	[15903] 카드 합체 놀이 [블로그]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		int [] arr = new int [n];
+//		int min1 = 9999;
+//		//가장 작은 값 저장할 변수
+//		int min2 = 9999;
+//		//그 다음 작은 값 저장할 변수
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int temp1 = 0;
+//		//min1 의 배열위치 저장 변수
+//		int temp2 = 0;
+//		//min2 의 배열위치 저장 변수
+//		int sum = 0;
+//		//합을 저장할 변수
+//		for(int i = 0; i < m; i++) {
+//			for(int j = 0; j < n; j++) {
+//				if(min1 > arr[j]) {
+//					min1 = arr[j];
+//					temp1 = j;
+//				}
+//				//가장 작은 값과 그 위치 저장
+//			for(int k = 0; k < n; k++) {
+//				if(min2 > arr[k] && arr[k] >= min1 && k != temp1) {
+//					min2 = arr[k];
+//					temp2 = k;
+//					}	
+//				}
+//			}
+//			//가장 작은 값과 그 배열위치를 제외한 그 다음 값을 찾는 반복문
+//			sum = arr[temp1] + arr[temp2];
+//			arr[temp1] = sum;
+//			arr[temp2] = sum;
+//			//각 위치에 둘의 합을 저장함
+//		}	
+//	
+//		sum = 0;
+//		for(int i = 0; i < n; i++) {
+//			sum += arr[i];
+//		}
+//		//모든 배열 숫자 합을 구함
+//		System.out.println(sum);
+		
+///////////////////////////////////////////////////////////////////////////////////////1030공부	
+		
+////		[11497]	통나무 건너뛰기	
+			
+//		Scanner scan = new Scanner(System.in);
+//		int tCase = scan.nextInt();
+//		
+//		for(int i = 0; i < tCase; i++) {
+//			int n = scan.nextInt();
+//			int [] arr = new int [n];
+//			for(int j = 0; j < n; j++) {
+//				arr[j] = scan.nextInt();
+//			}
+//			
+//			Arrays.sort(arr);
+//			//정렬
+//			if(n == 2) {
+//				System.out.println(arr[n-1] - arr[n-2]);
+//				//배열의 수가 2개일 경우 두수의 차가 최대 난이도
+//			}else if(n == 1) {
+//				System.out.println(0);
+//				//배열의 수가 1일 경우 무조건 0
+//			}else {
+//				System.out.println(arr[n-1] - arr[n-3]);
+//				//3개 이상일 경우 마지막 가장 큰 수와 두번째 큰 수의 차가 최대 난이도가 됨
+//			}
+//
+//		}
+//		
+		
+////	[11000] 강의실 배정 [완료][다시보기]
+		
+			Scanner scan = new Scanner(System.in);
+			int n = scan.nextInt();
+			int [][] arr = new int [n][2];
+			
+			for(int i = 0; i < n ; i++) {
+				for(int j = 0; j < 2; j++) {
+					arr[i][j] = scan.nextInt();
+				}
+			}
+			//2차월 배열 정렬 0번쨰 열 다음 1번째 열 기준(다중 배열 정렬)
+			Arrays.sort(arr, new Comparator<int[]>() {
+			    public int compare(int[] o1, int[] o2) {
+			    	 if(o1[0] == o2[0]) {
+		                   return o1[1] - o2[1];
+			    	 }else {
+			    		 return o1[0] - o2[0]; 
+			    	 }
+		           }
+		        });
+			
+			int count = 1;
+			//총 강의 가능 횟수
+			int temp = 0;
+			//강위 시작시간 저장 변수
+			for(int i = 1; i < n; i++) {
+				if(arr[temp][1] <= arr[i][0]) {
+					count++;
+					//처음 강의의 끝나는 시간보다 
+					//다음 강의의 시작 시간 같거나 크면
+					//강의 진행 가능
+					temp = i;
+					//시작시간 i번째 강의로 초기화 
+				}
+			}
 	}
 	
 	}
