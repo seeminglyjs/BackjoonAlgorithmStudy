@@ -8637,7 +8637,7 @@ public class main {
 			
 			
 			
-			// [7510]	고급수학 [블로그]
+			// [7510]	고급수학 [완료]
 			
 //			Scanner scan = new Scanner(System.in);			
 //			int Tcase = scan.nextInt();			
@@ -8684,7 +8684,7 @@ public class main {
 //			}
 //			//가장 긴변 제곱과 같은지 체크 해줌
 
-		// [16431]베시아 데이지		[블로그]
+		// [16431]베시아 데이지		[완료]
 		
 //		int []bessie = new int [2];
 //		int []daisy = new int [2];
@@ -8786,9 +8786,9 @@ public class main {
 //			}
 //			return cnt;
 		
-//		// [1059] 수 2 [블로그]
+//		// [1059] 수 2 [완료]
 		
-//		Scanner scna= new Scanner(System.in);
+//		Scanner scan= new Scanner(System.in);
 //		
 //		int L = scan.nextInt();
 //		int [] arr = new int [L];		
@@ -8820,9 +8820,9 @@ public class main {
 //		//end 값을 하나씩 빼가면서 비교해 줄 거길 때문에
 //		//초기화용 변수 이다.
 //		while(start != end) {
-//		for(int i = start; i <= end; i++) {
-//			if(start <= N && end >= N || start == N || end == N) {
-//			count++;
+//		for(int i = start; i <= tempEnd; i++) {
+//			if(start <= N && end >= N &&(start != end)) {
+//				count++;
 //			}
 //			end--;
 //		}
@@ -8842,7 +8842,7 @@ public class main {
 //		//숫자가 없는 경우이기 때문에 종료
 //		}
 //		System.out.println(count);
-		
+//		
 		
 		
 ///////////////////////////////////////////////////////////////////////	1011공부		
@@ -11220,41 +11220,381 @@ public class main {
 		
 ////	[11000] 강의실 배정 [완료][다시보기]
 		
-			Scanner scan = new Scanner(System.in);
-			int n = scan.nextInt();
-			int [][] arr = new int [n][2];
+//			Scanner scan = new Scanner(System.in);
+//			int n = scan.nextInt();
+//			int [][] arr = new int [n][2];
+//			
+//			for(int i = 0; i < n ; i++) {
+//				for(int j = 0; j < 2; j++) {
+//					arr[i][j] = scan.nextInt();
+//				}
+//			}
+//			//2차월 배열 정렬 0번쨰 열 다음 1번째 열 기준(다중 배열 정렬)
+//			Arrays.sort(arr, new Comparator<int[]>() {
+//			    public int compare(int[] o1, int[] o2) {
+//			    	 if(o1[0] == o2[0]) {
+//		                   return o1[1] - o2[1];
+//			    	 }else {
+//			    		 return o1[0] - o2[0]; 
+//			    	 }
+//		           }
+//		        });
+//			
+//			int count = 1;
+//			//총 강의 가능 횟수
+//			int temp = 0;
+//			//강위 시작시간 저장 변수
+//			for(int i = 1; i < n; i++) {
+//				if(arr[temp][1] <= arr[i][0]) {
+//					count++;
+//					//처음 강의의 끝나는 시간보다 
+//					//다음 강의의 시작 시간 같거나 크면
+//					//강의 진행 가능
+//					temp = i;
+//					//시작시간 i번째 강의로 초기화 
+//				}
+//			}
 			
-			for(int i = 0; i < n ; i++) {
-				for(int j = 0; j < 2; j++) {
-					arr[i][j] = scan.nextInt();
-				}
-			}
-			//2차월 배열 정렬 0번쨰 열 다음 1번째 열 기준(다중 배열 정렬)
-			Arrays.sort(arr, new Comparator<int[]>() {
-			    public int compare(int[] o1, int[] o2) {
-			    	 if(o1[0] == o2[0]) {
-		                   return o1[1] - o2[1];
-			    	 }else {
-			    		 return o1[0] - o2[0]; 
-			    	 }
-		           }
-		        });
-			
-			int count = 1;
-			//총 강의 가능 횟수
-			int temp = 0;
-			//강위 시작시간 저장 변수
-			for(int i = 1; i < n; i++) {
-				if(arr[temp][1] <= arr[i][0]) {
+///////////////////////////////////////////////////////////////////////	1106공부				
+
+//		[7570] 줄 세우기
+		// 어는 배열의 위치이든지 한 번에 앞이나 뒤로 한번 만 옮길 수 있기 때문에,
+		// 최솟값을 가장 앞으로 보내는 방식을 사용하였다.
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int count = 0;
+//		for(int i = 0; i < n - 1; i++) {
+//			int min = arr[i];
+//			//배열에서의 최솟값을 저장할 변수
+//			int temp = 0;
+//			//최솟값 배열의 위치를 저장할 변수
+//			for(int j = i + 1; j < n; j++) {
+//				if(arr[i] > arr[j]) {
+//					min = arr[j];
+//					temp = j;
+//					//가장 작은 값 배열을 돌면서 체크
+//				}
+//			}
+//			if(min != arr[i]) {
+//				arr[temp] = arr[i];
+//				arr[i] = min;
+//				count++;
+//				//최솟값의 배열의 i위치의 값이 아니면,
+//				//첫번째 자리와 최솟값의 위치를 서로 교환
+//			}
+//			
+//		}
+//		
+//		System.out.println(count);
+//		
+//		
+//		
+////		[8980] 택배 [실패]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int vil = scan.nextInt();
+//		int truck = scan.nextInt();
+//		int info = scan.nextInt();
+//		
+//		int [][] arr = new int [info][3];
+//		for(int i = 0; i < info; i++) {
+//			for(int j = 0; j < 3; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>(){
+//			public int compare(int [] o1, int [] o2) {
+//				if(o1[0] == o2[1]) {
+//					return o1[1] - o2[1];
+//				}else {
+//					return o1[0] - o2[0];
+//				}
+//			}
+//		});
+//		
+//		
+//		for(int i = 0; i < info; i++) {
+//			for(int j = 0; j < 3; j++) {
+//				System.out.print(arr[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+//		
+//		int sum = 0;
+//		int ttruck = 0;
+//		int tvil = arr[0][0];
+//		for(int i = 0; i < info; i++) {
+//			if(arr[i][0] == tvil) {
+//				ttruck += arr[i][2];
+//				if(ttruck > truck) {	
+//				ttruck -= arr[i][2];
+//				ttruck = truck;
+//				}
+//			}else {
+//				for(int j = 0; j < i; j++) {
+//					if(arr[j][1] == arr[i][0]) {
+//						ttruck -= arr[j][2];
+//						if(ttruck < 0) {
+//							ttruck += arr[j][2];
+//							sum += ttruck;
+//						}else {
+//							sum += arr[j][2];
+//						}
+//					}
+//				}
+//				ttruck += arr[i][2];
+//				if(ttruck > truck) {	
+//				ttruck -= arr[i][2];
+//				ttruck = truck;
+//				}
+//				if(arr[i][0] != tvil) {tvil = arr[i][0];}	
+//			}
+//	}
+//		System.out.println(sum);
+////////////다른 풀이 아래/////////////////////////////////////		
+//		import java.io.BufferedReader;
+//		import java.io.BufferedWriter;
+//		import java.io.InputStreamReader;
+//		import java.io.OutputStreamWriter;
+//		import java.util.Arrays;
+//		import java.util.StringTokenizer;
+//		 
+//		class Delivery implements Comparable<Delivery> {
+//		    int start; // 보내는 마을
+//		    int end; // 받는 마을
+//		    int boxNum; // 박스의 개수
+//		 
+//		    Delivery(int start, int end, int boxNum) {
+//		        this.start = start;
+//		        this.end = end;
+//		        this.boxNum = boxNum;
+//		    }
+//		 
+//		    @Override
+//		    public int compareTo(Delivery arg0) {
+//		        if (end == arg0.end) {
+//		            return start - arg0.start;
+//		        }
+//		        return end - arg0.end;
+//		    }
+//		}
+//		 
+//		public class Main {
+//		 
+//		    public static void main(String[] args) throws Exception {
+//		        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		        StringTokenizer st = new StringTokenizer(br.readLine());
+//		 
+//		        int N = Integer.parseInt(st.nextToken()); // 마을의 수
+//		        int C = Integer.parseInt(st.nextToken()); // 트럭의 용량
+//		 
+//		        int M = Integer.parseInt(br.readLine()); // 보낼 박스 정보의 개수
+//		        Delivery[] deliveries = new Delivery[M + 1];
+//		        for (int i = 1; i <= M; i++) {
+//		            st = new StringTokenizer(br.readLine());
+//		            int start = Integer.parseInt(st.nextToken());
+//		            int end = Integer.parseInt(st.nextToken());
+//		            int boxNum = Integer.parseInt(st.nextToken());
+//		 
+//		            deliveries[i] = new Delivery(start, end, boxNum);
+//		        }
+//		        // 택배를 받는 마을을 기준으로 오름차순 정렬을 하되, 받는 마을이 같을 경우
+//		        // 보내는 마을을 기준으로 오름차순 정렬을 한다.
+//		        Arrays.sort(deliveries, 1, M + 1);
+//		 
+//		        // 각 마을당 보낼 수 있는 최대 용량을 설정한다.
+//		        int[] weight = new int[N + 1];
+//		        for (int i = 1; i < N; i++) {
+//		            weight[i] = C;
+//		        }
+//		 
+//		        int ans = 0;
+//		        for (int i = 1; i <= M; i++) {
+//		            Delivery d = deliveries[i];
+//		 
+//		            int maxBoxNum = Integer.MAX_VALUE;
+//		 
+//		            // 보내는 마을과 받는 마을 사이의 경로 마을 중에서 보낼 수 있는 최대 한도를 구한다.
+//		            for (int j = d.start; j < d.end; j++) {
+//		                maxBoxNum = Math.min(maxBoxNum, weight[j]);
+//		            }
+//		 
+//		            // 위에서 구한 보낼 수 있는 최대 한도가 현재 보내려는 택배의 개수보다 크다면,
+//		            // 보내는 마을과 받는 마을 사이의 경로 마을 모두 용량에서 현재 보내려는 택배의 개수를 뺀다.
+//		            if (maxBoxNum >= d.boxNum) {
+//		                for (int j = d.start; j < d.end; j++) {
+//		                    weight[j] -= d.boxNum;
+//		                }
+//		                ans += d.boxNum;
+//		            } else {
+//		                // 보낼 수 있는 최대 한도보다 현재 보내려는 택배의 개수가 클 경우,
+//		                // 현재 보내려는 택배의 개수가 아닌 위에서 구한 최대 한도를 기준으로 한다.
+//		                for (int j = d.start; j < d.end; j++) {
+//		                    weight[j] -= maxBoxNum;
+//		                }
+//		                ans += maxBoxNum;
+//		            }
+//		        }
+//		 
+//		        bw.write(ans + "\n");
+//		        bw.flush();
+//		        bw.close();
+//		        br.close();
+//		    }
+//		 
+//		}
+
+		
+///////////////////////////////////////////////////////////////////////	1109공부				
+
+//		 [1343] 폴리오미노 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		String a = "AAAA";
+//		String b = "BB";
+//		String input = scan.next();
+//		String [] arr = new String [500];
+//		//변환된 값(a, b)이 들어갈 배열
+//		int [] temp = new int [500];
+//		//인트 값으로 변환된 input 값이 들어갈 배열
+//		
+//		for(int i = 0; i < input.length(); i++) {
+//			temp[i] = input.charAt(i) - 'W';
+//			//X 의 자리에 모두 정수 1이 들어가게 변환
+//		}
+//		
+//		int count = 0;
+//		//연속된 X 를 셀 변수
+//		int num = 0;
+//		//배열 위치 지정변수
+//		boolean flag = true;
+//		//덮을 수 없을 경우 체크 변수
+//		for(int i = 0; i < input.length(); i++) {
+//			if(temp[i] == 1) {
+//				count++;
+//				if(count % 4 == 0) {
+//					arr[num] = a;
+//					num++;
+//					count = 0;
+//					//4로 나누어지면 a 로 변환
+//				}else if(count % 4 != 0 && count % 2 == 0 && temp[i + 1] != 1) {
+//					arr[num] = b;
+//					num++;
+//					count = 0;
+//					//4로 나누어지지 않으면서 2로는 나누어지면 배열의 다음 값이 1이 아닌 값
+//					//즉 연속된 X값이 배열 다음자리에 없으면 이로 나누고 b로 덮어버림
+//				}	
+//			}else {
+//				if(count % 2 != 0) {
+//					flag = false;
+//					break;
+//					//연속 값이 2로 안나누어지면 덮을 수 없음
+//					//더이상 비교불필요 반복문 종료
+//					}else {
+//					arr[num] = ".";
+//					num++;
+//					//아니면 배열의 값을 점으로 채우고
+//					//배열위치 하나씩 더해줌
+//				}
+//				
+//			}
+//		}
+//		
+//		if(flag == false || count == 1) {
+//			System.out.println(-1);
+//			//flag 그 여부와 주어진 값이 한자리면 -1 출력
+//		}else {
+//			for(int i = 0; i < num; i++) {
+//				System.out.print(arr[i]);
+//			}
+//		}
+//		
+//		
+//	
+		
+		
+///////////////////////////////////////////////////////////////////////	1110공부				
+
+//		[2828] 사과 담기 게임 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int screen = scan.nextInt();
+//		int basketSize = scan.nextInt();
+//		int apple = scan.nextInt();
+//		int [] arr = new int [apple];
+//		
+//		int count = 0;
+//		//움직인 수를 저장할 변수
+//		for(int i = 0; i < apple; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int location = basketSize;
+//		//바구니의 현재 위치를 저장할 변수
+//		for(int i = 0; i < apple; i++) {
+//			while(true) {
+//				if(arr[i] >= (location  - (basketSize - 1)) && arr[i] <= location) {
+//					break;
+//					//바구니의 현재위치와 바구니의 크기내에 있을 경우 움직일 필요없음
+//				}else {
+//					if(arr[i] > location) {
+//						count += 1;
+//						location += 1;
+//						//사과의 위치가 현재위치보다 크면 한칸 움직이고 움직인 거리도 하나 더해줌
+//					}else {
+//						count += 1;
+//						location -= 1;
+//						//사과의 위치가 현재위치보다 작으면 한칸 움직이고 움직인 거리도 하나 더해줌
+//					}
+//				}
+//			}	
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//		[14659] 한조서열정리하고옴ㅋㅋ [블로그]
+		
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int [] arr = new int [n];
+		
+		for(int i = 0; i < n; i++) {
+			arr[i] = scan.nextInt();
+		}
+		
+		
+		int max = 0;
+		//최고의 활잡이가 처지하는 적의수를 저장할 변수
+		for(int i = 0; i < n - 1; i++) {
+			int count = 0;
+			//각 활잡이가 잡는 적의수를 저장할 변수
+			for(int j = i + 1; j < n; j++) {
+				if(arr[i] > arr[j]) {
 					count++;
-					//처음 강의의 끝나는 시간보다 
-					//다음 강의의 시작 시간 같거나 크면
-					//강의 진행 가능
-					temp = i;
-					//시작시간 i번째 강의로 초기화 
+					//자신보다 봉우리가 낮으면 하나씩 증가
+				}else {
+					if(arr[i] < arr[j]) {break;}
+					//자신보다 봉우리가 크면 반복 종료
 				}
 			}
+			if(max < count) {
+				max = count;
+				//활잡이별 처지 적수 비교
+			}
+		}
+		
+		System.out.println(max);
+		
 	}
-	
-	}
-	
+}
