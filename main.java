@@ -2599,7 +2599,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 		
-//		[2447번]	별 찍기 - 10[다시보기]
+//		[2447번]	별 찍기 - 10[skip_]
 		
 ///import java.util.Scanner;
 //
@@ -3238,51 +3238,69 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	716공부		
 		
-//		[1913번]			(ㅠㅠ) 다시보기
+//		[1913번]	 달팽이 [블로그]
 		
-//		
-//		int N=scan.nextInt();
-//		int K=scan.nextInt();
-//		int arrN[][]=new int[N][N];
-//		
-//		int cnt=0;
-//		int router=1;
-//		int i=N/2;
-//		int j=N/2;
-//		arrN[i][j]=++cnt;
-//		
-//		while(arrN[0][0]==0){
-//			arrN[--i][j]=++cnt;
-//			for(int k=1; k<=router; k++){
-//				arrN[i][++j]=++cnt;
-//			}
-//			for(int k=1; k<=router+1; k++){
-//				arrN[++i][j]=++cnt;
-//			}
-//			for(int k=1; k<=router+1; k++){
-//				arrN[i][--j]=++cnt;
-//			}
-//			for(int k=1; k<=router+1; k++){
-//				arrN[--i][j]=++cnt;
-//			}
-//			router+=2;
-//		}
-//		int x=0;
-//		int y=0;
-//		for(int z=0; z<N; z++){
-//			for(int u=0; u<N; u++){
-//				System.out.printf("%d ",arrN[z][u]);
-//				{
-//					if(arrN[z][u]==K){
-//						x=z+1;
-//						y=u+1;
-//                        break;
-//					}
-//				}
-//			}
-//			System.out.println();
-//		}
-//		System.out.println(x+" "+y);
+///import java.util.Scanner;
+//
+//public class TemplateA {
+//
+//    public static void main(String[] args) {
+//    	Scanner scan = new Scanner(System.in);
+//    	int size  = scan.nextInt();
+//    	//크기를 담을 변수
+//    	int tsize = size;
+//    	//크기를 임시 저장할 변수
+//    	int n = scan.nextInt();
+//    	int max = size * size;
+//    	//배열에 들어갈 총숫자가 들어갈 변수
+//    	
+//    	int [][] arr = new int[size][size];
+//    	
+//    	int j = 0;
+//    	//열위치변수
+//    	int i = -1;
+//    	//행위치변수
+//    	int count = 1;
+//    	//행열에 더해줄 변수
+//    	
+//    	while(true) {
+//    		for(int t = 1; t <= size; t++) {
+//    			i += count;
+//    			arr[i][j] = max;
+//    			max--;
+//    			//열고정 행변화 반복문
+//    		}
+//    		//처음에 행부터 하나씩 작아지면서 숫자를 너어줌
+//    		size--;
+//    		//열고정 행변화 반복문후 반복횟수 하나씩 적어짐
+//    		if(size <= 0) {break;}
+//    		//총사이즈가 0보다 작거나 같으면, 더이상 들어갈 자리가 없음
+//    		for(int t = 1; t <=size; t++) {
+//    			j += count;
+//    			arr[i][j] = max;
+//    			max--;
+//    			//행고정 열변화 반복문
+//    		}
+//    		count *= -1;
+//    	//한 루프가 다돌면 행열이 감소하거나 증가하는 순서가 바뀜
+//    	//때문에 더해주는 값을 1 또는 -1 로 변경해주어야함	
+//    	}
+//    		
+//    	int [] ans = new int [2];
+//    		for(int x = 0; x < tsize; x++) {
+//    			for(int y = 0; y < tsize; y++) {
+//    				if(n == arr[x][y]) {
+//    					ans[0] = x + 1;
+//    					ans[1] = y + 1;
+//        				//n의 값과 같은 위치를 저장하는 if 문
+//    				}
+//    				System.out.print(arr[x][y] + " ");
+//    			}
+//    		System.out.println();
+//    	}
+//    		System.out.println(ans[0] + " " + ans[1]);
+//    }
+//}
 		
 		
 ///////////////////////////////////////////////////////////////////////////////////////	716공부		
@@ -4240,35 +4258,50 @@ public class main {
 //		}
 		
 
-//		[11650] [다시보기]
+//		[11650] 좌표 정렬하기 [블로그]
 		
-//		int n= scan.nextInt();
-//		
-//		int arr[][]=new int[n][2]; //x좌표 y좌표
-//		
-//		for(int i=0;i<arr.length;i++) {
-//			for(int j=0;j<arr[i].length;j++) {
-//				arr[i][j] = scan.nextInt();
-//			}
-//		}
-//		
-//		Arrays.sort(arr,new Comparator<int[]>() { //Comparator 인터페이스 재정의
+//		import java.util.Arrays;
+//		import java.util.Comparator;
+//		import java.util.Scanner;
 //
-//			@Override
-//			public int compare(int[] o1, int[] o2) {
-//				
-//				 if(o1[0]==o2[0])// x좌표의 값이 같다면 y좌표를 기준으로 정렬		
-//					return Integer.compare(o1[1], o2[1]);
-//					return Integer.compare(o1[0], o2[0]); // 나머지는 x좌표를 기준으로 정렬
-//			}		
-//		}
-//		);
-//		
-//		
-//		for(int i=0;i<arr.length;i++) {
-//			
-//			System.out.println(arr[i][0]+" "+arr[i][1]);
-//		
+//		public class TemplateA {
+//
+//		    public static void main(String[] args) {
+//		    	Scanner scan = new Scanner(System.in);
+//		    	
+//		    	int n = scan.nextInt();
+//		    	
+//		    	int [][] arr = new int [n][2];
+//		    	
+//		    	for(int i = 0; i < n; i++) {
+//		    		for(int j = 0; j < 2; j++) {
+//		    			arr[i][j] = scan.nextInt();
+//		    		}
+//		    	}
+//		    	
+//		    	Arrays.sort(arr, new Comparator<int []>() {
+//		    		@Override
+//		    		public int compare(int o1[], int o2[]) {
+//		    			if(o1[0] == o2[0]) {
+//		    				return o1[1] - o2[1];
+//		    				//1열의 값이 같을 경우 2열의 값을 비교
+//		    				//작은 값이 위로 가게 정렬 리턴
+//		    			}else {
+//		    				return o1[0] - o2[0];
+//		    				//1열부터 값이 차이가 있는 경우 1열을 기준으로 정렬 리턴
+//		    			}	
+//		    		}
+//		    	});
+//		    	
+//		    	for(int i = 0; i < n; i++) {
+//		    		for(int j = 0; j < 2; j++) {
+//		    			System.out.print(arr[i][j]+ " ");
+//		    		}
+//		    		System.out.println();
+//		    	}
+//		    	
+//		    	
+//		    }
 //		}
 
 		
@@ -8847,7 +8880,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////	1011공부		
 
-//		// [1059] 수 이어쓰기 2 [블로그]
+//		// [1059] 수 이어쓰기 2 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		int n = scan.nextInt();
@@ -8870,7 +8903,7 @@ public class main {
 		
 		
 		
-//		// [3029] 경고 [블로그]
+//		// [3029] 경고 [완료]
 		
 //		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //		
@@ -9056,7 +9089,7 @@ public class main {
 //		}
 //		System.out.println(cnt); //모든 탐색을 마치고 cnt 출력
 		
-//		// [1731] 추론 [블로그]
+//		// [1731] 추론 [완료]
 		
 //		Scanner scan= new Scanner(System.in);
 //		int n = scan.nextInt();
@@ -9335,7 +9368,7 @@ public class main {
 //	static int start;
 	
 
-//			[2942] 퍼거슨과 사과 [블로그]
+//			[2942] 퍼거슨과 사과 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9417,7 +9450,7 @@ public class main {
 ///////////////////////////////////////////////////////////////////////	1015공부			
 	
 
-//		[14726] 신용카드 판별 [블로그]
+//		[14726] 신용카드 판별 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9459,7 +9492,7 @@ public class main {
 //		}
 
 		
-//		[2991] 사나운개 [블로그]
+//		[2991] 사나운개 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9513,7 +9546,7 @@ public class main {
 ///////////////////////////////////////////////////////////////////////	1016공부			
 		
 
-//		[12756] 고급 여관 [블로그]
+//		[12756] 고급 여관 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9543,7 +9576,7 @@ public class main {
 //		}
 
 		
-//		[11070] 피타고라스 기댓값	[블로그]
+//		[11070] 피타고라스 기댓값	[완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		int Tcase = scan.nextInt();
@@ -11565,36 +11598,735 @@ public class main {
 		
 //		[14659] 한조서열정리하고옴ㅋㅋ [블로그]
 		
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
-		int [] arr = new int [n];
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		int max = 0;
+//		//최고의 활잡이가 처지하는 적의수를 저장할 변수
+//		for(int i = 0; i < n - 1; i++) {
+//			int count = 0;
+//			//각 활잡이가 잡는 적의수를 저장할 변수
+//			for(int j = i + 1; j < n; j++) {
+//				if(arr[i] > arr[j]) {
+//					count++;
+//					//자신보다 봉우리가 낮으면 하나씩 증가
+//				}else {
+//					if(arr[i] < arr[j]) {break;}
+//					//자신보다 봉우리가 크면 반복 종료
+//				}
+//			}
+//			if(max < count) {
+//				max = count;
+//				//활잡이별 처지 적수 비교
+//			}
+//		}
+//		
+//		System.out.println(max);
 		
-		for(int i = 0; i < n; i++) {
-			arr[i] = scan.nextInt();
-		}
+		
+///////////////////////////////////////////////////////////////////////	1111공부				
+
+//		[13904] 과제 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		int [][] arr = new int [n + 1][2];
+//		
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>() {
+//		    @Override
+//			public int compare(int[] o1, int[] o2) {
+//		    	 if(o1[0] == o2[0]) {
+//	                 return o1[1] - o2[1];
+//		    	 }else {
+//		    		 return o1[0] - o2[0]; 
+//		    	 }
+//	           }
+//	        });
+//		
+//		int i = 0;
+//		int sum = 0;
+//		int max = 0;
+//		while(i != n) {
+//			if(arr[i][0] == arr[i + 1][0]) {
+//				max = arr[i][1] >= arr[i+1][1] ? arr[i][1] : arr[i + 1][1];
+//			}else {
+//				if(max == 0) {
+//					max = arr[i][1];
+//					sum += max;
+//					max = 0;
+//				}else {
+//					sum += max;
+//					max = 0;
+//				}
+//			}
+//			System.out.println(sum);
+//			i++;
+//		}
+//		
+//		System.out.println(sum);
+		
+////////////남이푼거//////////////////////		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int N = scan.nextInt();	
+//		int[][] work = new int[N][2];
+//		int maxScores = 0;	//과제 점수 최댓값
+//		int days = 0;		// 과제 진행한 날
+//		for(int i=0; i<N; i++) {
+//			work[i][0] = scan.nextInt();	// 과제 마감기한
+//			work[i][1] = scan.nextInt();	// 과제 점수
+//		}
+//		
+//		// 과제 점수 높은순으로 정렬
+//		Arrays.sort(work, new Comparator<int[]>() {
+//			@Override	
+//			public int compare(int[] o1, int[] o2) {
+//				return Integer.compare(o2[1], o1[1]);
+//			}
+//		});
+//		
+//		int[] scores = new int[1001];	// 정수 N의 범위 - 1~1000
+//		for(int i=0; i<N; i++) {		// 과제 점수가 높은 순
+//			for(int j=work[i][0]; j>0; j--) {	// 과제의 마감일로부터 최대한 늦게 과제 하기
+//				if(scores[j] == 0) {
+//					scores[j] = work[i][1];
+//					break;
+//				}
+//			}
+//		}
+//		
+//        	/*
+//		for(int i=0; i<N; i++) {
+//			System.out.print(work[i][0] + " " + work[i][1]);
+//			System.out.println();
+//		} 
+//       		 */
+//		
+//		for(int i=0; i<scores.length; i++) 
+//			maxScores += scores[i];
+//			
+//
+//		System.out.println(maxScores);
+//		scan.close();
+
+///////////////////////////////////////////////////////////////////////	1112공부
+
+		
+//// 		[11501] 주식 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int tCase = scan.nextInt();
+//		
+//		for(int t = 0; t < tCase; t++) {
+//			day = scan.nextInt();
+//			arr = new int [day];
+//			for(int d = 0; d < day; d++) {
+//				arr[d] = scan.nextInt();
+//			}
+//			roll();
+//		}
+//	
+//	}	
+//	static int [] arr;
+//	//day별 주식 가격 저장 배열
+//	static int day;
+//	//총 일수 변수
+//	static int cnt;
+//	//배열중 최대 주식가격의 위치를 저장할 변수
+//	static int sum;
+//	//총이익이 들어갈 변수
+//	static int max;
+//	//최대 주식가격이 들어갈 변수
+//	static int temp;
+//	//재귀시 배열의 시작위치를 지정할 변수
+//	
+//	public static void roll() {
+//		for(int i = cnt; i < day; i++) {
+//			if(max < arr[i]) {
+//				max = arr[i];
+//				cnt = i;
+//				}
+//			}
+//		// 배열에서의 최대 주식가격과 그 위치를 기억함
+//		if(cnt == 0) {
+//			System.out.println(0);
+//			//최대 주식가격의 위치가 첫번째이면 0을 출력
+//		}else {
+//			for(int i = temp; i <= cnt; i++) {
+//				sum += (max-arr[i]);
+//				System.out.println(sum+"*");
+//			}
+//			//최대 주식 가격의 위치와 같아질때 까지 
+//			//기존의 싼 가격의 주식을 판매함
+//			temp = cnt + 1;
+//			//재귀가 될수 있기 때문에 판 다음시점부터 비교
+//			max = 0;
+//			//max 값 초기화
+//			if(cnt == day - 1 ) {
+//				System.out.println(sum);
+//				//최대값이 위치가 배열의 마지막자리와 일치하면 출력
+//			}else {
+//				cnt++;
+//				roll();
+//				//아닐경우 배열의 시작위치를 최대값 다음위치로 지정
+//				//이유는 temp 랑 값음
+//			}
+//		}
 		
 		
-		int max = 0;
-		//최고의 활잡이가 처지하는 적의수를 저장할 변수
-		for(int i = 0; i < n - 1; i++) {
-			int count = 0;
-			//각 활잡이가 잡는 적의수를 저장할 변수
-			for(int j = i + 1; j < n; j++) {
-				if(arr[i] > arr[j]) {
-					count++;
-					//자신보다 봉우리가 낮으면 하나씩 증가
-				}else {
-					if(arr[i] < arr[j]) {break;}
-					//자신보다 봉우리가 크면 반복 종료
-				}
-			}
-			if(max < count) {
-				max = count;
-				//활잡이별 처지 적수 비교
-			}
-		}
+///////////////////////////////////////////////////////////////////////	1113공부
+
 		
-		System.out.println(max);
+////		[11508] 2+1 세일
 		
-	}
+//		int n = scan.nextInt();
+//		Integer [] arr = new Integer [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		Arrays.sort(arr,Collections.reverseOrder());
+//		//내림차순으로 정렬
+//		
+//		int sum = 0;
+//		//합을 저장할 변수
+//		int count = 0;
+//		//3의 배수를 체크할 변수
+//		if( n % 3 == 0) {
+//			for(int i = 0; i < n; i++) {
+//				if(count != 2) {
+//					sum += arr[i];
+//					count++;
+//				}else {
+//					count = 0;
+//				}
+//			}
+//			//3으로 나누어질 경우 3번째 자리를 내림차순 순으로
+//			//3번째 자리를 제외한 배열값들은 더해줌
+//		}else {
+//			sum += arr[0];
+//			for(int i = 1; i < n; i++) {
+//				if(count != 2) {
+//					sum += arr[i];
+//					count++;
+//				}else {
+//					count = 0;
+//				}
+//			}
+//			//3으로 나누어지지않을 경우 가장 큰 값은 제외시킴
+//			//나머지는 같음
+//		}
+//		
+//		System.out.println(sum);
+		
+///////////////////////////////////////////////////////////////////////	1114공부
+
+		
+////		[11053] 가장 긴 증가하는 부분 수열 [블로그]		
+		
+			
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		int max = 0;
+//		for(int i = 0; i < n; i++) {
+//			int count = 0;
+//			for(int j = i + 1; j < n; j++) {
+//				if(arr[i] < arr[j]) {
+//					count++;
+//				}
+//			}
+//			if(max < count) {
+//				max = count;
+//			}
+//		}
+//		
+//		System.out.println(max);
+		
+///////////////////////////////////////////////////////////////////////	1115공부
+		
+////	[1092] 배 [다시보기]
+		
+//	      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	        int N = Integer.parseInt(br.readLine());
+//	        int[] max = new int[N];
+//	        String[] str = br.readLine().split(" ");
+//	        int M = Integer.parseInt(br.readLine());
+//	        int[] box = new int[M];
+//	        String[] str1 = br.readLine().split(" ");
+//	        int[] avail = new int[N];
+//
+//	        for(int i=0; i<N; i++) {
+//	            max[i] = Integer.parseInt(str[i]);
+//	        }
+//
+//	        for(int i=0; i<M; i++) {
+//	            box[i] = Integer.parseInt(str1[i]);
+//	        }
+//
+//	        Arrays.sort(max);
+//	        Arrays.sort(box);
+//
+//	        if(max[N-1]<box[M-1])
+//	            System.out.println(-1);
+//
+//	        else {
+//	            int index = 0;
+//	            int cnt = 0;
+//
+//	            for(int i=0; i<M;) {
+//	                if(box[i]<=max[index]) {
+//	                    avail[index]++;
+//	                    i++;
+//	                    System.out.print(avail[index]);
+//	                    System.out.println(index);
+//	                }
+//	                else
+//	                    index++;
+//	            }
+//
+//	            while(true) {
+//	                boolean flag = false;
+//	                for(int i=0; i<N; i++) {
+//	                    if(avail[i]!=0) {
+//	                        avail[i]--;
+//	                        flag = true;
+//	                    }
+//	                    else {
+//	                        for(int j=i-1; j>=0; j--) {
+//	                            if(avail[j]!=0) {
+//	                                avail[j]--;
+//	                                flag = true;
+//	                                break;
+//	                            }
+//	                        }
+//	                    }
+//	                }
+//	                if(!flag) break;
+//	                cnt++;
+//	            }
+//	            System.out.println(cnt);
+//	        }
+///////////////////////////////////////////////////////////////////////	1116공부
+
+			
+//// 	[17609] 회물 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		for(int t = 0; t < n; t++) {
+//			String a = scan.next();
+//			int start = 0;
+//			int end = a.length();
+//			int count = -1;
+//			int [] arr = new int[a.length()];
+//			int [] temp = new int[a.length() + 1];
+//			for(int l =0; l < end; l++) {
+//				arr[l] = a.charAt(l) - 'a';
+//				temp[l] = a.charAt(l) - 'a';
+//			}
+//			
+//			for(int i = 0; i < a.length(); i++) {
+//				if(count != -1) {
+//					arr[count] = temp[count];
+//				}
+//				if(start == end || (arr[start] == arr[end] && (start + 1) == end)) {
+//					System.out.println(0);
+//				}else {
+//					if(start == count) {
+//						start++;
+//					}else if(end == count) {
+//						end--;
+//					}	
+//					if(arr[start] == arr[end]) {
+//						start++;
+//						end--;
+//					}else {
+//						count++;
+//						arr[count] = -1;
+//						
+						
+//						def pseudo(a, left, right):
+//						    while left < right:
+//						        if a[left] == a[right]:
+//						            left += 1
+//						            right -= 1
+//						        else:
+//						            return False
+//						    return True
+//
+//						# 회문 판단 함수
+//						def palindrome(a, left, right):
+//						    while left < right:
+//						        if a[left] == a[right]:
+//						            left += 1
+//						            right -= 1
+//						        else:
+//						            res1 = pseudo(a, left+1, right)
+//						            res2 = pseudo(a, left, right-1)
+//						            if res1 == True or res2 == True:
+//						                return 1
+//						            else:
+//						                return 2
+//						    return 0
+//
+//						T = int(input())
+//						for i in range(T):
+//						    a = list(input())
+//						    res = palindrome(a, 0, len(a)-1)
+//						    print(res)
+//					}
+//				}
+//				
+//			}
+//			
+//		}
+///////////////////////////////////////////////////////////////////////	1015공부			
+		
+
+//		[1781] 컵라면	[블로그]	
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [][] arr = new int [n][2];
+//		int max = 0;
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//				if(max < arr[i][0]) {
+//					max = arr[i][0];
+//				}
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int []>(){
+//			public int compare(int [] o1, int [] o2) {
+//				if(o1[1] == o2[1]) {
+//					return o2[0] - o1[0];
+//				}else {
+//					return o2[1]- o1[1];
+//				}
+//			}
+//		});
+//		//우선적으로 컵라면 기준으로 내림차순 컵라면 갯수가 같을경우
+//		//날짜기준으로 내림차순
+//		
+//		int deadline = 1;
+//		//데드라인 함수
+//		int sum = 0;		
+//		loop :while(true){
+//				for(int j = 0; j < n; j++) {
+//					if(j == n - 1 && deadline != arr[j][0]) {
+//						deadline++;
+//					}
+//					//j 가 끝날때까지 데드라인과 같은 배열내부의 데드라인이 없을경우
+//					//데드라인을 하나 더해줌
+//					if(deadline == arr[j][0]) {
+//						sum += arr[j][1];
+//						arr[j][0] = n + 1; 
+//						deadline++;
+//						break;
+//					}
+//					//데드라인과 배열의 데드라인이 같으면,
+//					//썸에 더해주고 해당 데드라인 재사용 못하게  n+1 하고
+//					//데드라인 또한 하나씩 증가해줌
+//				}
+//				if(deadline > max) {
+//					break loop;
+//				}
+//				//데드라인이 배열의 최대 데드라인보다 커지면
+//				//while 루프를 종료해줌
+//			}
+//			
+			
+//			System.out.println(sum);
+///////////////////////////////////////////////////////////////////////	1015공부			
+			
+
+//		[2138]		전구와 스위치 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		String a = scan.next();
+//		int [] arrA = new int [a.length()];
+//		for(int i = 0; i < a.length(); i++) {
+//			arrA[i] = a.charAt(i) - '0';
+//		}
+//		
+//		
+//		String b = scan.next();
+//		int [] arrB = new int [b.length()];
+//		int [] temp = new int [b.length()];
+//		for(int i = 0; i < b.length(); i++) {
+//			arrB[i] = b.charAt(i) - '0';
+//			temp[i] = b.charAt(i) - '0';
+//		}
+//		
+//		int start = 0;
+//		int end = b.length();
+//		int count = 0;
+//		boolean flag = true;
+//		if(a.length() != b.length()) {
+//			System.out.println(-1);
+//		}else {
+//			while(true) {
+//				for(int i = b.length() - 1; i >= 0; i--) {
+//					if(arrA[i] != arrB[i]) {
+//						if(i == 0) {
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i + 1] = 1 - arrB[i + 1];
+//							count++;
+//							flag = false;
+//						}else if(i == b.length() - 1){
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i - 1] = 1 - arrB[i - 1];
+//							count++;
+//							flag = false;
+//						}else {
+//							arrB[i + 1] = 1 - arrB[i + 1];
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i - 1] = 1 - arrB[i - 1];
+//							count++;
+//							flag = false;
+//						}
+//						break;
+//					}
+//				}
+//				
+//				for(int i = 0; i < b.length(); i++) {
+//					System.out.print(arrB[i]);
+//				}
+//				System.out.println();
+//				System.out.println(count);
+//				if(flag) {
+//					System.out.println(count);
+//					break;
+//				}
+//				
+//				
+//				for(int i = 0; i < b.length(); i++) {
+//					if(temp[i] == arrB[i]) {
+//						flag = true;
+//					}else {
+//						flag = false;
+//						break;
+//					}
+//				}
+//				
+//				if(flag && count != 0) {
+//					System.out.println(-1);
+//					break;
+//				}else if(count == 0){
+//					System.out.println(count);
+//				}else {
+//					flag = true;
+//				}
+//				
+//				}
+//			}
+		
+		
+		
+////	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//			
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		n = Integer.parseInt(br.readLine());
+//		String s=br.readLine();
+//		src=new char[2][n];
+//		src[0]=s.toCharArray();
+//		src[1]=s.toCharArray();
+//		dst=br.readLine().toCharArray();
+//		answer=Integer.MAX_VALUE;
+//		//0번째 스위치를 누르지 않고 시작
+//		go(1,0,0);
+//		//0번째 스위치를 누르고 시작
+//		push(0,1);
+//		go(1,1,1);
+//		System.out.println(answer==Integer.MAX_VALUE?-1:answer);
+//	}
+//	
+//	static char src[][],dst[];
+//	static int n,answer;
+//	static void push(int idx,int type) {
+//		for(int i=idx-1;i<=idx+1;i++) {
+//			if(i>=0&&i<n) src[type][i]=src[type][i]=='1'?'0':'1';
+//		}
+//	}
+//	static void go(int idx,int cnt,int type) {
+//		if(idx==n) {
+//			if(src[type][idx-1]==dst[idx-1]) answer=answer>cnt?cnt:answer;
+//			return;
+//		}
+//		if(src[type][idx-1]!=dst[idx-1]) {
+//			push(idx,type);
+//			go(idx+1,cnt+1,type);
+//		}else go(idx+1,cnt,type);
+		
+///////////////////////////////////////////////////////////////////////	1119공부			
+		
+
+//		[1758]	알바생 강호 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		Integer [] arr = new Integer [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr,Collections.reverseOrder());
+//		//내림차순 정렬
+//		int sum = 0;
+//		//총 팁을 저장할 변수
+//		int count = 1;
+//		//순서를 저장할 변수
+//		for(int i = 0; i < n; i++) {
+//			if(count > arr[i]) {
+//				break;
+//				//count 가 팁보다 커지면 종료
+//			}else {
+//				sum += arr[i] - (count - 1);
+//				count++;
+//				//팁이 0보다 작지않으면 계속해서 더해줌
+//			}
+//		}
+//	
+//		System.out.println(sum);
+		
+		
+///////////////////////////////////////////////////////////////////////	1122공부			
+		
+
+//		[2109] 순회강연	[다른풀이 살펴보기 다시보기]	
+
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [][] arr = new int [n][2];
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>(){
+//			public int compare(int[]o1, int[]o2) {
+//				if(o1[1]==o2[1]) {
+//					return o1[0]-o2[0];
+//				}else {
+//					return o1[1]-o2[1];
+//				}
+//			}
+//		});
+//		//마감일 기준으로 정렬
+//		
+//		int day = arr[0][1];
+//		//첫째날 저장
+//		int lastday = arr[n-1][1];		
+//		//마지막날 저장
+//		int sum = 0;
+//		//합을 더할 변수
+//		boolean flag = true;
+//		//마지막날 체크 변수
+//		while(day <= arr[n-1][1]) {
+//			int max = 0;
+//			for(int i = 0; i < n; i++) {
+//				if(arr[i][1] == day) {
+//					if(arr[i][0] > max) {
+//						max = arr[i][0];
+//					}
+//					//같은 날중 최대 페이값 저장
+//				}else if(arr[i][1] > day) {
+//						day = arr[i][1];
+//						flag = false;
+//						break;		
+//				}
+//				//배열값이 day 값보다 크면 비교 불필요
+//				//day값 다음 강연날로 변경
+//			}
+//			sum += max;
+//			if(flag && lastday == day) {break;}
+//			//
+//			flag = true;
+//		}
+//		
+//		System.out.println(sum);
+//////////////////////////////////////////////////
+//		import java.io.BufferedReader;
+//		import java.io.IOException;
+//		import java.io.InputStreamReader;
+//		import java.util.PriorityQueue;
+//		import java.util.StringTokenizer;
+//
+//		public class TemplateA {
+//			static int n;
+//			static boolean[] checked;
+//		    public static void main(String[] args) throws IOException{
+//		    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//				StringTokenizer st = new StringTokenizer(br.readLine());
+//				n = Integer.parseInt(st.nextToken());
+//				PriorityQueue<Lecture> pq = new PriorityQueue<>();
+//				int maxDay = 0;
+//				for(int i = 0; i < n; i++) {
+//					st = new StringTokenizer(br.readLine());
+//					int pay = Integer.parseInt(st.nextToken());
+//					int day = Integer.parseInt(st.nextToken());
+//					maxDay = Math.max(day, maxDay);
+//					pq.add(new Lecture(pay, day));
+//				}
+//				checked = new boolean[maxDay+1];
+//				int sum = 0;
+//				while(!pq.isEmpty()) {
+//					Lecture lecture = pq.poll();
+//					for(int i = lecture.day; i >= 1; i--) {
+//						if(!checked[i]) {
+//							checked[i] = true;
+//							sum += lecture.pay;
+//							break;
+//						}
+//					}
+//				}
+//				System.out.println(sum);
+//			}
+//		}
+//
+//		class Lecture implements Comparable<Lecture> {
+//			int pay;
+//			int day;
+//			public Lecture(int pay, int day) {
+//				this.pay = pay;
+//				this.day = day;
+//			}
+//
+//			@Override
+//			public int compareTo(Lecture target) {
+//				if(target.pay > this.pay) { // pay가 높은게 우선순위가 높다
+//					return 1;
+//				} else if(target.pay == this.pay) {
+//					if(target.day < this.day) { // 같은 pay면 day가 낮은게 우선순위가 높다.
+//						return 1;
+//					}
+//				}
+//				return -1;
+//			}
+//		}
+///////////////////////////////////////////		
+	}	
 }
