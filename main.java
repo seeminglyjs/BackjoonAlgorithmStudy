@@ -3238,7 +3238,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	716공부		
 		
-//		[1913번]	 달팽이 [블로그]
+//		[1913번]	 달팽이 [완료]
 		
 ///import java.util.Scanner;
 //
@@ -4258,7 +4258,7 @@ public class main {
 //		}
 		
 
-//		[11650] 좌표 정렬하기 [블로그]
+//		[11650] 좌표 정렬하기 [완료]
 		
 //		import java.util.Arrays;
 //		import java.util.Comparator;
@@ -11489,7 +11489,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////	1109공부				
 
-//		 [1343] 폴리오미노 [블로그]
+//		 [1343] 폴리오미노 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		String a = "AAAA";
@@ -11557,7 +11557,7 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////	1110공부				
 
-//		[2828] 사과 담기 게임 [블로그]
+//		[2828] 사과 담기 게임 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -12334,56 +12334,172 @@ public class main {
 
 //		[10165] 버스 노선	[블로그]
 		
-		Scanner scan = new Scanner(System.in);
-		
-		int station = scan.nextInt();
-		int busCnt = scan.nextInt();
-		
-		int [][] arr = new int [busCnt][2];
-		int [] ans = new int [busCnt];
-		//없어지질 않을 버스 노선을 저장할 배열
-		
-		for(int i = 0; i < busCnt; i++) {
-			for(int j = 0; j < 2; j++) {
-			arr[i][j] = scan.nextInt();	
-			}
-			
-			if(arr[i][0] > arr[i][1]) {
-				int temp = arr[i][0];
-				arr[i][0] = arr[i][1];
-				arr[i][1] = temp;
-				//각 버스노선이 시작지점이 작은값으로 가게 정렬해줌
-			}
-	
-		}
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int station = scan.nextInt();
+//		int busCnt = scan.nextInt();
+//		
+//		int [][] arr = new int [busCnt][2];
+//		int [] ans = new int [busCnt];
+//		//없어지질 않을 버스 노선을 저장할 배열
+//		
+//		for(int i = 0; i < busCnt; i++) {
+//			for(int j = 0; j < 2; j++) {
+//			arr[i][j] = scan.nextInt();	
+//			}
+//			
+//			if(arr[i][0] > arr[i][1]) {
+//				int temp = arr[i][0];
+//				arr[i][0] = arr[i][1];
+//				arr[i][1] = temp;
+//				//각 버스노선이 시작지점이 작은값으로 가게 정렬해줌
+//			}
+//	
+//		}
+//
+//		int start = 0;
+//		//배열의 위치한 처음 0번째 버스 저장
+//		while(true) {
+//			if(start > busCnt - 1) {break;}
+//			//start 가 총 버스의 수보다 커지면 스탑 배열이 0번째부터 시작하기 때문에 -1해줌
+//			for(int i = 0; i < busCnt; i++) {
+//				if(start != i) {
+//					if(arr[start][0] >= arr[i][0] && arr[start][1] <= arr[i][1]) {
+//					ans[start] = -1;
+//					break;
+//					}
+//					//초기 i와 start 가 같으면 같은 버스임으로 비교 불필요
+//					//이후 각 버스 노선마다 겹치는지 여부 체크
+//					//시작 지점이 과 끝나는 지점의 겹치거나 포함되는 여부 체크!!!
+//					//겹칠경우 해당 ans 배열에 그 버스노선은 사라질거기 때문에 -1 선언
+//				}
+//			}
+//			start++;
+//			//다음 버스 비교 위해 하나씩 더해줌
+//		}
+//		
+//		for(int i = 0; i < ans.length; i++) {
+//			if(ans[i] != -1) {
+//				System.out.print(i + 1 + " ");
+//			}
+//		}
+//		//배열은 0 부터 시작이기 때문에 -1이 아닌 버스들 출력함 
 
-		int start = 0;
-		//배열의 위치한 처음 0번째 버스 저장
-		while(true) {
-			if(start > busCnt - 1) {break;}
-			//start 가 총 버스의 수보다 커지면 스탑 배열이 0번째부터 시작하기 때문에 -1해줌
-			for(int i = 0; i < busCnt; i++) {
-				if(start != i) {
-					if(arr[start][0] >= arr[i][0] && arr[start][1] <= arr[i][1]) {
-					ans[start] = -1;
-					break;
-					}
-					//초기 i와 start 가 같으면 같은 버스임으로 비교 불필요
-					//이후 각 버스 노선마다 겹치는지 여부 체크
-					//시작 지점이 과 끝나는 지점의 겹치거나 포함되는 여부 체크!!!
-					//겹칠경우 해당 ans 배열에 그 버스노선은 사라질거기 때문에 -1 선언
-				}
-			}
-			start++;
-			//다음 버스 비교 위해 하나씩 더해줌
-		}
 		
-		for(int i = 0; i < ans.length; i++) {
-			if(ans[i] != -1) {
-				System.out.print(i + 1 + " ");
-			}
-		}
-		//배열은 0 부터 시작이기 때문에 -1이 아닌 버스들 출력함 
+///////////////////////////////////////////////////////////////////////	1224공부			
 		
-	}	
+
+//		[1285] 동전 뒤집기 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		n = scan.nextInt();	
+//		arr = new String [n][n];
+//		
+//		
+//			
+//		for(int i = 0; i<n; i++) {
+//			String temp = scan.next();
+//			for(int j = 0; j<n; j++) {
+//				arr[i][j] = String.valueOf(temp.charAt(j));
+//			}
+//		}
+//		
+//		String [][] ans = reverse();
+//		
+//		count = 0;
+//		for(int i = 0; i<n; i++) {
+//			for(int j = 0; j<n; j++) {
+//				if(ans[i][j].equals("H"));
+//				count++;
+//			}
+//		}
+//	
+////		for(int i = 0; i<n; i++) {
+////			for(int j = 0; j<n; j++) {
+////				System.out.print(ans[i][j]);
+////			}
+////			System.out.println();
+////		}
+////		
+//		System.out.println(count);
+//		
+//	}
+//	
+//	static String [][] arr;
+//	static int count = 0;
+//	static int n;
+//	
+//	public static String [][] reverse(){
+//		
+//		
+//		
+//		
+//		for(int i = 0; i<n; i++) {
+//			count = 0;
+//			for(int j = 0; j<n; j++) {
+//				if(arr[i][j].equals("H")) {
+//					count++;
+//				}
+//				if(count >= (n / 2) + 1 ) {
+//					for(int k = 0; k<n; k++) {
+//						if(arr[i][k].equals("H")) {
+//							arr[i][k] = "T";
+//						}else {
+//							arr[i][k] = "H";
+//						}
+//					}
+//					break;
+//				}
+//			}
+//		}
+//		
+//		for(int i = 0; i<n; i++) {
+//			count = 0;
+//			for(int j = 0; j<n; j++) {
+//				if(arr[j][i].equals("H")) {
+//					count++;
+//				}
+//				if(count >= (n / 2) + 1 ) {
+//					for(int k = 0; k<n; k++) {
+//						if(arr[k][i].equals("H")) {
+//							arr[k][i] = "T";
+//						}else {
+//							arr[k][i] = "H";
+//						}
+//					}
+//					break;
+//				}
+//			}
+//		}
+//		return arr;
+//	}
+	
+	
+//	using namespace std; 
+//	int main(void) { 
+//		int T; cin >> T; 
+//					for(int t_case=0; t_case<T; t_case++) { 
+//						int N, min = 100001, cnt; cin >> N; int distance[N]; 
+//						for(int i=0; i<N; i++) { 
+//							cin >> distance[i]; 
+//						if(distance[i] < 0) 
+//							distance[i] = -distance[i]; 
+//						if(distance[i] < min) min = distance[i]; 
+//						} 
+//	cnt = 0; 
+//	for(int i=0; i<N; i++) { 
+//		if(distance[i] == min) 
+//			cnt++; 
+//		} cout << "#" << t_case+1 << " " << min << " " << cnt << "\n"; 
+//		} 
+//					return 0; 
+//		}
+//
+//	출처: https://dev-repository.tistory.com/62 [Dev Repository]
+///////////////////////////////////////////////////////////////////////////////////	
+		
+		
+		
+		
+	}
 }
