@@ -12497,9 +12497,79 @@ public class main {
 //
 //	출처: https://dev-repository.tistory.com/62 [Dev Repository]
 ///////////////////////////////////////////////////////////////////////////////////	
+///////////////////////////////////////////////////////////////////////	1225공부
 		
 		
+// 			[2872] 우리 집에는 도서관이 있어 [블로그]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		//항상 최솟값을 제일 앞에 위치시킨다는 생각으로
+//		//문제에 접근한다.
+//		int count = 0;
+//		for(int i = 0; i < n - 1; i++) {
+//			for(int j = 0; j < n; j++) {
+//				int tmp = 0;
+//				//배열의 값을 임시로 받아줄 변수
+//					if(arr[0] > arr[j]) {
+//						tmp = arr[0];
+//						arr[0] = arr[j];
+//						arr[j] = tmp;
+//						count++;
+//						break;
+//						//루프를 돌면서 첫번째 자리보다 제이의 값이 크면
+//						//해당 값과 첫번째 위치를 서로 변경해줌
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
 		
 		
+//			[16435] 	스네이크버드 [블로그]
+		
+		
+		Scanner scan = new Scanner(System.in);
+		int fruitCnt = scan.nextInt();
+		int snakeLen = scan.nextInt();
+		
+		int [] arr = new int [fruitCnt];
+		
+		for(int i = 0; i < fruitCnt; i++) {
+			arr[i] = scan.nextInt();
+		}
+		
+		Arrays.sort(arr);
+		//내림차순 배열 정렬
+		int start = 0;
+		while(true) {
+			if(arr[start] <= snakeLen ) {
+				snakeLen++;
+				//과일의 위치가 뱀의 길이와 같거나 작으면 
+				//과일 먹고 뱀의 길이 증가
+				if(start < fruitCnt - 1) {
+					start++;
+					//남은 과일이 있으면, 다음 과일 비교 위해
+					//베열위치 더해줌
+				}else {
+					break;
+					//다음 과일 없으면 반복문탈출
+				}
+			}else {
+				break;
+				//뱀이 다음과일 위치보다 짧으면 반복문 탈출
+			}
+		}
+		
+		System.out.println(snakeLen);
 	}
-}
+	
+
+}		
