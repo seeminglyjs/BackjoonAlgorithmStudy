@@ -9630,7 +9630,7 @@ public class main {
 
 /////////////////////////////////////////////////////////////////////	1017공부
 		
-//		[2018] 수들의 합 5 [블로그]
+//		[2018] 수들의 합 5 [완료]
 		
 //		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 //		int n  = Integer.parseInt(bf.readLine());		
@@ -9717,7 +9717,7 @@ public class main {
 		
 /////////////////////////////////////////////////////////////////////	1019공부		
 
-//		[1312] 소수	[블로그]
+//		[1312] 소수	[완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9735,7 +9735,7 @@ public class main {
 //		
 //		System.out.println(answer);
 //		
-//		[14568]		2017 연세대학교 프로그래밍 경시대회 [블로그]
+//		[14568]		2017 연세대학교 프로그래밍 경시대회 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -9783,7 +9783,7 @@ public class main {
 //		System.out.println(count);
 		
 		
-//		[8394] 악수 [블로그]
+//		[8394] 악수 [완료]
 		
 //		//피보나치 수열 문제이다.
 //		
@@ -9814,7 +9814,7 @@ public class main {
 
 /////////////////////////////////////////////////////////////////////	1020공부		
 
-//		[18247] 겨울왕국 티겟 예매 [블로그]
+//		[18247] 겨울왕국 티겟 예매 [완료]
 		
 //		Scanner scan = new Scanner(System.in);		
 //		int L = 12;
@@ -9902,7 +9902,7 @@ public class main {
 		
 		
 		
-//		[1946] 신입사원 [블로그]
+//		[1946] 신입사원 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -10013,7 +10013,7 @@ public class main {
 //		return result;
 		
 		
-//		[1080] 행렬 [블로그]
+//		[1080] 행렬 [완료]
 		
 //		public class TemplateA {
 //			
@@ -10097,7 +10097,7 @@ public class main {
 //
 
 
-//		[16112] 5차 전직 [블로그]
+//		[16112] 5차 전직 [완료]
 		
 		//이문제에 중요한 부분은 처음 아케인스톤이 활성화되면
 		//그 아케인스톤의 경험치는 0이된다.
@@ -10141,7 +10141,7 @@ public class main {
 		
 /////////////////////////////////////////////////////////////////////	1021공부		
 
-//			[15973] 두 박스 [블로그]
+//			[15973] 두 박스 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -12536,39 +12536,139 @@ public class main {
 //			[16435] 	스네이크버드 [블로그]
 		
 		
+//		Scanner scan = new Scanner(System.in);
+//		int fruitCnt = scan.nextInt();
+//		int snakeLen = scan.nextInt();
+//		
+//		int [] arr = new int [fruitCnt];
+//		
+//		for(int i = 0; i < fruitCnt; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr);
+//		//내림차순 배열 정렬
+//		int start = 0;
+//		while(true) {
+//			if(arr[start] <= snakeLen ) {
+//				snakeLen++;
+//				//과일의 위치가 뱀의 길이와 같거나 작으면 
+//				//과일 먹고 뱀의 길이 증가
+//				if(start < fruitCnt - 1) {
+//					start++;
+//					//남은 과일이 있으면, 다음 과일 비교 위해
+//					//베열위치 더해줌
+//				}else {
+//					break;
+//					//다음 과일 없으면 반복문탈출
+//				}
+//			}else {
+//				break;
+//				//뱀이 다음과일 위치보다 짧으면 반복문 탈출
+//			}
+//		}
+//		
+//		System.out.println(snakeLen);
+		
+///////////////////////////////////////////////////////////////////////	1229공부
+		
+		//[2457] 공주님의 정원
 		Scanner scan = new Scanner(System.in);
-		int fruitCnt = scan.nextInt();
-		int snakeLen = scan.nextInt();
+		int flower = scan.nextInt();
 		
-		int [] arr = new int [fruitCnt];
+		int [][] arr = new int [flower][4];
 		
-		for(int i = 0; i < fruitCnt; i++) {
-			arr[i] = scan.nextInt();
-		}
-		
-		Arrays.sort(arr);
-		//내림차순 배열 정렬
-		int start = 0;
-		while(true) {
-			if(arr[start] <= snakeLen ) {
-				snakeLen++;
-				//과일의 위치가 뱀의 길이와 같거나 작으면 
-				//과일 먹고 뱀의 길이 증가
-				if(start < fruitCnt - 1) {
-					start++;
-					//남은 과일이 있으면, 다음 과일 비교 위해
-					//베열위치 더해줌
-				}else {
-					break;
-					//다음 과일 없으면 반복문탈출
-				}
-			}else {
-				break;
-				//뱀이 다음과일 위치보다 짧으면 반복문 탈출
+		for(int i =0; i < flower; i++) {
+			for(int j =0; j < 4; j++) {
+				arr[i][j] = scan.nextInt();
 			}
 		}
 		
-		System.out.println(snakeLen);
+		Arrays.sort(arr, new Comparator<int[]>() {
+		    @Override
+			public int compare(int[] o1, int[] o2) {
+		    	 if(o1[0] == o2[0]) {
+	                 return o2[2] - o1[2];
+		    	 }else {
+		    		 return o1[0] - o2[0]; 
+		    	 }
+	           }
+	        });
+		//시작달 기준 오름차순 같을 경우 끝나는 달 기준 내림차순
+		
+		int start = 3;
+		//꽃이 피어있어야하는 시작 달 3월 1일
+		int end = 12;
+		//꽃이 피어있어야하는 마지막달 달 11월 30일
+		int min =9999;
+		//최소한의 꽃의 수가 들어갈 변수
+		int num = 0;
+		//배열위치 지정 변수
+		loop :while(num != flower - 1) {
+			//배열위치가 총 꽃의 갯수보다 작을때까지 반복 (배열은 0부터 시작이니까)
+			int count = 1;
+			//기간 동안 펴져있을 꽃을 셀 변수 초기값 1
+			if(arr[num][0] <= start) {
+				//시작 달 비교
+				if(arr[num][2] == end || (arr[num][2] == (end -1) && arr[num][3] >= 30)) {
+					//시작 달 비교후 끝달도 비교해봄
+					min = 1;
+					//해당 꽃이 모든 기간이 펴있으면 더이상 비교 불필요 루프 종료
+					break loop;
+				}else {
+					int tempNum = num;
+					int month = arr[tempNum][2];
+					int day = arr[tempNum][3];
+					//현재의 꽃 저장 변수
+					//시작달 기준으로 비교를 진행하니 비교 꽃의 지는 월과 날짜를 담아줌
+					for(int i = 0; i < flower; i++) {
+						if(arr[i][0] < month || arr[i][0] == month && arr[i][1] <= day) {
+							if(arr[i][2] == end || (arr[i][2] == (end -1) && arr[i][3] >= 30)) {
+								//비교 꽃이 나머지 남은 기간을 모두 포함하면 더이상 반복문 불필요 루프 종료
+								if(count == 1) {count = 2;}
+								if(min > count) {
+									min = count;
+								}
+								num++;
+								break;
+							}else {
+								boolean flag = false;
+								for(int j = i + 1; j < flower -1; j++) {
+									if(arr[j][0] < month || arr[j][0] == month && arr[j][1] <= day) {
+										flag =true;
+									}
+								}
+								//i 다음위치의 꽃의 시작 날짜가 i번째 꽃이 지는 날짜보다 작거나 같으면,
+								//해당 i위치 꽃을 더할 필요없이 다음꽃과 비교하면됨.
+								if(!flag) {
+									count++;
+									tempNum = i;
+									month = arr[tempNum][2];
+									day = arr[tempNum][3];
+								}
+								//2개 이상일 경우 다음 꽃도 비교하기 위해 꽃 갯수와
+								//다음 꽃의 기간을 비교하기 위해 tempNum도 i로 초기화 하고 다시 저장	
+							}
+						}
+					}
+					if(month == end || (month == (end -1) && day >= 30)) {
+						if(min > count) {
+							min = count;
+						}
+						//최종적으로 count에 저장된 꽃의 기간이 끝이 시간보다 크거나 같은지 비교
+					}
+				}
+			}else {num++;}
+			//최솟값 찾기 위해 다음 꽃을 찾음
+		}
+		
+		if(num == flower) {
+			System.out.println(-1);
+		}else {
+			System.out.println(min);
+		}
+		
+		
 	}
 	
 
