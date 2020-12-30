@@ -10227,7 +10227,7 @@ public class main {
 //		
 
 		
-//		[13136] Do Not Touch Anything [블로그]
+//		[13136] Do Not Touch Anything [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -12572,101 +12572,164 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////	1229공부
 		
-		//[2457] 공주님의 정원
+		//[2457] 공주님의 정원 [블로그]
+//		Scanner scan = new Scanner(System.in);
+//		int flower = scan.nextInt();
+//		
+//		int [][] arr = new int [flower][4];
+//		
+//		for(int i =0; i < flower; i++) {
+//			for(int j =0; j < 4; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>() {
+//		    @Override
+//			public int compare(int[] o1, int[] o2) {
+//		    	 if(o1[0] == o2[0]) {
+//	                 return o2[2] - o1[2];
+//		    	 }else {
+//		    		 return o1[0] - o2[0]; 
+//		    	 }
+//	           }
+//	        });
+//		//시작달 기준 오름차순 같을 경우 끝나는 달 기준 내림차순
+//		
+//		int start = 3;
+//		//꽃이 피어있어야하는 시작 달 3월 1일
+//		int end = 12;
+//		//꽃이 피어있어야하는 마지막달 달 11월 30일
+//		int min =9999;
+//		//최소한의 꽃의 수가 들어갈 변수
+//		int num = 0;
+//		//배열위치 지정 변수
+//		loop :while(num != flower - 1) {
+//			//배열위치가 총 꽃의 갯수보다 작을때까지 반복 (배열은 0부터 시작이니까)
+//			int count = 1;
+//			//기간 동안 펴져있을 꽃을 셀 변수 초기값 1
+//			if(arr[num][0] <= start) {
+//				//시작 달 비교
+//				if(arr[num][2] == end || (arr[num][2] == (end -1) && arr[num][3] >= 30)) {
+//					//시작 달 비교후 끝달도 비교해봄
+//					min = 1;
+//					//해당 꽃이 모든 기간이 펴있으면 더이상 비교 불필요 루프 종료
+//					break loop;
+//				}else {
+//					int tempNum = num;
+//					int month = arr[tempNum][2];
+//					int day = arr[tempNum][3];
+//					//현재의 꽃 저장 변수
+//					//시작달 기준으로 비교를 진행하니 비교 꽃의 지는 월과 날짜를 담아줌
+//					for(int i = 0; i < flower; i++) {
+//						if(arr[i][0] < month || arr[i][0] == month && arr[i][1] <= day) {
+//							if(arr[i][2] == end || (arr[i][2] == (end -1) && arr[i][3] >= 30)) {
+//								//비교 꽃이 나머지 남은 기간을 모두 포함하면 더이상 반복문 불필요 루프 종료
+//								if(count == 1) {count = 2;}
+//								if(min > count) {
+//									min = count;
+//								}
+//								num++;
+//								break;
+//							}else {
+//								boolean flag = false;
+//								for(int j = i + 1; j < flower -1; j++) {
+//									if(arr[j][0] < month || arr[j][0] == month && arr[j][1] <= day) {
+//										flag =true;
+//									}
+//								}
+//								//i 다음위치의 꽃의 시작 날짜가 i번째 꽃이 지는 날짜보다 작거나 같으면,
+//								//해당 i위치 꽃을 더할 필요없이 다음꽃과 비교하면됨.
+//								if(!flag) {
+//									count++;
+//									tempNum = i;
+//									month = arr[tempNum][2];
+//									day = arr[tempNum][3];
+//								}
+//								//2개 이상일 경우 다음 꽃도 비교하기 위해 꽃 갯수와
+//								//다음 꽃의 기간을 비교하기 위해 tempNum도 i로 초기화 하고 다시 저장	
+//							}
+//						}
+//					}
+//					if(month == end || (month == (end -1) && day >= 30)) {
+//						if(min > count) {
+//							min = count;
+//						}
+//						//최종적으로 count에 저장된 꽃의 기간이 끝이 시간보다 크거나 같은지 비교
+//					}
+//				}
+//			}else {num++;}
+//			//최솟값 찾기 위해 다음 꽃을 찾음
+//		}
+//		
+//		if(num == flower) {
+//			System.out.println(-1);
+//		}else {
+//			System.out.println(min);
+//		}
+		
+/////////////////////////////////////////////////////////////////////	1230공부		
+		
+		//[11509] 풍선 맞추기 [블로그]
+		
 		Scanner scan = new Scanner(System.in);
-		int flower = scan.nextInt();
+		int n  = scan.nextInt();
 		
-		int [][] arr = new int [flower][4];
+		int [] arr = new int [n];
 		
-		for(int i =0; i < flower; i++) {
-			for(int j =0; j < 4; j++) {
-				arr[i][j] = scan.nextInt();
+		int max = 0;
+		int location = 0;
+		for(int i = 0; i < n; i++) {
+			arr[i] = scan.nextInt();
+			if(max < arr[i]) {
+				max = arr[i];
+				location = i;
 			}
 		}
+		//풍선위 최대높이값과 배열에서의 위치 저장
 		
-		Arrays.sort(arr, new Comparator<int[]>() {
-		    @Override
-			public int compare(int[] o1, int[] o2) {
-		    	 if(o1[0] == o2[0]) {
-	                 return o2[2] - o1[2];
-		    	 }else {
-		    		 return o1[0] - o2[0]; 
-		    	 }
-	           }
-	        });
-		//시작달 기준 오름차순 같을 경우 끝나는 달 기준 내림차순
 		
-		int start = 3;
-		//꽃이 피어있어야하는 시작 달 3월 1일
-		int end = 12;
-		//꽃이 피어있어야하는 마지막달 달 11월 30일
-		int min =9999;
-		//최소한의 꽃의 수가 들어갈 변수
-		int num = 0;
-		//배열위치 지정 변수
-		loop :while(num != flower - 1) {
-			//배열위치가 총 꽃의 갯수보다 작을때까지 반복 (배열은 0부터 시작이니까)
-			int count = 1;
-			//기간 동안 펴져있을 꽃을 셀 변수 초기값 1
-			if(arr[num][0] <= start) {
-				//시작 달 비교
-				if(arr[num][2] == end || (arr[num][2] == (end -1) && arr[num][3] >= 30)) {
-					//시작 달 비교후 끝달도 비교해봄
-					min = 1;
-					//해당 꽃이 모든 기간이 펴있으면 더이상 비교 불필요 루프 종료
-					break loop;
+		int count = 0;
+		//화살이 지나는 횟수
+		
+		loop1 : while(true) {
+			count++;
+			//화살 발사!!
+			if(location == n - 1) {break;}
+			//위치가 마지막 풍선 자리면 루프종료
+			
+			loop2 : for(int i = location; i < n; i++) {
+				if(max == arr[i]) {
+					arr[i] = -1;
+					max--;
+					//현재 화살의 위치와 풍선의 위치가 같으면 풍선 -1 값 대입  화살위치 하나씩 내려감
+				}else if(arr[i] > max) {
+					//풍선이 화살의 위치보다 높으면
+					max = -2;
+					//최대값 초기화
+					for(int j = 0; j < n; j++) {
+						if(max < arr[j]) {
+							max = arr[j];
+							location = j;
+						}
+					}
+					//다음 풍선의 최대위치 체크
+					if(max == -1) {break loop1;}
+					//풍선의 위치 최댓값이 -1이면 모든 풍선이 터진 거기 때문에 while 종료
+					break loop2;
+					//차순위 최댓값 구하고 for문 종료
 				}else {
-					int tempNum = num;
-					int month = arr[tempNum][2];
-					int day = arr[tempNum][3];
-					//현재의 꽃 저장 변수
-					//시작달 기준으로 비교를 진행하니 비교 꽃의 지는 월과 날짜를 담아줌
-					for(int i = 0; i < flower; i++) {
-						if(arr[i][0] < month || arr[i][0] == month && arr[i][1] <= day) {
-							if(arr[i][2] == end || (arr[i][2] == (end -1) && arr[i][3] >= 30)) {
-								//비교 꽃이 나머지 남은 기간을 모두 포함하면 더이상 반복문 불필요 루프 종료
-								if(count == 1) {count = 2;}
-								if(min > count) {
-									min = count;
-								}
-								num++;
-								break;
-							}else {
-								boolean flag = false;
-								for(int j = i + 1; j < flower -1; j++) {
-									if(arr[j][0] < month || arr[j][0] == month && arr[j][1] <= day) {
-										flag =true;
-									}
-								}
-								//i 다음위치의 꽃의 시작 날짜가 i번째 꽃이 지는 날짜보다 작거나 같으면,
-								//해당 i위치 꽃을 더할 필요없이 다음꽃과 비교하면됨.
-								if(!flag) {
-									count++;
-									tempNum = i;
-									month = arr[tempNum][2];
-									day = arr[tempNum][3];
-								}
-								//2개 이상일 경우 다음 꽃도 비교하기 위해 꽃 갯수와
-								//다음 꽃의 기간을 비교하기 위해 tempNum도 i로 초기화 하고 다시 저장	
-							}
-						}
-					}
-					if(month == end || (month == (end -1) && day >= 30)) {
-						if(min > count) {
-							min = count;
-						}
-						//최종적으로 count에 저장된 꽃의 기간이 끝이 시간보다 크거나 같은지 비교
-					}
+					max--;
+					//풍선위치가 화살위치보다 낮거나 터진풍선일 경우 화살위치만 내려감
 				}
-			}else {num++;}
-			//최솟값 찾기 위해 다음 꽃을 찾음
+			}
+
 		}
 		
-		if(num == flower) {
-			System.out.println(-1);
-		}else {
-			System.out.println(min);
-		}
+		
+		System.out.println(count);
+		
+		
 		
 		
 	}
