@@ -10330,7 +10330,7 @@ public class main {
 /////////////////////////////////////////////////////////////////////	1024공부	
 		
 		
-/////  [9661] 돌 게임7 [블로그]
+/////  [9661] 돌 게임7 [완료]
 //		
 //		Scanner scan = new Scanner(System.in);
 //		
@@ -12670,68 +12670,108 @@ public class main {
 		
 /////////////////////////////////////////////////////////////////////	1230공부		
 		
-		//[11509] 풍선 맞추기 [블로그]
+//		//[11509] 풍선 맞추기 [블로그]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n  = scan.nextInt();
+//		
+//		int [] arr = new int [n];
+//		
+//		int max = 0;
+//		int location = 0;
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			if(max < arr[i]) {
+//				max = arr[i];
+//				location = i;
+//			}
+//		}
+//		//풍선위 최대높이값과 배열에서의 위치 저장
+//		
+//		
+//		int count = 0;
+//		//화살이 지나는 횟수
+//		
+//		loop1 : while(true) {
+//			count++;
+//			//화살 발사!!
+//			if(location == n - 1) {break;}
+//			//위치가 마지막 풍선 자리면 루프종료
+//			
+//			loop2 : for(int i = location; i < n; i++) {
+//				if(max == arr[i]) {
+//					arr[i] = -1;
+//					max--;
+//					//현재 화살의 위치와 풍선의 위치가 같으면 풍선 -1 값 대입  화살위치 하나씩 내려감
+//				}else if(arr[i] > max) {
+//					//풍선이 화살의 위치보다 높으면
+//					max = -2;
+//					//최대값 초기화
+//					for(int j = 0; j < n; j++) {
+//						if(max < arr[j]) {
+//							max = arr[j];
+//							location = j;
+//						}
+//					}
+//					//다음 풍선의 최대위치 체크
+//					if(max == -1) {break loop1;}
+//					//풍선의 위치 최댓값이 -1이면 모든 풍선이 터진 거기 때문에 while 종료
+//					break loop2;
+//					//차순위 최댓값 구하고 for문 종료
+//				}else {
+//					max--;
+//					//풍선위치가 화살위치보다 낮거나 터진풍선일 경우 화살위치만 내려감
+//				}
+//			}
+//
+//		}
+//		
+//		
+//		System.out.println(count);
+//		
+/////////////////////////////////////////////////////////////////////	0105공부		
+		
+//		//[2212] 센서 [블로그]
 		
 		Scanner scan = new Scanner(System.in);
-		int n  = scan.nextInt();
 		
-		int [] arr = new int [n];
+		int sensor = scan.nextInt();
+		int collector = scan.nextInt();
+		int [] arr = new int [sensor];
+		int [] temp = new int [sensor - 1];
 		
-		int max = 0;
-		int location = 0;
-		for(int i = 0; i < n; i++) {
-			arr[i] = scan.nextInt();
-			if(max < arr[i]) {
-				max = arr[i];
-				location = i;
+		
+		if(collector >= sensor) {
+			System.out.println("0");
+			//센서보다 저장소가 많으면 총거리 0 출력
+		}else {
+			for(int i = 0; i < sensor; i++) {
+				arr[i] = scan.nextInt();
 			}
-		}
-		//풍선위 최대높이값과 배열에서의 위치 저장
-		
-		
-		int count = 0;
-		//화살이 지나는 횟수
-		
-		loop1 : while(true) {
-			count++;
-			//화살 발사!!
-			if(location == n - 1) {break;}
-			//위치가 마지막 풍선 자리면 루프종료
 			
-			loop2 : for(int i = location; i < n; i++) {
-				if(max == arr[i]) {
-					arr[i] = -1;
-					max--;
-					//현재 화살의 위치와 풍선의 위치가 같으면 풍선 -1 값 대입  화살위치 하나씩 내려감
-				}else if(arr[i] > max) {
-					//풍선이 화살의 위치보다 높으면
-					max = -2;
-					//최대값 초기화
-					for(int j = 0; j < n; j++) {
-						if(max < arr[j]) {
-							max = arr[j];
-							location = j;
-						}
-					}
-					//다음 풍선의 최대위치 체크
-					if(max == -1) {break loop1;}
-					//풍선의 위치 최댓값이 -1이면 모든 풍선이 터진 거기 때문에 while 종료
-					break loop2;
-					//차순위 최댓값 구하고 for문 종료
-				}else {
-					max--;
-					//풍선위치가 화살위치보다 낮거나 터진풍선일 경우 화살위치만 내려감
-				}
-			}
+			Arrays.sort(arr);
+			//오름차순 정렬
+			
+			for(int i = 0; i < sensor - 1; i++) {
+				temp[i] = arr[i + 1] - arr[i];
+			}		
+			//각 센서별 거리 차를 저장할 배열
+			
+			Arrays.sort(temp);
+			//센서 거리차 오름차순 정렬
+			int sum = 0;
+			//콜렉터가 커버할 총거리가 저장될 변수
 
+			for(int i = 0; i < sensor - collector; i++) {
+				sum += temp[i];
+			}
+			// 센서 - 콜렉터를 하면 콜렉터가 커버처야할 센서들의 갯수가 나옴
+			// 이후 해당 센서들중 오름차순한 가장 작은 값들을 더해주면
+			// 최솟값을 구할 수 있음
+			System.out.println(sum);
 		}
 		
-		
-		System.out.println(count);
-		
-		
-		
-		
+
 	}
 	
 
