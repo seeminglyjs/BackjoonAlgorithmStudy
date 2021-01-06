@@ -10402,8 +10402,8 @@ public class main {
 	
 			
 		    
-		    /////  [16283] Farm [블로그]
-		
+		    /////  [16283] Farm [완료]
+//		Scanner scan = new Scanner(System.in);		
 //		int Sfood = scan.nextInt();
 //		//양이 먹는 양
 //		int Gfood = scan.nextInt();
@@ -11964,6 +11964,895 @@ public class main {
 //						arr[count] = -1;
 //						
 						
+//						def pseudo(a, left, right):
+//						    while left < right:
+//						        if a[left] == a[right]:
+//						            left += 1
+//						            right -= 1
+//						        else:
+//						            return False
+//						    return True
+//
+//						# 회문 판단 함수
+//						def palindrome(a, left, right):
+//						    while left < right:
+//						        if a[left] == a[right]:
+//						            left += 1
+//						            right -= 1
+//						        else:
+//						            res1 = pseudo(a, left+1, right)
+//						            res2 = pseudo(a, left, right-1)
+//						            if res1 == True or res2 == True:
+//						                return 1
+//						            else:
+//						                return 2
+//						    return 0
+//
+//						T = int(input())
+//						for i in range(T):
+//						    a = list(input())
+//						    res = palindrome(a, 0, len(a)-1)
+//						    print(res)
+//					}
+//				}
+//				
+//			}
+//			
+//		}
+///////////////////////////////////////////////////////////////////////	1015공부			
+		
+
+//		[1781] 컵라면	[블로그]	
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [][] arr = new int [n][2];
+//		int max = 0;
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//				if(max < arr[i][0]) {
+//					max = arr[i][0];
+//				}
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int []>(){
+//			public int compare(int [] o1, int [] o2) {
+//				if(o1[1] == o2[1]) {
+//					return o2[0] - o1[0];
+//				}else {
+//					return o2[1]- o1[1];
+//				}
+//			}
+//		});
+//		//우선적으로 컵라면 기준으로 내림차순 컵라면 갯수가 같을경우
+//		//날짜기준으로 내림차순
+//		
+//		int deadline = 1;
+//		//데드라인 함수
+//		int sum = 0;		
+//		loop :while(true){
+//				for(int j = 0; j < n; j++) {
+//					if(j == n - 1 && deadline != arr[j][0]) {
+//						deadline++;
+//					}
+//					//j 가 끝날때까지 데드라인과 같은 배열내부의 데드라인이 없을경우
+//					//데드라인을 하나 더해줌
+//					if(deadline == arr[j][0]) {
+//						sum += arr[j][1];
+//						arr[j][0] = n + 1; 
+//						deadline++;
+//						break;
+//					}
+//					//데드라인과 배열의 데드라인이 같으면,
+//					//썸에 더해주고 해당 데드라인 재사용 못하게  n+1 하고
+//					//데드라인 또한 하나씩 증가해줌
+//				}
+//				if(deadline > max) {
+//					break loop;
+//				}
+//				//데드라인이 배열의 최대 데드라인보다 커지면
+//				//while 루프를 종료해줌
+//			}
+//			
+			
+//			System.out.println(sum);
+///////////////////////////////////////////////////////////////////////	1015공부			
+			
+
+//		[2138]		전구와 스위치 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		String a = scan.next();
+//		int [] arrA = new int [a.length()];
+//		for(int i = 0; i < a.length(); i++) {
+//			arrA[i] = a.charAt(i) - '0';
+//		}
+//		
+//		
+//		String b = scan.next();
+//		int [] arrB = new int [b.length()];
+//		int [] temp = new int [b.length()];
+//		for(int i = 0; i < b.length(); i++) {
+//			arrB[i] = b.charAt(i) - '0';
+//			temp[i] = b.charAt(i) - '0';
+//		}
+//		
+//		int start = 0;
+//		int end = b.length();
+//		int count = 0;
+//		boolean flag = true;
+//		if(a.length() != b.length()) {
+//			System.out.println(-1);
+//		}else {
+//			while(true) {
+//				for(int i = b.length() - 1; i >= 0; i--) {
+//					if(arrA[i] != arrB[i]) {
+//						if(i == 0) {
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i + 1] = 1 - arrB[i + 1];
+//							count++;
+//							flag = false;
+//						}else if(i == b.length() - 1){
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i - 1] = 1 - arrB[i - 1];
+//							count++;
+//							flag = false;
+//						}else {
+//							arrB[i + 1] = 1 - arrB[i + 1];
+//							arrB[i] = 1 - arrB[i];
+//							arrB[i - 1] = 1 - arrB[i - 1];
+//							count++;
+//							flag = false;
+//						}
+//						break;
+//					}
+//				}
+//				
+//				for(int i = 0; i < b.length(); i++) {
+//					System.out.print(arrB[i]);
+//				}
+//				System.out.println();
+//				System.out.println(count);
+//				if(flag) {
+//					System.out.println(count);
+//					break;
+//				}
+//				
+//				
+//				for(int i = 0; i < b.length(); i++) {
+//					if(temp[i] == arrB[i]) {
+//						flag = true;
+//					}else {
+//						flag = false;
+//						break;
+//					}
+//				}
+//				
+//				if(flag && count != 0) {
+//					System.out.println(-1);
+//					break;
+//				}else if(count == 0){
+//					System.out.println(count);
+//				}else {
+//					flag = true;
+//				}
+//				
+//				}
+//			}
+		
+		
+		
+////	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//	//			
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		n = Integer.parseInt(br.readLine());
+//		String s=br.readLine();
+//		src=new char[2][n];
+//		src[0]=s.toCharArray();
+//		src[1]=s.toCharArray();
+//		dst=br.readLine().toCharArray();
+//		answer=Integer.MAX_VALUE;
+//		//0번째 스위치를 누르지 않고 시작
+//		go(1,0,0);
+//		//0번째 스위치를 누르고 시작
+//		push(0,1);
+//		go(1,1,1);
+//		System.out.println(answer==Integer.MAX_VALUE?-1:answer);
+//	}
+//	
+//	static char src[][],dst[];
+//	static int n,answer;
+//	static void push(int idx,int type) {
+//		for(int i=idx-1;i<=idx+1;i++) {
+//			if(i>=0&&i<n) src[type][i]=src[type][i]=='1'?'0':'1';
+//		}
+//	}
+//	static void go(int idx,int cnt,int type) {
+//		if(idx==n) {
+//			if(src[type][idx-1]==dst[idx-1]) answer=answer>cnt?cnt:answer;
+//			return;
+//		}
+//		if(src[type][idx-1]!=dst[idx-1]) {
+//			push(idx,type);
+//			go(idx+1,cnt+1,type);
+//		}else go(idx+1,cnt,type);
+		
+///////////////////////////////////////////////////////////////////////	1119공부			
+		
+
+//		[1758]	알바생 강호 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		
+//		Integer [] arr = new Integer [n];
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr,Collections.reverseOrder());
+//		//내림차순 정렬
+//		int sum = 0;
+//		//총 팁을 저장할 변수
+//		int count = 1;
+//		//순서를 저장할 변수
+//		for(int i = 0; i < n; i++) {
+//			if(count > arr[i]) {
+//				break;
+//				//count 가 팁보다 커지면 종료
+//			}else {
+//				sum += arr[i] - (count - 1);
+//				count++;
+//				//팁이 0보다 작지않으면 계속해서 더해줌
+//			}
+//		}
+//	
+//		System.out.println(sum);
+		
+		
+///////////////////////////////////////////////////////////////////////	1122공부			
+		
+
+//		[2109] 순회강연	[다른풀이 살펴보기 다시보기]	
+
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [][] arr = new int [n][2];
+//		for(int i = 0; i < n; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>(){
+//			public int compare(int[]o1, int[]o2) {
+//				if(o1[1]==o2[1]) {
+//					return o1[0]-o2[0];
+//				}else {
+//					return o1[1]-o2[1];
+//				}
+//			}
+//		});
+//		//마감일 기준으로 정렬
+//		
+//		int day = arr[0][1];
+//		//첫째날 저장
+//		int lastday = arr[n-1][1];		
+//		//마지막날 저장
+//		int sum = 0;
+//		//합을 더할 변수
+//		boolean flag = true;
+//		//마지막날 체크 변수
+//		while(day <= arr[n-1][1]) {
+//			int max = 0;
+//			for(int i = 0; i < n; i++) {
+//				if(arr[i][1] == day) {
+//					if(arr[i][0] > max) {
+//						max = arr[i][0];
+//					}
+//					//같은 날중 최대 페이값 저장
+//				}else if(arr[i][1] > day) {
+//						day = arr[i][1];
+//						flag = false;
+//						break;		
+//				}
+//				//배열값이 day 값보다 크면 비교 불필요
+//				//day값 다음 강연날로 변경
+//			}
+//			sum += max;
+//			if(flag && lastday == day) {break;}
+//			//
+//			flag = true;
+//		}
+//		
+//		System.out.println(sum);
+//////////////////////////////////////////////////
+//		import java.io.BufferedReader;
+//		import java.io.IOException;
+//		import java.io.InputStreamReader;
+//		import java.util.PriorityQueue;
+//		import java.util.StringTokenizer;
+//
+//		public class TemplateA {
+//			static int n;
+//			static boolean[] checked;
+//		    public static void main(String[] args) throws IOException{
+//		    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//				StringTokenizer st = new StringTokenizer(br.readLine());
+//				n = Integer.parseInt(st.nextToken());
+//				PriorityQueue<Lecture> pq = new PriorityQueue<>();
+//				int maxDay = 0;
+//				for(int i = 0; i < n; i++) {
+//					st = new StringTokenizer(br.readLine());
+//					int pay = Integer.parseInt(st.nextToken());
+//					int day = Integer.parseInt(st.nextToken());
+//					maxDay = Math.max(day, maxDay);
+//					pq.add(new Lecture(pay, day));
+//				}
+//				checked = new boolean[maxDay+1];
+//				int sum = 0;
+//				while(!pq.isEmpty()) {
+//					Lecture lecture = pq.poll();
+//					for(int i = lecture.day; i >= 1; i--) {
+//						if(!checked[i]) {
+//							checked[i] = true;
+//							sum += lecture.pay;
+//							break;
+//						}
+//					}
+//				}
+//				System.out.println(sum);
+//			}
+//		}
+//
+//		class Lecture implements Comparable<Lecture> {
+//			int pay;
+//			int day;
+//			public Lecture(int pay, int day) {
+//				this.pay = pay;
+//				this.day = day;
+//			}
+//
+//			@Override
+//			public int compareTo(Lecture target) {
+//				if(target.pay > this.pay) { // pay가 높은게 우선순위가 높다
+//					return 1;
+//				} else if(target.pay == this.pay) {
+//					if(target.day < this.day) { // 같은 pay면 day가 낮은게 우선순위가 높다.
+//						return 1;
+//					}
+//				}
+//				return -1;
+//			}
+//		}
+///////////////////////////////////////////	
+		
+///////////////////////////////////////////////////////////////////////	1127공부			
+		
+
+//		[10165] 버스 노선	[블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int station = scan.nextInt();
+//		int busCnt = scan.nextInt();
+//		
+//		int [][] arr = new int [busCnt][2];
+//		int [] ans = new int [busCnt];
+//		//없어지질 않을 버스 노선을 저장할 배열
+//		
+//		for(int i = 0; i < busCnt; i++) {
+//			for(int j = 0; j < 2; j++) {
+//			arr[i][j] = scan.nextInt();	
+//			}
+//			
+//			if(arr[i][0] > arr[i][1]) {
+//				int temp = arr[i][0];
+//				arr[i][0] = arr[i][1];
+//				arr[i][1] = temp;
+//				//각 버스노선이 시작지점이 작은값으로 가게 정렬해줌
+//			}
+//	
+//		}
+//
+//		int start = 0;
+//		//배열의 위치한 처음 0번째 버스 저장
+//		while(true) {
+//			if(start > busCnt - 1) {break;}
+//			//start 가 총 버스의 수보다 커지면 스탑 배열이 0번째부터 시작하기 때문에 -1해줌
+//			for(int i = 0; i < busCnt; i++) {
+//				if(start != i) {
+//					if(arr[start][0] >= arr[i][0] && arr[start][1] <= arr[i][1]) {
+//					ans[start] = -1;
+//					break;
+//					}
+//					//초기 i와 start 가 같으면 같은 버스임으로 비교 불필요
+//					//이후 각 버스 노선마다 겹치는지 여부 체크
+//					//시작 지점이 과 끝나는 지점의 겹치거나 포함되는 여부 체크!!!
+//					//겹칠경우 해당 ans 배열에 그 버스노선은 사라질거기 때문에 -1 선언
+//				}
+//			}
+//			start++;
+//			//다음 버스 비교 위해 하나씩 더해줌
+//		}
+//		
+//		for(int i = 0; i < ans.length; i++) {
+//			if(ans[i] != -1) {
+//				System.out.print(i + 1 + " ");
+//			}
+//		}
+//		//배열은 0 부터 시작이기 때문에 -1이 아닌 버스들 출력함 
+
+		
+///////////////////////////////////////////////////////////////////////	1224공부			
+		
+
+//		[1285] 동전 뒤집기 [다시보기]
+		
+//		Scanner scan = new Scanner(System.in);
+//		n = scan.nextInt();	
+//		arr = new String [n][n];
+//		
+//		
+//			
+//		for(int i = 0; i<n; i++) {
+//			String temp = scan.next();
+//			for(int j = 0; j<n; j++) {
+//				arr[i][j] = String.valueOf(temp.charAt(j));
+//			}
+//		}
+//		
+//		String [][] ans = reverse();
+//		
+//		count = 0;
+//		for(int i = 0; i<n; i++) {
+//			for(int j = 0; j<n; j++) {
+//				if(ans[i][j].equals("H"));
+//				count++;
+//			}
+//		}
+//	
+////		for(int i = 0; i<n; i++) {
+////			for(int j = 0; j<n; j++) {
+////				System.out.print(ans[i][j]);
+////			}
+////			System.out.println();
+////		}
+////		
+//		System.out.println(count);
+//		
+//	}
+//	
+//	static String [][] arr;
+//	static int count = 0;
+//	static int n;
+//	
+//	public static String [][] reverse(){
+//		
+//		
+//		
+//		
+//		for(int i = 0; i<n; i++) {
+//			count = 0;
+//			for(int j = 0; j<n; j++) {
+//				if(arr[i][j].equals("H")) {
+//					count++;
+//				}
+//				if(count >= (n / 2) + 1 ) {
+//					for(int k = 0; k<n; k++) {
+//						if(arr[i][k].equals("H")) {
+//							arr[i][k] = "T";
+//						}else {
+//							arr[i][k] = "H";
+//						}
+//					}
+//					break;
+//				}
+//			}
+//		}
+//		
+//		for(int i = 0; i<n; i++) {
+//			count = 0;
+//			for(int j = 0; j<n; j++) {
+//				if(arr[j][i].equals("H")) {
+//					count++;
+//				}
+//				if(count >= (n / 2) + 1 ) {
+//					for(int k = 0; k<n; k++) {
+//						if(arr[k][i].equals("H")) {
+//							arr[k][i] = "T";
+//						}else {
+//							arr[k][i] = "H";
+//						}
+//					}
+//					break;
+//				}
+//			}
+//		}
+//		return arr;
+//	}
+	
+	
+//	using namespace std; 
+//	int main(void) { 
+//		int T; cin >> T; 
+//					for(int t_case=0; t_case<T; t_case++) { 
+//						int N, min = 100001, cnt; cin >> N; int distance[N]; 
+//						for(int i=0; i<N; i++) { 
+//							cin >> distance[i]; 
+//						if(distance[i] < 0) 
+//							distance[i] = -distance[i]; 
+//						if(distance[i] < min) min = distance[i]; 
+//						} 
+//	cnt = 0; 
+//	for(int i=0; i<N; i++) { 
+//		if(distance[i] == min) 
+//			cnt++; 
+//		} cout << "#" << t_case+1 << " " << min << " " << cnt << "\n"; 
+//		} 
+//					return 0; 
+//		}
+//
+//	출처: https://dev-repository.tistory.com/62 [Dev Repository]
+///////////////////////////////////////////////////////////////////////////////////	
+///////////////////////////////////////////////////////////////////////	1225공부
+		
+		
+// 			[2872] 우리 집에는 도서관이 있어 [블로그]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int [] arr = new int [n];
+//		
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		
+//		//항상 최솟값을 제일 앞에 위치시킨다는 생각으로
+//		//문제에 접근한다.
+//		int count = 0;
+//		for(int i = 0; i < n - 1; i++) {
+//			for(int j = 0; j < n; j++) {
+//				int tmp = 0;
+//				//배열의 값을 임시로 받아줄 변수
+//					if(arr[0] > arr[j]) {
+//						tmp = arr[0];
+//						arr[0] = arr[j];
+//						arr[j] = tmp;
+//						count++;
+//						break;
+//						//루프를 돌면서 첫번째 자리보다 제이의 값이 크면
+//						//해당 값과 첫번째 위치를 서로 변경해줌
+//				}
+//			}
+//		}
+//		
+//		System.out.println(count);
+		
+		
+//			[16435] 	스네이크버드 [블로그]
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		int fruitCnt = scan.nextInt();
+//		int snakeLen = scan.nextInt();
+//		
+//		int [] arr = new int [fruitCnt];
+//		
+//		for(int i = 0; i < fruitCnt; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		
+//		Arrays.sort(arr);
+//		//내림차순 배열 정렬
+//		int start = 0;
+//		while(true) {
+//			if(arr[start] <= snakeLen ) {
+//				snakeLen++;
+//				//과일의 위치가 뱀의 길이와 같거나 작으면 
+//				//과일 먹고 뱀의 길이 증가
+//				if(start < fruitCnt - 1) {
+//					start++;
+//					//남은 과일이 있으면, 다음 과일 비교 위해
+//					//베열위치 더해줌
+//				}else {
+//					break;
+//					//다음 과일 없으면 반복문탈출
+//				}
+//			}else {
+//				break;
+//				//뱀이 다음과일 위치보다 짧으면 반복문 탈출
+//			}
+//		}
+//		
+//		System.out.println(snakeLen);
+		
+///////////////////////////////////////////////////////////////////////	1229공부
+		
+		//[2457] 공주님의 정원 [블로그]
+//		Scanner scan = new Scanner(System.in);
+//		int flower = scan.nextInt();
+//		
+//		int [][] arr = new int [flower][4];
+//		
+//		for(int i =0; i < flower; i++) {
+//			for(int j =0; j < 4; j++) {
+//				arr[i][j] = scan.nextInt();
+//			}
+//		}
+//		
+//		Arrays.sort(arr, new Comparator<int[]>() {
+//		    @Override
+//			public int compare(int[] o1, int[] o2) {
+//		    	 if(o1[0] == o2[0]) {
+//	                 return o2[2] - o1[2];
+//		    	 }else {
+//		    		 return o1[0] - o2[0]; 
+//		    	 }
+//	           }
+//	        });
+//		//시작달 기준 오름차순 같을 경우 끝나는 달 기준 내림차순
+//		
+//		int start = 3;
+//		//꽃이 피어있어야하는 시작 달 3월 1일
+//		int end = 12;
+//		//꽃이 피어있어야하는 마지막달 달 11월 30일
+//		int min =9999;
+//		//최소한의 꽃의 수가 들어갈 변수
+//		int num = 0;
+//		//배열위치 지정 변수
+//		loop :while(num != flower - 1) {
+//			//배열위치가 총 꽃의 갯수보다 작을때까지 반복 (배열은 0부터 시작이니까)
+//			int count = 1;
+//			//기간 동안 펴져있을 꽃을 셀 변수 초기값 1
+//			if(arr[num][0] <= start) {
+//				//시작 달 비교
+//				if(arr[num][2] == end || (arr[num][2] == (end -1) && arr[num][3] >= 30)) {
+//					//시작 달 비교후 끝달도 비교해봄
+//					min = 1;
+//					//해당 꽃이 모든 기간이 펴있으면 더이상 비교 불필요 루프 종료
+//					break loop;
+//				}else {
+//					int tempNum = num;
+//					int month = arr[tempNum][2];
+//					int day = arr[tempNum][3];
+//					//현재의 꽃 저장 변수
+//					//시작달 기준으로 비교를 진행하니 비교 꽃의 지는 월과 날짜를 담아줌
+//					for(int i = 0; i < flower; i++) {
+//						if(arr[i][0] < month || arr[i][0] == month && arr[i][1] <= day) {
+//							if(arr[i][2] == end || (arr[i][2] == (end -1) && arr[i][3] >= 30)) {
+//								//비교 꽃이 나머지 남은 기간을 모두 포함하면 더이상 반복문 불필요 루프 종료
+//								if(count == 1) {count = 2;}
+//								if(min > count) {
+//									min = count;
+//								}
+//								num++;
+//								break;
+//							}else {
+//								boolean flag = false;
+//								for(int j = i + 1; j < flower -1; j++) {
+//									if(arr[j][0] < month || arr[j][0] == month && arr[j][1] <= day) {
+//										flag =true;
+//									}
+//								}
+//								//i 다음위치의 꽃의 시작 날짜가 i번째 꽃이 지는 날짜보다 작거나 같으면,
+//								//해당 i위치 꽃을 더할 필요없이 다음꽃과 비교하면됨.
+//								if(!flag) {
+//									count++;
+//									tempNum = i;
+//									month = arr[tempNum][2];
+//									day = arr[tempNum][3];
+//								}
+//								//2개 이상일 경우 다음 꽃도 비교하기 위해 꽃 갯수와
+//								//다음 꽃의 기간을 비교하기 위해 tempNum도 i로 초기화 하고 다시 저장	
+//							}
+//						}
+//					}
+//					if(month == end || (month == (end -1) && day >= 30)) {
+//						if(min > count) {
+//							min = count;
+//						}
+//						//최종적으로 count에 저장된 꽃의 기간이 끝이 시간보다 크거나 같은지 비교
+//					}
+//				}
+//			}else {num++;}
+//			//최솟값 찾기 위해 다음 꽃을 찾음
+//		}
+//		
+//		if(num == flower) {
+//			System.out.println(-1);
+//		}else {
+//			System.out.println(min);
+//		}
+		
+/////////////////////////////////////////////////////////////////////	1230공부		
+		
+//		//[11509] 풍선 맞추기 [블로그]
+//		
+//		Scanner scan = new Scanner(System.in);
+//		int n  = scan.nextInt();
+//		
+//		int [] arr = new int [n];
+//		
+//		int max = 0;
+//		int location = 0;
+//		for(int i = 0; i < n; i++) {
+//			arr[i] = scan.nextInt();
+//			if(max < arr[i]) {
+//				max = arr[i];
+//				location = i;
+//			}
+//		}
+//		//풍선위 최대높이값과 배열에서의 위치 저장
+//		
+//		
+//		int count = 0;
+//		//화살이 지나는 횟수
+//		
+//		loop1 : while(true) {
+//			count++;
+//			//화살 발사!!
+//			if(location == n - 1) {break;}
+//			//위치가 마지막 풍선 자리면 루프종료
+//			
+//			loop2 : for(int i = location; i < n; i++) {
+//				if(max == arr[i]) {
+//					arr[i] = -1;
+//					max--;
+//					//현재 화살의 위치와 풍선의 위치가 같으면 풍선 -1 값 대입  화살위치 하나씩 내려감
+//				}else if(arr[i] > max) {
+//					//풍선이 화살의 위치보다 높으면
+//					max = -2;
+//					//최대값 초기화
+//					for(int j = 0; j < n; j++) {
+//						if(max < arr[j]) {
+//							max = arr[j];
+//							location = j;
+//						}
+//					}
+//					//다음 풍선의 최대위치 체크
+//					if(max == -1) {break loop1;}
+//					//풍선의 위치 최댓값이 -1이면 모든 풍선이 터진 거기 때문에 while 종료
+//					break loop2;
+//					//차순위 최댓값 구하고 for문 종료
+//				}else {
+//					max--;
+//					//풍선위치가 화살위치보다 낮거나 터진풍선일 경우 화살위치만 내려감
+//				}
+//			}
+//
+//		}
+//		
+//		
+//		System.out.println(count);
+//		
+/////////////////////////////////////////////////////////////////////	0105공부		
+		
+//		//[2212] 센서 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int sensor = scan.nextInt();
+//		int collector = scan.nextInt();
+//		int [] arr = new int [sensor];
+//		int [] temp = new int [sensor - 1];
+//		
+//		
+//		if(collector >= sensor) {
+//			System.out.println("0");
+//			//센서보다 저장소가 많으면 총거리 0 출력
+//		}else {
+//			for(int i = 0; i < sensor; i++) {
+//				arr[i] = scan.nextInt();
+//			}
+//			
+//			Arrays.sort(arr);
+//			//오름차순 정렬
+//			
+//			for(int i = 0; i < sensor - 1; i++) {
+//				temp[i] = arr[i + 1] - arr[i];
+//			}		
+//			//각 센서별 거리 차를 저장할 배열
+//			
+//			Arrays.sort(temp);
+//			//센서 거리차 오름차순 정렬
+//			int sum = 0;
+//			//콜렉터가 커버할 총거리가 저장될 변수
+//
+//			for(int i = 0; i < sensor - collector; i++) {
+//				sum += temp[i];
+//			}
+//			// 센서 - 콜렉터를 하면 콜렉터가 커버처야할 센서들의 갯수가 나옴
+//			// 이후 해당 센서들중 오름차순한 가장 작은 값들을 더해주면
+//			// 최솟값을 구할 수 있음
+//			System.out.println(sum);
+//		}
+		
+/////////////////////////////////////////////////////////////////////	0106공부		
+		
+		
+//		//[1461] 도서관 [다시보기]
+		
+
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	        String[] input = br.readLine().split(" ");
+	        ArrayList<Integer> minus = new ArrayList<>();
+	        ArrayList<Integer> plus = new ArrayList<>();
+	        int N = Integer.parseInt(input[0]);
+	        int M = Integer.parseInt(input[1]);
+	        String[] books = br.readLine().split(" ");
+	        long sum = 0;
+	        int maxFlag = 0;
+
+	        for(int i=0; i<N; i++) {
+	            int book = Integer.parseInt(books[i]);
+
+	            if(book<0) {
+	                minus.add(Math.abs(book));
+	            }
+	            else
+	                plus.add(book);
+	        }
+	        Collections.sort(minus, Collections.reverseOrder());
+	        Collections.sort(plus, Collections.reverseOrder());
+
+	        if(!minus.isEmpty() && !plus.isEmpty()) {
+	            if(minus.get(0)>plus.get(0))
+	                maxFlag--;
+	            else
+	                maxFlag++;
+	        }
+
+	        else {
+	            if(minus.isEmpty())
+	                maxFlag++;
+	            else
+	                maxFlag--;
+	        }
+
+	        ArrayList<Integer> tmp = maxFlag < 0 ? minus : plus;
+	        sum += tmp.remove(0);
+	        System.out.println(sum);
+	        int i=0;
+	        while(!tmp.isEmpty()) {
+	            if(i==M-1)
+	                break;
+	            tmp.remove(0);
+	            i++;
+	        }
+	        System.out.println(i);
+	        
+	        for(int j=0; j<2; j++) {
+
+	            if (j==0)
+	                tmp = minus;
+	            else
+	                tmp = plus;
+
+	            int idx = 0;
+
+	            while (!tmp.isEmpty()) {
+
+	                if (idx==0)
+	                    sum += tmp.remove(0)*2;
+	                else
+	                    tmp.remove(0);
+
+	                idx++;
+	                idx%=M;
+	            }
+	        }
+	        System.out.println(sum);
+
+	        
+	        
+	        
+	    }
+}		
+					
 //						def pseudo(a, left, right):
 //						    while left < right:
 //						        if a[left] == a[right]:
