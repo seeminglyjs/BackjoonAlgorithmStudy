@@ -1,28 +1,7 @@
-import java.awt.Point;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Scanner;
-import java.util.StringTokenizer;
-import java.util.concurrent.locks.ReentrantReadWriteLock.ReadLock;
-
-import javax.swing.text.DefaultEditorKit.BeepAction;
-import javax.swing.text.StyledEditorKit.BoldAction;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 
 
@@ -2462,34 +2441,51 @@ public class main {
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
 		
-//		[4153번]		
+//		[4153번]	직각삼각형 [완료]	
 		
-//		문제
-//		과거 이집트인들은 각 변들의 길이가 3, 4, 5인 삼각형이 직각 삼각형인것을 알아냈다. 
-//		주어진 세변의 길이로 삼각형이 직각인지 아닌지 구분하시오.
+//		import java.util.Scanner;
 //
-//		입력
-//		입력은 여러개의 테스트케이스로 주어지며 마지막줄에는 0 0 0이 입력된다. 
-//		각 테스트케이스는 모두 30,000보다 작은 양의 정수로 주어지며, 각 입력은 변의 길이를 의미한다.
+//		public class TemplateA {
+//			public static void main(String[] args){
 //
-//		출력
-//		각 입력에 대해 직각 삼각형이 맞다면 "right", 아니라면 "wrong"을 출력한다.
-	
-//		Scanner scan = new Scanner(System.in);
-//		System.out.println("숫자를 입력해주세요.");
-//		int T = scan.nextInt();
-//		
-//		for(int i = 0; i < T; i++) {
-//			int a = scan.nextInt();
-//			int b = scan.nextInt();
-//			int c = scan.nextInt();
-//		
-//			if(Math.pow(a,2) + Math.pow(b,2) == Math.pow(c, 2)) {
-//				System.out.println("right");
-//			}else {
-//				System.out.println("wrong");
+//				Scanner scan = new Scanner(System.in);
+//
+//				int [] arr = new int [3];
+//
+//
+//				loop : while(true) {
+//					int max = 0;
+//					int location = 0;
+//					for(int i = 0; i < 3; i++) {
+//						arr[i] = scan.nextInt(); 
+//						if(max < arr[i]) {
+//							max = arr[i]; // 3변중 가장 큰 변 체크
+//							location = i; // 해당 배열 위치 저장
+//						}
+//					}
+//
+//					if(max == 0) {break loop;} 
+//					// max가 0이면 모든 값이 0이기 때문에 루프종료
+//
+//					int sum = 0; // 작은 두변 제곱을 넣을 변수
+//					for(int i = 0; i < 3; i++) {
+//						if(i != location) {
+//							sum += (int) Math.pow(arr[i], 2);
+//							// 작은변들의 제곱을 더해줌
+//						}
+//					}
+//
+//					if(Math.pow(max, 2) == sum) { 
+//						// 가장 긴변의 제곱이 작은 변의 제곱의 합과 같은지 체크
+//						System.out.println("right");
+//					}else {
+//						System.out.println("wrong");
+//					}
+//
+//				}
+//
+//
 //			}
-//		
 //		}
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
@@ -2527,7 +2523,7 @@ public class main {
 
 ///////////////////////////////////////////////////////////////////////////////////////	708공부
 		
-//		[10872번]				
+//		[10872번]	[블로그]		
 		
 //		문제
 //		0보다 크거나 같은 정수 N이 주어진다. 이때, N!을 출력하는 프로그램을 작성하시오.
@@ -2539,19 +2535,26 @@ public class main {
 //		첫째 줄에 N!을 출력한다.
 		
 		
-//		Scanner scna = new Scanner(System.in);
-//		System.out.println("숫자를 입력해주세요.");
-//		int input = scan.nextInt();
-//		int [] arr = new int[input];
-//		int sum = 1;
-//		
-//		for(int i = 0; i < input; i++) {
-//			arr[i] = i+1;
-//			sum *= arr[i];
-//		
+//		import java.util.Scanner;
+//
+//		public class TemplateA {
+//			public static void main(String[] args){
+//
+//				Scanner scan = new Scanner(System.in);
+//				System.out.println("숫자를 입력해주세요.");
+//				int input = scan.nextInt();
+//				int [] arr = new int[input];
+//				int sum = 1;
+//				
+//				for(int i = 0; i < input; i++) {
+//					arr[i] = i+1; // 1부터 시작하기 때문에 1더해줌
+//					sum *= arr[i]; //i 위치에 있는 값을 곱해줌
+//				}
+//				System.out.println(sum);
+//
+//
+//			}
 //		}
-//		System.out.println(sum);
-//		
 
 		
 ///////////////////////////////////////////////////////////////////////////////////////	
@@ -10657,7 +10660,7 @@ public class main {
 //		System.out.println(count);
 
 		
-//		[1449] 수리공 항승 [블로그]
+//		[1449] 수리공 항승 [완료]
 		
 //		Scanner scan = new Scanner(System.in);
 //		// 조건 1. 물이 세는 부분은 무조건 정수다.
@@ -12851,74 +12854,178 @@ public class main {
 	        
 		//[17616] 볼 모으기 [블로그]
 		
-		Scanner scan = new Scanner(System.in);
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		String ball = scan.next();
+//		
+//		int ballR = 0;
+//		int ballB = 0;
+//		//색별 공갯수를 저장할 변수
+//		int min = 99999999;
+//		//최소 정렬횟수 저장 변수
+//		
+//		for(int i = 0; i < ball.length(); i++) {
+//			if(ball.charAt(i) == 'R'){
+//				ballR++;
+//			}else {
+//				ballB++;
+//			}
+//		}
+//		
+//		int count = 0; // 정렬볼 카운트 변수
+//		//R을 모두 왼쪽 정렬할 경우 <<<<<<<
+//		for(int i = 0; i < ball.length(); i++) {
+//			if(ball.charAt(i) == 'R'){
+//				count++;
+//			}else {break;}
+//			//나머지 R들은 모두 B 옆에 있기 때문에 정지
+//			//나머지 R들은 모두 옮겨야 함
+//			//때문에 총 R에서 기존 맨 왼쪽에 있는 R을 빼주면
+//			//옮길 횟수가 나옴 -> 나머지도 같은 원리
+//		}
+//		
+//		min = Math.min(min, ballR - count); // 정렬 최솟값 체크
+//		//////////////////////////////////
+//		
+//		count = 0;
+//		//R을 모두 오른쪽 정렬할 경우 >>>>>>>
+//		for(int i =ball.length() - 1; i >=0 ; i--) {
+//			if(ball.charAt(i) == 'R'){
+//				count++;
+//			}else {break;}
+//		}
+//		
+//		min = Math.min(min, ballR - count); // 정렬 최솟값 체크
+//		//////////////////////////////////
+//		
+//		
+//		count = 0; // 정렬볼 카운트 변수
+//		//B을 모두 왼쪽 정렬할 경우 <<<<<<<
+//		for(int i = 0; i < ball.length(); i++) {
+//			if(ball.charAt(i) == 'B'){
+//				count++;
+//			}else {break;}
+//		}
+//		
+//		min = Math.min(min, ballB - count); // 정렬 최솟값 체크
+//		//////////////////////////////////
+//		
+//		count = 0;
+//		//B을 모두 오른쪽 정렬할 경우 >>>>>>>
+//		for(int i =ball.length() - 1; i >=0 ; i--) {
+//			if(ball.charAt(i) == 'B'){
+//				count++;
+//			}else {break;}
+//		}
+//		
+//		min = Math.min(min, ballB - count); // 정렬 최솟값 체크
+//		//////////////////////////////////
+//		
+//		System.out.println(min);
+		
+		
+		
+/////////////////////////////////////////////////////////////////////	0123공부		        
+        
+//		[19939]	 박 터트리기 [블로그]
+		
+//		Scanner scan = new Scanner(System.in);
+//		int ball = scan.nextInt();
+//		int bowl = scan.nextInt();
+//		int sum = 0; //바구니에 들어간 공을 더해줄 변수
+//		
+//		int [] arr = new int [bowl];
+//
+//		int count = 1;
+//		for(int i = 0; i < bowl; i++) {
+//			arr[i] += count;
+//			count++;
+//			sum += arr[i]; // 사용한 볼수를 더해줌
+//		}
+//		//초기값 셋팅
+//		//바구니의 수에 따라 모든 수가 다르게 값을 대입
+//		// count 변수를 하나씩 더해주면 서 모두 다른 값 대입
+//
+//		if(sum > ball) { // 공을 바구니 마다 모두 다른 값을 넣었는데,
+//			// 그 합이 초기 공의수보다 크면 -1
+//			System.out.println(-1);
+//		}else if(sum == ball){
+//			System.out.println((arr[bowl-1] - arr[0]));
+//			//sum 이  ball의 수와 같으면 모두 다른 값이 바구니에 들어가 있음
+//		}else {//추가적인 볼이 남은 경우
+//			ball -= sum;
+//			// 기존에 바구니에 넣어줌 공의 수를 초기 공의 값에서 빼줌
+//			if(ball % bowl == 0) {
+//			//남은 공을 바구니의 수에 나눠줌
+//			// 초기값을 제외하고 모두 다를려면 각 바구니당 1나씩 공을 추가해주는
+//			// 방식을 사용하면됨
+//				System.out.println((arr[bowl-1] - arr[0]));
+//			}else { // 나머지가 남을 경우 결국 같아지는 값이 생김
+//				// -1을 출력하고 마무리
+//				System.out.println(-1);
+//			}
+//		}
+		
+/////////////////////////////////////////////////////////////////////	0124공부		        
+        
+//	[15922]	아우으 우아으이야!! [블로그]
+
+		Scanner scan = new Scanner(System.in);	
 		int n = scan.nextInt();
-		String ball = scan.next();
+		int sum = 0;
+
+		int [][] arr = new int [n][2];
+
+		for(int i = 0; i < n; i++) {
+			for(int j = 0; j < 2; j++) {
+				arr[i][j] = scan.nextInt();
+			}	
+		}
 		
-		int ballR = 0;
-		int ballB = 0;
-		//색별 공갯수를 저장할 변수
-		int min = 99999999;
-		//최소 정렬횟수 저장 변수
+		//2차원 배열 오름 차순 정렬 코드
+		Arrays.sort(arr, new Comparator<int[]>(){
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				if(o1[0] == o2[0]) {
+					return o1[1] - o2[1];
+				}else {
+					return o1[0] - o2[0];
+				}	
+			}
+		});
 		
-		for(int i = 0; i < ball.length(); i++) {
-			if(ball.charAt(i) == 'R'){
-				ballR++;
-			}else {
-				ballB++;
+
+		int start = arr[0][0];
+		int end = arr[0][1];
+		
+
+		for(int i = 1; i < n; i++) {
+			if(arr[i][0] >= start && arr[i][1] <= end) {
+				//초기 범위에 모두 겹치는 경우 비교 불필요
+				System.out.println("1=="+arr[i][0] + " / " +arr[i][1]);
+				continue;
+			}else if(arr[i][0] <= end && arr[i][1] >= end ) {
+				// 범위에 들어가난 끝자리가 초과하는 경우
+				System.out.println("2=="+arr[i][0] + " / " +arr[i][1]);
+				System.out.println("2=="+start + " / " + end);
+				end = arr[i][1];
+			}else { // 기존의 초기의 start와 end의 범위를 모두 벗어난 경우
+				//sum에 기존 범위에 차이를 더해주고  start와  end를
+				//해당 벗어난 값으로 초기화 시켜줌
+				sum += Math.abs(end - start);
+				System.out.println("3=="+start + " / " + end);
+				System.out.println(sum);
+				start = arr[i][0];
+				end = arr[i][1];
+
 			}
 		}
+			
+			//나머지 선분의 길이 를 더해줌
+			sum += Math.abs(end - start);
+			System.out.println(sum);
+	
 		
-		int count = 0; // 정렬볼 카운트 변수
-		//R을 모두 왼쪽 정렬할 경우 <<<<<<<
-		for(int i = 0; i < ball.length(); i++) {
-			if(ball.charAt(i) == 'R'){
-				count++;
-			}else {break;}
-			//나머지 R들은 모두 B 옆에 있기 때문에 정지
-			//나머지 R들은 모두 옮겨야 함
-			//때문에 총 R에서 기존 맨 왼쪽에 있는 R을 빼주면
-			//옮길 횟수가 나옴 -> 나머지도 같은 원리
-		}
-		
-		min = Math.min(min, ballR - count); // 정렬 최솟값 체크
-		//////////////////////////////////
-		
-		count = 0;
-		//R을 모두 오른쪽 정렬할 경우 >>>>>>>
-		for(int i =ball.length() - 1; i >=0 ; i--) {
-			if(ball.charAt(i) == 'R'){
-				count++;
-			}else {break;}
-		}
-		
-		min = Math.min(min, ballR - count); // 정렬 최솟값 체크
-		//////////////////////////////////
-		
-		
-		count = 0; // 정렬볼 카운트 변수
-		//B을 모두 왼쪽 정렬할 경우 <<<<<<<
-		for(int i = 0; i < ball.length(); i++) {
-			if(ball.charAt(i) == 'B'){
-				count++;
-			}else {break;}
-		}
-		
-		min = Math.min(min, ballB - count); // 정렬 최솟값 체크
-		//////////////////////////////////
-		
-		count = 0;
-		//B을 모두 오른쪽 정렬할 경우 >>>>>>>
-		for(int i =ball.length() - 1; i >=0 ; i--) {
-			if(ball.charAt(i) == 'B'){
-				count++;
-			}else {break;}
-		}
-		
-		min = Math.min(min, ballB - count); // 정렬 최솟값 체크
-		//////////////////////////////////
-		
-		System.out.println(min);
-	        
-	    }
+
+	}
 }		
